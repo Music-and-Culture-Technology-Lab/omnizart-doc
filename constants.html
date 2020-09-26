@@ -212,15 +212,202 @@
             
   <div class="section" id="constants">
 <h1>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-omnizart.constants"></span><p>Constant settings.</p>
+<p>Settings that should not be modified easily within the scope of this project.
+There are three categories of the setting:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Feature</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Datasets</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Midi</span></code></p></li>
+</ul>
 <div class="section" id="feature">
 <h2>Feature<a class="headerlink" href="#feature" title="Permalink to this headline">¶</a></h2>
 <p>Records the settings of the feature extraction process.
 There are also default settings that can be adjusted, and are records in <cite>defaults/*.yaml</cite> files.</p>
+<span class="target" id="module-omnizart.constants.feature"></span><p>Some constant feature settings.</p>
 </div>
 <div class="section" id="datasets">
 <h2>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h2>
 <p>Records the directory structure of each dataset, and will be used for extracting the feature
 of the whole dataset (not yet supported…).</p>
+<span class="target" id="module-omnizart.constants.datasets"></span><p>Information about directory structure of each dataset.</p>
+<dl class="py class">
+<dt id="omnizart.constants.datasets.BaseStructure">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">BaseStructure</code><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Defines the necessary attributes and methods for each sub-dataset structure class.</p>
+<p>All sub-dataset structure class should inherit this meta class to ensure
+the necessary attributes, methods are overriden.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.label_ext" title="omnizart.constants.datasets.BaseStructure.label_ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_ext</span></code></a></dt><dd><p>The extension of ground-truth files.</p>
+</dd>
+<dt><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.test_labels" title="omnizart.constants.datasets.BaseStructure.test_labels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_labels</span></code></a></dt><dd><p>Records folders that contains testing labels.</p>
+</dd>
+<dt><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.test_wavs" title="omnizart.constants.datasets.BaseStructure.test_wavs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_wavs</span></code></a></dt><dd><p>Records folders that contains testing wav files.</p>
+</dd>
+<dt><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.train_labels" title="omnizart.constants.datasets.BaseStructure.train_labels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train_labels</span></code></a></dt><dd><p>Records folders that contains training labels.</p>
+</dd>
+<dt><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.train_wavs" title="omnizart.constants.datasets.BaseStructure.train_wavs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train_wavs</span></code></a></dt><dd><p>Records folders that contains trainig wav files.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.label_ext">
+<em class="property">abstract property </em><code class="sig-name descname">label_ext</code><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.label_ext" title="Permalink to this definition">¶</a></dt>
+<dd><p>The extension of ground-truth files.</p>
+<p class="rubric">Examples</p>
+<p>Defines a sub-dataset structure class:</p>
+<dl>
+<dt>class SubStructure(BaseStructure):</dt><dd><p>&#64;property
+def label_ext(self):</p>
+<blockquote>
+<div><p>return ‘.mid’</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.test_labels">
+<em class="property">abstract property </em><code class="sig-name descname">test_labels</code><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.test_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Records folders that contains testing labels.</p>
+<p>Similar to the <cite>train_labels</cite> function, records information of where the corresponding
+ground-truth files are stored.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.test_wavs">
+<em class="property">abstract property </em><code class="sig-name descname">test_wavs</code><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.test_wavs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Records folders that contains testing wav files.</p>
+<p>Same as what <cite>train_wavs</cite> does, but for testing wav files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.train_labels">
+<em class="property">abstract property </em><code class="sig-name descname">train_labels</code><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.train_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Records folders that contains training labels.</p>
+<p>Similar to the <cite>train_wavs</cite> function, records information of where the corresponding
+ground-truth files are stored.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.train_wavs">
+<em class="property">abstract property </em><code class="sig-name descname">train_wavs</code><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.train_wavs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Records folders that contains trainig wav files.</p>
+<p>The path to sub-folders should be the relative path to root folder of the dataset.</p>
+<p class="rubric">Examples</p>
+<p>Assume the structure of the dataset looks like following</p>
+<div class="line-block">
+<div class="line">maps</div>
+<div class="line">├── MAPS_AkPnCGdD_2</div>
+<div class="line">│   └── AkPnCGdD</div>
+<div class="line">└── MAPS_AkPnBcht_2</div>
+<div class="line-block">
+<div class="line">   └── AkPnBcht</div>
+</div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">AkPnCGdD</span></code> and <code class="docutils literal notranslate"><span class="pre">AkPnBcht</span></code> are the folders store the wav files.
+The function should return a list like:</p>
+<div class="line-block">
+<div class="line">&gt;&gt;&gt; [‘MAPS_AkPnCGdD_2/AkPnCGdD’, ‘MAPS_AkPnBcht_2/AkPnBcht’]</div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.constants.datasets.ExtSuStructure">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">ExtSuStructure</code><a class="headerlink" href="#omnizart.constants.datasets.ExtSuStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#omnizart.constants.datasets.BaseStructure" title="omnizart.constants.datasets.BaseStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets.BaseStructure</span></code></a></p>
+<p>Structure of Extended-Su dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_ext</strong></dt><dd></dd>
+<dt><strong>test_labels</strong></dt><dd></dd>
+<dt><strong>test_wavs</strong></dt><dd></dd>
+<dt><strong>train_labels</strong></dt><dd></dd>
+<dt><strong>train_wavs</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.constants.datasets.MaestroStructure">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">MaestroStructure</code><a class="headerlink" href="#omnizart.constants.datasets.MaestroStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#omnizart.constants.datasets.BaseStructure" title="omnizart.constants.datasets.BaseStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets.BaseStructure</span></code></a></p>
+<p>Structure of Maestro dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_ext</strong></dt><dd></dd>
+<dt><strong>test_labels</strong></dt><dd></dd>
+<dt><strong>test_wavs</strong></dt><dd></dd>
+<dt><strong>train_labels</strong></dt><dd></dd>
+<dt><strong>train_wavs</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.constants.datasets.MapsStructure">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">MapsStructure</code><a class="headerlink" href="#omnizart.constants.datasets.MapsStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#omnizart.constants.datasets.BaseStructure" title="omnizart.constants.datasets.BaseStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets.BaseStructure</span></code></a></p>
+<p>Structure of MAPS dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_ext</strong></dt><dd></dd>
+<dt><strong>test_labels</strong></dt><dd></dd>
+<dt><strong>test_wavs</strong></dt><dd></dd>
+<dt><strong>train_labels</strong></dt><dd></dd>
+<dt><strong>train_wavs</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.constants.datasets.MusicNetStructure">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">MusicNetStructure</code><a class="headerlink" href="#omnizart.constants.datasets.MusicNetStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#omnizart.constants.datasets.BaseStructure" title="omnizart.constants.datasets.BaseStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets.BaseStructure</span></code></a></p>
+<p>Structure of MusicNet dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_ext</strong></dt><dd></dd>
+<dt><strong>test_labels</strong></dt><dd></dd>
+<dt><strong>test_wavs</strong></dt><dd></dd>
+<dt><strong>train_labels</strong></dt><dd></dd>
+<dt><strong>train_wavs</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.constants.datasets.PopStructure">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">PopStructure</code><a class="headerlink" href="#omnizart.constants.datasets.PopStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#omnizart.constants.datasets.BaseStructure" title="omnizart.constants.datasets.BaseStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets.BaseStructure</span></code></a></p>
+<p>Structure of Pop dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_ext</strong></dt><dd></dd>
+<dt><strong>test_labels</strong></dt><dd></dd>
+<dt><strong>test_wavs</strong></dt><dd></dd>
+<dt><strong>train_labels</strong></dt><dd></dd>
+<dt><strong>train_wavs</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="midi">
 <h2>Midi<a class="headerlink" href="#midi" title="Permalink to this headline">¶</a></h2>
