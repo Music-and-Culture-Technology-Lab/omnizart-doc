@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Quick Start</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Command Line Interface" href="cli.html" />
+  <link rel="prev" title="Omniscient Mozart’s Document" href="index.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">omnizart</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="index.html#omniscient-mozart-s-document"
+         class="nav-link  router-link-active">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#omniscient-mozart-s-document"
+         class="nav-link ">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="index.html#omniscient-mozart-s-document"
+         class="nav-link  router-link-active">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#omniscient-mozart-s-document"
+         class="nav-link ">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#omniscient-mozart-s-document">Contents</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Quick Start</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#installation" class="reference internal">Installation</a></li>
+                
+                  <li class="toctree-l2"><a href="#transcribe-a-pop-song" class="reference internal">Transcribe a pop song</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="cli.html" class="reference internal ">Command Line Interface</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#omniscient-mozart-s-document">API Reference</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="music.html" class="reference internal ">Music Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="drum.html" class="reference internal ">Drum Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="feature.html" class="reference internal ">Feature</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="models.html" class="reference internal ">Models</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="constants.html" class="reference internal ">Constants</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="utils.html" class="reference internal ">Utilities</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Quick Start</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← Omniscient Mozart’s Document</a>
+  </li>
+  <li class="next">
+    <a href="cli.html"
+       title="next chapter">Command Line Interface →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-pip">
+<h3>Using pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install omnizart
+</pre></div>
+</div>
+</div>
+<div class="section" id="from-source">
+<h3>From source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h3>
+<p>The most guaranteed way for installing the pacakge from source.
+This will create a virtual environment under the same folder,
+and thus not installed system-wide. For the system-wide installation
+approach, please refer to the following section.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Music-and-Culture-Technology-Lab/omnizart.git
+<span class="nb">cd</span> omnizart
+make install
+</pre></div>
+</div>
+<p>The second way is by using the provided shell script to install, which
+is almost identical to execute <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> command, except you
+can specify more settings for the installtoin including to install
+system-wide this time.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">### Under the `omnizart` folder</span>
+<span class="c1"># System-wide installation</span>
+./scripts/install.sh
+
+<span class="c1"># Install with virtual environment</span>
+./scripts/install.sh venv
+
+<span class="c1"># Use &#39;poetry&#39; for installation</span>
+<span class="nb">export</span> <span class="nv">DEFAULT_VENV_APPROACH</span><span class="o">=</span>poetry
+./scripts/install.sh
+
+<span class="c1"># Use built-in &#39;venv&#39; libarary for installation</span>
+<span class="nb">export</span> <span class="nv">DEFAULT_VENV_APPROACH</span><span class="o">=</span>venv
+./scripts/install.sh
+</pre></div>
+</div>
+<p>A more manual way for installing this package is by using <code class="docutils literal notranslate"><span class="pre">poetry</span></code>, which we use this
+tool for the dependency management.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Under the `omnizart` folder</span>
+pip install --upgrade pip
+pip install <span class="nv">setuptools</span><span class="o">==</span><span class="m">50</span>.0.3
+pip install poetry
+poetry install
+</pre></div>
+</div>
+<p>The last and the most unstable, conventional way for installation
+is by using the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> files.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Under the `omnizart` folder</span>
+pip install --upgrade pip
+pip install <span class="nv">setuptools</span><span class="o">==</span><span class="m">50</span>.0.3
+
+<span class="c1"># May encounter problems when installing the dependency &#39;madmom&#39;</span>
+python setup.py install
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="transcribe-a-pop-song">
+<h2>Transcribe a pop song<a class="headerlink" href="#transcribe-a-pop-song" title="Permalink to this headline">¶</a></h2>
+<p>Transcribes a song into a MIDI file and a CSV file with more complete
+and representative information.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart transcribe all &lt;path/to/audio.wav&gt;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← Omniscient Mozart’s Document</a>
+  </li>
+  <li class="next">
+    <a href="cli.html"
+       title="next chapter">Command Line Interface →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, BreezeWhite.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>
