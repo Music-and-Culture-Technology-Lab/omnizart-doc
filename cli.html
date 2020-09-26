@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="_static/theme-vendors.js"></script>
@@ -117,7 +118,7 @@
             
               <ul>
                 
-                  <li class="toctree-l2"><a href="#transcribe" class="reference internal">Transcribe</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.cli.transcribe" class="reference internal">Transcribe</a></li>
                 
               </ul>
             
@@ -211,8 +212,30 @@
 <p>This page describes the basic concept and usage of <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> command.</p>
 <p>The root entry is <code class="docutils literal notranslate"><span class="pre">omnizart</span></code>, and followed by several sub-commands. To see a list of available sub-commands, type <code class="docutils literal notranslate"><span class="pre">omnizart</span> <span class="pre">--help</span></code>.</p>
 <p>More detailed descriptions and the usage of each sub-commands can be found from their own page.</p>
-<div class="section" id="transcribe">
-<h2>Transcribe<a class="headerlink" href="#transcribe" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-omnizart.cli.transcribe">
+<span id="transcribe"></span><h2>Transcribe<a class="headerlink" href="#module-omnizart.cli.transcribe" title="Permalink to this headline">¶</a></h2>
+<p>Collections of transcription commands.</p>
+<p>Transcribes the audio in different aspects, such as instrument, drum, and vocal. Specify <cite>all</cite> to the first
+argument to transcribe all different aspects. The output will be a MIDI file with the same name as the
+input audio, except the extension will be replaced with ‘.mid’.</p>
+<p>
+Available functions are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">music</span></code> - trancribes instrument notes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">drum</span></code> - transcribes drum percussions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vocal</span></code> - transcribes vocal melodies</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beat</span></code> - MIDI-domain beat tracking</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chord</span></code> - MIDI-domain chord transcription</p></li>
+</ul>
+<p>Input for the former three should be wav file, and the last two
+should be MIDI file.</p>
+<p>Example Usage</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ omnizart transcribe music <span class="se">\ </span>
+    example.wav <span class="se">\ </span>
+    --model-path path/to/model <span class="se">\ </span>
+    --output example.mid
+</pre></div>
+</div>
 </div>
 </div>
 

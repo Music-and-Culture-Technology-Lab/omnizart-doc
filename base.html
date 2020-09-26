@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="_static/theme-vendors.js"></script>
@@ -144,7 +145,7 @@
             
               <ul>
                 
-                  <li class="toctree-l2"><a href="#base-classes" class="reference internal">Base Classes</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.base" class="reference internal">Base Classes</a></li>
                 
               </ul>
             
@@ -206,8 +207,33 @@
 <hr>
           <div class="content" role="main">
             
-  <div class="section" id="base-classes">
-<h1>Base Classes<a class="headerlink" href="#base-classes" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-omnizart.base">
+<span id="base-classes"></span><h1>Base Classes<a class="headerlink" href="#module-omnizart.base" title="Permalink to this headline">¶</a></h1>
+<p>Base classes of this project.</p>
+<p>Defines common interfaces, attributes, and utilities for different tasks.</p>
+<dl class="py class">
+<dt id="omnizart.base.BaseTranscription">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.base.</code><code class="sig-name descname">BaseTranscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setting_class</span></em>, <em class="sig-param"><span class="n">conf_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.BaseTranscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class of transcription applications.</p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 42%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>transcribe</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.base.BaseTranscription.transcribe">
+<em class="property">abstract </em><code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.BaseTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

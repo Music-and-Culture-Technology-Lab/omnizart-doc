@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="_static/theme-vendors.js"></script>
@@ -132,11 +133,11 @@
             
               <ul>
                 
-                  <li class="toctree-l2"><a href="#app" class="reference internal">App</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.music.app" class="reference internal">App</a></li>
                 
-                  <li class="toctree-l2"><a href="#inference" class="reference internal">Inference</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.music.inference" class="reference internal">Inference</a></li>
                 
-                  <li class="toctree-l2"><a href="#loss-functions" class="reference internal">Loss Functions</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.music.losses" class="reference internal">Loss Functions</a></li>
                 
                   <li class="toctree-l2"><a href="#utils" class="reference internal">Utils</a></li>
                 
@@ -215,14 +216,318 @@
   <div class="section" id="music-transcription">
 <h1>Music Transcription<a class="headerlink" href="#music-transcription" title="Permalink to this headline">¶</a></h1>
 <p>Transcribes notes of each instruments in the music.</p>
-<div class="section" id="app">
-<h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-omnizart.music.app">
+<span id="app"></span><h2>App<a class="headerlink" href="#module-omnizart.music.app" title="Permalink to this headline">¶</a></h2>
+<p>Application class of music.</p>
+<p>Inludes core functions and interfaces for transcribing the audio, train
+a model, generate feature of datasets, and evaluate on models.</p>
+<div class="section" id="see-also">
+<h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
+<p>omnizart.base.BaseTranscription: The base class of all transcription/application classes.</p>
+<dl class="py class">
+<dt id="omnizart.music.app.MusicTranscription">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.app.</code><code class="sig-name descname">MusicTranscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Application class for music transcription.</p>
+<p>Inherited from the BaseTranscription class to make sure everything
+needed got override.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.transcribe" title="omnizart.music.app.MusicTranscription.transcribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transcribe</span></code></a>(input_audio[, model_path, output])</p></td>
+<td><p>Transcribe notes and instruments of the given audio.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>generate_feature</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>train</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.music.app.MusicTranscription.transcribe">
+<code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transcribe notes and instruments of the given audio.</p>
+<p>This function transcribes notes (onset, duration) of each instruments in the audio.
+The results will be written out as a MIDI file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>input_audio: Path</strong></dt><dd><p>Path to the wav audio file.</p>
+</dd>
+<dt><strong>model_path: Path</strong></dt><dd><p>Path to the trained model. Should be the folder that contains <cite>arch.yaml</cite>, <cite>weights.h5</cite>, and
+<cite>configuration.yaml</cite>.</p>
+</dd>
+<dt><strong>output: Path (optional)</strong></dt><dd><p>Path for writing out the transcribed MIDI file. Default to current path.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.cli.music.transcribe</span></code></dt><dd><p>The coressponding command line entry.</p>
+</dd>
+</dl>
 </div>
-<div class="section" id="inference">
-<h2>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h2>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="loss-functions">
-<h2>Loss Functions<a class="headerlink" href="#loss-functions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-omnizart.music.inference">
+<span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.music.inference" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.music.inference.down_sample">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">down_sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">occur_num</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.down_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Down sample multi-channel predictions along the feature dimension.</p>
+<p>Down sample the feature size from 354 to 88 for infering the notes from a multi-channel prediction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pred: 3D numpy array</strong></dt><dd><p>Thresholded prediction with multiple channels. Dimension: [timesteps x pitch x instruments]</p>
+</dd>
+<dt><strong>occur_num: int</strong></dt><dd><p>Minimum occurance of each pitch for determining true activation of the pitch.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>d_sample: 3D numpy array</dt><dd><p>Down-sampled prediction. Dimension: [timesteps x 88 x instruments]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.find_min_max_stren">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">find_min_max_stren</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.find_min_max_stren" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for detemine the note velocity accroding to prediction value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>notes: list[dict]</strong></dt><dd><p>Data structure returned by function <cite>infer_piece</cite>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.find_occur">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">find_occur</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pitch</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">min_duration</span><span class="o">=</span><span class="default_value">0.03</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.find_occur" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the onset and offset of a thresholded prediction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pitch: 1D numpy array</strong></dt><dd><p>Time series of predicted pitch activations.</p>
+</dd>
+<dt><strong>t_unit: float</strong></dt><dd><p>Time unit of each entry.</p>
+</dd>
+<dt><strong>min_duration: float</strong></dt><dd><p>Minimum interval of each note in seconds.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.infer_piece">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">infer_piece</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">piece</span></em>, <em class="sig-param"><span class="n">shortest_sec</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">offset_sec</span><span class="o">=</span><span class="default_value">0.12</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.infer_piece" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dim: time x 88 x 4 (off, dura, onset, offset)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.interpolation">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">interpolation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">ori_t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">tar_t_unit</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.interpolation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolate between each frame to increase the time resolution.</p>
+<p>The default setting of feature extraction has time resolution of 0.02 seconds for each frame.
+To fit the conventional evaluation settings, which has time resolution of 0.01 seconds, we additionally
+apply the interpolation function to increase time resolution. Here we use <cite>Cubic Spline</cite> for the
+estimation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.multi_inst_note_inference">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">multi_inst_note_inference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'note-stream'</span></em>, <em class="sig-param"><span class="n">onset_th</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">dura_th</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">frm_th</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">inst_th</span><span class="o">=</span><span class="default_value">0.95</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">channel_program_mapping</span><span class="o">=</span><span class="default_value">[0, 6, 40, 41, 42, 43, 60, 68, 70, 71, 73]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.multi_inst_note_inference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function for infering raw multi-instrument predictions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mode: {‘note-stream’, ‘note’, ‘frame-stream’, ‘frame’}</strong></dt><dd><p>Inference mode.
+Difference between ‘note’ and ‘frame’ is that the former consists of two note attributes, which are ‘onset’ and
+‘duration’, and the later only contains ‘duration’, which in most of the cases leads to worse listening
+experience.
+With postfix ‘stream’ refers to transcribe instrument at the same time, meaning classifying each notes into
+instrument classes, or says different tracks.</p>
+</dd>
+<dt><strong>onset_th: float</strong></dt><dd><p>Threshold of onset channel. Type of list or float</p>
+</dd>
+<dt><strong>dura_th: float</strong></dt><dd><p>Threshold of duration channel. Type of list or float</p>
+</dd>
+<dt><strong>inst_th: float</strong></dt><dd><p>Threshold of deciding a instrument is present or not according to Std. of prediction.</p>
+</dd>
+<dt><strong>normalize: bool</strong></dt><dd><p>Whether to normalize the predictions. For more details, please refer to our
+<a class="reference external" href="https://bit.ly/2QhdWX5">paper</a></p>
+</dd>
+<dt><strong>t_unit: float</strong></dt><dd><p>Time unit for each frame. Should not be modified unless you have different settings during the feature
+extraction</p>
+</dd>
+<dt><strong>channel_program_mapping: list[int]</strong></dt><dd><p>Mapping prediction channels to MIDI program numbers.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>out_midi</dt><dd><p>A pretty_midi.PrettyMIDI object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>Publications can be found <a class="reference external" href="https://bit.ly/2QhdWX5">here</a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.norm_onset_dura">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">norm_onset_dura</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">onset_th</span></em>, <em class="sig-param"><span class="n">dura_th</span></em>, <em class="sig-param"><span class="n">interpolate</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.norm_onset_dura" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalizes prediction values of onset and duration channel.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.norm_split_onset_dura">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">norm_split_onset_dura</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">onset_th</span></em>, <em class="sig-param"><span class="n">lower_onset_th</span></em>, <em class="sig-param"><span class="n">split_bound</span></em>, <em class="sig-param"><span class="n">dura_th</span></em>, <em class="sig-param"><span class="n">interpolate</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">normalize</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.norm_split_onset_dura" title="Permalink to this definition">¶</a></dt>
+<dd><p>An advanced version of function for normalizing onset and duration channel.</p>
+<p>From the extensive experiments, we observe that the average prediction value for high and low frequency are
+different. Lower pitches tend to have smaller values, while higher pitches having larger. To acheive better
+transcription results, the most straight-forward solution is to assign different thresholds for low and
+high frequency part. And this is what this function provides for the purpose.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pred</strong></dt><dd><p>The predictions.</p>
+</dd>
+<dt><strong>onset_th: float</strong></dt><dd><p>Threshold for high frequency part.</p>
+</dd>
+<dt><strong>lower_onset_th: float</strong></dt><dd><p>Threshold for low frequency part.</p>
+</dd>
+<dt><strong>split_bound: int</strong></dt><dd><p>The split point of low and high frequency part. Value should be within 0~87.</p>
+</dd>
+<dt><strong>interpolate: bool</strong></dt><dd><p>Whether to apply interpolation between each frame to increase time resolution.</p>
+</dd>
+<dt><strong>normalize: bool</strong></dt><dd><p>Whether to normalize the prediction values.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pred</dt><dd><p>Thresholded prediction, having value either 0 or 1.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.roll_down_sample">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">roll_down_sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">occur_num</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">base</span><span class="o">=</span><span class="default_value">88</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.roll_down_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Down sample feature size for a single pitch.</p>
+<p>Down sample the feature size from 354 to 88 for infering the notes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data: 2D numpy array</strong></dt><dd><p>The thresholded 2D prediction..</p>
+</dd>
+<dt><strong>occur_num: int</strong></dt><dd><p>For each pitch, the original prediction expands 4 bins wide. This value determines how many positive bins
+should there be to say there is a real activation after down sampling.</p>
+</dd>
+<dt><strong>base</strong></dt><dd><p>Should be constant as there are 88 pitches on the piano.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>return_v: 2D numpy array</dt><dd><p>Down sampled prediction.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The parameter <cite>data</cite> should be thresholded!</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.threshold_type_converter">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">threshold_type_converter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">threshold</span></em>, <em class="sig-param"><span class="n">length</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.threshold_type_converter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert scalar value to a list with the same value.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.inference.to_midi">
+<code class="sig-prename descclassname">omnizart.music.inference.</code><code class="sig-name descname">to_midi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">notes</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.to_midi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate the intermediate data into final output MIDI file.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.music.losses">
+<span id="loss-functions"></span><h2>Loss Functions<a class="headerlink" href="#module-omnizart.music.losses" title="Permalink to this headline">¶</a></h2>
+<p>Loss functions for Music module.</p>
+<dl class="py function">
+<dt id="omnizart.music.losses.focal_loss">
+<code class="sig-prename descclassname">omnizart.music.losses.</code><code class="sig-name descname">focal_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_tensor</span></em>, <em class="sig-param"><span class="n">prediction_tensor</span></em>, <em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">0.25</span></em>, <em class="sig-param"><span class="n">gamma</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.focal_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute focal loss for predictions.</p>
+<p>Multi-labels Focal loss formula:</p>
+<div class="math notranslate nohighlight">
+\[FL = -\alpha * (z-p)^\gamma * \log{(p)} -(1-\alpha) * p^\gamma * \log{(1-p)}\]</div>
+<p>Which <span class="math notranslate nohighlight">\(\alpha\)</span> = 0.25, <span class="math notranslate nohighlight">\(\gamma\)</span> = 2, p = sigmoid(x), z = target_tensor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>prediction_tensor</strong></dt><dd><p>A float tensor of shape [batch_size, num_anchors, num_classes] representing the predicted logits for each
+class.</p>
+</dd>
+<dt><strong>target_tensor:</strong></dt><dd><p>A float tensor of shape [batch_size, num_anchors, num_classes] representing one-hot encoded classification
+targets.</p>
+</dd>
+<dt><strong>weights</strong></dt><dd><p>A float tensor of shape [batch_size, num_anchors].</p>
+</dd>
+<dt><strong>alpha</strong></dt><dd><p>A scalar tensor for focal loss alpha hyper-parameter.</p>
+</dd>
+<dt><strong>gamma</strong></dt><dd><p>A scalar tensor for focal loss gamma hyper-parameter.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>loss</dt><dd><p>A scalar tensor representing the value of the loss function</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.losses.smooth_loss">
+<code class="sig-prename descclassname">omnizart.music.losses.</code><code class="sig-name descname">smooth_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y_true</span></em>, <em class="sig-param"><span class="n">y_pred</span></em>, <em class="sig-param"><span class="n">gamma</span><span class="o">=</span><span class="default_value">0.15</span></em>, <em class="sig-param"><span class="n">total_chs</span><span class="o">=</span><span class="default_value">22</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.smooth_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to compute loss after applying <strong>label-smoothing</strong>.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="utils">
 <h2>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>

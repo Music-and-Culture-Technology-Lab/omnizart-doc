@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="_static/theme-vendors.js"></script>
@@ -208,10 +209,40 @@
 <hr>
           <div class="content" role="main">
             
-  <div class="section" id="drum-transcription">
-<h1>Drum Transcription<a class="headerlink" href="#drum-transcription" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-omnizart.drum">
+<span id="drum-transcription"></span><h1>Drum Transcription<a class="headerlink" href="#module-omnizart.drum" title="Permalink to this headline">¶</a></h1>
+<p>Drum transcription module.</p>
+<p>Utilities for transcribing drum percussions in the music.</p>
 <div class="section" id="transcribe">
 <h2>Transcribe<a class="headerlink" href="#transcribe" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.drum.app.DrumTranscription.transcribe">
+<code class="sig-prename descclassname">omnizart.drum.app.DrumTranscription.</code><code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transcribe drum in the audio.</p>
+<p>This function transcribes drum activations in the music. Currently the model
+predicts 13 classes of different drum sets, and 3 of them will be written to
+the MIDI file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>input_audio: Path</strong></dt><dd><p>Path to the raw audio file (.wav).</p>
+</dd>
+<dt><strong>model_path: Path</strong></dt><dd><p>Path to the trained model.</p>
+</dd>
+<dt><strong>output: Path (optional)</strong></dt><dd><p>Path for writing out the transcribed MIDI file. Default to current path.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.cli.drum.transcribe</span></code></dt><dd><p>CLI entry point of this function.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
 </div>
 <div class="section" id="utils">
 <h2>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>

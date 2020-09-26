@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="_static/theme-vendors.js"></script>
@@ -167,7 +168,7 @@
             
               <ul>
                 
-                  <li class="toctree-l2"><a href="#utilities" class="reference internal">Utilities</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.utils" class="reference internal">Utilities</a></li>
                 
               </ul>
             
@@ -201,8 +202,187 @@
 <hr>
           <div class="content" role="main">
             
-  <div class="section" id="utilities">
-<h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-omnizart.utils">
+<span id="utilities"></span><h1>Utilities<a class="headerlink" href="#module-omnizart.utils" title="Permalink to this headline">¶</a></h1>
+<p>Various utility functions for this project.</p>
+<dl class="py function">
+<dt id="omnizart.utils.camel_to_snake">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">camel_to_snake</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.camel_to_snake" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a camel case to snake case</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.dump_pickle">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">dump_pickle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">save_to</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.dump_pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump data to the given path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data: python objects</strong></dt><dd><p>Data to store. Should be python built-in types like <cite>dict</cite>, <cite>list</cite>, <cite>str</cite>, <cite>int</cite>, etc</p>
+</dd>
+<dt><strong>save_to: Path</strong></dt><dd><p>The full path to store the pickle file, including file name.
+Will create the directory if the given path doesn’t exist.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.ensure_path_exists">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">ensure_path_exists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.ensure_path_exists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.get_logger">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">get_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">'warn'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.get_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the logger for printing informations.</p>
+<p>Used for layout the information of various stages while executing the program.
+Set the environment variable <code class="docutils literal notranslate"><span class="pre">LOG_LEVEL</span></code> to change the default level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name: str</strong></dt><dd><p>Name of the logger.</p>
+</dd>
+<dt><strong>level: {‘debug’, ‘info’, ‘warn’, ‘warning’, ‘error’, ‘critical’}</strong></dt><dd><p>Level of the logger. The level ‘warn’ and ‘warning’ are different. The former
+is the default level and the actual level is set to logging.INFO, and for
+‘warning’ which will be set to true logging.WARN level. The purpose behind this
+design is to categorize the message layout into several different formats.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.json_serializable">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">json_serializable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key_path</span><span class="o">=</span><span class="default_value">'./'</span></em>, <em class="sig-param"><span class="n">value_path</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.json_serializable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class-level decorator for making a class json-serializable object.</p>
+<p>This decorator makes a class serializable as a json object. All attributes
+will be outputed as a key-value pair recursively if there are also attributes
+that is type of json-serializable class.
+Inject two functions to the decorated class: from_json, to_json.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>key_path: Path</strong></dt><dd><p>Access sub-object according to the path. E.g. Assume you have a
+dictionary: d = {“a”: {“b”: {“c”: “d”}}}, and the path: p = “a/b”,
+then the sub-object after being propagated would be {“c”: “d”}.</p>
+</dd>
+<dt><strong>value_path: Path</strong></dt><dd><p>The relative path to the key_path. This parameter makes you able
+to access the value that is not at the same level as the key.
+E.g. assume you have a sub-object after the propagation of key_path:
+d = {“a”: {“b”: {“c”: “d”}}}, and the value_path: vp = “a/b/c”,
+the corresponding value of the key should be “d”.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">tests.test_utils.test_normal_serializable</span></code></dt><dd><p>Unit test of this decorator.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>The attributes should be defined inside ‘__init__’, or those defined as
+class attributes will not be serialized as thery are invisible for
+__dict__ attribute.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@json_serializable</span><span class="p">()</span>
+<span class="go">    class A:</span>
+<span class="go">        def __init__(self):</span>
+<span class="go">            self.a = 1</span>
+<span class="go">            self.b = &quot;Hello&quot;</span>
+<span class="go">            self.c = [10, 20, 30]</span>
+
+<span class="go">    @json_serializable()</span>
+<span class="go">    class B:</span>
+<span class="go">        def __init__(self):</span>
+<span class="go">            self.a_instance = A()</span>
+<span class="go">            self.d = &quot;World&quot;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inst</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inst</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;d&quot;: &quot;World&quot;,</span>
+<span class="go">    &quot;a_instance&quot;: {</span>
+<span class="go">        &quot;a&quot;: 1,</span>
+<span class="go">        &quot;b&quot;: &quot;Hello&quot;,</span>
+<span class="go">        &quot;c&quot;: [10, 20, 30]</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.load_audio_with_librosa">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">load_audio_with_librosa</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">audio_path</span></em>, <em class="sig-param"><span class="n">sampling_rate</span><span class="o">=</span><span class="default_value">44100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.load_audio_with_librosa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load audio from the given path with librosa.load</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>audio_path: Path</strong></dt><dd><p>Path to the audio.</p>
+</dd>
+<dt><strong>sampling_rate: int</strong></dt><dd><p>Target sampling rate after loaded.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>audio: 1D numpy array</dt><dd><p>Raw data of the audio.</p>
+</dd>
+<dt>tar_sampling_rate: int</dt><dd><p>Sampling rate of the audio. Will be the same as the given <code class="docutils literal notranslate"><span class="pre">sampling_rate</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.load_pickle">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">load_pickle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pickle_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.load_pickle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load pickle file from the given path</p>
+<p>Read and returns the data from the given pickle file path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pickle_file: Path</strong></dt><dd><p>The full path to the pickle file for read</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>object</dt><dd><p>Python object, could be <cite>dict</cite>, <cite>list</cite>, <cite>str</cite>, etc.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.load_yaml">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">load_yaml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">yaml_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.load_yaml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.parallel_generator">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">parallel_generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">input_list</span></em>, <em class="sig-param"><span class="n">max_workers</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">use_thread</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">chunk_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.parallel_generator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.snake_to_camel">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">snake_to_camel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.snake_to_camel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a snake case to camel case</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.utils.write_yaml">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">write_yaml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">json_obj</span></em>, <em class="sig-param"><span class="n">output_path</span></em>, <em class="sig-param"><span class="n">dump</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.write_yaml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

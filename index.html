@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="_static/theme-vendors.js"></script>
@@ -209,7 +210,7 @@ chord progression, notes of instruments, and beat tracking.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#transcribe">Transcribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#module-omnizart.cli.transcribe">Transcribe</a></li>
 </ul>
 </li>
 </ul>
@@ -218,9 +219,9 @@ chord progression, notes of instruments, and beat tracking.</p>
 <p class="caption"><span class="caption-text">API Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="music.html">Music Transcription</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="music.html#app">App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music.html#inference">Inference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music.html#loss-functions">Loss Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#module-omnizart.music.app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#module-omnizart.music.inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music.html#module-omnizart.music.losses">Loss Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="music.html#utils">Utils</a></li>
 </ul>
 </li>
@@ -231,17 +232,17 @@ chord progression, notes of instruments, and beat tracking.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="base.html">Base Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature.html">Feature</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="feature.html#cfp">CFP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feature.html#hcfp">HCFP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feature.html#cqt">CQT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feature.html#beat-tracking">Beat Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature.html#module-omnizart.feature.cfp">CFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature.html#module-omnizart.feature.hcfp">HCFP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature.html#module-omnizart.feature.cqt">CQT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature.html#module-omnizart.feature.beat_for_drum">Beat Tracking</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="models.html#u-net">U-Net</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#tensor2tensor">Tensor2Tensor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#spectral-normalization-model">Spectral Normalization Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#utils">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-omnizart.models.u_net">U-Net</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-omnizart.models.t2t">Tensor2Tensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-omnizart.models.spectral_norm_net">Spectral Normalization Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-omnizart.models.utils">Utils</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="constants.html">Constants</a><ul>
