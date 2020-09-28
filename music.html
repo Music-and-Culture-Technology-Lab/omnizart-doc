@@ -135,11 +135,17 @@
                 
                   <li class="toctree-l2"><a href="#module-omnizart.music.app" class="reference internal">App</a></li>
                 
+                  <li class="toctree-l2"><a href="#module-omnizart.music.dataset" class="reference internal">Dataset</a></li>
+                
                   <li class="toctree-l2"><a href="#module-omnizart.music.inference" class="reference internal">Inference</a></li>
                 
                   <li class="toctree-l2"><a href="#module-omnizart.music.losses" class="reference internal">Loss Functions</a></li>
                 
-                  <li class="toctree-l2"><a href="#utils" class="reference internal">Utils</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.music.labels" class="reference internal">Labels</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.music.prediction" class="reference internal">Prediciton</a></li>
+                
+                  <li class="toctree-l2"><a href="#settings" class="reference internal">Settings</a></li>
                 
               </ul>
             
@@ -152,12 +158,6 @@
           </li>
 
         
-          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
-
-            
-          </li>
-
-        
           <li class="toctree-l1 "><a href="feature.html" class="reference internal ">Feature</a>
 
             
@@ -165,6 +165,18 @@
 
         
           <li class="toctree-l1 "><a href="models.html" class="reference internal ">Models</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="training.html" class="reference internal ">Training</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
 
             
           </li>
@@ -227,7 +239,8 @@ a model, generate feature of datasets, and evaluate on models.</p>
 <dl class="py class">
 <dt id="omnizart.music.app.MusicTranscription">
 <em class="property">class </em><code class="sig-prename descclassname">omnizart.music.app.</code><code class="sig-name descname">MusicTranscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription" title="Permalink to this definition">¶</a></dt>
-<dd><p>Application class for music transcription.</p>
+<dd><p>Bases: <a class="reference internal" href="base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
+<p>Application class for music transcription.</p>
 <p>Inherited from the BaseTranscription class to make sure everything
 needed got override.</p>
 <p class="rubric">Methods</p>
@@ -237,25 +250,73 @@ needed got override.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.generate_feature" title="omnizart.music.app.MusicTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, music_settings])</p></td>
+<td><p>Extract the feature of the whole dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.train" title="omnizart.music.app.MusicTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, …])</p></td>
+<td><p>Model training.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.transcribe" title="omnizart.music.app.MusicTranscription.transcribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transcribe</span></code></a>(input_audio[, model_path, output])</p></td>
 <td><p>Transcribe notes and instruments of the given audio.</p></td>
 </tr>
 </tbody>
 </table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 67%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>generate_feature</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>train</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl class="py method">
+<dt id="omnizart.music.app.MusicTranscription.generate_feature">
+<code class="sig-name descname">generate_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em>, <em class="sig-param"><span class="n">music_settings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the feature of the whole dataset.</p>
+<p>To train the model, the first thing is to pre-process the data into feature
+representations. After downloading the dataset, use this function to generate
+the feature by giving the path to where the dataset stored, and the program
+will do all the rest of things.</p>
+<p>To specify the output path, modify the attribute
+<code class="docutils literal notranslate"><span class="pre">music_settings.dataset.feature_save_path</span></code> to the value you want.
+It will default to the folder under where the dataset stored, generating
+two folders: <code class="docutils literal notranslate"><span class="pre">train_feature</span></code> and <code class="docutils literal notranslate"><span class="pre">test_feature</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dataset_path: Path</strong></dt><dd><p>Path to the downloaded dataset.</p>
+</dd>
+<dt><strong>music_settings: MusicSettings</strong></dt><dd><p>The configuration instance that holds all relative settings for
+the life-cycle of building a model.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="constants.html#module-omnizart.constants.datasets" title="omnizart.constants.datasets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.constants.datasets</span></code></a></dt><dd><p>Supported dataset that can be applied and the split of training/testing.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.app.MusicTranscription.train">
+<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">music_settings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model training.</p>
+<p>Train a new music model or continue to train on a pre-trained model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the generated feature.</p>
+</dd>
+<dt><strong>model_name: str</strong></dt><dd><p>The name of the trained model. If not given, will default to the
+current timestamp.</p>
+</dd>
+<dt><strong>input_model_path: Path</strong></dt><dd><p>Specify the path to the pre-trained model if you want to continue
+to fine-tune on the model.</p>
+</dd>
+<dt><strong>music_settings: MusicSettings</strong></dt><dd><p>The configuration instance that holds all relative settings for
+the life-cycle of building a model.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt id="omnizart.music.app.MusicTranscription.transcribe">
 <code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
@@ -287,6 +348,86 @@ The results will be written out as a MIDI file.</p>
 </dd></dl>
 
 </div>
+</div>
+<div class="section" id="module-omnizart.music.dataset">
+<span id="dataset"></span><h2>Dataset<a class="headerlink" href="#module-omnizart.music.dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="omnizart.music.dataset.FeatureDataset">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.dataset.</code><code class="sig-name descname">FeatureDataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">8</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">[1, 3]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.dataset.FeatureDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dataset loader for <code class="docutils literal notranslate"><span class="pre">music</span></code> module.</p>
+<p>It’s much faster than passing the naive generator to the training loop.
+There are some work-around to dealing with the customized stored label format.
+Due to that all return data and corresponding type need to be defined first,
+meaning no type conversion are allowed while applying the <cite>map</cite> function,
+and thus the work-around is to add one more column to the return data as the
+intermediate data that will not be used in the training loop, but will be
+used in the <cite>map</cite> processing.
+In <code class="docutils literal notranslate"><span class="pre">music</span></code> module, the <cite>map</cite> conversion happened in <code class="docutils literal notranslate"><span class="pre">get_label_conversion_wrapper</span></code>,
+and must be applied, or it will return the wrong data pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the extracted feature files, including <cite>*.hdf</cite> and <cite>*.pickle</cite> pairs,
+which refers to feature and label files, respectively.</p>
+</dd>
+<dt><strong>feature_files: list[Path]</strong></dt><dd><p>List of path of <cite>*.hdf</cite> feature files. Corresponding label files should also
+under the same folder.</p>
+</dd>
+<dt><strong>num_samples: int</strong></dt><dd><p>Total number of samples to be yielded.</p>
+</dd>
+<dt><strong>timesteps: int</strong></dt><dd><p>Time length of the feature.</p>
+</dd>
+<dt><strong>channels: list[int]</strong></dt><dd><p>Channels to be used for training. Allowed values are [1, 2, 3].</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><dl class="simple">
+<dt>feature: numpy.ndarray</dt><dd><p>Input feature for training.</p>
+</dd>
+<dt>label: numpy.ndarray</dt><dd><p>Corresponding label.</p>
+</dd>
+<dt>label_str: str</dt><dd><p>Column of intermediate product. Should not be used in the training.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>One of the parameter, <cite>feature_folder</cite> or <cite>feature_files</cite>, should be specified.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.dataset.get_dataset">
+<code class="sig-prename descclassname">omnizart.music.dataset.</code><code class="sig-name descname">get_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_conversion_func</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">8</span></em>, <em class="sig-param"><span class="n">steps</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">[1, 3]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.dataset.get_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the dataset instance.</p>
+<p>Use this function to get the dataset instance and don’t initialize
+the dataset instance yourself, since it may lead to unknown behavior
+due to the customized process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_conversion_func: callable</strong></dt><dd><p>The function that will be used for converting the customized label format
+into numpy array.</p>
+</dd>
+<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the extracted feature files, including <cite>*.hdf</cite> and <cite>*.pickle</cite> pairs,
+which refers to feature and label files, respectively.</p>
+</dd>
+<dt><strong>feature_files: list[Path]</strong></dt><dd><p>List of path of <cite>*.hdf</cite> feature files. Corresponding label files should also
+under the same folder.</p>
+</dd>
+<dt><strong>batch_size: int</strong></dt><dd><p>Size of input batch for each step.</p>
+</dd>
+<dt><strong>steps: int</strong></dt><dd><p>Total steps for each epoch.</p>
+</dd>
+<dt><strong>timesteps: int</strong></dt><dd><p>Time length of the feature.</p>
+</dd>
+<dt><strong>channels: list[int]</strong></dt><dd><p>Channels to be used for training. Allowed values are [1, 2, 3].</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-omnizart.music.inference">
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.music.inference" title="Permalink to this headline">¶</a></h2>
@@ -529,8 +670,688 @@ targets.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="utils">
-<h2>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-omnizart.music.labels">
+<span id="labels"></span><h2>Labels<a class="headerlink" href="#module-omnizart.music.labels" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="omnizart.music.labels.BaseLabelExtraction">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.labels.</code><code class="sig-name descname">BaseLabelExtraction</code><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for extract label informations.</p>
+<p>Provides basic functions to process native label format into the format
+required by <code class="docutils literal notranslate"><span class="pre">music</span></code> module. All sub-classes should parse the original
+label information into <a class="reference internal" href="#omnizart.music.labels.Label" title="omnizart.music.labels.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> class.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#omnizart.music.labels.label_conversion" title="omnizart.music.labels.label_conversion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.music.labels.label_conversion</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.extract_label" title="omnizart.music.labels.BaseLabelExtraction.extract_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_label</span></code></a>(label_path, t_unit[, …])</p></td>
+<td><p>Extract labels into customized storage format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.load_label" title="omnizart.music.labels.BaseLabelExtraction.load_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_label</span></code></a>(label_path)</p></td>
+<td><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.name_transform" title="omnizart.music.labels.BaseLabelExtraction.name_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name_transform</span></code></a>(name)</p></td>
+<td><p>Maps the filename of label to the same name of the corresponding wav file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.process" title="omnizart.music.labels.BaseLabelExtraction.process"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process</span></code></a>(label_list, out_path[, t_unit, …])</p></td>
+<td><p>Process the given list of label files and output to the target folder.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.music.labels.BaseLabelExtraction.extract_label">
+<em class="property">classmethod </em><code class="sig-name descname">extract_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em>, <em class="sig-param"><span class="n">t_unit</span></em>, <em class="sig-param"><span class="n">onset_len_sec</span><span class="o">=</span><span class="default_value">0.05</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.extract_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract labels into customized storage format.</p>
+<p>Process the given path of label into list of <a class="reference internal" href="#omnizart.music.labels.Label" title="omnizart.music.labels.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> instances,
+then further convert them into deliberately customized storage format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_path: Path</strong></dt><dd><p>Path to the label file.</p>
+</dd>
+<dt><strong>t_unit: float</strong></dt><dd><p>Time unit of each step in seconds. Should be consistent with the time unit of
+each frame of the extracted feature.</p>
+</dd>
+<dt><strong>onset_len_sec: float</strong></dt><dd><p>Length of the first few frames with probability one. The later onset
+probabilities will be in a ‘fade-out’ manner until the note offset.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.BaseLabelExtraction.load_label">
+<em class="property">abstract classmethod </em><code class="sig-name descname">load_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
+<p>Sub-classes should override this function to process their own label
+format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_path: Path</strong></dt><dd><p>Path to the label file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>labels: list[Label]</dt><dd><p>List of <a class="reference internal" href="#omnizart.music.labels.Label" title="omnizart.music.labels.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> instances.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.BaseLabelExtraction.name_transform">
+<em class="property">classmethod </em><code class="sig-name descname">name_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maps the filename of label to the same name of the corresponding wav file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name: str</strong></dt><dd><p>Name of the label file, without parent directory prefix and file extension.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>trans_name: str</dt><dd><p>The name same as the coressponding wav (or says feature) file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.BaseLabelExtraction.process">
+<em class="property">classmethod </em><code class="sig-name descname">process</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_list</span></em>, <em class="sig-param"><span class="n">out_path</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">onset_len_sec</span><span class="o">=</span><span class="default_value">0.05</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the given list of label files and output to the target folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_list: list[Path]</strong></dt><dd><p>List of label paths.</p>
+</dd>
+<dt><strong>out_path: Path</strong></dt><dd><p>Path for saving the extracted label files.</p>
+</dd>
+<dt><strong>t_unit: float</strong></dt><dd><p>Time unit of each step in seconds. Should be consistent with the time unit of
+each frame of the extracted feature.</p>
+</dd>
+<dt><strong>onset_len_sec: float</strong></dt><dd><p>Length of the first few frames with probability one. The later onset
+probabilities will be in a ‘fade-out’ manner until the note offset.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.music.labels.Label">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.labels.</code><code class="sig-name descname">Label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_time</span></em>, <em class="sig-param"><span class="n">end_time</span></em>, <em class="sig-param"><span class="n">note</span></em>, <em class="sig-param"><span class="n">instrument</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">velocity</span><span class="o">=</span><span class="default_value">64</span></em>, <em class="sig-param"><span class="n">start_beat</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">end_beat</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">note_value</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">is_drum</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.Label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interface of different label format.</p>
+<p>Plays role for generalize the label format, and subsequent dataset class should
+implement functions transforming labels (whether in .mid, .txt, or .csv format)
+and parse the necessary columns into attributes this class holds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>start_time: float</strong></dt><dd><p>Onset time of the note in seconds.</p>
+</dd>
+<dt><strong>end_time: float</strong></dt><dd><p>Offset time of the note in seconds.</p>
+</dd>
+<dt><strong>note: int</strong></dt><dd><p>Midi number of the number, should be within 21~108.</p>
+</dd>
+<dt><strong>velocity: int</strong></dt><dd><p>Velocity of keypress, should be wihtin 0~127</p>
+</dd>
+<dt><strong>start_beat: float</strong></dt><dd><p>Start beat index of the note.</p>
+</dd>
+<dt><strong>end_beat: float</strong></dt><dd><p>End beat index of the note.</p>
+</dd>
+<dt><strong>note_value: str</strong></dt><dd><p>Type of the note (e.g. quater, eighth, sixteenth).</p>
+</dd>
+<dt><strong>is_drum: bool</strong></dt><dd><p>Whether the note represents the drum channel.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>note</strong></dt><dd></dd>
+<dt><strong>velocity</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="omnizart.music.labels.Label.note">
+<em class="property">property </em><code class="sig-name descname">note</code><a class="headerlink" href="#omnizart.music.labels.Label.note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.Label.velocity">
+<em class="property">property </em><code class="sig-name descname">velocity</code><a class="headerlink" href="#omnizart.music.labels.Label.velocity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.music.labels.LabelType">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.labels.</code><code class="sig-name descname">LabelType</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines different types of <cite>music</cite> label for training.</p>
+<p>Defines functions that converts the customized label format into numpy
+array. With the customized format, it is more flexible to transform
+labels into different different numpy formats according to the usage
+scenario, and also saves a lot of storage space by using the customized
+format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mode: [‘note’, ‘note-stream’, ‘pop-note-stream’, ‘frame’, ‘frame-stream’]</strong></dt><dd><p>Mode of label conversion.</p>
+<ul class="simple">
+<li><p>note: outputs onset and duration channel</p></li>
+<li><p>note-stream: outputs onset and duration channel of instruments (for MusicNet)</p></li>
+<li><p>pop-note-stream: similar to <code class="docutils literal notranslate"><span class="pre">note-stream</span></code> mode, but is for <code class="docutils literal notranslate"><span class="pre">Pop</span></code> dataset</p></li>
+<li><p>frame: same as <code class="docutils literal notranslate"><span class="pre">note</span></code> mode. To truely output duration channel only, use         <cite>true-frame</cite> mode.</p></li>
+<li><p>frame-stream: same as <code class="docutils literal notranslate"><span class="pre">note-stream</span></code>. To truely output duration channel only         for each instrument, use <code class="docutils literal notranslate"><span class="pre">true-frame-stream</span></code> mode.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>get_available_modes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_conversion_func</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_frame</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_frame_onset</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_out_classes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>multi_inst_frm</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>multi_inst_note</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>multi_pop_note</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.music.labels.LabelType.get_available_modes">
+<code class="sig-name descname">get_available_modes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_available_modes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.LabelType.get_conversion_func">
+<code class="sig-name descname">get_conversion_func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_conversion_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.LabelType.get_frame">
+<code class="sig-name descname">get_frame</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_frame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.LabelType.get_frame_onset">
+<code class="sig-name descname">get_frame_onset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_frame_onset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.LabelType.get_out_classes">
+<code class="sig-name descname">get_out_classes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_out_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.LabelType.multi_inst_frm">
+<code class="sig-name descname">multi_inst_frm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.multi_inst_frm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.LabelType.multi_inst_note">
+<code class="sig-name descname">multi_inst_note</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.multi_inst_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.music.labels.LabelType.multi_pop_note">
+<code class="sig-name descname">multi_pop_note</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.multi_pop_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.music.labels.MaestroLabelExtraction">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.labels.</code><code class="sig-name descname">MaestroLabelExtraction</code><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Label extraction class for Maestro dataset</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.labels.MaestroLabelExtraction.load_label" title="omnizart.music.labels.MaestroLabelExtraction.load_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_label</span></code></a>(label_path)</p></td>
+<td><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.music.labels.MaestroLabelExtraction.load_label">
+<em class="property">classmethod </em><code class="sig-name descname">load_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
+<p>Sub-classes should override this function to process their own label
+format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_path: Path</strong></dt><dd><p>Path to the label file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>labels: list[Label]</dt><dd><p>List of <a class="reference internal" href="#omnizart.music.labels.Label" title="omnizart.music.labels.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> instances.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.music.labels.MapsLabelExtraction">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.labels.</code><code class="sig-name descname">MapsLabelExtraction</code><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Label extraction class for Maps dataset</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.labels.MapsLabelExtraction.load_label" title="omnizart.music.labels.MapsLabelExtraction.load_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_label</span></code></a>(label_path)</p></td>
+<td><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.music.labels.MapsLabelExtraction.load_label">
+<em class="property">classmethod </em><code class="sig-name descname">load_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
+<p>Sub-classes should override this function to process their own label
+format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_path: Path</strong></dt><dd><p>Path to the label file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>labels: list[Label]</dt><dd><p>List of <a class="reference internal" href="#omnizart.music.labels.Label" title="omnizart.music.labels.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> instances.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.music.labels.MusicNetLabelExtraction">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.labels.</code><code class="sig-name descname">MusicNetLabelExtraction</code><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Label extraction class for MusicNet dataset</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.labels.MusicNetLabelExtraction.load_label" title="omnizart.music.labels.MusicNetLabelExtraction.load_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_label</span></code></a>(label_path)</p></td>
+<td><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.music.labels.MusicNetLabelExtraction.load_label">
+<em class="property">classmethod </em><code class="sig-name descname">load_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
+<p>Sub-classes should override this function to process their own label
+format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_path: Path</strong></dt><dd><p>Path to the label file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>labels: list[Label]</dt><dd><p>List of <a class="reference internal" href="#omnizart.music.labels.Label" title="omnizart.music.labels.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Label</span></code></a> instances.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.music.labels.PopLabelExtraction">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.labels.</code><code class="sig-name descname">PopLabelExtraction</code><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Label extraction class for Pop Rhythm dataset</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.labels.PopLabelExtraction.name_transform" title="omnizart.music.labels.PopLabelExtraction.name_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name_transform</span></code></a>(name)</p></td>
+<td><p>Maps the filename of label to the same name of the corresponding wav file.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.music.labels.PopLabelExtraction.name_transform">
+<em class="property">classmethod </em><code class="sig-name descname">name_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maps the filename of label to the same name of the corresponding wav file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name: str</strong></dt><dd><p>Name of the label file, without parent directory prefix and file extension.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>trans_name: str</dt><dd><p>The name same as the coressponding wav (or says feature) file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.music.labels.SuLabelExtraction">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.labels.</code><code class="sig-name descname">SuLabelExtraction</code><a class="headerlink" href="#omnizart.music.labels.SuLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Label extraction class for Extended-Su dataset</p>
+<p>Uses the same process as Maestro dataset</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.music.labels.label_conversion">
+<code class="sig-prename descclassname">omnizart.music.labels.</code><code class="sig-name descname">label_conversion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em>, <em class="sig-param"><span class="n">ori_feature_size</span><span class="o">=</span><span class="default_value">352</span></em>, <em class="sig-param"><span class="n">feature_num</span><span class="o">=</span><span class="default_value">352</span></em>, <em class="sig-param"><span class="n">base</span><span class="o">=</span><span class="default_value">88</span></em>, <em class="sig-param"><span class="n">mpe</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">onsets</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">channel_mapping</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.label_conversion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the customized label format into numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label: object</strong></dt><dd><p>List of dict that is in customized label format.</p>
+</dd>
+<dt><strong>ori_feature_size: int</strong></dt><dd><p>Size of the original feature dimension.</p>
+</dd>
+<dt><strong>feature_num: int</strong></dt><dd><p>Size of the target output feature dimension.</p>
+</dd>
+<dt><strong>base: int</strong></dt><dd><p>Number of total available pitches.</p>
+</dd>
+<dt><strong>mpe: bool</strong></dt><dd><p>Whether to merge all channels into a single one, discarding information
+about instruments.</p>
+</dd>
+<dt><strong>onsets: bool</strong></dt><dd><p>Fill in onset probabilities if set to true, or fill one to all activations.</p>
+</dd>
+<dt><strong>channel_mapping: dict</strong></dt><dd><p>Maps the instrument program number to the specified channel index, used
+to indicate which channel should represent what instruments.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.extract_label" title="omnizart.music.labels.BaseLabelExtraction.extract_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.music.labels.BaseLabelExtraction.extract_label</span></code></a></dt><dd><p>Function that generates the customized label format.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.music.prediction">
+<span id="prediciton"></span><h2>Prediciton<a class="headerlink" href="#module-omnizart.music.prediction" title="Permalink to this headline">¶</a></h2>
+<p>Utility functions for Music module</p>
+<dl class="py function">
+<dt id="omnizart.music.prediction.predict">
+<code class="sig-prename descclassname">omnizart.music.prediction.</code><code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">feature_num</span><span class="o">=</span><span class="default_value">384</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make predictions on the feature.</p>
+<p>Generate predictions by using the loaded model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature: numpy.ndarray</strong></dt><dd><p>Extracted feature of the audio.
+Dimension:  timesteps x feature_size x channels</p>
+</dd>
+<dt><strong>model: keras.Model</strong></dt><dd><p>The loaded model instance</p>
+</dd>
+<dt><strong>feature_num: int</strong></dt><dd><p>Padding along the feature dimension to the size <cite>feature_num</cite></p>
+</dd>
+<dt><strong>batch_size: int</strong></dt><dd><p>Batch size for each step of prediction. The size is depending on the available GPU memory.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pred: numpy.ndarray</dt><dd><p>The predicted results. The values are ranging from 0~1.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>Below are the default settings for building the music model. It will be loaded
+by the class <code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.setting_loaders.MusicSettings</span></code>. The name of the
+attributes will be converted to snake-case (e.g. HopSize -&gt; hop_size). There
+is also a path transformation process when applying the settings into the
+<code class="docutils literal notranslate"><span class="pre">MusicSettings</span></code> instance. For example, if you want to access the attribute
+<code class="docutils literal notranslate"><span class="pre">BatchSize</span></code> defined in the yaml path <em>General/Training/Settings/BatchSize</em>,
+the coressponding attribute will be <em>MusicSettings.training.batch_size</em>.
+The level of <em>/Settings</em> is removed among all fields.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-documented configurable settings, with description, type hint, and available</span>
+<span class="c1"># options. All the parameters can be overriden by another specified configuration file </span>
+<span class="c1"># with selected parameters.</span>
+
+
+<span class="nt">General</span><span class="p">:</span>
+    <span class="nt">TranscriptionMode</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart transribe music` command.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span> 
+        <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pop</span>
+    <span class="nt">CheckpointPath</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to the pre-trained models.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Map</span>
+        <span class="nt">SubType</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">String</span><span class="p p-Indicator">,</span> <span class="nv">String</span><span class="p p-Indicator">]</span>
+        <span class="nt">Value</span><span class="p">:</span>
+            <span class="nt">Piano</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/music/music_piano</span>
+            <span class="nt">Pop</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/music/music_pop</span>
+    <span class="nt">Feature</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">HopSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Hop size in seconds with respect to sampling rate.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.02</span>
+            <span class="nt">SamplingRate</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Adjust input sampling rate to this value.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">44100</span>
+            <span class="nt">WindowSize</span><span class="p">:</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">7939</span>
+            <span class="nt">FrequencyResolution</span><span class="p">:</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+            <span class="nt">FrequencyCenter</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Lowest frequency to extract.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">27.5</span>
+            <span class="nt">TimeCenter</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Highest frequency to extract (1/time_center).</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.00022287</span>
+            <span class="nt">Gamma</span><span class="p">:</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">List</span>
+                <span class="nt">SubType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">0.24</span><span class="p p-Indicator">,</span> <span class="nv">0.6</span><span class="p p-Indicator">,</span> <span class="nv">1.0</span><span class="p p-Indicator">]</span>
+            <span class="nt">BinsPerOctave</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of bins for each octave.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">48</span>
+            <span class="nt">HarmonicNumber</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of harmonic bins of HCFP feature.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+            <span class="nt">Harmonic</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Whether to use harmonic version of the input feature for training.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Bool</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+    <span class="nt">Dataset</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Settings of datasets.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the downloaded datasets.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./</span>
+            <span class="nt">FeatureType</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Type of feature to extract.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CFP</span>
+                <span class="nt">Choices</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;CFP&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;HCFP&quot;</span><span class="p p-Indicator">]</span>
+            <span class="nt">FeatureSavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the extracted feature. Default to the path under the dataset folder.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">+</span>
+    <span class="nt">Model</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of training / testing the model.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePrefix</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Prefix of the trained model&#39;s name to be saved.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">music</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to save the trained model.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/music</span>
+            <span class="nt">ModelType</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default model type to be used for training</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">attn</span>
+                <span class="nt">Choices</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;aspp&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;attn&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">Inference</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings when infering notes.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">MinLength</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Minimum length of a note in seconds.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.05</span>
+            <span class="nt">InstTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold for filtering instruments.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1</span>
+            <span class="nt">OnsetTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold of predicted onset channel.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6.0</span>
+            <span class="nt">DuraTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold of predicted duration channel.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span>
+            <span class="nt">FrameTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold of frame-level predictions.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span>
+    <span class="nt">Training</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Parameters for training</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">Epoch</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Maximum number of epochs for training.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">20</span>
+            <span class="nt">Steps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of training steps for each epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3000</span>
+            <span class="nt">ValSteps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of validation steps after each training epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
+            <span class="nt">BatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batch size of each training step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+            <span class="nt">ValBatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batchs size of each validation step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+            <span class="nt">EarlyStop</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Terminate the training if the validation performance doesn&#39;t imrove after n epochs.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+            <span class="nt">LossFunction</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Loss function for computing the objectives.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">smooth</span>
+                <span class="nt">Choices</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;smooth&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;focal&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;bce&quot;</span><span class="p p-Indicator">]</span>
+            <span class="nt">LabelType</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Determines the training target to be single- or multi-instrument scenario, and more options.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">note-stream</span>
+                <span class="nt">Choices</span><span class="p">:</span> 
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">note-stream</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">frame-stream</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">note</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">frame</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true-frame</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true-frame-stream</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pop-note-stream</span>
+            <span class="nt">Channels</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Use different types of feature for training.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">List</span>
+                <span class="nt">SubType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;Spec&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;Ceps&quot;</span><span class="p p-Indicator">]</span>
+                <span class="nt">Choices</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;Spec&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;GCoS&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;Ceps&quot;</span><span class="p p-Indicator">]</span>
+            <span class="nt">Timesteps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Length of time axis of the input feature.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">256</span>
+</pre></div>
+</div>
 </div>
 </div>
 

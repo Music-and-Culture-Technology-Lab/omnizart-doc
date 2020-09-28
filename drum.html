@@ -24,7 +24,7 @@
     
   <link rel="index" title="Index" href="genindex.html" />
   <link rel="search" title="Search" href="search.html" />
-  <link rel="next" title="Base Classes" href="base.html" />
+  <link rel="next" title="Feature" href="feature.html" />
   <link rel="prev" title="Music Transcription" href="music.html" /> 
   </head>
 
@@ -141,15 +141,9 @@
                 
                   <li class="toctree-l2"><a href="#transcribe" class="reference internal">Transcribe</a></li>
                 
-                  <li class="toctree-l2"><a href="#utils" class="reference internal">Utils</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.drum.prediction" class="reference internal">Prediction</a></li>
                 
               </ul>
-            
-          </li>
-
-        
-          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
-
             
           </li>
 
@@ -161,6 +155,18 @@
 
         
           <li class="toctree-l1 "><a href="models.html" class="reference internal ">Models</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="training.html" class="reference internal ">Training</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
 
             
           </li>
@@ -200,8 +206,8 @@
        title="previous chapter">← Music Transcription</a>
   </li>
   <li class="next">
-    <a href="base.html"
-       title="next chapter">Base Classes →</a>
+    <a href="feature.html"
+       title="next chapter">Feature →</a>
   </li>
 </ul>
   
@@ -244,8 +250,46 @@ the MIDI file.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="utils">
-<h2>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-omnizart.drum.prediction">
+<span id="prediction"></span><h2>Prediction<a class="headerlink" href="#module-omnizart.drum.prediction" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.drum.prediction.create_batches">
+<code class="sig-prename descclassname">omnizart.drum.prediction.</code><code class="sig-name descname">create_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span></em>, <em class="sig-param"><span class="n">mini_beat_per_seg</span></em>, <em class="sig-param"><span class="n">b_size</span><span class="o">=</span><span class="default_value">6</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a 4D input for model prediction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature: 3D numpy array</strong></dt><dd><p>Should be in shape [mini_beat_pos x time x freq].</p>
+</dd>
+<dt><strong>mini_beat_per_seg: int</strong></dt><dd><p>Number of mini beats in one segment (a beat).</p>
+</dd>
+<dt><strong>b_size: int</strong></dt><dd><p>Output batch size.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>batch_feature: 5D numpy array</dt><dd><p>Dimensions are [batches x b_size x time x freq x mini_beat_per_seg].</p>
+</dd>
+<dt>pad_size: int</dt><dd><p>The additional padded size at the end of the batch.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.drum.prediction.merge_batches">
+<code class="sig-prename descclassname">omnizart.drum.prediction.</code><code class="sig-name descname">merge_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batch_pred</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse process of create_batches.</p>
+<p>Merges a 5D batched-prediction into 2D output.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.drum.prediction.predict">
+<code class="sig-prename descclassname">omnizart.drum.prediction.</code><code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">patch_cqt_feature</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">mini_beat_per_seg</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">6</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 </div>
 
@@ -258,8 +302,8 @@ the MIDI file.</p>
        title="previous chapter">← Music Transcription</a>
   </li>
   <li class="next">
-    <a href="base.html"
-       title="next chapter">Base Classes →</a>
+    <a href="feature.html"
+       title="next chapter">Feature →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, BreezeWhite.

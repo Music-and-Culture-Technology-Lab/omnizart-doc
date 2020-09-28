@@ -25,7 +25,7 @@
   <link rel="index" title="Index" href="genindex.html" />
   <link rel="search" title="Search" href="search.html" />
   <link rel="next" title="Utilities" href="utils.html" />
-  <link rel="prev" title="Models" href="models.html" /> 
+  <link rel="prev" title="Base Classes" href="base.html" /> 
   </head>
 
   <body>
@@ -140,12 +140,6 @@
           </li>
 
         
-          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
-
-            
-          </li>
-
-        
           <li class="toctree-l1 "><a href="feature.html" class="reference internal ">Feature</a>
 
             
@@ -153,6 +147,18 @@
 
         
           <li class="toctree-l1 "><a href="models.html" class="reference internal ">Models</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="training.html" class="reference internal ">Training</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
 
             
           </li>
@@ -198,8 +204,8 @@
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="models.html"
-       title="previous chapter">← Models</a>
+    <a href="base.html"
+       title="previous chapter">← Base Classes</a>
   </li>
   <li class="next">
     <a href="utils.html"
@@ -420,6 +426,15 @@ instrument name.</p>
 <dl class="simple">
 <dt>MIDI_PROGRAM_NAME_MAPPING: Dict</dt><dd><p>Mapping of program number to name.</p>
 </dd>
+<dt>LOWEST_MIDI_NOTE: int</dt><dd><p>Lowest note midi number that will be used.</p>
+</dd>
+<dt>HIGHEST_MIDI_NOTE: int</dt><dd><p>Highest note midi number that will be used.</p>
+</dd>
+<dt>MUSICNET_INSTRUMENT_PROGRAMS: list[int]</dt><dd><p>Program numbers that are used in MusicNet dataset.</p>
+</dd>
+<dt>POP_INSTRUMENT_PROGRAMS: list[int]</dt><dd><p>Program numbers that represent different groups of channels used
+in Pop dataset.</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -430,8 +445,8 @@ instrument name.</p>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="models.html"
-       title="previous chapter">← Models</a>
+    <a href="base.html"
+       title="previous chapter">← Base Classes</a>
   </li>
   <li class="next">
     <a href="utils.html"

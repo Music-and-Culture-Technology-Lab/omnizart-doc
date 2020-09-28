@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Training</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Base Classes" href="base.html" />
+  <link rel="prev" title="Models" href="models.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">omnizart</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="index.html#omniscient-mozart-s-document"
+         class="nav-link ">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#omniscient-mozart-s-document"
+         class="nav-link  router-link-active">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="index.html#omniscient-mozart-s-document"
+         class="nav-link ">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#omniscient-mozart-s-document"
+         class="nav-link  router-link-active">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#omniscient-mozart-s-document">Contents</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="quick-start.html" class="reference internal ">Quick Start</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="cli.html" class="reference internal ">Command Line Interface</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#omniscient-mozart-s-document">API Reference</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="music.html" class="reference internal ">Music Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="drum.html" class="reference internal ">Drum Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="feature.html" class="reference internal ">Feature</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="models.html" class="reference internal ">Models</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Training</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#id1" class="reference internal">Training</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.callbacks" class="reference internal">Callbacks</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="constants.html" class="reference internal ">Constants</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="utils.html" class="reference internal ">Utilities</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Training</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="models.html"
+       title="previous chapter">← Models</a>
+  </li>
+  <li class="next">
+    <a href="base.html"
+       title="next chapter">Base Classes →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="training">
+<h1>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h1>
+<p>Including logics of main training loop, progress visualization, and callback
+functions.</p>
+<div class="section" id="id1">
+<h2>Training<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-omnizart.train"></span><dl class="py function">
+<dt id="omnizart.train.execute_callbacks">
+<code class="sig-prename descclassname">omnizart.train.</code><code class="sig-name descname">execute_callbacks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">callbacks</span></em>, <em class="sig-param"><span class="n">func_name</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.execute_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.train.format_num">
+<code class="sig-prename descclassname">omnizart.train.</code><code class="sig-name descname">format_num</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span></em>, <em class="sig-param"><span class="n">digit</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.format_num" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.train.gen_bar_postfix">
+<code class="sig-prename descclassname">omnizart.train.</code><code class="sig-name descname">gen_bar_postfix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result</span></em>, <em class="sig-param"><span class="n">targets</span><span class="o">=</span><span class="default_value">['loss', 'accuracy']</span></em>, <em class="sig-param"><span class="n">name_transform</span><span class="o">=</span><span class="default_value">['loss', 'acc']</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.gen_bar_postfix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.train.train_epochs">
+<code class="sig-prename descclassname">omnizart.train.</code><code class="sig-name descname">train_epochs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">train_dataset</span></em>, <em class="sig-param"><span class="n">validate_dataset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">steps</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">val_steps</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">callbacks</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.train_epochs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.train.train_steps">
+<code class="sig-prename descclassname">omnizart.train.</code><code class="sig-name descname">train_steps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">dataset</span></em>, <em class="sig-param"><span class="n">steps</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bar_title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.train_steps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.callbacks">
+<span id="callbacks"></span><h2>Callbacks<a class="headerlink" href="#module-omnizart.callbacks" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="omnizart.callbacks.Callback">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.callbacks.</code><code class="sig-name descname">Callback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">monitor</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.Callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class of all callback classes</p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>on_epoch_begin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>on_epoch_end</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>on_test_batch_begin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>on_test_batch_end</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>on_train_batch_begin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>on_train_batch_end</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>on_train_begin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>on_train_end</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.callbacks.EarlyStopping">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.callbacks.</code><code class="sig-name descname">EarlyStopping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">patience</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">monitor</span><span class="o">=</span><span class="default_value">'val_acc'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.EarlyStopping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Early stop the training after no improvement on the monitor for a certain period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>patience: int</strong></dt><dd><p>Longeset period of epochs for waiting the target metrics showing improvement.</p>
+</dd>
+<dt><strong>monitor: str</strong></dt><dd><p>Metric name for the observation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 36%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>on_epoch_end</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>on_train_begin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>on_train_end</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.callbacks.ModelCheckpoint">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.callbacks.</code><code class="sig-name descname">ModelCheckpoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">monitor</span><span class="o">=</span><span class="default_value">'val_acc'</span></em>, <em class="sig-param"><span class="n">save_best_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">save_weights_only</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.ModelCheckpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saving the model during training.</p>
+<p>The newest checkpoint will override the original checkpoint during a single
+training period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filepath: Path</strong></dt><dd><p>Path for saving the checkpoint.</p>
+</dd>
+<dt><strong>monitor: str</strong></dt><dd><p>Metric name for the observation. No effect if <cite>save_bset_only</cite> is set to false.</p>
+</dd>
+<dt><strong>save_best_only: bool</strong></dt><dd><p>Whether to save the model having the best performance on the metric only.</p>
+</dd>
+<dt><strong>save_weights_only: bool</strong></dt><dd><p>Save the model’s weight only, without architecture.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 36%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>on_epoch_end</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>on_train_begin</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="models.html"
+       title="previous chapter">← Models</a>
+  </li>
+  <li class="next">
+    <a href="base.html"
+       title="next chapter">Base Classes →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, BreezeWhite.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

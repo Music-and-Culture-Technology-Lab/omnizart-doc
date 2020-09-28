@@ -139,12 +139,6 @@
           </li>
 
         
-          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
-
-            
-          </li>
-
-        
           <li class="toctree-l1 "><a href="feature.html" class="reference internal ">Feature</a>
 
             
@@ -152,6 +146,18 @@
 
         
           <li class="toctree-l1 "><a href="models.html" class="reference internal ">Models</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="training.html" class="reference internal ">Training</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
 
             
           </li>
@@ -214,12 +220,15 @@
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
  | <a href="#W"><strong>W</strong></a>
  
 </div>
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction">BaseLabelExtraction (class in omnizart.music.labels)</a>
+</li>
       <li><a href="constants.html#omnizart.constants.datasets.BaseStructure">BaseStructure (class in omnizart.constants.datasets)</a>
 </li>
   </ul></td>
@@ -242,6 +251,8 @@
         <li><a href="models.html#omnizart.models.u_net.MultiHeadAttention.call">(omnizart.models.u_net.MultiHeadAttention method)</a>
 </li>
       </ul></li>
+      <li><a href="training.html#omnizart.callbacks.Callback">Callback (class in omnizart.callbacks)</a>
+</li>
       <li><a href="utils.html#omnizart.utils.camel_to_snake">camel_to_snake() (in module omnizart.utils)</a>
 </li>
       <li><a href="models.html#omnizart.models.t2t.cast_like">cast_like() (in module omnizart.models.t2t)</a>
@@ -261,6 +272,8 @@
       <li><a href="models.html#omnizart.models.spectral_norm_net.conv_sa">conv_sa() (in module omnizart.models.spectral_norm_net)</a>
 </li>
       <li><a href="models.html#omnizart.models.spectral_norm_net.ConvSN2D">ConvSN2D (class in omnizart.models.spectral_norm_net)</a>
+</li>
+      <li><a href="drum.html#omnizart.drum.prediction.create_batches">create_batches() (in module omnizart.drum.prediction)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -290,9 +303,13 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="training.html#omnizart.callbacks.EarlyStopping">EarlyStopping (class in omnizart.callbacks)</a>
+</li>
       <li><a href="models.html#omnizart.models.t2t.embedding_to_padding">embedding_to_padding() (in module omnizart.models.t2t)</a>
 </li>
       <li><a href="utils.html#omnizart.utils.ensure_path_exists">ensure_path_exists() (in module omnizart.utils)</a>
+</li>
+      <li><a href="training.html#omnizart.train.execute_callbacks">execute_callbacks() (in module omnizart.train)</a>
 </li>
       <li><a href="feature.html#omnizart.feature.beat_for_drum.extract_beat_with_madmom">extract_beat_with_madmom() (in module omnizart.feature.beat_for_drum)</a>
 </li>
@@ -303,6 +320,8 @@
       <li><a href="feature.html#omnizart.feature.cqt.extract_cqt">extract_cqt() (in module omnizart.feature.cqt)</a>
 </li>
       <li><a href="feature.html#omnizart.feature.hcfp.extract_hcfp">extract_hcfp() (in module omnizart.feature.hcfp)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction.extract_label">extract_label() (omnizart.music.labels.BaseLabelExtraction class method)</a>
 </li>
       <li><a href="feature.html#omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path">extract_mini_beat_from_audio_path() (in module omnizart.feature.beat_for_drum)</a>
 </li>
@@ -316,6 +335,8 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="music.html#omnizart.music.dataset.FeatureDataset">FeatureDataset (class in omnizart.music.dataset)</a>
+</li>
       <li><a href="feature.html#omnizart.feature.hcfp.fetch_harmonic">fetch_harmonic() (in module omnizart.feature.hcfp)</a>
 </li>
       <li><a href="music.html#omnizart.music.inference.find_min_max_stren">find_min_max_stren() (in module omnizart.music.inference)</a>
@@ -325,6 +346,8 @@
       <li><a href="music.html#omnizart.music.inference.find_occur">find_occur() (in module omnizart.music.inference)</a>
 </li>
       <li><a href="music.html#omnizart.music.losses.focal_loss">focal_loss() (in module omnizart.music.losses)</a>
+</li>
+      <li><a href="training.html#omnizart.train.format_num">format_num() (in module omnizart.train)</a>
 </li>
       <li><a href="feature.html#omnizart.feature.cfp.freq_to_log_freq_mapping">freq_to_log_freq_mapping() (in module omnizart.feature.cfp)</a>
 </li>
@@ -338,15 +361,31 @@
 </li>
       <li><a href="models.html#omnizart.models.t2t.gather_indices_2d">gather_indices_2d() (in module omnizart.models.t2t)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="training.html#omnizart.train.gen_bar_postfix">gen_bar_postfix() (in module omnizart.train)</a>
+</li>
+      <li><a href="music.html#omnizart.music.app.MusicTranscription.generate_feature">generate_feature() (omnizart.music.app.MusicTranscription method)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.LabelType.get_available_modes">get_available_modes() (omnizart.music.labels.LabelType method)</a>
+</li>
       <li><a href="models.html#omnizart.models.spectral_norm_net.ConvSN2D.get_config">get_config() (omnizart.models.spectral_norm_net.ConvSN2D method)</a>
 
       <ul>
         <li><a href="models.html#omnizart.models.u_net.MultiHeadAttention.get_config">(omnizart.models.u_net.MultiHeadAttention method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="music.html#omnizart.music.labels.LabelType.get_conversion_func">get_conversion_func() (omnizart.music.labels.LabelType method)</a>
+</li>
+      <li><a href="music.html#omnizart.music.dataset.get_dataset">get_dataset() (in module omnizart.music.dataset)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.LabelType.get_frame">get_frame() (omnizart.music.labels.LabelType method)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.LabelType.get_frame_onset">get_frame_onset() (omnizart.music.labels.LabelType method)</a>
+</li>
       <li><a href="utils.html#omnizart.utils.get_logger">get_logger() (in module omnizart.utils)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.LabelType.get_out_classes">get_out_classes() (omnizart.music.labels.LabelType method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -374,10 +413,26 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="music.html#omnizart.music.labels.Label">Label (class in omnizart.music.labels)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.label_conversion">label_conversion() (in module omnizart.music.labels)</a>
+</li>
       <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.label_ext">label_ext() (omnizart.constants.datasets.BaseStructure property)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.LabelType">LabelType (class in omnizart.music.labels)</a>
 </li>
       <li><a href="utils.html#omnizart.utils.load_audio_with_librosa">load_audio_with_librosa() (in module omnizart.utils)</a>
 </li>
+      <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction.load_label">load_label() (omnizart.music.labels.BaseLabelExtraction class method)</a>
+
+      <ul>
+        <li><a href="music.html#omnizart.music.labels.MaestroLabelExtraction.load_label">(omnizart.music.labels.MaestroLabelExtraction class method)</a>
+</li>
+        <li><a href="music.html#omnizart.music.labels.MapsLabelExtraction.load_label">(omnizart.music.labels.MapsLabelExtraction class method)</a>
+</li>
+        <li><a href="music.html#omnizart.music.labels.MusicNetLabelExtraction.load_label">(omnizart.music.labels.MusicNetLabelExtraction class method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="utils.html#omnizart.utils.load_pickle">load_pickle() (in module omnizart.utils)</a>
@@ -394,19 +449,29 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="feature.html#omnizart.feature.beat_for_drum.MadmomBeatTracking">MadmomBeatTracking (class in omnizart.feature.beat_for_drum)</a>
 </li>
+      <li><a href="music.html#omnizart.music.labels.MaestroLabelExtraction">MaestroLabelExtraction (class in omnizart.music.labels)</a>
+</li>
       <li><a href="constants.html#omnizart.constants.datasets.MaestroStructure">MaestroStructure (class in omnizart.constants.datasets)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.MapsLabelExtraction">MapsLabelExtraction (class in omnizart.music.labels)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.MapsStructure">MapsStructure (class in omnizart.constants.datasets)</a>
 </li>
       <li><a href="models.html#omnizart.models.t2t.maybe_upcast">maybe_upcast() (in module omnizart.models.t2t)</a>
 </li>
+      <li><a href="drum.html#omnizart.drum.prediction.merge_batches">merge_batches() (in module omnizart.drum.prediction)</a>
+</li>
       <li><a href="models.html#omnizart.models.t2t.mixed_precision_is_enabled">mixed_precision_is_enabled() (in module omnizart.models.t2t)</a>
+</li>
+      <li><a href="training.html#omnizart.callbacks.ModelCheckpoint">ModelCheckpoint (class in omnizart.callbacks)</a>
 </li>
       <li>
     module
 
       <ul>
         <li><a href="base.html#module-omnizart.base">omnizart.base</a>
+</li>
+        <li><a href="training.html#module-omnizart.callbacks">omnizart.callbacks</a>
 </li>
         <li><a href="cli.html#module-omnizart.cli.transcribe">omnizart.cli.transcribe</a>
 </li>
@@ -419,6 +484,8 @@
         <li><a href="constants.html#module-omnizart.constants.midi">omnizart.constants.midi</a>
 </li>
         <li><a href="drum.html#module-omnizart.drum">omnizart.drum</a>
+</li>
+        <li><a href="drum.html#module-omnizart.drum.prediction">omnizart.drum.prediction</a>
 </li>
         <li><a href="feature.html#module-omnizart.feature">omnizart.feature</a>
 </li>
@@ -442,18 +509,34 @@
 </li>
         <li><a href="music.html#module-omnizart.music.app">omnizart.music.app</a>
 </li>
+        <li><a href="music.html#module-omnizart.music.dataset">omnizart.music.dataset</a>
+</li>
         <li><a href="music.html#module-omnizart.music.inference">omnizart.music.inference</a>
 </li>
+        <li><a href="music.html#module-omnizart.music.labels">omnizart.music.labels</a>
+</li>
         <li><a href="music.html#module-omnizart.music.losses">omnizart.music.losses</a>
+</li>
+        <li><a href="music.html#module-omnizart.music.prediction">omnizart.music.prediction</a>
+</li>
+        <li><a href="training.html#module-omnizart.train">omnizart.train</a>
 </li>
         <li><a href="utils.html#module-omnizart.utils">omnizart.utils</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="music.html#omnizart.music.labels.LabelType.multi_inst_frm">multi_inst_frm() (omnizart.music.labels.LabelType method)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.LabelType.multi_inst_note">multi_inst_note() (omnizart.music.labels.LabelType method)</a>
+</li>
       <li><a href="music.html#omnizart.music.inference.multi_inst_note_inference">multi_inst_note_inference() (in module omnizart.music.inference)</a>
 </li>
+      <li><a href="music.html#omnizart.music.labels.LabelType.multi_pop_note">multi_pop_note() (omnizart.music.labels.LabelType method)</a>
+</li>
       <li><a href="models.html#omnizart.models.u_net.MultiHeadAttention">MultiHeadAttention (class in omnizart.models.u_net)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.MusicNetLabelExtraction">MusicNetLabelExtraction (class in omnizart.music.labels)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.MusicNetStructure">MusicNetStructure (class in omnizart.constants.datasets)</a>
 </li>
@@ -465,6 +548,12 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction.name_transform">name_transform() (omnizart.music.labels.BaseLabelExtraction class method)</a>
+
+      <ul>
+        <li><a href="music.html#omnizart.music.labels.PopLabelExtraction.name_transform">(omnizart.music.labels.PopLabelExtraction class method)</a>
+</li>
+      </ul></li>
       <li><a href="feature.html#omnizart.feature.cfp.nonlinear_func">nonlinear_func() (in module omnizart.feature.cfp)</a>
 </li>
   </ul></td>
@@ -472,6 +561,8 @@
       <li><a href="music.html#omnizart.music.inference.norm_onset_dura">norm_onset_dura() (in module omnizart.music.inference)</a>
 </li>
       <li><a href="music.html#omnizart.music.inference.norm_split_onset_dura">norm_split_onset_dura() (in module omnizart.music.inference)</a>
+</li>
+      <li><a href="music.html#omnizart.music.labels.Label.note">note() (omnizart.music.labels.Label property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -484,6 +575,13 @@
 
       <ul>
         <li><a href="base.html#module-omnizart.base">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.callbacks
+
+      <ul>
+        <li><a href="training.html#module-omnizart.callbacks">module</a>
 </li>
       </ul></li>
       <li>
@@ -529,6 +627,13 @@
 </li>
       </ul></li>
       <li>
+    omnizart.drum.prediction
+
+      <ul>
+        <li><a href="drum.html#module-omnizart.drum.prediction">module</a>
+</li>
+      </ul></li>
+      <li>
     omnizart.feature
 
       <ul>
@@ -556,8 +661,6 @@
         <li><a href="feature.html#module-omnizart.feature.cqt">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     omnizart.feature.hcfp
 
@@ -565,6 +668,8 @@
         <li><a href="feature.html#module-omnizart.feature.hcfp">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     omnizart.models
 
@@ -608,6 +713,13 @@
 </li>
       </ul></li>
       <li>
+    omnizart.music.dataset
+
+      <ul>
+        <li><a href="music.html#module-omnizart.music.dataset">module</a>
+</li>
+      </ul></li>
+      <li>
     omnizart.music.inference
 
       <ul>
@@ -615,10 +727,31 @@
 </li>
       </ul></li>
       <li>
+    omnizart.music.labels
+
+      <ul>
+        <li><a href="music.html#module-omnizart.music.labels">module</a>
+</li>
+      </ul></li>
+      <li>
     omnizart.music.losses
 
       <ul>
         <li><a href="music.html#module-omnizart.music.losses">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.music.prediction
+
+      <ul>
+        <li><a href="music.html#module-omnizart.music.prediction">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.train
+
+      <ul>
+        <li><a href="training.html#module-omnizart.train">module</a>
 </li>
       </ul></li>
       <li>
@@ -640,14 +773,26 @@
 </li>
       <li><a href="utils.html#omnizart.utils.parallel_generator">parallel_generator() (in module omnizart.utils)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="music.html#omnizart.music.labels.PopLabelExtraction">PopLabelExtraction (class in omnizart.music.labels)</a>
+</li>
       <li><a href="constants.html#omnizart.constants.datasets.PopStructure">PopStructure (class in omnizart.constants.datasets)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="feature.html#omnizart.feature.cqt.post_process_cqt">post_process_cqt() (in module omnizart.feature.cqt)</a>
 </li>
-      <li><a href="feature.html#omnizart.feature.beat_for_drum.MadmomBeatTracking.process">process() (omnizart.feature.beat_for_drum.MadmomBeatTracking method)</a>
+      <li><a href="drum.html#omnizart.drum.prediction.predict">predict() (in module omnizart.drum.prediction)</a>
+
+      <ul>
+        <li><a href="music.html#omnizart.music.prediction.predict">(in module omnizart.music.prediction)</a>
 </li>
+      </ul></li>
+      <li><a href="feature.html#omnizart.feature.beat_for_drum.MadmomBeatTracking.process">process() (omnizart.feature.beat_for_drum.MadmomBeatTracking method)</a>
+
+      <ul>
+        <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction.process">(omnizart.music.labels.BaseLabelExtraction class method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -700,6 +845,8 @@
 </li>
       <li><a href="feature.html#omnizart.feature.cfp.STFT">STFT() (in module omnizart.feature.cfp)</a>
 </li>
+      <li><a href="music.html#omnizart.music.labels.SuLabelExtraction">SuLabelExtraction (class in omnizart.music.labels)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -714,10 +861,16 @@
 </li>
       <li><a href="music.html#omnizart.music.inference.to_midi">to_midi() (in module omnizart.music.inference)</a>
 </li>
+      <li><a href="music.html#omnizart.music.app.MusicTranscription.train">train() (omnizart.music.app.MusicTranscription method)</a>
+</li>
+      <li><a href="training.html#omnizart.train.train_epochs">train_epochs() (in module omnizart.train)</a>
+</li>
       <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.train_labels">train_labels() (omnizart.constants.datasets.BaseStructure property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="training.html#omnizart.train.train_steps">train_steps() (in module omnizart.train)</a>
+</li>
       <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.train_wavs">train_wavs() (omnizart.constants.datasets.BaseStructure property)</a>
 </li>
       <li><a href="drum.html#omnizart.drum.app.DrumTranscription.transcribe">transcribe() (in module omnizart.drum.app.DrumTranscription)</a>
@@ -739,6 +892,14 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="models.html#omnizart.models.spectral_norm_net.SpectralNormalization.update_weights">update_weights() (omnizart.models.spectral_norm_net.SpectralNormalization method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="music.html#omnizart.music.labels.Label.velocity">velocity() (omnizart.music.labels.Label property)</a>
 </li>
   </ul></td>
 </tr></table>
