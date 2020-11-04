@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Drum Transcription</title>
+    
+      <link rel="stylesheet" href="../_static/pygments.css">
+      <link rel="stylesheet" href="../_static/theme.css">
+      <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+      
+      <script src="../_static/theme-vendors.js"></script>
+      <script src="../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Chord Transcription" href="../chord/api.html" />
+  <link rel="prev" title="Music Transcription" href="../music/api.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../index.html" class="home-link">
+    
+      <span class="site-name">omnizart</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="../index.html#omniscient-mozart-s-document"
+         class="nav-link ">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../index.html#omniscient-mozart-s-document"
+         class="nav-link  router-link-active">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="../index.html#omniscient-mozart-s-document"
+         class="nav-link ">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../index.html#omniscient-mozart-s-document"
+         class="nav-link  router-link-active">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#omniscient-mozart-s-document">Contents</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../quick-start.html" class="reference internal ">Quick Start</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../tutorial.html" class="reference internal ">Tutorial</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../music/cli.html" class="reference internal ">omnizart music</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="cli.html" class="reference internal ">omnizart drum</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../chord/cli.html" class="reference internal ">omnizart chord</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#omniscient-mozart-s-document">API Reference</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="../music/api.html" class="reference internal ">Music Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Drum Transcription</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#feature-storage-format" class="reference internal">Feature Storage Format</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.drum.app" class="reference internal">App</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.drum.dataset" class="reference internal">Dataset</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.drum.labels" class="reference internal">Labels</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.drum.prediction" class="reference internal">Prediction</a></li>
+                
+                  <li class="toctree-l2"><a href="#settings" class="reference internal">Settings</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../chord/api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../feature.html" class="reference internal ">Feature</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../models.html" class="reference internal ">Models</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../training.html" class="reference internal ">Training</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../base.html" class="reference internal ">Base Classes</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../constants.html" class="reference internal ">Constants</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../utils.html" class="reference internal ">Utilities</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+    <li>Drum Transcription</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="../music/api.html"
+       title="previous chapter">← Music Transcription</a>
+  </li>
+  <li class="next">
+    <a href="../chord/api.html"
+       title="next chapter">Chord Transcription →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="module-omnizart.drum">
+<span id="drum-transcription"></span><h1>Drum Transcription<a class="headerlink" href="#module-omnizart.drum" title="Permalink to this headline">¶</a></h1>
+<p>Drum transcription module.</p>
+<p>Utilities for transcribing drum percussions in the music.</p>
+<div class="section" id="feature-storage-format">
+<h2>Feature Storage Format<a class="headerlink" href="#feature-storage-format" title="Permalink to this headline">¶</a></h2>
+<p>Processed feature will be stored in <code class="docutils literal notranslate"><span class="pre">.hdf</span></code> file format, one file per piece.</p>
+<p>Columns in the file are:</p>
+<ul class="simple">
+<li><p><strong>feature</strong>: CQT feature.</p></li>
+<li><p><strong>label</strong>: Merged drum label set, with a total of 13 classes.</p></li>
+<li><p><strong>label_128</strong>: Complete drum label set.</p></li>
+<li><p><strong>mini_beat_arr</strong>: The tracked mini-beat array of the clip.</p></li>
+</ul>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">h5py</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdf_ref</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s2">&quot;ytd_audio_00001_TRBSAIC128E0793CCE.hdf&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdf_ref</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">&lt;KeysViewHDF5 [&#39;mini_beat_arr&#39;, &#39;feature&#39;, &#39;label&#39;, &#39;label_128&#39;]&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">feature</span> <span class="o">=</span> <span class="n">hdf_ref</span><span class="p">[</span><span class="s2">&quot;feature&quot;</span><span class="p">][:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">feature</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="go">(2299, 120, 120)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdf_ref</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<p>The relative publication can be found in <a class="reference internal" href="#rdfaec52e6142-1" id="id1">[1]</a></p>
+<dl class="citation">
+<dt class="label" id="rdfaec52e6142-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>I-Chieh Wei, Chih-Wei Wu, Li Su. “Improving Automatic Drum Transcription Using Large-Scale
+Audio-to-MIDI Aligned Data” (in submission)</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="module-omnizart.drum.app">
+<span id="app"></span><h2>App<a class="headerlink" href="#module-omnizart.drum.app" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="omnizart.drum.app.DrumTranscription">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.drum.app.</code><code class="sig-name descname">DrumTranscription</code><a class="headerlink" href="#omnizart.drum.app.DrumTranscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
+<p>Application class for drum transcriptions.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.drum.app.DrumTranscription.generate_feature" title="omnizart.drum.app.DrumTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, …])</p></td>
+<td><p>Extract the feature of the whole dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.drum.app.DrumTranscription.train" title="omnizart.drum.app.DrumTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, …])</p></td>
+<td><p>Model training.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.drum.app.DrumTranscription.transcribe" title="omnizart.drum.app.DrumTranscription.transcribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transcribe</span></code></a>(input_audio[, model_path, output])</p></td>
+<td><p>Transcribe drum in the audio.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.drum.app.DrumTranscription.generate_feature">
+<code class="sig-name descname">generate_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em>, <em class="sig-param"><span class="n">drum_settings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_threads</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the feature of the whole dataset.</p>
+<p>Currently only supports Pop dataset. To train the model, you have to prepare the training
+data first, then process it into feature representations. After downloading the dataset,
+use this function to do the pre-processing and transform the raw data into features.</p>
+<p>To specify the output path, modify the attribute
+<code class="docutils literal notranslate"><span class="pre">music_settings.dataset.feature_save_path</span></code> to the value you want.
+It will default to the folder under where the dataset stored, generating
+two folders: <code class="docutils literal notranslate"><span class="pre">train_feature</span></code> and <code class="docutils literal notranslate"><span class="pre">test_feature</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dataset_path: Path</strong></dt><dd><p>Path to the downloaded dataset.</p>
+</dd>
+<dt><strong>drum_settings: DrumSettings</strong></dt><dd><p>The configuration instance that holds all relative settings for
+the life-cycle of building a model.</p>
+</dd>
+<dt><strong>num_threads:</strong></dt><dd><p>Number of threads for parallel extracting the features.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../constants.html#omnizart.constants.datasets.PopStructure" title="omnizart.constants.datasets.PopStructure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.constants.datasets.PopStructure</span></code></a></dt><dd><p>The only supported dataset for drum transcription. Records the train/test partition according to the folder.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.drum.app.DrumTranscription.train">
+<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">drum_settings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model training.</p>
+<p>Train a new model or continue to train on a previously trained model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the folder containing generated feature.</p>
+</dd>
+<dt><strong>model_name: str</strong></dt><dd><p>The name for storing the trained model. If not given, will default to the
+current timesamp.</p>
+</dd>
+<dt><strong>input_model_path: Path</strong></dt><dd><p>Continue to train on the pre-trained model by specifying the path.</p>
+</dd>
+<dt><strong>drum_settings: DrumSettings</strong></dt><dd><p>The configuration instance that holds all relative settings for
+the life-cycle of building a model.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.drum.app.DrumTranscription.transcribe">
+<code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transcribe drum in the audio.</p>
+<p>This function transcribes drum activations in the music. Currently the model
+predicts 13 classes of different drum sets, and 3 of them will be written to
+the MIDI file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>input_audio: Path</strong></dt><dd><p>Path to the raw audio file (.wav).</p>
+</dd>
+<dt><strong>model_path: Path</strong></dt><dd><p>Path to the trained model.</p>
+</dd>
+<dt><strong>output: Path (optional)</strong></dt><dd><p>Path for writing out the transcribed MIDI file. Default to current path.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.cli.drum.transcribe</span></code></dt><dd><p>CLI entry point of this function.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.drum.dataset">
+<span id="dataset"></span><h2>Dataset<a class="headerlink" href="#module-omnizart.drum.dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="omnizart.drum.dataset.FeatureLoader">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.drum.dataset.</code><code class="sig-name descname">FeatureLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">mini_beat_per_seg</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.dataset.FeatureLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Feature loader of Pop dataset.</p>
+<p>The iterator makes sure that every sample in the dataset will be used.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.drum.dataset.get_dataset">
+<code class="sig-prename descclassname">omnizart.drum.dataset.</code><code class="sig-name descname">get_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">steps</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.dataset.get_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the dataset instance.</p>
+<p>A quick way to get and setup the dataset instance for training/validation.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the folder containing extracted feature files (<a href="#id2"><span class="problematic" id="id3">*</span></a>.hdf).</p>
+</dd>
+<dt><strong>feature_files: list[Path]</strong></dt><dd><p>List of paths to the feature files with extension <cite>.hdf</cite>. This parameter
+gives the ability to have more control on which files to use.</p>
+<p>Either <code class="docutils literal notranslate"><span class="pre">feature_folder</span></code> or <code class="docutils literal notranslate"><span class="pre">feature_files</span></code> should be specified.
+If both given, <code class="docutils literal notranslate"><span class="pre">feature_files</span></code> will be used.</p>
+</dd>
+<dt><strong>batch_size: int</strong></dt><dd><p>Size of input batch for each training step.</p>
+</dd>
+<dt><strong>steps: int</strong></dt><dd><p>Total steps of each epoch.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>dataset: tf.data.Dataset</dt><dd><p>A tensorflow dataset instance with optimized setup.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.drum.labels">
+<span id="labels"></span><h2>Labels<a class="headerlink" href="#module-omnizart.drum.labels" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.drum.labels.extract_label">
+<code class="sig-prename descclassname">omnizart.drum.labels.</code><code class="sig-name descname">extract_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em>, <em class="sig-param"><span class="n">m_beat_arr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.labels.extract_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract drum label notes.</p>
+<p>Process ground-truth midi into numpy array representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_path: Path</strong></dt><dd><p>Path to the midi file.</p>
+</dd>
+<dt><strong>m_beat_arr:</strong></dt><dd><p>Extracted mini-beat array of the coressponding audio piece.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>drum_track_ary: numpy.ndarray</dt><dd><p>The extracted label in numpy array. Should have a total of 128 classes
+of drum notes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../feature.html#omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path" title="omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path</span></code></a></dt><dd><p>The function for extracting mini-beat array from the given audio path.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.drum.labels.extract_label_13_inst">
+<code class="sig-prename descclassname">omnizart.drum.labels.</code><code class="sig-name descname">extract_label_13_inst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em>, <em class="sig-param"><span class="n">m_beat_arr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.labels.extract_label_13_inst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract 13 types of drum label notes.</p>
+<p>Process the MIDI drum notes into numpy array and concludes them
+into 13 different sub-classes of drum notes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_path: Path</strong></dt><dd><p>Path to the midi file.</p>
+</dd>
+<dt><strong>m_beat_arr:</strong></dt><dd><p>Extracted mini-beat array of the coressponding audio piece.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>drum_track_ary: numpy.ndarray</dt><dd><p>The extracted label in numpy array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#omnizart.drum.labels.extract_label" title="omnizart.drum.labels.extract_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.drum.labels.extract_label</span></code></a></dt><dd><p>Complete drum label extraction with 128 output classes.</p>
+</dd>
+<dt><a class="reference internal" href="../feature.html#omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path" title="omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path</span></code></a></dt><dd><p>The function for extracting mini-beat array from the given audio path.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.drum.prediction">
+<span id="prediction"></span><h2>Prediction<a class="headerlink" href="#module-omnizart.drum.prediction" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.drum.prediction.create_batches">
+<code class="sig-prename descclassname">omnizart.drum.prediction.</code><code class="sig-name descname">create_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span></em>, <em class="sig-param"><span class="n">mini_beat_per_seg</span></em>, <em class="sig-param"><span class="n">b_size</span><span class="o">=</span><span class="default_value">6</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a 4D input for model prediction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature: 3D numpy array</strong></dt><dd><p>Should be in shape [mini_beat_pos x time x freq].</p>
+</dd>
+<dt><strong>mini_beat_per_seg: int</strong></dt><dd><p>Number of mini beats in one segment (a beat).</p>
+</dd>
+<dt><strong>b_size: int</strong></dt><dd><p>Output batch size.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>batch_feature: 5D numpy array</dt><dd><p>Dimensions are [batches x b_size x time x freq x mini_beat_per_seg].</p>
+</dd>
+<dt>pad_size: int</dt><dd><p>The additional padded size at the end of the batch.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.drum.prediction.merge_batches">
+<code class="sig-prename descclassname">omnizart.drum.prediction.</code><code class="sig-name descname">merge_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batch_pred</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse process of create_batches.</p>
+<p>Merges a 5D batched-prediction into 2D output.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.drum.prediction.predict">
+<code class="sig-prename descclassname">omnizart.drum.prediction.</code><code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">patch_cqt_feature</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">mini_beat_per_seg</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">32</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>Below are the default settings for building the drum model. It will be loaded
+by the class <code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.setting_loaders.DrumSettings</span></code>. The name of the
+attributes will be converted to snake-case (e.g. HopSize -&gt; hop_size). There
+is also a path transformation process when applying the settings into the
+<code class="docutils literal notranslate"><span class="pre">DrumSettings</span></code> instance. For example, if you want to access the attribute
+<code class="docutils literal notranslate"><span class="pre">BatchSize</span></code> defined in the yaml path <em>General/Training/Settings/BatchSize</em>,
+the coressponding attribute will be <em>DrumSettings.training.batch_size</em>.
+The level of <em>/Settings</em> is removed among all fields.</p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="../music/api.html"
+       title="previous chapter">← Music Transcription</a>
+  </li>
+  <li class="next">
+    <a href="../chord/api.html"
+       title="next chapter">Chord Transcription →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, MCTLab.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

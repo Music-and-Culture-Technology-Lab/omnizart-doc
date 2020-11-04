@@ -113,7 +113,25 @@
           </li>
 
         
-          <li class="toctree-l1 "><a href="cli.html" class="reference internal ">Command Line Interface</a>
+          <li class="toctree-l1 "><a href="tutorial.html" class="reference internal ">Tutorial</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="music/cli.html" class="reference internal ">omnizart music</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="drum/cli.html" class="reference internal ">omnizart drum</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/cli.html" class="reference internal ">omnizart chord</a>
 
             
           </li>
@@ -128,13 +146,19 @@
       </p>
       <ul class="current">
         
-          <li class="toctree-l1 "><a href="music.html" class="reference internal ">Music Transcription</a>
+          <li class="toctree-l1 "><a href="music/api.html" class="reference internal ">Music Transcription</a>
 
             
           </li>
 
         
-          <li class="toctree-l1 "><a href="drum.html" class="reference internal ">Drum Transcription</a>
+          <li class="toctree-l1 "><a href="drum/api.html" class="reference internal ">Drum Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/api.html" class="reference internal ">Chord Transcription</a>
 
             
           </li>
@@ -232,6 +256,30 @@ There are three categories of the setting:</p>
 <p>Records the settings of the feature extraction process.
 There are also default settings that can be adjusted, and are records in <cite>defaults/*.yaml</cite> files.</p>
 <span class="target" id="module-omnizart.constants.feature"></span><p>Some constant feature settings.</p>
+<dl class="py data">
+<dt id="omnizart.constants.feature.CHORD_INT_MAPPING">
+<code class="sig-prename descclassname">omnizart.constants.feature.</code><code class="sig-name descname">CHORD_INT_MAPPING</code><em class="property"> = {'A#:maj': 10, 'A#:min': 22, 'A:maj': 9, 'A:min': 21, 'B:maj': 11, 'B:min': 23, 'C#:maj': 1, 'C#:min': 13, 'C:maj': 0, 'C:min': 12, 'D#:maj': 3, 'D#:min': 15, 'D:maj': 2, 'D:min': 14, 'E:maj': 4, 'E:min': 16, 'F#:maj': 6, 'F#:min': 18, 'F:maj': 5, 'F:min': 17, 'G#:maj': 8, 'G#:min': 20, 'G:maj': 7, 'G:min': 19, 'N': 24, 'X': 25}</em><a class="headerlink" href="#omnizart.constants.feature.CHORD_INT_MAPPING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping of chord names to integers (for <code class="docutils literal notranslate"><span class="pre">chord</span></code> module).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="omnizart.constants.feature.ENHARMONIC_TABLE">
+<code class="sig-prename descclassname">omnizart.constants.feature.</code><code class="sig-name descname">ENHARMONIC_TABLE</code><em class="property"> = {'Ab': 'G#', 'Bb': 'A#', 'Cb': 'B', 'Db': 'C#', 'Eb': 'D#', 'Fb': 'E', 'Gb': 'F#'}</em><a class="headerlink" href="#omnizart.constants.feature.ENHARMONIC_TABLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Table of major chord to corresponding enharmonic chord (for <code class="docutils literal notranslate"><span class="pre">chord</span></code> module)</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="omnizart.constants.feature.FEATURE_NAME_TO_NUMBER">
+<code class="sig-prename descclassname">omnizart.constants.feature.</code><code class="sig-name descname">FEATURE_NAME_TO_NUMBER</code><em class="property"> = {'C': 3, 'Ceps': 3, 'G': 2, 'GCoS': 2, 'S': 1, 'Spec': 1}</em><a class="headerlink" href="#omnizart.constants.feature.FEATURE_NAME_TO_NUMBER" title="Permalink to this definition">¶</a></dt>
+<dd><p>Feature name to channel number mapping (for <code class="docutils literal notranslate"><span class="pre">music</span></code> module)</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="omnizart.constants.feature.NOTE_PRIORITY_ARRAY">
+<code class="sig-prename descclassname">omnizart.constants.feature.</code><code class="sig-name descname">NOTE_PRIORITY_ARRAY</code><em class="property"> = [2.0364304, 1.4848346, 0.5027617, 0.5768271, 2.8335114, 0.733738, 0.83764803, 0.5139924, 0.4998506, 0.4733462, 0.5940674, 0.7641602, 1.148832]</em><a class="headerlink" href="#omnizart.constants.feature.NOTE_PRIORITY_ARRAY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Weighting factor for different drum notes (for <code class="docutils literal notranslate"><span class="pre">drum</span></code> module).</p>
+</dd></dl>
+
 </div>
 <div class="section" id="datasets">
 <h2>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h2>
@@ -258,9 +306,56 @@ the necessary attributes, methods are overriden.</p>
 </dd>
 <dt><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.train_wavs" title="omnizart.constants.datasets.BaseStructure.train_wavs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train_wavs</span></code></a></dt><dd><p>Records folders that contains trainig wav files.</p>
 </dd>
+<dt><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.url" title="omnizart.constants.datasets.BaseStructure.url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">url</span></code></a></dt><dd><p>classmethod(function) -&gt; method</p>
+</dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.get_test_labels" title="omnizart.constants.datasets.BaseStructure.get_test_labels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_test_labels</span></code></a>([dataset_path])</p></td>
+<td><p>Get list of complete test label paths</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.get_test_wavs" title="omnizart.constants.datasets.BaseStructure.get_test_wavs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_test_wavs</span></code></a>([dataset_path])</p></td>
+<td><p>Get list of complete test wav paths</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.get_train_labels" title="omnizart.constants.datasets.BaseStructure.get_train_labels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_train_labels</span></code></a>([dataset_path])</p></td>
+<td><p>Get list of complete train label paths</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.constants.datasets.BaseStructure.get_train_wavs" title="omnizart.constants.datasets.BaseStructure.get_train_wavs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_train_wavs</span></code></a>([dataset_path])</p></td>
+<td><p>Get list of complete train wav paths</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.get_test_labels">
+<code class="sig-name descname">get_test_labels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.get_test_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of complete test label paths</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.get_test_wavs">
+<code class="sig-name descname">get_test_wavs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.get_test_wavs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of complete test wav paths</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.get_train_labels">
+<code class="sig-name descname">get_train_labels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.get_train_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of complete train label paths</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.get_train_wavs">
+<code class="sig-name descname">get_train_wavs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.get_train_wavs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of complete train wav paths</p>
+</dd></dl>
+
 <dl class="py method">
 <dt id="omnizart.constants.datasets.BaseStructure.label_ext">
 <em class="property">abstract property </em><code class="sig-name descname">label_ext</code><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.label_ext" title="Permalink to this definition">¶</a></dt>
@@ -323,6 +418,45 @@ The function should return a list like:</p>
 </div>
 </dd></dl>
 
+<dl class="py method">
+<dt id="omnizart.constants.datasets.BaseStructure.url">
+<em class="property">property </em><code class="sig-name descname">url</code><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>classmethod(function) -&gt; method</p>
+<p>Convert a function to be a class method.</p>
+<p>A class method receives the class as implicit first argument,
+just like an instance method receives the instance.
+To declare a class method, use this idiom:</p>
+<blockquote>
+<div><dl>
+<dt>class C:</dt><dd><p>&#64;classmethod
+def f(cls, arg1, arg2, …):</p>
+<blockquote>
+<div><p>…</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p>It can be called either on the class (e.g. C.f()) or on an instance
+(e.g. C().f()).  The instance is ignored except for its class.
+If a class method is called for a derived class, the derived class
+object is passed as the implied first argument.</p>
+<p>Class methods are different than C++ or Java static methods.
+If you want those, see the staticmethod builtin.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.constants.datasets.BeethovenSonatas">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">BeethovenSonatas</code><a class="headerlink" href="#omnizart.constants.datasets.BeethovenSonatas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Constant settings of BPS-FH dataset</p>
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.BeethovenSonatas.url">
+<code class="sig-name descname">url</code><em class="property"> = 'https://drive.google.com/uc?export=download&amp;id=1nYq2FB5LQfYJoXyYZl3XcklpJkCOnwhV'</em><a class="headerlink" href="#omnizart.constants.datasets.BeethovenSonatas.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hosted dataset download url.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -341,6 +475,12 @@ The function should return a list like:</p>
 </dl>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.ExtSuStructure.url">
+<code class="sig-name descname">url</code><em class="property"> = 'https://drive.google.com/uc?export=download&amp;id=1Miw9G2O1Y8g253RQ2uQ4udM5XMKB-9p8'</em><a class="headerlink" href="#omnizart.constants.datasets.ExtSuStructure.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dataset URL</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -359,6 +499,12 @@ The function should return a list like:</p>
 </dl>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.MaestroStructure.url">
+<code class="sig-name descname">url</code><em class="property"> = 'https://storage.googleapis.com/magentadata/datasets/maestro/v2.0.0/maestro-v2.0.0.zip'</em><a class="headerlink" href="#omnizart.constants.datasets.MaestroStructure.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dataset URL</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -380,6 +526,55 @@ The function should return a list like:</p>
 </dd></dl>
 
 <dl class="py class">
+<dt id="omnizart.constants.datasets.McGillBillBoard">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">McGillBillBoard</code><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Constant settings of McGill BillBoard dataset.</p>
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.McGillBillBoard.feature_file_name">
+<code class="sig-name descname">feature_file_name</code><em class="property"> = 'bothchroma.csv'</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.feature_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of feature files</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.McGillBillBoard.feature_folder">
+<code class="sig-name descname">feature_folder</code><em class="property"> = './McGill-Billboard-Features'</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.feature_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to the feature folder relative to dataset</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.McGillBillBoard.index_file_path">
+<code class="sig-name descname">index_file_path</code><em class="property"> = './billboard-2.0-index.csv'</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.index_file_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to the index file relative the dataset</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.McGillBillBoard.label_file_name">
+<code class="sig-name descname">label_file_name</code><em class="property"> = 'majmin.lab'</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.label_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of label files</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.McGillBillBoard.label_folder">
+<code class="sig-name descname">label_folder</code><em class="property"> = './McGill-Billboard-MIREX'</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.label_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to the label folder relative to dataset</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.McGillBillBoard.train_test_split_id">
+<code class="sig-name descname">train_test_split_id</code><em class="property"> = 1000</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.train_test_split_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split ID of train/val set.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.McGillBillBoard.url">
+<code class="sig-name descname">url</code><em class="property"> = 'https://drive.google.com/uc?export=download&amp;id=1_K_Fof4zt1IQvs1aDmf-5wY0wHqgcPlC'</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dataset URL</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="omnizart.constants.datasets.MusicNetStructure">
 <em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">MusicNetStructure</code><a class="headerlink" href="#omnizart.constants.datasets.MusicNetStructure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#omnizart.constants.datasets.BaseStructure" title="omnizart.constants.datasets.BaseStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets.BaseStructure</span></code></a></p>
@@ -395,6 +590,12 @@ The function should return a list like:</p>
 </dl>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.MusicNetStructure.url">
+<code class="sig-name descname">url</code><em class="property"> = 'https://homes.cs.washington.edu/~thickstn/media/musicnet.tar.gz'</em><a class="headerlink" href="#omnizart.constants.datasets.MusicNetStructure.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dataset URL</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -421,22 +622,32 @@ The function should return a list like:</p>
 <p>Records MIDI related settings, including mapping of program number and the corresponding
 instrument name.</p>
 <span class="target" id="module-omnizart.constants.midi"></span><p>Stores MIDI-related constant variables.</p>
-<div class="section" id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
-<dl class="simple">
-<dt>MIDI_PROGRAM_NAME_MAPPING: Dict</dt><dd><p>Mapping of program number to name.</p>
-</dd>
-<dt>LOWEST_MIDI_NOTE: int</dt><dd><p>Lowest note midi number that will be used.</p>
-</dd>
-<dt>HIGHEST_MIDI_NOTE: int</dt><dd><p>Highest note midi number that will be used.</p>
-</dd>
-<dt>MUSICNET_INSTRUMENT_PROGRAMS: list[int]</dt><dd><p>Program numbers that are used in MusicNet dataset.</p>
-</dd>
-<dt>POP_INSTRUMENT_PROGRAMS: list[int]</dt><dd><p>Program numbers that represent different groups of channels used
-in Pop dataset.</p>
-</dd>
-</dl>
-</div>
+<dl class="py data">
+<dt id="omnizart.constants.midi.MIDI_PROGRAM_NAME_MAPPING">
+<code class="sig-prename descclassname">omnizart.constants.midi.</code><code class="sig-name descname">MIDI_PROGRAM_NAME_MAPPING</code><em class="property"> = {'0': 'Acoustic Grand Piano', '1': 'Bright Acoustic Piano', '10': 'Music Box', '100': 'FX 5 (brightness)', '101': 'FX 6 (goblins)', '102': 'FX 7 (echoes)', '103': 'FX 8 (sci-fi)', '104': 'Sitar', '105': 'Banjo', '106': 'Shamisen', '107': 'Koto', '108': 'Kalimba', '109': 'Bag pipe', '11': 'Vibraphone', '110': 'Fiddle', '111': 'Shanai', '112': 'Tinkle Bell', '113': 'Agogo', '114': 'Steel Drums', '115': 'Woodblock', '116': 'Taiko Drum', '117': 'Melodic Tom', '118': 'Synth Drum', '119': 'Reverse Cymbal', '12': 'Marimba', '120': 'Guitar Fret Noise', '121': 'Breath Noise', '122': 'Seashore', '123': 'Bird Tweet', '124': 'Telephone Ring', '125': 'Helicopter', '126': 'Applause', '127': 'Gunshot', '13': 'Xylophone', '14': 'Tubular Bells', '15': 'Dulcimer', '16': 'Drawbar Organ', '17': 'Percussive Organ', '18': 'Rock Organ', '19': 'Church Organ', '2': 'Electric Grand Piano', '20': 'Reed Organ', '21': 'Accordion', '22': 'Harmonica', '23': 'Tango Accordion', '24': 'Acoustic Guitar (nylon)', '25': 'Acoustic Guitar (steel)', '26': 'Electric Guitar (jazz)', '27': 'Electric Guitar (clean)', '28': 'Electric Guitar (muted)', '29': 'Overdriven Guitar', '3': 'Honky-tonk Piano', '30': 'Distortion Guitar', '31': 'Guitar Harmonics', '32': 'Acoustic Bass', '33': 'Electric Bass (finger)', '34': 'Electric Bass (pick)', '35': 'Retless Bass', '36': 'Slap Bass 1', '37': 'Slap Bass 2', '38': 'Synth Bass 1', '39': 'Synth Bass 2', '4': 'Electric Piano 1', '40': 'Violin', '41': 'Viola', '42': 'Cello', '43': 'Contrabass', '44': 'Tremolo Strings', '45': 'Pizzicato Strings', '46': 'Orchestral Harp', '47': 'Timpani', '48': 'String Ensemble 1', '49': 'String Ensemble 2', '5': 'Electric Piano 2', '50': 'Synth Strings 1', '51': 'Synth Strings 2', '52': 'Choir Aahs', '53': 'Voice Oohs', '54': 'Synth Voice', '55': 'Orchestra Hit', '56': 'Trumpet', '57': 'Trombone', '58': 'Tuba', '59': 'Muted Trumpet', '6': 'Harpsichord', '60': 'French Horn', '61': 'Brass Section', '62': 'Synth Brass 1', '63': 'Synth Brass 2', '64': 'Soprano Sax', '65': 'Alto Sax', '66': 'Tenor Sax', '67': 'Baritone Sax', '68': 'Oboe', '69': 'English Horn', '7': 'Clavi', '70': 'Bassoon', '71': 'Clarinet', '72': 'Piccolo', '73': 'Flute', '74': 'Recorder', '75': 'Pan Flute', '76': 'Blown Bottle', '77': 'Shakuhachi', '78': 'Whistle', '79': 'Ocarina', '8': 'Celesta', '80': 'Lead 1 (square)', '81': 'Lead 2 (sawtooth)', '82': 'Lead 3 (calliope)', '83': 'Lead 4 (chiff)', '84': 'Lead 5 (charang)', '85': 'Lead 6 (voice)', '86': 'Lead 7 (fifths)', '87': 'Lead 8 (bass+lead)', '88': 'Pad 1 (new age)', '89': 'Pad 2 (warm)', '9': 'Glockenspiel', '90': 'Pad 3 (polysynth)', '91': 'Pad 4 (choir)', '92': 'Pad 5 (bowed)', '93': 'Pad 6 (metallic)', '94': 'Pad 7 (halo)', '95': 'Pad 8 (sweep)', '96': 'FX 1 (rain)', '97': 'FX 2 (soundtrack)', '98': 'FX 3 (crystal)', '99': 'FX 4 (atmosphere)'}</em><a class="headerlink" href="#omnizart.constants.midi.MIDI_PROGRAM_NAME_MAPPING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mappings of MIDI program number and the corresponding name derived from the
+Wiki page: <a class="reference external" href="https://en.wikipedia.org/wiki/General_MIDI">https://en.wikipedia.org/wiki/General_MIDI</a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="omnizart.constants.midi.MUSICNET_INSTRUMENT_PROGRAMS">
+<code class="sig-prename descclassname">omnizart.constants.midi.</code><code class="sig-name descname">MUSICNET_INSTRUMENT_PROGRAMS</code><em class="property"> = [0, 6, 40, 41, 42, 43, 60, 68, 70, 71, 73]</em><a class="headerlink" href="#omnizart.constants.midi.MUSICNET_INSTRUMENT_PROGRAMS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Program numbers that are used in MusicNet dataset.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="omnizart.constants.midi.POP_INSTRUMENT_PROGRAMES">
+<code class="sig-prename descclassname">omnizart.constants.midi.</code><code class="sig-name descname">POP_INSTRUMENT_PROGRAMES</code><em class="property"> = [24, 32, 40, 0, 56]</em><a class="headerlink" href="#omnizart.constants.midi.POP_INSTRUMENT_PROGRAMES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Program numbers that represent different groups of channels used in Pop dataset.
+Guitar, bass, strings, organ, piano, and others</p>
+</dd></dl>
+
+<dl class="py data">
+<dt id="omnizart.constants.midi.SOUNDFONT_PATH">
+<code class="sig-prename descclassname">omnizart.constants.midi.</code><code class="sig-name descname">SOUNDFONT_PATH</code><em class="property"> = '/home/runner/work/omnizart/omnizart/omnizart/resource/soundfonts.sf2'</em><a class="headerlink" href="#omnizart.constants.midi.SOUNDFONT_PATH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to the soundfont.</p>
+</dd></dl>
+
 </div>
 </div>
 
@@ -453,9 +664,9 @@ in Pop dataset.</p>
        title="next chapter">Utilities →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
-      &#169; Copyright 2020, BreezeWhite.
+      &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

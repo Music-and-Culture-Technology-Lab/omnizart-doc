@@ -112,7 +112,25 @@
           </li>
 
         
-          <li class="toctree-l1 "><a href="cli.html" class="reference internal ">Command Line Interface</a>
+          <li class="toctree-l1 "><a href="tutorial.html" class="reference internal ">Tutorial</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="music/cli.html" class="reference internal ">omnizart music</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="drum/cli.html" class="reference internal ">omnizart drum</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/cli.html" class="reference internal ">omnizart chord</a>
 
             
           </li>
@@ -127,13 +145,19 @@
       </p>
       <ul class="">
         
-          <li class="toctree-l1 "><a href="music.html" class="reference internal ">Music Transcription</a>
+          <li class="toctree-l1 "><a href="music/api.html" class="reference internal ">Music Transcription</a>
 
             
           </li>
 
         
-          <li class="toctree-l1 "><a href="drum.html" class="reference internal ">Drum Transcription</a>
+          <li class="toctree-l1 "><a href="drum/api.html" class="reference internal ">Drum Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/api.html" class="reference internal ">Chord Transcription</a>
 
             
           </li>
@@ -215,8 +239,30 @@ chord progression, notes of instruments, and beat tracking.</p>
 <li class="toctree-l2"><a class="reference internal" href="quick-start.html#transcribe-a-pop-song">Transcribe a pop song</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli.html#module-omnizart.cli.transcribe">Transcribe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#transcribe">Transcribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#generate-feature">Generate Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#train-model">Train Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#download-datasets">Download Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#download-checkpoints">Download Checkpoints</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="music/cli.html">omnizart music</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="music/cli.html#transcribe">transcribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/cli.html#generate-feature">generate-feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/cli.html#train-model">train-model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="drum/cli.html">omnizart drum</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="drum/cli.html#transcribe">transcribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drum/cli.html#generate-feature">generate-feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drum/cli.html#train-model">train-model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chord/cli.html">omnizart chord</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chord/cli.html#transcribe">transcribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chord/cli.html#generate-feature">generate-feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chord/cli.html#train-model">train-model</a></li>
 </ul>
 </li>
 </ul>
@@ -224,19 +270,33 @@ chord progression, notes of instruments, and beat tracking.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">API Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="music.html">Music Transcription</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="music.html#module-omnizart.music.app">App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music.html#module-omnizart.music.dataset">Dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music.html#module-omnizart.music.inference">Inference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music.html#module-omnizart.music.losses">Loss Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music.html#module-omnizart.music.labels">Labels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music.html#module-omnizart.music.prediction">Prediciton</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music.html#settings">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="music/api.html">Music Transcription</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="music/api.html#feature-storage-format">Feature Storage Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/api.html#module-omnizart.music.app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/api.html#module-omnizart.music.dataset">Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/api.html#module-omnizart.music.inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/api.html#module-omnizart.music.losses">Loss Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/api.html#module-omnizart.music.labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/api.html#module-omnizart.music.prediction">Prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/api.html#settings">Settings</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="drum.html">Drum Transcription</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="drum.html#transcribe">Transcribe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="drum.html#module-omnizart.drum.prediction">Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drum/api.html">Drum Transcription</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="drum/api.html#feature-storage-format">Feature Storage Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drum/api.html#module-omnizart.drum.app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drum/api.html#module-omnizart.drum.dataset">Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drum/api.html#module-omnizart.drum.labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drum/api.html#module-omnizart.drum.prediction">Prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drum/api.html#settings">Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chord/api.html">Chord Transcription</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chord/api.html#feature-storage-format">Feature Storage Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chord/api.html#module-omnizart.chord.app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chord/api.html#module-omnizart.chord.features">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chord/api.html#module-omnizart.chord.dataset">Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chord/api.html#module-omnizart.chord.inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chord/api.html#settings">Settings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="feature.html">Feature</a><ul>
@@ -265,7 +325,11 @@ chord progression, notes of instruments, and beat tracking.</p>
 <li class="toctree-l2"><a class="reference internal" href="constants.html#midi">Midi</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-omnizart.remote">Remote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-omnizart.utils">Utility Functions</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -279,9 +343,9 @@ chord progression, notes of instruments, and beat tracking.</p>
        title="next chapter">Quick Start →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
-      &#169; Copyright 2020, BreezeWhite.
+      &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

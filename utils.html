@@ -112,7 +112,25 @@
           </li>
 
         
-          <li class="toctree-l1 "><a href="cli.html" class="reference internal ">Command Line Interface</a>
+          <li class="toctree-l1 "><a href="tutorial.html" class="reference internal ">Tutorial</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="music/cli.html" class="reference internal ">omnizart music</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="drum/cli.html" class="reference internal ">omnizart drum</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/cli.html" class="reference internal ">omnizart chord</a>
 
             
           </li>
@@ -127,13 +145,19 @@
       </p>
       <ul class="current">
         
-          <li class="toctree-l1 "><a href="music.html" class="reference internal ">Music Transcription</a>
+          <li class="toctree-l1 "><a href="music/api.html" class="reference internal ">Music Transcription</a>
 
             
           </li>
 
         
-          <li class="toctree-l1 "><a href="drum.html" class="reference internal ">Drum Transcription</a>
+          <li class="toctree-l1 "><a href="drum/api.html" class="reference internal ">Drum Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/api.html" class="reference internal ">Chord Transcription</a>
 
             
           </li>
@@ -174,7 +198,9 @@
             
               <ul>
                 
-                  <li class="toctree-l2"><a href="#module-omnizart.utils" class="reference internal">Utilities</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.remote" class="reference internal">Remote</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.utils" class="reference internal">Utility Functions</a></li>
                 
               </ul>
             
@@ -208,8 +234,87 @@
 <hr>
           <div class="content" role="main">
             
-  <div class="section" id="module-omnizart.utils">
-<span id="utilities"></span><h1>Utilities<a class="headerlink" href="#module-omnizart.utils" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="utilities">
+<h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h1>
+<p>Some common utility functionalities.</p>
+<div class="section" id="module-omnizart.remote">
+<span id="remote"></span><h2>Remote<a class="headerlink" href="#module-omnizart.remote" title="Permalink to this headline">¶</a></h2>
+<p>Functions related to networking.</p>
+<p>Containing functions to download files from the internet. Supports
+download <em>zipped</em> files from Google Drive.</p>
+<dl class="py data">
+<dt id="omnizart.remote.SIZE_MAPPING">
+<code class="sig-prename descclassname">omnizart.remote.</code><code class="sig-name descname">SIZE_MAPPING</code><em class="property"> = [(1, 'B'), (1024, 'KB'), (1048576, 'MB'), (1073741824, 'GB'), (1099511627776, 'TB')]</em><a class="headerlink" href="#omnizart.remote.SIZE_MAPPING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping bytes to human-readable size unit.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.remote.download">
+<code class="sig-prename descclassname">omnizart.remote.</code><code class="sig-name descname">download</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">file_length</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_path</span><span class="o">=</span><span class="default_value">'./'</span></em>, <em class="sig-param"><span class="n">save_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cookie_file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unzip</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.remote.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download file from the internet.</p>
+<p>Download file from the remote URL, with progress visualization and dynamic downloading
+rate adjustment. Uses pure python built-in packages, no additional package requirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>url: URL</strong></dt><dd><p>The file download url.</p>
+</dd>
+<dt><strong>file_length: float</strong></dt><dd><p>In bytes. If the length can’t be retrieved from the response header, but can be
+obtained by other approaches, you can explicitly specify the length for progress
+visualization.</p>
+</dd>
+<dt><strong>save_path: Path</strong></dt><dd><p>The path to store the donwloaded file.</p>
+</dd>
+<dt><strong>save_name: str</strong></dt><dd><p>Explicitly specify the file name to be stored. If not given, default to parse the
+name from the given url.</p>
+</dd>
+<dt><strong>cookie_file: Path</strong></dt><dd><p>Path to the cookie file. Suitable for stateful download (e.g. Google Drive).</p>
+</dd>
+<dt><strong>unzip: bool</strong></dt><dd><p>Whether to unzip (decompress) the downloaded file (assumed zipped). Will not delete
+the original downloaded file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.remote.download_large_file_from_google_drive">
+<code class="sig-prename descclassname">omnizart.remote.</code><code class="sig-name descname">download_large_file_from_google_drive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">file_length</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_path</span><span class="o">=</span><span class="default_value">'./'</span></em>, <em class="sig-param"><span class="n">save_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unzip</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.remote.download_large_file_from_google_drive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Google Drive file downloader.</p>
+<p>Download function dedicated for Google Drive files. Mainly to deal with download
+large files and the confirmation page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>url: URL</strong></dt><dd><p>Could be a full google drive download url or the file ID.</p>
+</dd>
+<dt><strong>file_length: float</strong></dt><dd><p>In bytes. If the length can’t be retrieved from the response header, but can be
+obtained by other approaches, you can explicitly specify the length for progress
+visualization.</p>
+</dd>
+<dt><strong>save_path: Path</strong></dt><dd><p>Path to store the downloaded file.</p>
+</dd>
+<dt><strong>save_name: str</strong></dt><dd><p>Explicitly specify the file name to be stored. If not given, default to parse the
+name from the given url.</p>
+</dd>
+<dt><strong>unzip: bool</strong></dt><dd><p>Whether to unzip (decompress) the downloaded file (assumed zipped). Will not delete
+the original downloaded file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.remote.format_byte">
+<code class="sig-prename descclassname">omnizart.remote.</code><code class="sig-name descname">format_byte</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">digit</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.remote.format_byte" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the given byte size into human-readable string.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.utils">
+<span id="utility-functions"></span><h2>Utility Functions<a class="headerlink" href="#module-omnizart.utils" title="Permalink to this headline">¶</a></h2>
 <p>Various utility functions for this project.</p>
 <dl class="py function">
 <dt id="omnizart.utils.camel_to_snake">
@@ -375,7 +480,7 @@ __dict__ attribute.</p>
 
 <dl class="py function">
 <dt id="omnizart.utils.parallel_generator">
-<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">parallel_generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">input_list</span></em>, <em class="sig-param"><span class="n">max_workers</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">use_thread</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">chunk_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.parallel_generator" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">parallel_generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">input_list</span></em>, <em class="sig-param"><span class="n">max_workers</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">use_thread</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">chunk_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">300</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.parallel_generator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -385,10 +490,17 @@ __dict__ attribute.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="omnizart.utils.synth_midi">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">synth_midi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">midi_path</span></em>, <em class="sig-param"><span class="n">sampling_rate</span><span class="o">=</span><span class="default_value">44100</span></em>, <em class="sig-param"><span class="n">out_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.synth_midi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synthesize MIDI into wav audio.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="omnizart.utils.write_yaml">
 <code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">write_yaml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">json_obj</span></em>, <em class="sig-param"><span class="n">output_path</span></em>, <em class="sig-param"><span class="n">dump</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.write_yaml" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</div>
 </div>
 
 
@@ -400,9 +512,9 @@ __dict__ attribute.</p>
        title="previous chapter">← Constants</a>
   </li>
 </ul><div class="footer" role="contentinfo">
-      &#169; Copyright 2020, BreezeWhite.
+      &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

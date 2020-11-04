@@ -112,7 +112,25 @@
           </li>
 
         
-          <li class="toctree-l1 "><a href="cli.html" class="reference internal ">Command Line Interface</a>
+          <li class="toctree-l1 "><a href="tutorial.html" class="reference internal ">Tutorial</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="music/cli.html" class="reference internal ">omnizart music</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="drum/cli.html" class="reference internal ">omnizart drum</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/cli.html" class="reference internal ">omnizart chord</a>
 
             
           </li>
@@ -127,13 +145,19 @@
       </p>
       <ul class="">
         
-          <li class="toctree-l1 "><a href="music.html" class="reference internal ">Music Transcription</a>
+          <li class="toctree-l1 "><a href="music/api.html" class="reference internal ">Music Transcription</a>
 
             
           </li>
 
         
-          <li class="toctree-l1 "><a href="drum.html" class="reference internal ">Drum Transcription</a>
+          <li class="toctree-l1 "><a href="drum/api.html" class="reference internal ">Drum Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/api.html" class="reference internal ">Chord Transcription</a>
 
             
           </li>
@@ -202,7 +226,9 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#B"><strong>B</strong></a>
+ <a href="#Symbols"><strong>Symbols</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
@@ -224,16 +250,402 @@
  | <a href="#W"><strong>W</strong></a>
  
 </div>
+<h2 id="Symbols">Symbols</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    --batch-size &lt;batch_size&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-b">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-b">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-b">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --dataset-path &lt;dataset_path&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-d">omnizart-chord-generate-feature command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-d">omnizart-drum-generate-feature command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-d">omnizart-music-generate-feature command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --early-stop &lt;early_stop&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-early-stop">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-early-stop">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-early-stop">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --epochs &lt;epochs&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-e">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-e">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-e">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --feature-path &lt;feature_path&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-d">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-d">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-d">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --feature-type &lt;feature_type&gt;
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-f">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --harmonic
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-h">omnizart-music-generate-feature command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --input-model &lt;input_model&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-i">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-i">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-i">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --label-type &lt;label_type&gt;
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-l">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --learning-rate-decay &lt;learning_rate_decay&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-learning-rate-decay">omnizart-chord-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --loss-function &lt;loss_function&gt;
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-n">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --model-name &lt;model_name&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-m">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-m">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-m">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --model-path &lt;model_path&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-m">omnizart-chord-transcribe command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-m">omnizart-drum-transcribe command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-m">omnizart-music-transcribe command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --model-type &lt;model_type&gt;
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-y">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --num-threads &lt;num_threads&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-n">omnizart-chord-generate-feature command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-n">omnizart-drum-generate-feature command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-n">omnizart-music-generate-feature command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --output &lt;output&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-o">omnizart-chord-transcribe command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-o">omnizart-drum-transcribe command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-o">omnizart-music-transcribe command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --output-path &lt;output_path&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-o">omnizart-chord-generate-feature command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-o">omnizart-drum-generate-feature command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-o">omnizart-music-generate-feature command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --steps &lt;steps&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-s">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-s">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-s">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --timesteps &lt;timesteps&gt;
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-t">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --val-batch-size &lt;val_batch_size&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-vb">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-vb">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-vb">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    --val-steps &lt;val_steps&gt;
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-vs">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-vs">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-vs">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -b
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-b">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-b">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-b">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -d
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-d">omnizart-chord-generate-feature command line option</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-d">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-d">omnizart-drum-generate-feature command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-d">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-d">omnizart-music-generate-feature command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-d">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -e
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-e">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-e">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-e">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -f
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-f">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -h
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-h">omnizart-music-generate-feature command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -i
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-i">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-i">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-i">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -l
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-l">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -m
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-m">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-m">omnizart-chord-transcribe command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-m">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-m">omnizart-drum-transcribe command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-m">omnizart-music-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-m">omnizart-music-transcribe command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -n
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-n">omnizart-chord-generate-feature command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-n">omnizart-drum-generate-feature command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-n">omnizart-music-generate-feature command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-n">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -o
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-o">omnizart-chord-generate-feature command line option</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-o">omnizart-chord-transcribe command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-o">omnizart-drum-generate-feature command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-o">omnizart-drum-transcribe command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-o">omnizart-music-generate-feature command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-o">omnizart-music-transcribe command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -s
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-s">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-s">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-s">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -t
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-t">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -vb
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-vb">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-vb">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-vb">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -vs
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-vs">omnizart-chord-train-model command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-vs">omnizart-drum-train-model command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-vs">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -y
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-y">omnizart-music-train-model command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="chord/api.html#omnizart.chord.features.augment_feature">augment_feature() (in module omnizart.chord.features)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction">BaseLabelExtraction (class in omnizart.music.labels)</a>
+      <li><a href="music/api.html#omnizart.music.labels.BaseLabelExtraction">BaseLabelExtraction (class in omnizart.music.labels)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.BaseStructure">BaseStructure (class in omnizart.constants.datasets)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="base.html#omnizart.base.BaseTranscription">BaseTranscription (class in omnizart.base)</a>
+</li>
+      <li><a href="constants.html#omnizart.constants.datasets.BeethovenSonatas">BeethovenSonatas (class in omnizart.constants.datasets)</a>
 </li>
       <li><a href="models.html#omnizart.models.spectral_norm_net.SpectralNormalization.build">build() (omnizart.models.spectral_norm_net.SpectralNormalization method)</a>
 </li>
@@ -248,6 +660,8 @@
       <ul>
         <li><a href="models.html#omnizart.models.spectral_norm_net.SpectralNormalization.call">(omnizart.models.spectral_norm_net.SpectralNormalization method)</a>
 </li>
+        <li><a href="models.html#omnizart.models.t2t.MultiHeadAttention.call">(omnizart.models.t2t.MultiHeadAttention method)</a>
+</li>
         <li><a href="models.html#omnizart.models.u_net.MultiHeadAttention.call">(omnizart.models.u_net.MultiHeadAttention method)</a>
 </li>
       </ul></li>
@@ -259,13 +673,19 @@
 </li>
       <li><a href="feature.html#omnizart.feature.cfp.cfp_filterbank">cfp_filterbank() (in module omnizart.feature.cfp)</a>
 </li>
+      <li><a href="constants.html#omnizart.constants.feature.CHORD_INT_MAPPING">CHORD_INT_MAPPING (in module omnizart.constants.feature)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="chord/api.html#omnizart.chord.app.ChordTranscription">ChordTranscription (class in omnizart.chord.app)</a>
+</li>
       <li><a href="models.html#omnizart.models.spectral_norm_net.cnn_attention">cnn_attention() (in module omnizart.models.spectral_norm_net)</a>
 </li>
       <li><a href="models.html#omnizart.models.t2t.combine_heads_2d">combine_heads_2d() (in module omnizart.models.t2t)</a>
 </li>
       <li><a href="models.html#omnizart.models.t2t.combine_last_two_dimensions">combine_last_two_dimensions() (in module omnizart.models.t2t)</a>
+</li>
+      <li><a href="chord/api.html#omnizart.chord.features.compute_tonal_centroids">compute_tonal_centroids() (in module omnizart.chord.features)</a>
 </li>
       <li><a href="models.html#omnizart.models.u_net.conv_block">conv_block() (in module omnizart.models.u_net)</a>
 </li>
@@ -273,7 +693,7 @@
 </li>
       <li><a href="models.html#omnizart.models.spectral_norm_net.ConvSN2D">ConvSN2D (class in omnizart.models.spectral_norm_net)</a>
 </li>
-      <li><a href="drum.html#omnizart.drum.prediction.create_batches">create_batches() (in module omnizart.drum.prediction)</a>
+      <li><a href="drum/api.html#omnizart.drum.prediction.create_batches">create_batches() (in module omnizart.drum.prediction)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -286,14 +706,20 @@
       <li><a href="models.html#omnizart.models.spectral_norm_net.down_sample">down_sample() (in module omnizart.models.spectral_norm_net)</a>
 
       <ul>
-        <li><a href="music.html#omnizart.music.inference.down_sample">(in module omnizart.music.inference)</a>
+        <li><a href="music/api.html#omnizart.music.inference.down_sample">(in module omnizart.music.inference)</a>
 </li>
       </ul></li>
+      <li><a href="utils.html#omnizart.remote.download">download() (in module omnizart.remote)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="utils.html#omnizart.remote.download_large_file_from_google_drive">download_large_file_from_google_drive() (in module omnizart.remote)</a>
+</li>
       <li><a href="models.html#omnizart.models.t2t.dropout_with_broadcast_dims">dropout_with_broadcast_dims() (in module omnizart.models.t2t)</a>
 </li>
       <li><a href="models.html#omnizart.models.spectral_norm_net.drum_model">drum_model() (in module omnizart.models.spectral_norm_net)</a>
+</li>
+      <li><a href="drum/api.html#omnizart.drum.app.DrumTranscription">DrumTranscription (class in omnizart.drum.app)</a>
 </li>
       <li><a href="utils.html#omnizart.utils.dump_pickle">dump_pickle() (in module omnizart.utils)</a>
 </li>
@@ -307,6 +733,8 @@
 </li>
       <li><a href="models.html#omnizart.models.t2t.embedding_to_padding">embedding_to_padding() (in module omnizart.models.t2t)</a>
 </li>
+      <li><a href="constants.html#omnizart.constants.feature.ENHARMONIC_TABLE">ENHARMONIC_TABLE (in module omnizart.constants.feature)</a>
+</li>
       <li><a href="utils.html#omnizart.utils.ensure_path_exists">ensure_path_exists() (in module omnizart.utils)</a>
 </li>
       <li><a href="training.html#omnizart.train.execute_callbacks">execute_callbacks() (in module omnizart.train)</a>
@@ -315,13 +743,21 @@
 </li>
       <li><a href="feature.html#omnizart.feature.cfp.extract_cfp">extract_cfp() (in module omnizart.feature.cfp)</a>
 </li>
+      <li><a href="feature.html#omnizart.feature.cqt.extract_cqt">extract_cqt() (in module omnizart.feature.cqt)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="feature.html#omnizart.feature.cqt.extract_cqt">extract_cqt() (in module omnizart.feature.cqt)</a>
+      <li><a href="chord/api.html#omnizart.chord.features.extract_feature_label">extract_feature_label() (in module omnizart.chord.features)</a>
 </li>
       <li><a href="feature.html#omnizart.feature.hcfp.extract_hcfp">extract_hcfp() (in module omnizart.feature.hcfp)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction.extract_label">extract_label() (omnizart.music.labels.BaseLabelExtraction class method)</a>
+      <li><a href="drum/api.html#omnizart.drum.labels.extract_label">extract_label() (in module omnizart.drum.labels)</a>
+
+      <ul>
+        <li><a href="music/api.html#omnizart.music.labels.BaseLabelExtraction.extract_label">(omnizart.music.labels.BaseLabelExtraction class method)</a>
+</li>
+      </ul></li>
+      <li><a href="drum/api.html#omnizart.drum.labels.extract_label_13_inst">extract_label_13_inst() (in module omnizart.drum.labels)</a>
 </li>
       <li><a href="feature.html#omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path">extract_mini_beat_from_audio_path() (in module omnizart.feature.beat_for_drum)</a>
 </li>
@@ -335,17 +771,33 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.dataset.FeatureDataset">FeatureDataset (class in omnizart.music.dataset)</a>
+      <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard.feature_file_name">feature_file_name (omnizart.constants.datasets.McGillBillBoard attribute)</a>
 </li>
-      <li><a href="feature.html#omnizart.feature.hcfp.fetch_harmonic">fetch_harmonic() (in module omnizart.feature.hcfp)</a>
+      <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard.feature_folder">feature_folder (omnizart.constants.datasets.McGillBillBoard attribute)</a>
 </li>
-      <li><a href="music.html#omnizart.music.inference.find_min_max_stren">find_min_max_stren() (in module omnizart.music.inference)</a>
+      <li><a href="constants.html#omnizart.constants.feature.FEATURE_NAME_TO_NUMBER">FEATURE_NAME_TO_NUMBER (in module omnizart.constants.feature)</a>
 </li>
+      <li><a href="music/api.html#omnizart.music.dataset.FeatureDataset">FeatureDataset (class in omnizart.music.dataset)</a>
+</li>
+      <li><a href="chord/api.html#omnizart.chord.dataset.FeatureLoader">FeatureLoader (class in omnizart.chord.dataset)</a>
+
+      <ul>
+        <li><a href="drum/api.html#omnizart.drum.dataset.FeatureLoader">(class in omnizart.drum.dataset)</a>
+</li>
+        <li><a href="music/api.html#omnizart.music.dataset.FeatureLoader">(class in omnizart.music.dataset)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.inference.find_occur">find_occur() (in module omnizart.music.inference)</a>
+      <li><a href="feature.html#omnizart.feature.hcfp.fetch_harmonic">fetch_harmonic() (in module omnizart.feature.hcfp)</a>
 </li>
-      <li><a href="music.html#omnizart.music.losses.focal_loss">focal_loss() (in module omnizart.music.losses)</a>
+      <li><a href="music/api.html#omnizart.music.inference.find_min_max_stren">find_min_max_stren() (in module omnizart.music.inference)</a>
+</li>
+      <li><a href="music/api.html#omnizart.music.inference.find_occur">find_occur() (in module omnizart.music.inference)</a>
+</li>
+      <li><a href="music/api.html#omnizart.music.losses.focal_loss">focal_loss() (in module omnizart.music.losses)</a>
+</li>
+      <li><a href="utils.html#omnizart.remote.format_byte">format_byte() (in module omnizart.remote)</a>
 </li>
       <li><a href="training.html#omnizart.train.format_num">format_num() (in module omnizart.train)</a>
 </li>
@@ -363,29 +815,55 @@
 </li>
       <li><a href="training.html#omnizart.train.gen_bar_postfix">gen_bar_postfix() (in module omnizart.train)</a>
 </li>
-      <li><a href="music.html#omnizart.music.app.MusicTranscription.generate_feature">generate_feature() (omnizart.music.app.MusicTranscription method)</a>
+      <li><a href="chord/api.html#omnizart.chord.app.ChordTranscription.generate_feature">generate_feature() (omnizart.chord.app.ChordTranscription method)</a>
+
+      <ul>
+        <li><a href="drum/api.html#omnizart.drum.app.DrumTranscription.generate_feature">(omnizart.drum.app.DrumTranscription method)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.LabelType.get_available_modes">get_available_modes() (omnizart.music.labels.LabelType method)</a>
+        <li><a href="music/api.html#omnizart.music.app.MusicTranscription.generate_feature">(omnizart.music.app.MusicTranscription method)</a>
+</li>
+      </ul></li>
+      <li><a href="music/api.html#omnizart.music.labels.LabelType.get_available_modes">get_available_modes() (omnizart.music.labels.LabelType method)</a>
 </li>
       <li><a href="models.html#omnizart.models.spectral_norm_net.ConvSN2D.get_config">get_config() (omnizart.models.spectral_norm_net.ConvSN2D method)</a>
 
       <ul>
+        <li><a href="models.html#omnizart.models.t2t.MultiHeadAttention.get_config">(omnizart.models.t2t.MultiHeadAttention method)</a>
+</li>
         <li><a href="models.html#omnizart.models.u_net.MultiHeadAttention.get_config">(omnizart.models.u_net.MultiHeadAttention method)</a>
+</li>
+      </ul></li>
+      <li><a href="music/api.html#omnizart.music.labels.LabelType.get_conversion_func">get_conversion_func() (omnizart.music.labels.LabelType method)</a>
+</li>
+      <li><a href="chord/api.html#omnizart.chord.dataset.get_dataset">get_dataset() (in module omnizart.chord.dataset)</a>
+
+      <ul>
+        <li><a href="drum/api.html#omnizart.drum.dataset.get_dataset">(in module omnizart.drum.dataset)</a>
+</li>
+        <li><a href="music/api.html#omnizart.music.dataset.get_dataset">(in module omnizart.music.dataset)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.labels.LabelType.get_conversion_func">get_conversion_func() (omnizart.music.labels.LabelType method)</a>
+      <li><a href="music/api.html#omnizart.music.labels.LabelType.get_frame">get_frame() (omnizart.music.labels.LabelType method)</a>
 </li>
-      <li><a href="music.html#omnizart.music.dataset.get_dataset">get_dataset() (in module omnizart.music.dataset)</a>
-</li>
-      <li><a href="music.html#omnizart.music.labels.LabelType.get_frame">get_frame() (omnizart.music.labels.LabelType method)</a>
-</li>
-      <li><a href="music.html#omnizart.music.labels.LabelType.get_frame_onset">get_frame_onset() (omnizart.music.labels.LabelType method)</a>
+      <li><a href="music/api.html#omnizart.music.labels.LabelType.get_frame_onset">get_frame_onset() (omnizart.music.labels.LabelType method)</a>
 </li>
       <li><a href="utils.html#omnizart.utils.get_logger">get_logger() (in module omnizart.utils)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.LabelType.get_out_classes">get_out_classes() (omnizart.music.labels.LabelType method)</a>
+      <li><a href="music/api.html#omnizart.music.labels.LabelType.get_out_classes">get_out_classes() (omnizart.music.labels.LabelType method)</a>
+</li>
+      <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.get_test_labels">get_test_labels() (omnizart.constants.datasets.BaseStructure method)</a>
+</li>
+      <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.get_test_wavs">get_test_wavs() (omnizart.constants.datasets.BaseStructure method)</a>
+</li>
+      <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.get_train_labels">get_train_labels() (omnizart.constants.datasets.BaseStructure method)</a>
+</li>
+      <li><a href="chord/api.html#omnizart.chord.features.get_train_test_split_ids">get_train_test_split_ids() (in module omnizart.chord.features)</a>
+</li>
+      <li><a href="training.html#omnizart.train.get_train_val_feat_file_list">get_train_val_feat_file_list() (in module omnizart.train)</a>
+</li>
+      <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.get_train_wavs">get_train_wavs() (omnizart.constants.datasets.BaseStructure method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -393,11 +871,26 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.inference.infer_piece">infer_piece() (in module omnizart.music.inference)</a>
+      <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard.index_file_path">index_file_path (omnizart.constants.datasets.McGillBillBoard attribute)</a>
 </li>
+      <li><a href="music/api.html#omnizart.music.inference.infer_piece">infer_piece() (in module omnizart.music.inference)</a>
+</li>
+      <li><a href="chord/api.html#omnizart.chord.inference.inference">inference() (in module omnizart.chord.inference)</a>
+</li>
+      <li>
+    INPUT_AUDIO
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-arg-INPUT_AUDIO">omnizart-chord-transcribe command line option</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-arg-INPUT_AUDIO">omnizart-drum-transcribe command line option</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-arg-INPUT_AUDIO">omnizart-music-transcribe command line option</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.inference.interpolation">interpolation() (in module omnizart.music.inference)</a>
+      <li><a href="music/api.html#omnizart.music.inference.interpolation">interpolation() (in module omnizart.music.inference)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -413,28 +906,36 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.labels.Label">Label (class in omnizart.music.labels)</a>
+      <li><a href="music/api.html#omnizart.music.labels.Label">Label (class in omnizart.music.labels)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.label_conversion">label_conversion() (in module omnizart.music.labels)</a>
+      <li><a href="music/api.html#omnizart.music.labels.label_conversion">label_conversion() (in module omnizart.music.labels)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.label_ext">label_ext() (omnizart.constants.datasets.BaseStructure property)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.LabelType">LabelType (class in omnizart.music.labels)</a>
+      <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard.label_file_name">label_file_name (omnizart.constants.datasets.McGillBillBoard attribute)</a>
+</li>
+      <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard.label_folder">label_folder (omnizart.constants.datasets.McGillBillBoard attribute)</a>
+</li>
+      <li><a href="music/api.html#omnizart.music.labels.LabelType">LabelType (class in omnizart.music.labels)</a>
 </li>
       <li><a href="utils.html#omnizart.utils.load_audio_with_librosa">load_audio_with_librosa() (in module omnizart.utils)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction.load_label">load_label() (omnizart.music.labels.BaseLabelExtraction class method)</a>
-
-      <ul>
-        <li><a href="music.html#omnizart.music.labels.MaestroLabelExtraction.load_label">(omnizart.music.labels.MaestroLabelExtraction class method)</a>
+      <li><a href="chord/api.html#omnizart.chord.features.load_feature">load_feature() (in module omnizart.chord.features)</a>
 </li>
-        <li><a href="music.html#omnizart.music.labels.MapsLabelExtraction.load_label">(omnizart.music.labels.MapsLabelExtraction class method)</a>
-</li>
-        <li><a href="music.html#omnizart.music.labels.MusicNetLabelExtraction.load_label">(omnizart.music.labels.MusicNetLabelExtraction class method)</a>
-</li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="chord/api.html#omnizart.chord.features.load_label">load_label() (in module omnizart.chord.features)</a>
+
+      <ul>
+        <li><a href="music/api.html#omnizart.music.labels.BaseLabelExtraction.load_label">(omnizart.music.labels.BaseLabelExtraction class method)</a>
+</li>
+        <li><a href="music/api.html#omnizart.music.labels.MaestroLabelExtraction.load_label">(omnizart.music.labels.MaestroLabelExtraction class method)</a>
+</li>
+        <li><a href="music/api.html#omnizart.music.labels.MapsLabelExtraction.load_label">(omnizart.music.labels.MapsLabelExtraction class method)</a>
+</li>
+        <li><a href="music/api.html#omnizart.music.labels.MusicNetLabelExtraction.load_label">(omnizart.music.labels.MusicNetLabelExtraction class method)</a>
+</li>
+      </ul></li>
       <li><a href="utils.html#omnizart.utils.load_pickle">load_pickle() (in module omnizart.utils)</a>
 </li>
       <li><a href="utils.html#omnizart.utils.load_yaml">load_yaml() (in module omnizart.utils)</a>
@@ -449,17 +950,21 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="feature.html#omnizart.feature.beat_for_drum.MadmomBeatTracking">MadmomBeatTracking (class in omnizart.feature.beat_for_drum)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.MaestroLabelExtraction">MaestroLabelExtraction (class in omnizart.music.labels)</a>
+      <li><a href="music/api.html#omnizart.music.labels.MaestroLabelExtraction">MaestroLabelExtraction (class in omnizart.music.labels)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.MaestroStructure">MaestroStructure (class in omnizart.constants.datasets)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.MapsLabelExtraction">MapsLabelExtraction (class in omnizart.music.labels)</a>
+      <li><a href="music/api.html#omnizart.music.labels.MapsLabelExtraction">MapsLabelExtraction (class in omnizart.music.labels)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.MapsStructure">MapsStructure (class in omnizart.constants.datasets)</a>
 </li>
       <li><a href="models.html#omnizart.models.t2t.maybe_upcast">maybe_upcast() (in module omnizart.models.t2t)</a>
 </li>
-      <li><a href="drum.html#omnizart.drum.prediction.merge_batches">merge_batches() (in module omnizart.drum.prediction)</a>
+      <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard">McGillBillBoard (class in omnizart.constants.datasets)</a>
+</li>
+      <li><a href="drum/api.html#omnizart.drum.prediction.merge_batches">merge_batches() (in module omnizart.drum.prediction)</a>
+</li>
+      <li><a href="constants.html#omnizart.constants.midi.MIDI_PROGRAM_NAME_MAPPING">MIDI_PROGRAM_NAME_MAPPING (in module omnizart.constants.midi)</a>
 </li>
       <li><a href="models.html#omnizart.models.t2t.mixed_precision_is_enabled">mixed_precision_is_enabled() (in module omnizart.models.t2t)</a>
 </li>
@@ -473,7 +978,15 @@
 </li>
         <li><a href="training.html#module-omnizart.callbacks">omnizart.callbacks</a>
 </li>
-        <li><a href="cli.html#module-omnizart.cli.transcribe">omnizart.cli.transcribe</a>
+        <li><a href="chord/api.html#module-omnizart.chord">omnizart.chord</a>
+</li>
+        <li><a href="chord/api.html#module-omnizart.chord.app">omnizart.chord.app</a>
+</li>
+        <li><a href="chord/api.html#module-omnizart.chord.dataset">omnizart.chord.dataset</a>
+</li>
+        <li><a href="chord/api.html#module-omnizart.chord.features">omnizart.chord.features</a>
+</li>
+        <li><a href="chord/api.html#module-omnizart.chord.inference">omnizart.chord.inference</a>
 </li>
         <li><a href="constants.html#module-omnizart.constants">omnizart.constants</a>
 </li>
@@ -483,9 +996,15 @@
 </li>
         <li><a href="constants.html#module-omnizart.constants.midi">omnizart.constants.midi</a>
 </li>
-        <li><a href="drum.html#module-omnizart.drum">omnizart.drum</a>
+        <li><a href="drum/api.html#module-omnizart.drum">omnizart.drum</a>
 </li>
-        <li><a href="drum.html#module-omnizart.drum.prediction">omnizart.drum.prediction</a>
+        <li><a href="drum/api.html#module-omnizart.drum.app">omnizart.drum.app</a>
+</li>
+        <li><a href="drum/api.html#module-omnizart.drum.dataset">omnizart.drum.dataset</a>
+</li>
+        <li><a href="drum/api.html#module-omnizart.drum.labels">omnizart.drum.labels</a>
+</li>
+        <li><a href="drum/api.html#module-omnizart.drum.prediction">omnizart.drum.prediction</a>
 </li>
         <li><a href="feature.html#module-omnizart.feature">omnizart.feature</a>
 </li>
@@ -507,17 +1026,21 @@
 </li>
         <li><a href="models.html#module-omnizart.models.utils">omnizart.models.utils</a>
 </li>
-        <li><a href="music.html#module-omnizart.music.app">omnizart.music.app</a>
+        <li><a href="music/api.html#module-omnizart.music">omnizart.music</a>
 </li>
-        <li><a href="music.html#module-omnizart.music.dataset">omnizart.music.dataset</a>
+        <li><a href="music/api.html#module-omnizart.music.app">omnizart.music.app</a>
 </li>
-        <li><a href="music.html#module-omnizart.music.inference">omnizart.music.inference</a>
+        <li><a href="music/api.html#module-omnizart.music.dataset">omnizart.music.dataset</a>
 </li>
-        <li><a href="music.html#module-omnizart.music.labels">omnizart.music.labels</a>
+        <li><a href="music/api.html#module-omnizart.music.inference">omnizart.music.inference</a>
 </li>
-        <li><a href="music.html#module-omnizart.music.losses">omnizart.music.losses</a>
+        <li><a href="music/api.html#module-omnizart.music.labels">omnizart.music.labels</a>
 </li>
-        <li><a href="music.html#module-omnizart.music.prediction">omnizart.music.prediction</a>
+        <li><a href="music/api.html#module-omnizart.music.losses">omnizart.music.losses</a>
+</li>
+        <li><a href="music/api.html#module-omnizart.music.prediction">omnizart.music.prediction</a>
+</li>
+        <li><a href="utils.html#module-omnizart.remote">omnizart.remote</a>
 </li>
         <li><a href="training.html#module-omnizart.train">omnizart.train</a>
 </li>
@@ -526,21 +1049,27 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.labels.LabelType.multi_inst_frm">multi_inst_frm() (omnizart.music.labels.LabelType method)</a>
+      <li><a href="music/api.html#omnizart.music.labels.LabelType.multi_inst_frm">multi_inst_frm() (omnizart.music.labels.LabelType method)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.LabelType.multi_inst_note">multi_inst_note() (omnizart.music.labels.LabelType method)</a>
+      <li><a href="music/api.html#omnizart.music.labels.LabelType.multi_inst_note">multi_inst_note() (omnizart.music.labels.LabelType method)</a>
 </li>
-      <li><a href="music.html#omnizart.music.inference.multi_inst_note_inference">multi_inst_note_inference() (in module omnizart.music.inference)</a>
+      <li><a href="music/api.html#omnizart.music.inference.multi_inst_note_inference">multi_inst_note_inference() (in module omnizart.music.inference)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.LabelType.multi_pop_note">multi_pop_note() (omnizart.music.labels.LabelType method)</a>
+      <li><a href="music/api.html#omnizart.music.labels.LabelType.multi_pop_note">multi_pop_note() (omnizart.music.labels.LabelType method)</a>
 </li>
-      <li><a href="models.html#omnizart.models.u_net.MultiHeadAttention">MultiHeadAttention (class in omnizart.models.u_net)</a>
+      <li><a href="models.html#omnizart.models.t2t.MultiHeadAttention">MultiHeadAttention (class in omnizart.models.t2t)</a>
+
+      <ul>
+        <li><a href="models.html#omnizart.models.u_net.MultiHeadAttention">(class in omnizart.models.u_net)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.MusicNetLabelExtraction">MusicNetLabelExtraction (class in omnizart.music.labels)</a>
+      </ul></li>
+      <li><a href="constants.html#omnizart.constants.midi.MUSICNET_INSTRUMENT_PROGRAMS">MUSICNET_INSTRUMENT_PROGRAMS (in module omnizart.constants.midi)</a>
+</li>
+      <li><a href="music/api.html#omnizart.music.labels.MusicNetLabelExtraction">MusicNetLabelExtraction (class in omnizart.music.labels)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.MusicNetStructure">MusicNetStructure (class in omnizart.constants.datasets)</a>
 </li>
-      <li><a href="music.html#omnizart.music.app.MusicTranscription">MusicTranscription (class in omnizart.music.app)</a>
+      <li><a href="music/api.html#omnizart.music.app.MusicTranscription">MusicTranscription (class in omnizart.music.app)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -548,21 +1077,23 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction.name_transform">name_transform() (omnizart.music.labels.BaseLabelExtraction class method)</a>
+      <li><a href="music/api.html#omnizart.music.labels.BaseLabelExtraction.name_transform">name_transform() (omnizart.music.labels.BaseLabelExtraction class method)</a>
 
       <ul>
-        <li><a href="music.html#omnizart.music.labels.PopLabelExtraction.name_transform">(omnizart.music.labels.PopLabelExtraction class method)</a>
+        <li><a href="music/api.html#omnizart.music.labels.PopLabelExtraction.name_transform">(omnizart.music.labels.PopLabelExtraction class method)</a>
 </li>
       </ul></li>
       <li><a href="feature.html#omnizart.feature.cfp.nonlinear_func">nonlinear_func() (in module omnizart.feature.cfp)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.inference.norm_onset_dura">norm_onset_dura() (in module omnizart.music.inference)</a>
+      <li><a href="music/api.html#omnizart.music.inference.norm_onset_dura">norm_onset_dura() (in module omnizart.music.inference)</a>
 </li>
-      <li><a href="music.html#omnizart.music.inference.norm_split_onset_dura">norm_split_onset_dura() (in module omnizart.music.inference)</a>
+      <li><a href="music/api.html#omnizart.music.inference.norm_split_onset_dura">norm_split_onset_dura() (in module omnizart.music.inference)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.Label.note">note() (omnizart.music.labels.Label property)</a>
+      <li><a href="music/api.html#omnizart.music.labels.Label.note">note() (omnizart.music.labels.Label property)</a>
+</li>
+      <li><a href="constants.html#omnizart.constants.feature.NOTE_PRIORITY_ARRAY">NOTE_PRIORITY_ARRAY (in module omnizart.constants.feature)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -570,6 +1101,247 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    omnizart-chord-generate-feature command line option
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-d">--dataset-path &lt;dataset_path&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-n">--num-threads &lt;num_threads&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-o">--output-path &lt;output_path&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-d">-d</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-n">-n</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-generate-feature-o">-o</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart-chord-train-model command line option
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-b">--batch-size &lt;batch_size&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-early-stop">--early-stop &lt;early_stop&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-e">--epochs &lt;epochs&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-d">--feature-path &lt;feature_path&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-i">--input-model &lt;input_model&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-learning-rate-decay">--learning-rate-decay &lt;learning_rate_decay&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-m">--model-name &lt;model_name&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-s">--steps &lt;steps&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-vb">--val-batch-size &lt;val_batch_size&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-vs">--val-steps &lt;val_steps&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-b">-b</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-d">-d</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-e">-e</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-i">-i</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-m">-m</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-s">-s</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-vb">-vb</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-train-model-vs">-vs</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart-chord-transcribe command line option
+
+      <ul>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-m">--model-path &lt;model_path&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-o">--output &lt;output&gt;</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-m">-m</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-o">-o</a>
+</li>
+        <li><a href="chord/cli.html#cmdoption-omnizart-chord-transcribe-arg-INPUT_AUDIO">INPUT_AUDIO</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart-drum-generate-feature command line option
+
+      <ul>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-d">--dataset-path &lt;dataset_path&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-n">--num-threads &lt;num_threads&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-o">--output-path &lt;output_path&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-d">-d</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-n">-n</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-generate-feature-o">-o</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart-drum-train-model command line option
+
+      <ul>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-b">--batch-size &lt;batch_size&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-early-stop">--early-stop &lt;early_stop&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-e">--epochs &lt;epochs&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-d">--feature-path &lt;feature_path&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-i">--input-model &lt;input_model&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-m">--model-name &lt;model_name&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-s">--steps &lt;steps&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-vb">--val-batch-size &lt;val_batch_size&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-vs">--val-steps &lt;val_steps&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-b">-b</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-d">-d</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-e">-e</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-i">-i</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-m">-m</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-s">-s</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-vb">-vb</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-train-model-vs">-vs</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart-drum-transcribe command line option
+
+      <ul>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-m">--model-path &lt;model_path&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-o">--output &lt;output&gt;</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-m">-m</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-o">-o</a>
+</li>
+        <li><a href="drum/cli.html#cmdoption-omnizart-drum-transcribe-arg-INPUT_AUDIO">INPUT_AUDIO</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart-music-generate-feature command line option
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-d">--dataset-path &lt;dataset_path&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-h">--harmonic</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-n">--num-threads &lt;num_threads&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-o">--output-path &lt;output_path&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-d">-d</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-h">-h</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-n">-n</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-generate-feature-o">-o</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart-music-train-model command line option
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-b">--batch-size &lt;batch_size&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-early-stop">--early-stop &lt;early_stop&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-e">--epochs &lt;epochs&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-d">--feature-path &lt;feature_path&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-f">--feature-type &lt;feature_type&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-i">--input-model &lt;input_model&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-l">--label-type &lt;label_type&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-n">--loss-function &lt;loss_function&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-m">--model-name &lt;model_name&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-y">--model-type &lt;model_type&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-s">--steps &lt;steps&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-t">--timesteps &lt;timesteps&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-vb">--val-batch-size &lt;val_batch_size&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-vs">--val-steps &lt;val_steps&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-b">-b</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-d">-d</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-e">-e</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-f">-f</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-i">-i</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-l">-l</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-m">-m</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-n">-n</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-s">-s</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-t">-t</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-vb">-vb</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-vs">-vs</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-train-model-y">-y</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    omnizart-music-transcribe command line option
+
+      <ul>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-m">--model-path &lt;model_path&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-o">--output &lt;output&gt;</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-m">-m</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-o">-o</a>
+</li>
+        <li><a href="music/cli.html#cmdoption-omnizart-music-transcribe-arg-INPUT_AUDIO">INPUT_AUDIO</a>
+</li>
+      </ul></li>
       <li>
     omnizart.base
 
@@ -585,10 +1357,38 @@
 </li>
       </ul></li>
       <li>
-    omnizart.cli.transcribe
+    omnizart.chord
 
       <ul>
-        <li><a href="cli.html#module-omnizart.cli.transcribe">module</a>
+        <li><a href="chord/api.html#module-omnizart.chord">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.chord.app
+
+      <ul>
+        <li><a href="chord/api.html#module-omnizart.chord.app">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.chord.dataset
+
+      <ul>
+        <li><a href="chord/api.html#module-omnizart.chord.dataset">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.chord.features
+
+      <ul>
+        <li><a href="chord/api.html#module-omnizart.chord.features">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.chord.inference
+
+      <ul>
+        <li><a href="chord/api.html#module-omnizart.chord.inference">module</a>
 </li>
       </ul></li>
       <li>
@@ -623,14 +1423,35 @@
     omnizart.drum
 
       <ul>
-        <li><a href="drum.html#module-omnizart.drum">module</a>
+        <li><a href="drum/api.html#module-omnizart.drum">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.drum.app
+
+      <ul>
+        <li><a href="drum/api.html#module-omnizart.drum.app">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.drum.dataset
+
+      <ul>
+        <li><a href="drum/api.html#module-omnizart.drum.dataset">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.drum.labels
+
+      <ul>
+        <li><a href="drum/api.html#module-omnizart.drum.labels">module</a>
 </li>
       </ul></li>
       <li>
     omnizart.drum.prediction
 
       <ul>
-        <li><a href="drum.html#module-omnizart.drum.prediction">module</a>
+        <li><a href="drum/api.html#module-omnizart.drum.prediction">module</a>
 </li>
       </ul></li>
       <li>
@@ -668,8 +1489,6 @@
         <li><a href="feature.html#module-omnizart.feature.hcfp">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     omnizart.models
 
@@ -706,45 +1525,59 @@
 </li>
       </ul></li>
       <li>
+    omnizart.music
+
+      <ul>
+        <li><a href="music/api.html#module-omnizart.music">module</a>
+</li>
+      </ul></li>
+      <li>
     omnizart.music.app
 
       <ul>
-        <li><a href="music.html#module-omnizart.music.app">module</a>
+        <li><a href="music/api.html#module-omnizart.music.app">module</a>
 </li>
       </ul></li>
       <li>
     omnizart.music.dataset
 
       <ul>
-        <li><a href="music.html#module-omnizart.music.dataset">module</a>
+        <li><a href="music/api.html#module-omnizart.music.dataset">module</a>
 </li>
       </ul></li>
       <li>
     omnizart.music.inference
 
       <ul>
-        <li><a href="music.html#module-omnizart.music.inference">module</a>
+        <li><a href="music/api.html#module-omnizart.music.inference">module</a>
 </li>
       </ul></li>
       <li>
     omnizart.music.labels
 
       <ul>
-        <li><a href="music.html#module-omnizart.music.labels">module</a>
+        <li><a href="music/api.html#module-omnizart.music.labels">module</a>
 </li>
       </ul></li>
       <li>
     omnizart.music.losses
 
       <ul>
-        <li><a href="music.html#module-omnizart.music.losses">module</a>
+        <li><a href="music/api.html#module-omnizart.music.losses">module</a>
 </li>
       </ul></li>
       <li>
     omnizart.music.prediction
 
       <ul>
-        <li><a href="music.html#module-omnizart.music.prediction">module</a>
+        <li><a href="music/api.html#module-omnizart.music.prediction">module</a>
+</li>
+      </ul></li>
+      <li>
+    omnizart.remote
+
+      <ul>
+        <li><a href="utils.html#module-omnizart.remote">module</a>
 </li>
       </ul></li>
       <li>
@@ -773,24 +1606,28 @@
 </li>
       <li><a href="utils.html#omnizart.utils.parallel_generator">parallel_generator() (in module omnizart.utils)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.PopLabelExtraction">PopLabelExtraction (class in omnizart.music.labels)</a>
+      <li><a href="constants.html#omnizart.constants.midi.POP_INSTRUMENT_PROGRAMES">POP_INSTRUMENT_PROGRAMES (in module omnizart.constants.midi)</a>
+</li>
+      <li><a href="music/api.html#omnizart.music.labels.PopLabelExtraction">PopLabelExtraction (class in omnizart.music.labels)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.PopStructure">PopStructure (class in omnizart.constants.datasets)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#omnizart.models.t2t.positional_encoding">positional_encoding() (in module omnizart.models.t2t)</a>
+</li>
       <li><a href="feature.html#omnizart.feature.cqt.post_process_cqt">post_process_cqt() (in module omnizart.feature.cqt)</a>
 </li>
-      <li><a href="drum.html#omnizart.drum.prediction.predict">predict() (in module omnizart.drum.prediction)</a>
+      <li><a href="drum/api.html#omnizart.drum.prediction.predict">predict() (in module omnizart.drum.prediction)</a>
 
       <ul>
-        <li><a href="music.html#omnizart.music.prediction.predict">(in module omnizart.music.prediction)</a>
+        <li><a href="music/api.html#omnizart.music.prediction.predict">(in module omnizart.music.prediction)</a>
 </li>
       </ul></li>
       <li><a href="feature.html#omnizart.feature.beat_for_drum.MadmomBeatTracking.process">process() (omnizart.feature.beat_for_drum.MadmomBeatTracking method)</a>
 
       <ul>
-        <li><a href="music.html#omnizart.music.labels.BaseLabelExtraction.process">(omnizart.music.labels.BaseLabelExtraction class method)</a>
+        <li><a href="music/api.html#omnizart.music.labels.BaseLabelExtraction.process">(omnizart.music.labels.BaseLabelExtraction class method)</a>
 </li>
       </ul></li>
       <li><a href="training.html#omnizart.train.PROGRESS_BAR_FORMAT">PROGRESS_BAR_FORMAT (in module omnizart.train)</a>
@@ -809,15 +1646,19 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="models.html#omnizart.models.t2t.reshape_range">reshape_range() (in module omnizart.models.t2t)</a>
+      <li><a href="models.html#omnizart.models.t2t.relative_positional_encoding">relative_positional_encoding() (in module omnizart.models.t2t)</a>
 </li>
-      <li><a href="models.html#omnizart.models.spectral_norm_net.residual_block">residual_block() (in module omnizart.models.spectral_norm_net)</a>
+      <li><a href="chord/api.html#omnizart.chord.features.reshape_feature">reshape_feature() (in module omnizart.chord.features)</a>
+</li>
+      <li><a href="models.html#omnizart.models.t2t.reshape_range">reshape_range() (in module omnizart.models.t2t)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#omnizart.models.spectral_norm_net.residual_block">residual_block() (in module omnizart.models.spectral_norm_net)</a>
+</li>
       <li><a href="models.html#omnizart.models.spectral_norm_net.SpectralNormalization.restore_weights">restore_weights() (omnizart.models.spectral_norm_net.SpectralNormalization method)</a>
 </li>
-      <li><a href="music.html#omnizart.music.inference.roll_down_sample">roll_down_sample() (in module omnizart.music.inference)</a>
+      <li><a href="music/api.html#omnizart.music.inference.roll_down_sample">roll_down_sample() (in module omnizart.music.inference)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -827,17 +1668,27 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="models.html#omnizart.models.t2t.scatter_blocks_2d">scatter_blocks_2d() (in module omnizart.models.t2t)</a>
 </li>
+      <li><a href="chord/api.html#omnizart.chord.features.segment_feature">segment_feature() (in module omnizart.chord.features)</a>
+</li>
       <li><a href="models.html#omnizart.models.u_net.semantic_segmentation">semantic_segmentation() (in module omnizart.models.u_net)</a>
 </li>
       <li><a href="models.html#omnizart.models.u_net.semantic_segmentation_attn">semantic_segmentation_attn() (in module omnizart.models.u_net)</a>
 </li>
       <li><a href="models.html#omnizart.models.utils.shape_list">shape_list() (in module omnizart.models.utils)</a>
 </li>
-      <li><a href="music.html#omnizart.music.losses.smooth_loss">smooth_loss() (in module omnizart.music.losses)</a>
+      <li><a href="chord/api.html#omnizart.chord.features.shift_chord">shift_chord() (in module omnizart.chord.features)</a>
+</li>
+      <li><a href="chord/api.html#omnizart.chord.features.shift_chromagram">shift_chromagram() (in module omnizart.chord.features)</a>
+</li>
+      <li><a href="utils.html#omnizart.remote.SIZE_MAPPING">SIZE_MAPPING (in module omnizart.remote)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="music/api.html#omnizart.music.losses.smooth_loss">smooth_loss() (in module omnizart.music.losses)</a>
+</li>
       <li><a href="utils.html#omnizart.utils.snake_to_camel">snake_to_camel() (in module omnizart.utils)</a>
+</li>
+      <li><a href="constants.html#omnizart.constants.midi.SOUNDFONT_PATH">SOUNDFONT_PATH (in module omnizart.constants.midi)</a>
 </li>
       <li><a href="models.html#omnizart.models.spectral_norm_net.SpectralNormalization">SpectralNormalization (class in omnizart.models.spectral_norm_net)</a>
 </li>
@@ -847,7 +1698,9 @@
 </li>
       <li><a href="feature.html#omnizart.feature.cfp.STFT">STFT() (in module omnizart.feature.cfp)</a>
 </li>
-      <li><a href="music.html#omnizart.music.labels.SuLabelExtraction">SuLabelExtraction (class in omnizart.music.labels)</a>
+      <li><a href="music/api.html#omnizart.music.labels.SuLabelExtraction">SuLabelExtraction (class in omnizart.music.labels)</a>
+</li>
+      <li><a href="utils.html#omnizart.utils.synth_midi">synth_midi() (in module omnizart.utils)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -859,12 +1712,16 @@
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.test_wavs">test_wavs() (omnizart.constants.datasets.BaseStructure property)</a>
 </li>
-      <li><a href="music.html#omnizart.music.inference.threshold_type_converter">threshold_type_converter() (in module omnizart.music.inference)</a>
+      <li><a href="music/api.html#omnizart.music.inference.threshold_type_converter">threshold_type_converter() (in module omnizart.music.inference)</a>
 </li>
-      <li><a href="music.html#omnizart.music.inference.to_midi">to_midi() (in module omnizart.music.inference)</a>
+      <li><a href="music/api.html#omnizart.music.inference.to_midi">to_midi() (in module omnizart.music.inference)</a>
 </li>
-      <li><a href="music.html#omnizart.music.app.MusicTranscription.train">train() (omnizart.music.app.MusicTranscription method)</a>
+      <li><a href="drum/api.html#omnizart.drum.app.DrumTranscription.train">train() (omnizart.drum.app.DrumTranscription method)</a>
+
+      <ul>
+        <li><a href="music/api.html#omnizart.music.app.MusicTranscription.train">(omnizart.music.app.MusicTranscription method)</a>
 </li>
+      </ul></li>
       <li><a href="training.html#omnizart.train.train_epochs">train_epochs() (in module omnizart.train)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.train_labels">train_labels() (omnizart.constants.datasets.BaseStructure property)</a>
@@ -873,14 +1730,16 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="training.html#omnizart.train.train_steps">train_steps() (in module omnizart.train)</a>
 </li>
+      <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard.train_test_split_id">train_test_split_id (omnizart.constants.datasets.McGillBillBoard attribute)</a>
+</li>
       <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.train_wavs">train_wavs() (omnizart.constants.datasets.BaseStructure property)</a>
 </li>
-      <li><a href="drum.html#omnizart.drum.app.DrumTranscription.transcribe">transcribe() (in module omnizart.drum.app.DrumTranscription)</a>
+      <li><a href="base.html#omnizart.base.BaseTranscription.transcribe">transcribe() (omnizart.base.BaseTranscription method)</a>
 
       <ul>
-        <li><a href="base.html#omnizart.base.BaseTranscription.transcribe">(omnizart.base.BaseTranscription method)</a>
+        <li><a href="drum/api.html#omnizart.drum.app.DrumTranscription.transcribe">(omnizart.drum.app.DrumTranscription method)</a>
 </li>
-        <li><a href="music.html#omnizart.music.app.MusicTranscription.transcribe">(omnizart.music.app.MusicTranscription method)</a>
+        <li><a href="music/api.html#omnizart.music.app.MusicTranscription.transcribe">(omnizart.music.app.MusicTranscription method)</a>
 </li>
       </ul></li>
       <li><a href="models.html#omnizart.models.u_net.transpose_conv_block">transpose_conv_block() (in module omnizart.models.u_net)</a>
@@ -895,19 +1754,39 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="models.html#omnizart.models.spectral_norm_net.SpectralNormalization.update_weights">update_weights() (omnizart.models.spectral_norm_net.SpectralNormalization method)</a>
 </li>
+      <li><a href="constants.html#omnizart.constants.datasets.BeethovenSonatas.url">url (omnizart.constants.datasets.BeethovenSonatas attribute)</a>
+
+      <ul>
+        <li><a href="constants.html#omnizart.constants.datasets.ExtSuStructure.url">(omnizart.constants.datasets.ExtSuStructure attribute)</a>
+</li>
+        <li><a href="constants.html#omnizart.constants.datasets.MaestroStructure.url">(omnizart.constants.datasets.MaestroStructure attribute)</a>
+</li>
+        <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard.url">(omnizart.constants.datasets.McGillBillBoard attribute)</a>
+</li>
+        <li><a href="constants.html#omnizart.constants.datasets.MusicNetStructure.url">(omnizart.constants.datasets.MusicNetStructure attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.url">url() (omnizart.constants.datasets.BaseStructure property)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="music.html#omnizart.music.labels.Label.velocity">velocity() (omnizart.music.labels.Label property)</a>
+      <li><a href="music/api.html#omnizart.music.labels.Label.velocity">velocity() (omnizart.music.labels.Label property)</a>
 </li>
   </ul></td>
 </tr></table>
 
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="chord/api.html#omnizart.chord.inference.write_csv">write_csv() (in module omnizart.chord.inference)</a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="utils.html#omnizart.utils.write_yaml">write_yaml() (in module omnizart.utils)</a>
 </li>
@@ -920,9 +1799,9 @@
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
 </ul><div class="footer" role="contentinfo">
-      &#169; Copyright 2020, BreezeWhite.
+      &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>
