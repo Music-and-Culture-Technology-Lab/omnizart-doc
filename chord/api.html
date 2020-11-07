@@ -296,19 +296,11 @@ Retrieval Conference (ISMIR), September 2018</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.chord.app.ChordTranscription.generate_feature" title="omnizart.chord.app.ChordTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, …])</p></td>
 <td><p>Extract feature of McGill BillBoard dataset.</p></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 58%" />
-<col style="width: 42%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>train</strong></p></td>
-<td></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.chord.app.ChordTranscription.train" title="omnizart.chord.app.ChordTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, …])</p></td>
+<td><p>Model training.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>transcribe</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.chord.app.ChordTranscription.transcribe" title="omnizart.chord.app.ChordTranscription.transcribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transcribe</span></code></a>(input_audio[, model_path, output])</p></td>
+<td><p>Transcribe chords in the audio.</p></td>
 </tr>
 </tbody>
 </table>
@@ -325,6 +317,67 @@ Retrieval Conference (ISMIR), September 2018</p>
 <p>The last two feature will be both used for computing the training loss.
 During the feature extraction, the feature data is stored as a numpy array
 with named field, makes it works like a dict type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.chord.app.ChordTranscription.train">
+<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">chord_settings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model training.</p>
+<p>Train a new music model or continue to train on a pre-trained model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the generated feature.</p>
+</dd>
+<dt><strong>model_name: str</strong></dt><dd><p>The name of the trained model. If not given, will default to the
+current timestamp.</p>
+</dd>
+<dt><strong>input_model_path: Path</strong></dt><dd><p>Specify the path to the pre-trained model if you want to continue
+to fine-tune on the model.</p>
+</dd>
+<dt><strong>chord_settings: ChordSettings</strong></dt><dd><p>The configuration instance that holds all relative settings for
+the life-cycle of building a model.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.chord.app.ChordTranscription.transcribe">
+<code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transcribe chords in the audio.</p>
+<p>This function transcribes chord progression in the audio and will outputs MIDI
+and CSV files. The MIDI file is provided for quick validation by directly listen
+to the chords. The complete transcription results are listed in the CSV file,
+which contains the chord’s name and the start and end time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>input_audio: Path</strong></dt><dd><p>Path to the raw audio file (.wav).</p>
+</dd>
+<dt><strong>model_path: Path</strong></dt><dd><p>Path to the trained model or the supported transcription mode.</p>
+</dd>
+<dt><strong>output: Path (optional)</strong></dt><dd><p>Path for writing out the transcribed MIDI file. Default to the current path.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>midi: pretty_midi.PrettyMIDI</dt><dd><p>Transcribed chord progression with default chord-to-notes mappings.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.cli.chord.transcribe</span></code></dt><dd><p>CLI entry point of this function.</p>
+</dd>
+<dt><a class="reference internal" href="#module-omnizart.chord.inference" title="omnizart.chord.inference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.chord.inference</span></code></a></dt><dd><p>Records the default chord-to-notes mappings.</p>
+</dd>
+</dl>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -505,6 +558,119 @@ is also a path transformation process when applying the settings into the
 <code class="docutils literal notranslate"><span class="pre">BatchSize</span></code> defined in the yaml path <em>General/Training/Settings/BatchSize</em>,
 the coressponding attribute will be <em>ChordSettings.training.batch_size</em>.
 The level of <em>/Settings</em> is removed among all fields.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+    <span class="nt">TranscriptionMode</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart transribe drum` command.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+        <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ChordV1</span>
+    <span class="nt">CheckpointPath</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to the pre-trained models.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Map</span>
+        <span class="nt">SubType</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">String</span><span class="p p-Indicator">,</span> <span class="nv">String</span><span class="p p-Indicator">]</span>
+        <span class="nt">Value</span><span class="p">:</span>
+            <span class="nt">ChordV1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/chord/chord_v1</span>
+    <span class="nt">Feature</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction for drum transcription.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SegmentWidth</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Width of segments. Each frame last for 0.046 seconds, and thus each segment would last for around 0.5 seconds.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">21</span>
+            <span class="nt">SegmentHop</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Hop size of the segment.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+            <span class="nt">NumSteps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of total steps. Default setting would have around 23 seconds.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
+    <span class="nt">Dataset</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Settings of datasets.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the downloaded datasets.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./</span>
+            <span class="nt">FeatureSavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the extracted feature. Default to the path under the dataset folder.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">+</span>
+    <span class="nt">Model</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of training / testing the model.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePrefix</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Prefix of the trained model&#39;s name to be saved.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">chord</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to save the trained model.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/chord</span>
+            <span class="nt">NumEncAttnBlocks</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of attention blocks for encoder.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+            <span class="nt">NumDecAttnBlocks</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of attention blocks for decoder.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+            <span class="nt">FreqSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Available size on the frequency axis to be seen.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">24</span>
+            <span class="nt">EncInputEmbSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Embedding size of the encoder&#39;s input.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">512</span>
+            <span class="nt">DecInputEmbSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Embedding size of the decoder&#39;s input.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">512</span>
+            <span class="nt">DropoutRate</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Dropout rate of all dropout layers.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.6</span>
+            <span class="nt">AnnealingRate</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">To be added...</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1</span>
+    <span class="nt">Training</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Hyper parameters for training</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">Epoch</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Maximum number of epochs for training.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+            <span class="nt">Steps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of training steps for each epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+            <span class="nt">ValSteps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of validation steps after each training epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
+            <span class="nt">BatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batch size of each training step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">32</span>
+            <span class="nt">ValBatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batch size of each validation step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">32</span>
+            <span class="nt">EarlyStop</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Terminate the training if the validation performance doesn&#39;t imrove after n epochs.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+            <span class="nt">InitLearningRate</span><span class="p">:</span>
+                <span class="nt">Descriptoin</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Initial learning rate.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0001</span>
+            <span class="nt">LearningRateDecay</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Decaying rate of learning rate per epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.96</span>
+</pre></div>
+</div>
 </div>
 </div>
 

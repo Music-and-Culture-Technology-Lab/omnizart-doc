@@ -163,6 +163,8 @@
                 
                   <li class="toctree-l2"><a href="#module-omnizart.drum.dataset" class="reference internal">Dataset</a></li>
                 
+                  <li class="toctree-l2"><a href="#module-omnizart.drum.inference" class="reference internal">Inference</a></li>
+                
                   <li class="toctree-l2"><a href="#module-omnizart.drum.labels" class="reference internal">Labels</a></li>
                 
                   <li class="toctree-l2"><a href="#module-omnizart.drum.prediction" class="reference internal">Prediction</a></li>
@@ -378,9 +380,15 @@ the MIDI file.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>input_audio: Path</strong></dt><dd><p>Path to the raw audio file (.wav).</p>
 </dd>
-<dt><strong>model_path: Path</strong></dt><dd><p>Path to the trained model.</p>
+<dt><strong>model_path: Path</strong></dt><dd><p>Path to the trained model or the supported transcription mode.</p>
 </dd>
-<dt><strong>output: Path (optional)</strong></dt><dd><p>Path for writing out the transcribed MIDI file. Default to current path.</p>
+<dt><strong>output: Path (optional)</strong></dt><dd><p>Path for writing out the transcribed MIDI file. Default to the current path.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>midi: pretty_midi.PrettyMIDI</dt><dd><p>The transcribed drum notes.</p>
 </dd>
 </dl>
 </dd>
@@ -435,6 +443,19 @@ If both given, <code class="docutils literal notranslate"><span class="pre">feat
 </dd>
 </dl>
 </dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.drum.inference">
+<span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.drum.inference" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.drum.inference.get_3inst_ary">
+<code class="sig-prename descclassname">omnizart.drum.inference.</code><code class="sig-name descname">get_3inst_ary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inst_13_ary_in</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.inference.get_3inst_ary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.drum.inference.inference">
+<code class="sig-prename descclassname">omnizart.drum.inference.</code><code class="sig-name descname">inference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">m_beat_arr</span></em>, <em class="sig-param"><span class="n">bass_drum_th</span><span class="o">=</span><span class="default_value">0.85</span></em>, <em class="sig-param"><span class="n">snare_th</span><span class="o">=</span><span class="default_value">1.2</span></em>, <em class="sig-param"><span class="n">hihat_th</span><span class="o">=</span><span class="default_value">0.17</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.inference.inference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="module-omnizart.drum.labels">
@@ -555,6 +576,122 @@ is also a path transformation process when applying the settings into the
 <code class="docutils literal notranslate"><span class="pre">BatchSize</span></code> defined in the yaml path <em>General/Training/Settings/BatchSize</em>,
 the coressponding attribute will be <em>DrumSettings.training.batch_size</em>.
 The level of <em>/Settings</em> is removed among all fields.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+    <span class="nt">TranscriptionMode</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart transribe drum` command.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+        <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">keras</span>
+    <span class="nt">CheckpointPath</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to the pre-trained models.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Map</span>
+        <span class="nt">SubType</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">String</span><span class="p p-Indicator">,</span> <span class="nv">String</span><span class="p p-Indicator">]</span>
+        <span class="nt">Value</span><span class="p">:</span>
+            <span class="nt">keras</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/drum/drum_keras</span>
+    <span class="nt">Feature</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction for drum transcription.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SamplingRate</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Adjust input sampling rate to this value.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">44100</span>
+            <span class="nt">PaddingSeconds</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Padding length to the begin and the end of the raw audio data.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
+            <span class="nt">LowestNote</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Lowest MIDI note number to be considered.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16</span>
+            <span class="nt">NumberOfNotes</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of total notes to extract.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">120</span>
+            <span class="nt">HopSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Hop size for computing CQT feature.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">256</span>
+            <span class="nt">MiniBeatPerBar</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of mini beats in a single 4/4 measure.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">32</span>
+            <span class="nt">MiniBeatPerSegment</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of mini beats in a single 4/4 measure.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+    <span class="nt">Dataset</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Settings of datasets.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the downloaded datasets.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./</span>
+            <span class="nt">FeatureSavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the extracted feature. Default to the path under the dataset folder.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">+</span>
+    <span class="nt">Model</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of training / testing the model.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePrefix</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Prefix of the trained model&#39;s name to be saved.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">drum</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to save the trained model.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/drum</span>
+    <span class="nt">Inference</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings when infereing notes.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">BassDrumTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold for the bass drum.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.85</span>
+            <span class="nt">SnareTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold for the snare.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.2</span>
+            <span class="nt">HihatTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold for the hihat.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.17</span>
+    <span class="nt">Training</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Hyper parameters for training</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">Epoch</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Maximum number of epochs for training.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">50</span>
+            <span class="nt">Steps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of training steps for each epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+            <span class="nt">ValSteps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of validation steps after each training epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span>
+            <span class="nt">BatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batch size of each training step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">32</span>
+            <span class="nt">ValBatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batch size of each validation step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">32</span>
+            <span class="nt">EarlyStop</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Terminate the training if the validation performance doesn&#39;t imrove after n epochs.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+            <span class="nt">InitLearningRate</span><span class="p">:</span>
+                <span class="nt">Descriptoin</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Initial learning rate.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.00002</span>
+            <span class="nt">ResBlockNum</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of residual blocks.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+</pre></div>
+</div>
 </div>
 </div>
 

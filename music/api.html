@@ -381,10 +381,16 @@ The results will be written out as a MIDI file.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>input_audio: Path</strong></dt><dd><p>Path to the wav audio file.</p>
 </dd>
-<dt><strong>model_path: Path</strong></dt><dd><p>Path to the trained model. Should be the folder that contains <cite>arch.yaml</cite>, <cite>weights.h5</cite>, and
-<cite>configuration.yaml</cite>.</p>
+<dt><strong>model_path: Path</strong></dt><dd><p>Path to the trained model or the transcription mode. If given a path, should be
+the folder that contains <cite>arch.yaml</cite>, <cite>weights.h5</cite>, and <cite>configuration.yaml</cite>.</p>
 </dd>
 <dt><strong>output: Path (optional)</strong></dt><dd><p>Path for writing out the transcribed MIDI file. Default to current path.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>midi: pretty_midi.PrettyMIDI</dt><dd><p>The transcribed notes of different instruments.</p>
 </dd>
 </dl>
 </dd>
@@ -451,7 +457,7 @@ under the same folder.</p>
 
 <dl class="py class">
 <dt id="omnizart.music.dataset.FeatureLoader">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.dataset.</code><code class="sig-name descname">FeatureLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_conversion_func</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">[1, 3]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.dataset.FeatureLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.dataset.</code><code class="sig-name descname">FeatureLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_conversion_func</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">[1, 3]</span></em>, <em class="sig-param"><span class="n">feature_num</span><span class="o">=</span><span class="default_value">352</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.dataset.FeatureLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Feature loader for training <code class="docutils literal notranslate"><span class="pre">music</span></code> model.</p>
 <p>Random samples the feature and label pair in the dataset, does not gaurantee that
 all samples will be used while training.</p>
@@ -459,7 +465,7 @@ all samples will be used while training.</p>
 
 <dl class="py function">
 <dt id="omnizart.music.dataset.get_dataset">
-<code class="sig-prename descclassname">omnizart.music.dataset.</code><code class="sig-name descname">get_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_conversion_func</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">8</span></em>, <em class="sig-param"><span class="n">steps</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">[1, 3]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.dataset.get_dataset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">omnizart.music.dataset.</code><code class="sig-name descname">get_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_conversion_func</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">8</span></em>, <em class="sig-param"><span class="n">steps</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">[1, 3]</span></em>, <em class="sig-param"><span class="n">feature_num</span><span class="o">=</span><span class="default_value">352</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.dataset.get_dataset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the dataset instance.</p>
 <p>Use this function to get the dataset instance and don’t initialize
 the dataset instance yourself, since it may lead to unknown behavior
@@ -483,6 +489,15 @@ under the same folder.</p>
 <dt><strong>timesteps: int</strong></dt><dd><p>Time length of the feature.</p>
 </dd>
 <dt><strong>channels: list[int]</strong></dt><dd><p>Channels to be used for training. Allowed values are [1, 2, 3].</p>
+</dd>
+<dt><strong>feature_num: int</strong></dt><dd><p>Target input size of feature dimension. Padding zeros to the bottom and top
+if the input feature size and target size is inconsistent.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>dataset: tf.data.Dataset</dt><dd><p>A tensorflow dataset instance.</p>
 </dd>
 </dl>
 </dd>
@@ -1244,6 +1259,180 @@ is also a path transformation process when applying the settings into the
 <code class="docutils literal notranslate"><span class="pre">BatchSize</span></code> defined in the yaml path <em>General/Training/Settings/BatchSize</em>,
 the coressponding attribute will be <em>MusicSettings.training.batch_size</em>.
 The level of <em>/Settings</em> is removed among all fields.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-documented configurable settings, with description, type hint, and available</span>
+<span class="c1"># options. All the parameters can be overriden by another specified configuration file </span>
+<span class="c1"># with selected parameters.</span>
+
+
+<span class="nt">General</span><span class="p">:</span>
+    <span class="nt">TranscriptionMode</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart transribe music` command.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span> 
+        <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Piano</span>
+    <span class="nt">CheckpointPath</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to the pre-trained models.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Map</span>
+        <span class="nt">SubType</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">String</span><span class="p p-Indicator">,</span> <span class="nv">String</span><span class="p p-Indicator">]</span>
+        <span class="nt">Value</span><span class="p">:</span>
+            <span class="nt">Piano</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/music/music_piano</span>
+            <span class="nt">Pop</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/music/music_pop</span>
+            <span class="nt">Stream</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/music/music_note_stream</span>
+    <span class="nt">Feature</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">HopSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Hop size in seconds with respect to sampling rate.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.02</span>
+            <span class="nt">SamplingRate</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Adjust input sampling rate to this value.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">44100</span>
+            <span class="nt">WindowSize</span><span class="p">:</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">7939</span>
+            <span class="nt">FrequencyResolution</span><span class="p">:</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+            <span class="nt">FrequencyCenter</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Lowest frequency to extract.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">27.5</span>
+            <span class="nt">TimeCenter</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Highest frequency to extract (1/time_center).</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.00022287</span>
+            <span class="nt">Gamma</span><span class="p">:</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">List</span>
+                <span class="nt">SubType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">0.24</span><span class="p p-Indicator">,</span> <span class="nv">0.6</span><span class="p p-Indicator">,</span> <span class="nv">1.0</span><span class="p p-Indicator">]</span>
+            <span class="nt">BinsPerOctave</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of bins for each octave.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">48</span>
+            <span class="nt">HarmonicNumber</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of harmonic bins of HCFP feature.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+            <span class="nt">Harmonic</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Whether to use harmonic version of the input feature for training.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Bool</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+    <span class="nt">Dataset</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Settings of datasets.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the downloaded datasets.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./</span>
+            <span class="nt">FeatureType</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Type of feature to extract.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CFP</span>
+                <span class="nt">Choices</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;CFP&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;HCFP&quot;</span><span class="p p-Indicator">]</span>
+            <span class="nt">FeatureSavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the extracted feature. Default to the path under the dataset folder.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">+</span>
+    <span class="nt">Model</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of training / testing the model.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePrefix</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Prefix of the trained model&#39;s name to be saved.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">music</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to save the trained model.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/music</span>
+            <span class="nt">ModelType</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default model type to be used for training</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">attn</span>
+                <span class="nt">Choices</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;aspp&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;attn&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">Inference</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings when infering notes.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">MinLength</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Minimum length of a note in seconds.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.05</span>
+            <span class="nt">InstTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold for filtering instruments.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1</span>
+            <span class="nt">OnsetTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold of predicted onset channel.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6.0</span>
+            <span class="nt">DuraTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold of predicted duration channel.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span>
+            <span class="nt">FrameTh</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold of frame-level predictions.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span>
+    <span class="nt">Training</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Parameters for training</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">Epoch</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Maximum number of epochs for training.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">20</span>
+            <span class="nt">Steps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of training steps for each epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3000</span>
+            <span class="nt">ValSteps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of validation steps after each training epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
+            <span class="nt">BatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batch size of each training step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+            <span class="nt">ValBatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batch size of each validation step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8</span>
+            <span class="nt">EarlyStop</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Terminate the training if the validation performance doesn&#39;t imrove after n epochs.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6</span>
+            <span class="nt">LossFunction</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Loss function for computing the objectives.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">smooth</span>
+                <span class="nt">Choices</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;smooth&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;focal&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;bce&quot;</span><span class="p p-Indicator">]</span>
+            <span class="nt">LabelType</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Determines the training target to be single- or multi-instrument scenario, and more options.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">note-stream</span>
+                <span class="nt">Choices</span><span class="p">:</span> 
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">note-stream</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">frame-stream</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">note</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">frame</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true-frame</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true-frame-stream</span>
+                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pop-note-stream</span>
+            <span class="nt">Channels</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Use different types of feature for training.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">List</span>
+                <span class="nt">SubType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;Spec&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;Ceps&quot;</span><span class="p p-Indicator">]</span>
+                <span class="nt">Choices</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;Spec&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;GCoS&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;Ceps&quot;</span><span class="p p-Indicator">]</span>
+            <span class="nt">Timesteps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Length of time axis of the input feature.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">256</span>
+            <span class="nt">FeatureNum</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The target size of feature dimension.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">352</span>
+</pre></div>
+</div>
 </div>
 </div>
 
