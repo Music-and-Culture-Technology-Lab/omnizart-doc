@@ -274,12 +274,14 @@ system-wide this time.</p>
 <span class="c1"># Install with virtual environment</span>
 ./scripts/install.sh venv
 
-<span class="c1"># Use &#39;poetry&#39; for installation</span>
-<span class="nb">export</span> <span class="nv">DEFAULT_VENV_APPROACH</span><span class="o">=</span>poetry
-./scripts/install.sh
-
+<span class="c1">## For conda user, the following approach is recommanded, since there</span>
+<span class="c1">## are some conflicts between poetry and conda.</span>
 <span class="c1"># Use built-in &#39;venv&#39; libarary for installation</span>
 <span class="nb">export</span> <span class="nv">DEFAULT_VENV_APPROACH</span><span class="o">=</span>venv
+./scripts/install.sh
+
+<span class="c1"># Use &#39;poetry&#39; for installation</span>
+<span class="nb">export</span> <span class="nv">DEFAULT_VENV_APPROACH</span><span class="o">=</span>poetry
 ./scripts/install.sh
 </pre></div>
 </div>
@@ -316,7 +318,7 @@ omnizart download-checkpoints
 <h2>Transcribe a pop song<a class="headerlink" href="#transcribe-a-pop-song" title="Permalink to this headline">¶</a></h2>
 <p>Transcribes a song into a MIDI file and a CSV file that contains more complete
 and representative information.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart transcribe all &lt;path/to/audio.wav&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart music transcribe &lt;path/to/audio.wav&gt;
 </pre></div>
 </div>
 </div>
