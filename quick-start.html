@@ -114,7 +114,7 @@
                 
                   <li class="toctree-l2"><a href="#installation" class="reference internal">Installation</a></li>
                 
-                  <li class="toctree-l2"><a href="#transcribe-a-pop-song" class="reference internal">Transcribe a pop song</a></li>
+                  <li class="toctree-l2"><a href="#transcribe-a-song" class="reference internal">Transcribe a song</a></li>
                 
               </ul>
             
@@ -276,12 +276,12 @@ system-wide this time.</p>
 
 <span class="c1">## For conda user, the following approach is recommanded, since there</span>
 <span class="c1">## are some conflicts between poetry and conda.</span>
-<span class="c1"># Use built-in &#39;venv&#39; libarary for installation</span>
-<span class="nb">export</span> <span class="nv">DEFAULT_VENV_APPROACH</span><span class="o">=</span>venv
+<span class="c1"># Use pip for installation. Takes longer time.</span>
+<span class="nb">export</span> <span class="nv">DEFAULT_INSTALL_APPROACH</span><span class="o">=</span>pip
 ./scripts/install.sh
 
-<span class="c1"># Use &#39;poetry&#39; for installation</span>
-<span class="nb">export</span> <span class="nv">DEFAULT_VENV_APPROACH</span><span class="o">=</span>poetry
+<span class="c1"># Use poetry for installation. Install pacakges in parallel, and thus much faster.</span>
+<span class="nb">export</span> <span class="nv">DEFAULT_INSTALL_APPROACH</span><span class="o">=</span>poetry
 ./scripts/install.sh
 </pre></div>
 </div>
@@ -306,6 +306,7 @@ pip install --upgrade pip
 pip install --upgrade setuptools
 
 <span class="c1"># May encounter problems when installing the dependency &#39;madmom&#39;</span>
+pip install -r requirements.txt
 python setup.py install
 
 <span class="c1"># Download the checkpoints</span>
@@ -314,8 +315,8 @@ omnizart download-checkpoints
 </div>
 </div>
 </div>
-<div class="section" id="transcribe-a-pop-song">
-<h2>Transcribe a pop song<a class="headerlink" href="#transcribe-a-pop-song" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="transcribe-a-song">
+<h2>Transcribe a song<a class="headerlink" href="#transcribe-a-song" title="Permalink to this headline">¶</a></h2>
 <p>Transcribes a song into a MIDI file and a CSV file that contains more complete
 and representative information.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart music transcribe &lt;path/to/audio.wav&gt;
