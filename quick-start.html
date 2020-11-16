@@ -25,7 +25,7 @@
   <link rel="index" title="Index" href="genindex.html" />
   <link rel="search" title="Search" href="search.html" />
   <link rel="next" title="Tutorial" href="tutorial.html" />
-  <link rel="prev" title="Omniscient Mozart’s Document" href="index.html" /> 
+  <link rel="prev" title="Omniscient Mozart" href="index.html" /> 
   </head>
 
   <body>
@@ -41,14 +41,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#omniscient-mozart-s-document"
+      <a href="index.html#demo"
          class="nav-link  router-link-active">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#omniscient-mozart-s-document"
+      <a href="index.html#demo"
          class="nav-link ">
          API Reference
       </a>
@@ -71,14 +71,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#omniscient-mozart-s-document"
+      <a href="index.html#demo"
          class="nav-link  router-link-active">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#omniscient-mozart-s-document"
+      <a href="index.html#demo"
          class="nav-link ">
          API Reference
       </a>
@@ -103,7 +103,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#omniscient-mozart-s-document">Contents</a></span>
+        <span class="caption-text"><a href="index.html#demo">Contents</a></span>
       </p>
       <ul class="current">
         
@@ -115,6 +115,8 @@
                   <li class="toctree-l2"><a href="#installation" class="reference internal">Installation</a></li>
                 
                   <li class="toctree-l2"><a href="#transcribe-a-song" class="reference internal">Transcribe a song</a></li>
+                
+                  <li class="toctree-l2"><a href="#synthesize" class="reference internal">Synthesize</a></li>
                 
               </ul>
             
@@ -150,7 +152,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#omniscient-mozart-s-document">API Reference</a></span>
+        <span class="caption-text"><a href="index.html#demo">API Reference</a></span>
       </p>
       <ul class="">
         
@@ -227,7 +229,7 @@
   <ul class="page-nav">
   <li class="prev">
     <a href="index.html"
-       title="previous chapter">← Omniscient Mozart’s Document</a>
+       title="previous chapter">← Omniscient Mozart</a>
   </li>
   <li class="next">
     <a href="tutorial.html"
@@ -241,6 +243,7 @@
             
   <div class="section" id="quick-start">
 <h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://bit.ly/omnizart-colab">Colab</a> &lt;- Try <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> online now, without any local installation and efforts!!</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="using-pip">
@@ -323,6 +326,18 @@ and representative information.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="synthesize">
+<h2>Synthesize<a class="headerlink" href="#synthesize" title="Permalink to this headline">¶</a></h2>
+<p>After transcribing, it is usually hard to directly listen to the MIDI, which needs
+additional soundfont to synthesize the symbolic representation into raw audio.</p>
+<p>We hear your voice! We provide a built-in command, with default soundfont already
+included, to transform the MIDI into wav file. Execute following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart synth example.mid
+</pre></div>
+</div>
+<p>When you execute the first time, it takes a little while for downloading the
+free-licensed soundfont.</p>
+</div>
 </div>
 
 
@@ -331,7 +346,7 @@ and representative information.</p>
             <div class="inner"><ul class="page-nav">
   <li class="prev">
     <a href="index.html"
-       title="previous chapter">← Omniscient Mozart’s Document</a>
+       title="previous chapter">← Omniscient Mozart</a>
   </li>
   <li class="next">
     <a href="tutorial.html"
@@ -340,7 +355,7 @@ and representative information.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

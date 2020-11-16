@@ -40,14 +40,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#omniscient-mozart-s-document"
+      <a href="index.html#demo"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#omniscient-mozart-s-document"
+      <a href="index.html#demo"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -70,14 +70,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#omniscient-mozart-s-document"
+      <a href="index.html#demo"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#omniscient-mozart-s-document"
+      <a href="index.html#demo"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -102,7 +102,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#omniscient-mozart-s-document">Contents</a></span>
+        <span class="caption-text"><a href="index.html#demo">Contents</a></span>
       </p>
       <ul class="">
         
@@ -141,7 +141,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#omniscient-mozart-s-document">API Reference</a></span>
+        <span class="caption-text"><a href="index.html#demo">API Reference</a></span>
       </p>
       <ul class="current">
         
@@ -316,6 +316,19 @@ the original downloaded file.</p>
 <div class="section" id="module-omnizart.utils">
 <span id="utility-functions"></span><h2>Utility Functions<a class="headerlink" href="#module-omnizart.utils" title="Permalink to this headline">¶</a></h2>
 <p>Various utility functions for this project.</p>
+<dl class="py class">
+<dt id="omnizart.utils.LazyLoader">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">LazyLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">local_name</span></em>, <em class="sig-param"><span class="n">parent_module_globals</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">warning</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.LazyLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lazily import a module, mainly to avoid pulling in large dependencies.</p>
+<p>Original implementations are from tensorflow <a class="reference internal" href="#r4293d5747efb-1" id="id1">[1]</a>.</p>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r4293d5747efb-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/util/lazy_loader.py">https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/util/lazy_loader.py</a></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py function">
 <dt id="omnizart.utils.camel_to_snake">
 <code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">camel_to_snake</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.camel_to_snake" title="Permalink to this definition">¶</a></dt>
@@ -491,7 +504,7 @@ __dict__ attribute.</p>
 
 <dl class="py function">
 <dt id="omnizart.utils.synth_midi">
-<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">synth_midi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">midi_path</span></em>, <em class="sig-param"><span class="n">sampling_rate</span><span class="o">=</span><span class="default_value">44100</span></em>, <em class="sig-param"><span class="n">out_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.synth_midi" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">synth_midi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">midi_path</span></em>, <em class="sig-param"><span class="n">output_path</span></em>, <em class="sig-param"><span class="n">sampling_rate</span><span class="o">=</span><span class="default_value">44100</span></em>, <em class="sig-param"><span class="n">sf2_path</span><span class="o">=</span><span class="default_value">'/home/runner/work/omnizart/omnizart/omnizart/resource/soundfonts.sf2'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.synth_midi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Synthesize MIDI into wav audio.</p>
 </dd></dl>
 
@@ -514,7 +527,7 @@ __dict__ attribute.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

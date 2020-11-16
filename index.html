@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Omniscient Mozart’s Document</title>
+      <title>Omniscient Mozart</title>
     
       <link rel="stylesheet" href="_static/pygments.css">
       <link rel="stylesheet" href="_static/theme.css">
@@ -40,14 +40,14 @@
 
   
     <div class="nav-item">
-      <a href="#omniscient-mozart-s-document"
+      <a href="#demo"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="#omniscient-mozart-s-document"
+      <a href="#demo"
          class="nav-link ">
          API Reference
       </a>
@@ -70,14 +70,14 @@
 
   
     <div class="nav-item">
-      <a href="#omniscient-mozart-s-document"
+      <a href="#demo"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="#omniscient-mozart-s-document"
+      <a href="#demo"
          class="nav-link ">
          API Reference
       </a>
@@ -102,7 +102,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="#omniscient-mozart-s-document">Contents</a></span>
+        <span class="caption-text"><a href="#demo">Contents</a></span>
       </p>
       <ul class="">
         
@@ -141,7 +141,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="#omniscient-mozart-s-document">API Reference</a></span>
+        <span class="caption-text"><a href="#demo">API Reference</a></span>
       </p>
       <ul class="">
         
@@ -211,7 +211,7 @@
   <ul class="breadcrumbs">
     <li><a href="#">Docs</a> &raquo;</li>
     
-    <li>Omniscient Mozart’s Document</li>
+    <li>Omniscient Mozart</li>
   </ul>
   
 
@@ -226,17 +226,38 @@
 <hr>
           <div class="content" role="main">
             
-  <div class="section" id="omniscient-mozart-s-document">
-<h1>Omniscient Mozart’s Document<a class="headerlink" href="#omniscient-mozart-s-document" title="Permalink to this headline">¶</a></h1>
-<p>A command line tool for all kinds of transcription tasks, including vocal melody, drum percussion,
+  <div class="section" id="omniscient-mozart">
+<h1>Omniscient Mozart<a class="headerlink" href="#omniscient-mozart" title="Permalink to this headline">¶</a></h1>
+<p><strong>Omnizart</strong>, a command line tool for all kinds of transcription tasks, including vocal melody, drum percussion,
 chord progression, notes of instruments, and beat tracking.</p>
-<p>All works are developed by <a class="reference external" href="https://sites.google.com/view/mctl/home">MCTLab</a>.</p>
+<p>Provides a consistent way for managing the life-cycle of transcription tasks, from dataset
+downloading, feature pre-processing, model training, to the final MIDI inference and synthesizing
+the output MIDI to raw audio. Pre-trained models are also provided for immediate use.</p>
+<p>Everything are deliberately designed for the ease of use. We’ve put a large amount of energies
+and time for making <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> comfortable to use.</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/features.png" src="_images/features.png" />
+<p class="caption"><span class="caption-text">Omnizart provides a complete solution for managing every stage in the life-cycle of transcription tasks.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<p>Here is an demonstration of the chord and drum transcription using our system.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hjJhweRlE-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Result of chord transcription.</p>
+<audio controls="controls">
+   <source src="_audio/high_chord_synth.mp3" type="audio/mpeg">
+   Your browser does not support the <code>audio</code> element.
+</audio><p>Result of drum transcription.</p>
+<audio controls="controls">
+   <source src="_audio/high_drum_synth.mp3" type="audio/mpeg">
+   Your browser does not support the <code>audio</code> element.
+</audio><p>All works are developed by <a class="reference external" href="https://sites.google.com/view/mctl/home">MCTLab</a>.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="quick-start.html#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quick-start.html#transcribe-a-song">Transcribe a song</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#synthesize">Synthesize</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a><ul>
@@ -334,6 +355,7 @@ chord progression, notes of instruments, and beat tracking.</p>
 </ul>
 </div>
 </div>
+</div>
 
 
           </div>
@@ -346,7 +368,7 @@ chord progression, notes of instruments, and beat tracking.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>
