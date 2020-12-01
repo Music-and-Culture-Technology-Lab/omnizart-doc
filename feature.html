@@ -262,34 +262,15 @@
 
 <dl class="py function">
 <dt id="omnizart.feature.cfp.extract_cfp">
-<code class="sig-prename descclassname">omnizart.feature.cfp.</code><code class="sig-name descname">extract_cfp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">hop</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">win_size</span><span class="o">=</span><span class="default_value">7939</span></em>, <em class="sig-param"><span class="n">fr</span><span class="o">=</span><span class="default_value">2.0</span></em>, <em class="sig-param"><span class="n">fc</span><span class="o">=</span><span class="default_value">27.5</span></em>, <em class="sig-param"><span class="n">tc</span><span class="o">=</span><span class="default_value">0.00022286605749944285</span></em>, <em class="sig-param"><span class="n">g</span><span class="o">=</span><span class="default_value">[0.24, 0.6, 1]</span></em>, <em class="sig-param"><span class="n">bin_per_octave</span><span class="o">=</span><span class="default_value">48</span></em>, <em class="sig-param"><span class="n">down_fs</span><span class="o">=</span><span class="default_value">44100</span></em>, <em class="sig-param"><span class="n">max_sample</span><span class="o">=</span><span class="default_value">2000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_cfp" title="Permalink to this definition">¶</a></dt>
-<dd><p>CFP feature extraction function.</p>
-<p>Given the audio path, returns the CFP feature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>Z</dt><dd><p>Multiplication of spectrum and cepstrum</p>
-</dd>
-<dt>tfrL0</dt><dd><p>Spectrum of the audio.</p>
-</dd>
-<dt>tfrLF</dt><dd><p>Generalized Cepstrum of Spectrum (GCoS).</p>
-</dd>
-<dt>tfrLQ</dt><dd><p>Cepstrum of the audio</p>
-</dd>
-<dt>cen_freq</dt><dd><p>Central frequencies of the feature dimension.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<p>The CFP approach was first proposed in <a class="reference internal" href="#r79fe513ea8a7-1" id="id1">[1]</a></p>
-<dl class="citation">
-<dt class="label" id="r79fe513ea8a7-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>L. Su and Y. Yang, “Combining Spectral and Temporal Representations for Multipitch Estimation of Polyphonic
-Music,” in IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2015.</p>
-</dd>
-</dl>
+<code class="sig-prename descclassname">omnizart.feature.cfp.</code><code class="sig-name descname">extract_cfp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">down_fs</span><span class="o">=</span><span class="default_value">44100</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_cfp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap around _extract_cfp.</p>
+<p>Separate load audio from the actual CFP extraction.</p>
 </dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.feature.cfp.extract_vocal_cfp">
+<code class="sig-prename descclassname">omnizart.feature.cfp.</code><code class="sig-name descname">extract_vocal_cfp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">down_fs</span><span class="o">=</span><span class="default_value">16000</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_vocal_cfp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt id="omnizart.feature.cfp.freq_to_log_freq_mapping">
@@ -309,6 +290,11 @@ Music,” in IEEE/ACM Transactions on Audio, Speech, and Language Processing, 20
 <dl class="py function">
 <dt id="omnizart.feature.cfp.quef_to_log_freq_mapping">
 <code class="sig-prename descclassname">omnizart.feature.cfp.</code><code class="sig-name descname">quef_to_log_freq_mapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ceps</span></em>, <em class="sig-param"><span class="n">q</span></em>, <em class="sig-param"><span class="n">fs</span></em>, <em class="sig-param"><span class="n">fc</span></em>, <em class="sig-param"><span class="n">tc</span></em>, <em class="sig-param"><span class="n">NumPerOct</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.quef_to_log_freq_mapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.feature.cfp.spectral_flux">
+<code class="sig-prename descclassname">omnizart.feature.cfp.</code><code class="sig-name descname">spectral_flux</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spec</span></em>, <em class="sig-param"><span class="n">invert</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">norm</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.spectral_flux" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

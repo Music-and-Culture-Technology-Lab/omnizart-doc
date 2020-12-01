@@ -161,7 +161,7 @@
                 
                   <li class="toctree-l2"><a href="#module-omnizart.drum.app" class="reference internal">App</a></li>
                 
-                  <li class="toctree-l2"><a href="#module-omnizart.drum.dataset" class="reference internal">Dataset</a></li>
+                  <li class="toctree-l2"><a href="#dataset" class="reference internal">Dataset</a></li>
                 
                   <li class="toctree-l2"><a href="#module-omnizart.drum.inference" class="reference internal">Inference</a></li>
                 
@@ -404,46 +404,16 @@ the MIDI file.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.drum.dataset">
-<span id="dataset"></span><h2>Dataset<a class="headerlink" href="#module-omnizart.drum.dataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.drum.dataset.FeatureLoader">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.drum.dataset.</code><code class="sig-name descname">FeatureLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">mini_beat_per_seg</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.dataset.FeatureLoader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Feature loader of Pop dataset.</p>
-<p>The iterator makes sure that every sample in the dataset will be used.</p>
+<dt id="omnizart.drum.app.PopDatasetLoader">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.drum.app.</code><code class="sig-name descname">PopDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mini_beat_per_seg</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">slice_hop</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.PopDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
+<p>Pop dataset loader for training drum model.</p>
 </dd></dl>
 
-<dl class="py function">
-<dt id="omnizart.drum.dataset.get_dataset">
-<code class="sig-prename descclassname">omnizart.drum.dataset.</code><code class="sig-name descname">get_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">32</span></em>, <em class="sig-param"><span class="n">steps</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.dataset.get_dataset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the dataset instance.</p>
-<p>A quick way to get and setup the dataset instance for training/validation.</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the folder containing extracted feature files (<a href="#id2"><span class="problematic" id="id3">*</span></a>.hdf).</p>
-</dd>
-<dt><strong>feature_files: list[Path]</strong></dt><dd><p>List of paths to the feature files with extension <cite>.hdf</cite>. This parameter
-gives the ability to have more control on which files to use.</p>
-<p>Either <code class="docutils literal notranslate"><span class="pre">feature_folder</span></code> or <code class="docutils literal notranslate"><span class="pre">feature_files</span></code> should be specified.
-If both given, <code class="docutils literal notranslate"><span class="pre">feature_files</span></code> will be used.</p>
-</dd>
-<dt><strong>batch_size: int</strong></dt><dd><p>Size of input batch for each training step.</p>
-</dd>
-<dt><strong>steps: int</strong></dt><dd><p>Total steps of each epoch.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>dataset: tf.data.Dataset</dt><dd><p>A tensorflow dataset instance with optimized setup.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
+</div>
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-omnizart.drum.inference">
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.drum.inference" title="Permalink to this headline">¶</a></h2>
@@ -578,7 +548,7 @@ the coressponding attribute will be <em>DrumSettings.training.batch_size</em>.
 The level of <em>/Settings</em> is removed among all fields.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
     <span class="nt">TranscriptionMode</span><span class="p">:</span>
-        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart transribe drum` command.</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart drum transcribe` command.</span>
         <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
         <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">keras</span>
     <span class="nt">CheckpointPath</span><span class="p">:</span>
@@ -586,7 +556,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
         <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Map</span>
         <span class="nt">SubType</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">String</span><span class="p p-Indicator">,</span> <span class="nv">String</span><span class="p p-Indicator">]</span>
         <span class="nt">Value</span><span class="p">:</span>
-            <span class="nt">keras</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/drum/drum_keras</span>
+            <span class="nt">keras</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/drum/drum_keras</span>
     <span class="nt">Feature</span><span class="p">:</span>
         <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction for drum transcription.</span>
         <span class="nt">Settings</span><span class="p">:</span>

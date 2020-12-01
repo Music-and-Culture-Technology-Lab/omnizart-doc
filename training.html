@@ -518,6 +518,55 @@ training period.</p>
 </table>
 </dd></dl>
 
+<dl class="py class">
+<dt id="omnizart.callbacks.TFModelCheckpoint">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.callbacks.</code><code class="sig-name descname">TFModelCheckpoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">monitor</span><span class="o">=</span><span class="default_value">'val_loss'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">save_best_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">save_weights_only</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">save_freq</span><span class="o">=</span><span class="default_value">'epoch'</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.TFModelCheckpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Re-implementation of Tensorflow ModelCheckpoint.</p>
+<p>Customize the behaviour of saving the checkpoints.
+When specify save_weights_only to ‘True’, save the weights only during training, and save
+the whole model including architecture using model.save() at the end of training.</p>
+<p>This callback is mainly designed for saving customized models that is unable to
+use model.to_yaml() function.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.callbacks.TFModelCheckpoint.on_train_end" title="omnizart.callbacks.TFModelCheckpoint.on_train_end"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_train_end</span></code></a>(logs)</p></td>
+<td><p>Called at the end of training.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 57%" />
+<col style="width: 43%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>set_model</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.callbacks.TFModelCheckpoint.on_train_end">
+<code class="sig-name descname">on_train_end</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.TFModelCheckpoint.on_train_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called at the end of training.</p>
+<p>Subclasses should override for any actions to run.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>logs: Dict. Currently the output of the last call to <cite>on_epoch_end()</cite></dt><dd><p>is passed to this argument for this method but that may change in
+the future.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 

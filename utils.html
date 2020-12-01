@@ -275,6 +275,12 @@ the original downloaded file.</p>
 </dd>
 </dl>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>path: Path</dt><dd><p>The absolute path to the downloaded/extracted folder/file.</p>
+</dd>
+</dl>
+</dd>
 </dl>
 </dd></dl>
 
@@ -300,6 +306,12 @@ name from the given url.</p>
 </dd>
 <dt><strong>unzip: bool</strong></dt><dd><p>Whether to unzip (decompress) the downloaded file (assumed zipped). Will not delete
 the original downloaded file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>path: Path</dt><dd><p>The absolute path to the downloaded/extracted folder/file.</p>
 </dd>
 </dl>
 </dd>
@@ -333,23 +345,6 @@ the original downloaded file.</p>
 <dt id="omnizart.utils.camel_to_snake">
 <code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">camel_to_snake</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.camel_to_snake" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a camel case to snake case</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="omnizart.utils.dump_pickle">
-<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">dump_pickle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">save_to</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.dump_pickle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Dump data to the given path.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>data: python objects</strong></dt><dd><p>Data to store. Should be python built-in types like <cite>dict</cite>, <cite>list</cite>, <cite>str</cite>, <cite>int</cite>, etc</p>
-</dd>
-<dt><strong>save_to: Path</strong></dt><dd><p>The full path to store the pickle file, including file name.
-Will create the directory if the given path doesn’t exist.</p>
-</dd>
-</dl>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -442,58 +437,13 @@ __dict__ attribute.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.load_audio_with_librosa">
-<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">load_audio_with_librosa</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">audio_path</span></em>, <em class="sig-param"><span class="n">sampling_rate</span><span class="o">=</span><span class="default_value">44100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.load_audio_with_librosa" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load audio from the given path with librosa.load</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>audio_path: Path</strong></dt><dd><p>Path to the audio.</p>
-</dd>
-<dt><strong>sampling_rate: int</strong></dt><dd><p>Target sampling rate after loaded.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>audio: 1D numpy array</dt><dd><p>Raw data of the audio.</p>
-</dd>
-<dt>tar_sampling_rate: int</dt><dd><p>Sampling rate of the audio. Will be the same as the given <code class="docutils literal notranslate"><span class="pre">sampling_rate</span></code>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="omnizart.utils.load_pickle">
-<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">load_pickle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pickle_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.load_pickle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load pickle file from the given path</p>
-<p>Read and returns the data from the given pickle file path</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>pickle_file: Path</strong></dt><dd><p>The full path to the pickle file for read</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>object</dt><dd><p>Python object, could be <cite>dict</cite>, <cite>list</cite>, <cite>str</cite>, etc.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="omnizart.utils.load_yaml">
-<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">load_yaml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">yaml_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.load_yaml" title="Permalink to this definition">¶</a></dt>
+<dt id="omnizart.utils.parallel_generator">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">parallel_generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">input_list</span></em>, <em class="sig-param"><span class="n">max_workers</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">use_thread</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">chunk_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">600</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.parallel_generator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.parallel_generator">
-<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">parallel_generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">input_list</span></em>, <em class="sig-param"><span class="n">max_workers</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">use_thread</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">chunk_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">300</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.parallel_generator" title="Permalink to this definition">¶</a></dt>
+<dt id="omnizart.utils.resolve_dataset_type">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">resolve_dataset_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em>, <em class="sig-param"><span class="n">keywords</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.resolve_dataset_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -507,11 +457,6 @@ __dict__ attribute.</p>
 <code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">synth_midi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">midi_path</span></em>, <em class="sig-param"><span class="n">output_path</span></em>, <em class="sig-param"><span class="n">sampling_rate</span><span class="o">=</span><span class="default_value">44100</span></em>, <em class="sig-param"><span class="n">sf2_path</span><span class="o">=</span><span class="default_value">'/home/runner/work/omnizart/omnizart/omnizart/resource/soundfonts.sf2'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.synth_midi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Synthesize MIDI into wav audio.</p>
 </dd></dl>
-
-<dl class="py function">
-<dt id="omnizart.utils.write_yaml">
-<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">write_yaml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">json_obj</span></em>, <em class="sig-param"><span class="n">output_path</span></em>, <em class="sig-param"><span class="n">dump</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.write_yaml" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </div>
 </div>

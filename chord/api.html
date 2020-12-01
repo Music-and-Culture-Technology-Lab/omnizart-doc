@@ -169,7 +169,7 @@
                 
                   <li class="toctree-l2"><a href="#module-omnizart.chord.features" class="reference internal">Feature</a></li>
                 
-                  <li class="toctree-l2"><a href="#module-omnizart.chord.dataset" class="reference internal">Dataset</a></li>
+                  <li class="toctree-l2"><a href="#dataset" class="reference internal">Dataset</a></li>
                 
                   <li class="toctree-l2"><a href="#module-omnizart.chord.inference" class="reference internal">Inference</a></li>
                 
@@ -298,10 +298,13 @@ Retrieval Conference (ISMIR), September 2018</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.chord.app.ChordTranscription.generate_feature" title="omnizart.chord.app.ChordTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, …])</p></td>
 <td><p>Extract feature of McGill BillBoard dataset.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.chord.app.ChordTranscription.train" title="omnizart.chord.app.ChordTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.chord.app.ChordTranscription.get_model" title="omnizart.chord.app.ChordTranscription.get_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_model</span></code></a>(settings)</p></td>
+<td><p>Get the chord model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.chord.app.ChordTranscription.train" title="omnizart.chord.app.ChordTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, …])</p></td>
 <td><p>Model training.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.chord.app.ChordTranscription.transcribe" title="omnizart.chord.app.ChordTranscription.transcribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transcribe</span></code></a>(input_audio[, model_path, output])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.chord.app.ChordTranscription.transcribe" title="omnizart.chord.app.ChordTranscription.transcribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transcribe</span></code></a>(input_audio[, model_path, output])</p></td>
 <td><p>Transcribe chords in the audio.</p></td>
 </tr>
 </tbody>
@@ -319,6 +322,14 @@ Retrieval Conference (ISMIR), September 2018</p>
 <p>The last two feature will be both used for computing the training loss.
 During the feature extraction, the feature data is stored as a numpy array
 with named field, makes it works like a dict type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.chord.app.ChordTranscription.get_model">
+<code class="sig-name descname">get_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.get_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the chord model.</p>
+<p>More comprehensive reasons to having this method, please refer to
+<code class="docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription.get_model</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -382,6 +393,28 @@ which contains the chord’s name and the start and end time.</p>
 </div>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt id="omnizart.chord.app.McGillDatasetLoader">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.chord.app.</code><code class="sig-name descname">McGillDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">slice_hop</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.McGillDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
+<p>McGill BillBoard dataset loader.</p>
+<p>The feature column name stored in the .hdf files is slightly different from
+others, which the name is <code class="docutils literal notranslate"><span class="pre">chroma</span></code>, not <code class="docutils literal notranslate"><span class="pre">feature</span></code>.
+Also the returned label should be a tuple of two different ground-truth labels
+to fit the training scenario.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>feature:</dt><dd><p>Input feature for training the model.</p>
+</dd>
+<dt>label: tuple</dt><dd><p>gt_chord -&gt; Ground-truth chord label.
+gt_chord_change -&gt; Ground-truth chord change label.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -501,41 +534,8 @@ training set, and others for testing set.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-omnizart.chord.dataset">
-<span id="dataset"></span><h2>Dataset<a class="headerlink" href="#module-omnizart.chord.dataset" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="omnizart.chord.dataset.FeatureLoader">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.chord.dataset.</code><code class="sig-name descname">FeatureLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.dataset.FeatureLoader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Feature loader of <code class="docutils literal notranslate"><span class="pre">chord</span></code> module.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the folder that contains the extracted feature files.</p>
-</dd>
-<dt><strong>feature_files: list[Path]</strong></dt><dd><p>List of paths to the feature files. One of <em>feature_folder</em> or <em>feature_files</em>
-must be specified.</p>
-</dd>
-<dt><strong>num_samples: int</strong></dt><dd><p>Total sample number to be yielded.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Yields</dt>
-<dd class="field-even"><dl class="simple">
-<dt>feature:</dt><dd><p>Input feature for training the model.</p>
-</dd>
-<dt>label: tuple</dt><dd><p>gt_chord -&gt; Ground-truth chord label.
-gt_chord_change -&gt; Ground-truth chord change label.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="omnizart.chord.dataset.get_dataset">
-<code class="sig-prename descclassname">omnizart.chord.dataset.</code><code class="sig-name descname">get_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">epochs</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">8</span></em>, <em class="sig-param"><span class="n">steps</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.dataset.get_dataset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-omnizart.chord.inference">
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.chord.inference" title="Permalink to this headline">¶</a></h2>
@@ -562,7 +562,7 @@ the coressponding attribute will be <em>ChordSettings.training.batch_size</em>.
 The level of <em>/Settings</em> is removed among all fields.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
     <span class="nt">TranscriptionMode</span><span class="p">:</span>
-        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart transribe drum` command.</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart chord transcribe` command.</span>
         <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
         <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ChordV1</span>
     <span class="nt">CheckpointPath</span><span class="p">:</span>
@@ -570,7 +570,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
         <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Map</span>
         <span class="nt">SubType</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">String</span><span class="p p-Indicator">,</span> <span class="nv">String</span><span class="p p-Indicator">]</span>
         <span class="nt">Value</span><span class="p">:</span>
-            <span class="nt">ChordV1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/chord/chord_v1</span>
+            <span class="nt">ChordV1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/chord/chord_v1</span>
     <span class="nt">Feature</span><span class="p">:</span>
         <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction for drum transcription.</span>
         <span class="nt">Settings</span><span class="p">:</span>
