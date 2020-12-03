@@ -137,6 +137,12 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
@@ -164,6 +170,12 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="vocal/api.html" class="reference internal ">Vocal Transcription</a>
+
+            
+          </li>
+
+        
           <li class="toctree-l1 "><a href="feature.html" class="reference internal ">Feature</a>
 
             
@@ -182,6 +194,8 @@
                   <li class="toctree-l2"><a href="#module-omnizart.models.spectral_norm_net" class="reference internal">Spectral Normalization Model</a></li>
                 
                   <li class="toctree-l2"><a href="#module-omnizart.models.chord_model" class="reference internal">Chord Transformer</a></li>
+                
+                  <li class="toctree-l2"><a href="#pyramid-net" class="reference internal">Pyramid Net</a></li>
                 
                   <li class="toctree-l2"><a href="#module-omnizart.models.utils" class="reference internal">Utils</a></li>
                 
@@ -1495,8 +1509,26 @@ are prefixed with <cite>val_</cite>.</p>
 <dd></dd></dl>
 
 </div>
+<div class="section" id="pyramid-net">
+<h2>Pyramid Net<a class="headerlink" href="#pyramid-net" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-omnizart.models.utils">
 <span id="utils"></span><h2>Utils<a class="headerlink" href="#module-omnizart.models.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.models.utils.get_contour">
+<code class="sig-prename descclassname">omnizart.models.utils.</code><code class="sig-name descname">get_contour</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.utils.get_contour" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.models.utils.note_res_downsampling">
+<code class="sig-prename descclassname">omnizart.models.utils.</code><code class="sig-name descname">note_res_downsampling</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">score</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.utils.note_res_downsampling" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.models.utils.padding">
+<code class="sig-prename descclassname">omnizart.models.utils.</code><code class="sig-name descname">padding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">feature_num</span></em>, <em class="sig-param"><span class="n">timesteps</span></em>, <em class="sig-param"><span class="n">dimension</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.utils.padding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py function">
 <dt id="omnizart.models.utils.shape_list">
 <code class="sig-prename descclassname">omnizart.models.utils.</code><code class="sig-name descname">shape_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_tensor</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.utils.shape_list" title="Permalink to this definition">¶</a></dt>

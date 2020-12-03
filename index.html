@@ -136,6 +136,12 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
@@ -158,6 +164,12 @@
 
         
           <li class="toctree-l1 "><a href="chord/api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal/api.html" class="reference internal ">Vocal Transcription</a>
 
             
           </li>
@@ -250,7 +262,17 @@ and time for making <code class="docutils literal notranslate"><span class="pre"
 <audio controls="controls">
    <source src="_audio/high_drum_synth.mp3" type="audio/mpeg">
    Your browser does not support the <code>audio</code> element.
-</audio><p>All works are developed by <a class="reference external" href="https://sites.google.com/view/mctl/home">MCTLab</a>.</p>
+</audio><p>Result of vocal transcription.</p>
+<audio controls="controls">
+   <source src="_audio/high_vocal_synth.mp3" type="audio/mpeg">
+   Your browser does not support the <code>audio</code> element.
+</audio><p>Result of vocal pitch contour transcription.</p>
+<audio controls="controls">
+   <source src="_audio/high_vocal_contour.mp3" type="audio/mpeg">
+   Your browser does not support the <code>audio</code> element.
+</audio><p>Source files can be downloaded <a class="reference external" href="https://drive.google.com/file/d/15VqHearznV9L83cyl61ccACsXXJ4vBHo/view?usp=sharing">here</a>.
+You can use <em>Audacity</em> to open it.</p>
+<p>All works are developed under <a class="reference external" href="https://sites.google.com/view/mctl/home">MCTLab</a>.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents</span></p>
 <ul>
@@ -286,6 +308,12 @@ and time for making <code class="docutils literal notranslate"><span class="pre"
 <li class="toctree-l2"><a class="reference internal" href="chord/cli.html#train-model">train-model</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="vocal/cli.html">omnizart vocal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vocal/cli.html#transcribe">transcribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal/cli.html#generate-feature">generate-feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal/cli.html#train-model">train-model</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -293,7 +321,7 @@ and time for making <code class="docutils literal notranslate"><span class="pre"
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="music/api.html">Music Transcription</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="music/api.html#feature-storage-format">Feature Storage Format</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music/api.html#module-omnizart.music.app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="music/api.html#app">App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="music/api.html#dataset">Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="music/api.html#module-omnizart.music.inference">Inference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="music/api.html#module-omnizart.music.losses">Loss Functions</a></li>
@@ -304,7 +332,7 @@ and time for making <code class="docutils literal notranslate"><span class="pre"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="drum/api.html">Drum Transcription</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="drum/api.html#feature-storage-format">Feature Storage Format</a></li>
-<li class="toctree-l2"><a class="reference internal" href="drum/api.html#module-omnizart.drum.app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drum/api.html#app">App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drum/api.html#dataset">Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drum/api.html#module-omnizart.drum.inference">Inference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drum/api.html#module-omnizart.drum.labels">Labels</a></li>
@@ -314,11 +342,21 @@ and time for making <code class="docutils literal notranslate"><span class="pre"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chord/api.html">Chord Transcription</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="chord/api.html#feature-storage-format">Feature Storage Format</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chord/api.html#module-omnizart.chord.app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chord/api.html#app">App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chord/api.html#module-omnizart.chord.features">Feature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chord/api.html#dataset">Dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chord/api.html#module-omnizart.chord.inference">Inference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chord/api.html#settings">Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vocal/api.html">Vocal Transcription</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vocal/api.html#feature-storage-format">Feature Storage Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal/api.html#app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal/api.html#dataset">Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal/api.html#module-omnizart.vocal.inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal/api.html#module-omnizart.vocal.labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal/api.html#module-omnizart.vocal.prediction">Prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal/api.html#settings">Settings</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="feature.html">Feature</a><ul>
@@ -333,6 +371,7 @@ and time for making <code class="docutils literal notranslate"><span class="pre"
 <li class="toctree-l2"><a class="reference internal" href="models.html#module-omnizart.models.t2t">Tensor2Tensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html#module-omnizart.models.spectral_norm_net">Spectral Normalization Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html#module-omnizart.models.chord_model">Chord Transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#pyramid-net">Pyramid Net</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html#module-omnizart.models.utils">Utils</a></li>
 </ul>
 </li>
@@ -341,7 +380,12 @@ and time for making <code class="docutils literal notranslate"><span class="pre"
 <li class="toctree-l2"><a class="reference internal" href="training.html#module-omnizart.callbacks">Callbacks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="base.html">Base Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base.html">Base Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base.html#transcription">Transcription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#label">Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#dataset-loader">Dataset Loader</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="constants.html">Constants</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="constants.html#feature">Feature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="constants.html#datasets">Datasets</a></li>

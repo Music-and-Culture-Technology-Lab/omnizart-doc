@@ -137,6 +137,12 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
@@ -159,6 +165,12 @@
 
         
           <li class="toctree-l1 "><a href="chord/api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal/api.html" class="reference internal ">Vocal Transcription</a>
 
             
           </li>
@@ -400,14 +412,14 @@ ground-truth files are stored.</p>
 <dl class="py attribute">
 <dt id="omnizart.constants.datasets.BaseStructure.test_wavs">
 <code class="sig-name descname">test_wavs</code><em class="property"> = None</em><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.test_wavs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Records folders that contains testing wav files.</p>
+<dd><p>Record folders that contain testing wav files.</p>
 <p>Same as what <cite>train_wavs</cite> does, but for testing wav files.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="omnizart.constants.datasets.BaseStructure.train_labels">
 <code class="sig-name descname">train_labels</code><em class="property"> = None</em><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.train_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Records folders that contains training labels.</p>
+<dd><p>Record folders that contains training labels.</p>
 <p>Similar to the <cite>train_wavs</cite> function, records information of where the corresponding
 ground-truth files are stored.</p>
 </dd></dl>
@@ -415,7 +427,7 @@ ground-truth files are stored.</p>
 <dl class="py attribute">
 <dt id="omnizart.constants.datasets.BaseStructure.train_wavs">
 <code class="sig-name descname">train_wavs</code><em class="property"> = None</em><a class="headerlink" href="#omnizart.constants.datasets.BaseStructure.train_wavs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Records folders that contains trainig wav files.</p>
+<dd><p>Record folders that contain trainig wav files.</p>
 <p>The path to sub-folders should be the relative path to root folder of the dataset.</p>
 <p class="rubric">Examples</p>
 <p>Assume the structure of the dataset looks like following</p>
@@ -428,8 +440,8 @@ ground-truth files are stored.</p>
 <div class="line">   └── AkPnBcht</div>
 </div>
 </div>
-<p>Where <code class="docutils literal notranslate"><span class="pre">AkPnCGdD</span></code> and <code class="docutils literal notranslate"><span class="pre">AkPnBcht</span></code> are the folders store the wav files.
-The function should return a list like:</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">AkPnCGdD</span></code> and <code class="docutils literal notranslate"><span class="pre">AkPnBcht</span></code> are the folders that store the wav files.
+The function should then return a list like:</p>
 <div class="line-block">
 <div class="line">&gt;&gt;&gt; [‘MAPS_AkPnCGdD_2/AkPnCGdD’, ‘MAPS_AkPnBcht_2/AkPnBcht’]</div>
 </div>

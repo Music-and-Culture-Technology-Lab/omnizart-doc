@@ -24,7 +24,7 @@
     
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Music Transcription" href="../music/api.html" />
+  <link rel="next" title="omnizart vocal" href="../vocal/cli.html" />
   <link rel="prev" title="omnizart drum" href="../drum/cli.html" /> 
   </head>
 
@@ -147,6 +147,12 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
@@ -169,6 +175,12 @@
 
         
           <li class="toctree-l1 "><a href="api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal/api.html" class="reference internal ">Vocal Transcription</a>
 
             
           </li>
@@ -232,8 +244,8 @@
        title="previous chapter">← omnizart drum</a>
   </li>
   <li class="next">
-    <a href="../music/api.html"
-       title="next chapter">Music Transcription →</a>
+    <a href="../vocal/cli.html"
+       title="next chapter">omnizart vocal →</a>
   </li>
 </ul>
   
@@ -297,13 +309,13 @@
 <dl class="std option">
 <dt id="cmdoption-omnizart-chord-generate-feature-o">
 <span id="cmdoption-omnizart-chord-generate-feature-output-path"></span><code class="sig-name descname">-o</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--output-path</code><code class="sig-prename descclassname"> &lt;output_path&gt;</code><a class="headerlink" href="#cmdoption-omnizart-chord-generate-feature-o" title="Permalink to this definition">¶</a></dt>
-<dd><p>Path for svaing the extracted feature. Default to the folder under the dataset.</p>
+<dd><p>Path for saving the extracted feature. Default to the folder under the dataset.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-chord-generate-feature-n">
 <span id="cmdoption-omnizart-chord-generate-feature-num-threads"></span><code class="sig-name descname">-n</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--num-threads</code><code class="sig-prename descclassname"> &lt;num_threads&gt;</code><a class="headerlink" href="#cmdoption-omnizart-chord-generate-feature-n" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parallel extract the feature by using multiple threads.</p>
+<dd><p>Number of threads used for parallel feature extraction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>4</p>
@@ -337,7 +349,7 @@
 <dl class="std option">
 <dt id="cmdoption-omnizart-chord-train-model-i">
 <span id="cmdoption-omnizart-chord-train-model-input-model"></span><code class="sig-name descname">-i</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--input-model</code><code class="sig-prename descclassname"> &lt;input_model&gt;</code><a class="headerlink" href="#cmdoption-omnizart-chord-train-model-i" title="Permalink to this definition">¶</a></dt>
-<dd><p>If given, the training will continue to fine-tune on the pre-trained model.</p>
+<dd><p>If given, the training will continue to fine-tune the pre-trained model.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -373,7 +385,7 @@
 <dl class="std option">
 <dt id="cmdoption-omnizart-chord-train-model-early-stop">
 <code class="sig-name descname">--early-stop</code><code class="sig-prename descclassname"> &lt;early_stop&gt;</code><a class="headerlink" href="#cmdoption-omnizart-chord-train-model-early-stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stop the training after the given epoch number if the validation accuracy did not improve.</p>
+<dd><p>Stop the training if validation accuracy does not improve over the given number of epochs.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -395,8 +407,8 @@
        title="previous chapter">← omnizart drum</a>
   </li>
   <li class="next">
-    <a href="../music/api.html"
-       title="next chapter">Music Transcription →</a>
+    <a href="../vocal/cli.html"
+       title="next chapter">omnizart vocal →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.

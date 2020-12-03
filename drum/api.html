@@ -137,6 +137,12 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
@@ -159,7 +165,7 @@
                 
                   <li class="toctree-l2"><a href="#feature-storage-format" class="reference internal">Feature Storage Format</a></li>
                 
-                  <li class="toctree-l2"><a href="#module-omnizart.drum.app" class="reference internal">App</a></li>
+                  <li class="toctree-l2"><a href="#app" class="reference internal">App</a></li>
                 
                   <li class="toctree-l2"><a href="#dataset" class="reference internal">Dataset</a></li>
                 
@@ -177,6 +183,12 @@
 
         
           <li class="toctree-l1 "><a href="../chord/api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal/api.html" class="reference internal ">Vocal Transcription</a>
 
             
           </li>
@@ -287,8 +299,8 @@ Audio-to-MIDI Aligned Data” (in submission)</p>
 </dl>
 </div>
 </div>
-<div class="section" id="module-omnizart.drum.app">
-<span id="app"></span><h2>App<a class="headerlink" href="#module-omnizart.drum.app" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="app">
+<h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.drum.app.DrumTranscription">
 <em class="property">class </em><code class="sig-prename descclassname">omnizart.drum.app.</code><code class="sig-name descname">DrumTranscription</code><a class="headerlink" href="#omnizart.drum.app.DrumTranscription" title="Permalink to this definition">¶</a></dt>
@@ -404,6 +416,9 @@ the MIDI file.</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.drum.app.PopDatasetLoader">
 <em class="property">class </em><code class="sig-prename descclassname">omnizart.drum.app.</code><code class="sig-name descname">PopDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mini_beat_per_seg</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">slice_hop</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.PopDatasetLoader" title="Permalink to this definition">¶</a></dt>
@@ -411,9 +426,6 @@ the MIDI file.</p>
 <p>Pop dataset loader for training drum model.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="dataset">
-<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-omnizart.drum.inference">
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.drum.inference" title="Permalink to this headline">¶</a></h2>
@@ -550,13 +562,13 @@ The level of <em>/Settings</em> is removed among all fields.</p>
     <span class="nt">TranscriptionMode</span><span class="p">:</span>
         <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart drum transcribe` command.</span>
         <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
-        <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">keras</span>
+        <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Keras</span>
     <span class="nt">CheckpointPath</span><span class="p">:</span>
         <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to the pre-trained models.</span>
         <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Map</span>
         <span class="nt">SubType</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">String</span><span class="p p-Indicator">,</span> <span class="nv">String</span><span class="p p-Indicator">]</span>
         <span class="nt">Value</span><span class="p">:</span>
-            <span class="nt">keras</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/drum/drum_keras</span>
+            <span class="nt">Keras</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/drum/drum_keras</span>
     <span class="nt">Feature</span><span class="p">:</span>
         <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction for drum transcription.</span>
         <span class="nt">Settings</span><span class="p">:</span>

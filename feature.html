@@ -25,7 +25,7 @@
   <link rel="index" title="Index" href="genindex.html" />
   <link rel="search" title="Search" href="search.html" />
   <link rel="next" title="Models" href="models.html" />
-  <link rel="prev" title="Chord Transcription" href="chord/api.html" /> 
+  <link rel="prev" title="Vocal Transcription" href="vocal/api.html" /> 
   </head>
 
   <body>
@@ -137,6 +137,12 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
@@ -159,6 +165,12 @@
 
         
           <li class="toctree-l1 "><a href="chord/api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal/api.html" class="reference internal ">Vocal Transcription</a>
 
             
           </li>
@@ -230,8 +242,8 @@
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="chord/api.html"
-       title="previous chapter">← Chord Transcription</a>
+    <a href="vocal/api.html"
+       title="previous chapter">← Vocal Transcription</a>
   </li>
   <li class="next">
     <a href="models.html"
@@ -263,14 +275,65 @@
 <dl class="py function">
 <dt id="omnizart.feature.cfp.extract_cfp">
 <code class="sig-prename descclassname">omnizart.feature.cfp.</code><code class="sig-name descname">extract_cfp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">down_fs</span><span class="o">=</span><span class="default_value">44100</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_cfp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wrap around _extract_cfp.</p>
-<p>Separate load audio from the actual CFP extraction.</p>
+<dd><p>CFP feature extraction function.</p>
+<p>Given the audio path, returns the CFP feature. Will automatically process
+the feature in parallel to accelerate the computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename: Path</strong></dt><dd><p>Path to the audio.</p>
+</dd>
+<dt><strong>hop: float</strong></dt><dd><p>Hop size in seconds, with regard to the sampling rate.</p>
+</dd>
+<dt><strong>win_size: int</strong></dt><dd><p>Window size.</p>
+</dd>
+<dt><strong>fr: float</strong></dt><dd><p>Frequency resolution.</p>
+</dd>
+<dt><strong>fc: float</strong></dt><dd><p>Lowest start frequency.</p>
+</dd>
+<dt><strong>tc: float</strong></dt><dd><p>Inverse number of the highest frequency bound.</p>
+</dd>
+<dt><strong>g: list[float]</strong></dt><dd><p>Power factor of the output STFT results.</p>
+</dd>
+<dt><strong>bin_per_octave: int</strong></dt><dd><p>Number of bins in each octave.</p>
+</dd>
+<dt><strong>down_fs: int</strong></dt><dd><p>Resample to this sampling rate, if the loaded audio has a different value.</p>
+</dd>
+<dt><strong>max_sample: int</strong></dt><dd><p>Maximum number of frames to be processed for each computation. Adjust to
+a smaller number if your RAM is not enough.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Z</dt><dd><p>Multiplication of spectrum and cepstrum</p>
+</dd>
+<dt>tfrL0</dt><dd><p>Spectrum of the audio.</p>
+</dd>
+<dt>tfrLF</dt><dd><p>Generalized Cepstrum of Spectrum (GCoS).</p>
+</dd>
+<dt>tfrLQ</dt><dd><p>Cepstrum of the audio</p>
+</dd>
+<dt>cen_freq</dt><dd><p>Central frequencies to each feature.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>The CFP approach was first proposed in <a class="reference internal" href="#r79fe513ea8a7-1" id="id1">[1]</a></p>
+<dl class="citation">
+<dt class="label" id="r79fe513ea8a7-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>L. Su and Y. Yang, “Combining Spectral and Temporal Representations for Multipitch Estimation of Polyphonic
+Music,” in IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2015.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="omnizart.feature.cfp.extract_vocal_cfp">
 <code class="sig-prename descclassname">omnizart.feature.cfp.</code><code class="sig-name descname">extract_vocal_cfp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">down_fs</span><span class="o">=</span><span class="default_value">16000</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_vocal_cfp" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Specialized CFP feature extraction for vocal submodule.</p>
+</dd></dl>
 
 <dl class="py function">
 <dt id="omnizart.feature.cfp.freq_to_log_freq_mapping">
@@ -459,8 +522,8 @@ beat resolution. We use linear interpolation to generate the mini beats.</p>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="chord/api.html"
-       title="previous chapter">← Chord Transcription</a>
+    <a href="vocal/api.html"
+       title="previous chapter">← Vocal Transcription</a>
   </li>
   <li class="next">
     <a href="models.html"

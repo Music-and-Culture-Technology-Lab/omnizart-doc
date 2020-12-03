@@ -25,7 +25,7 @@
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
   <link rel="next" title="Drum Transcription" href="../drum/api.html" />
-  <link rel="prev" title="omnizart chord" href="../chord/cli.html" /> 
+  <link rel="prev" title="omnizart vocal" href="../vocal/cli.html" /> 
   </head>
 
   <body>
@@ -137,6 +137,12 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
@@ -153,7 +159,7 @@
                 
                   <li class="toctree-l2"><a href="#feature-storage-format" class="reference internal">Feature Storage Format</a></li>
                 
-                  <li class="toctree-l2"><a href="#module-omnizart.music.app" class="reference internal">App</a></li>
+                  <li class="toctree-l2"><a href="#app" class="reference internal">App</a></li>
                 
                   <li class="toctree-l2"><a href="#dataset" class="reference internal">Dataset</a></li>
                 
@@ -179,6 +185,12 @@
 
         
           <li class="toctree-l1 "><a href="../chord/api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal/api.html" class="reference internal ">Vocal Transcription</a>
 
             
           </li>
@@ -238,8 +250,8 @@
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../chord/cli.html"
-       title="previous chapter">← omnizart chord</a>
+    <a href="../vocal/cli.html"
+       title="previous chapter">← omnizart vocal</a>
   </li>
   <li class="next">
     <a href="../drum/api.html"
@@ -283,55 +295,8 @@ IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP
 </dl>
 </div>
 </div>
-<div class="section" id="module-omnizart.music.app">
-<span id="app"></span><h2>App<a class="headerlink" href="#module-omnizart.music.app" title="Permalink to this headline">¶</a></h2>
-<p>Application class of music.</p>
-<p>Inludes core functions and interfaces for transcribing the audio, train
-a model, generate feature of datasets, and evaluate on models.</p>
-<div class="section" id="see-also">
-<h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
-<p>omnizart.base.BaseTranscription: The base class of all transcription/application classes.</p>
-<dl class="py class">
-<dt id="omnizart.music.app.MusicDatasetLoader">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.app.</code><code class="sig-name descname">MusicDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_conversion_func</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">[1, 3]</span></em>, <em class="sig-param"><span class="n">feature_num</span><span class="o">=</span><span class="default_value">352</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicDatasetLoader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
-<p>Feature loader for training <code class="docutils literal notranslate"><span class="pre">music</span></code> model.</p>
-<p>Load feature and label for training. Also converts the custom format of
-label into piano roll representation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>label_conversion_func: callable</strong></dt><dd><p>The function that will be used for converting the customized label format
-into numpy array.</p>
-</dd>
-<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the extracted feature files, including <cite>*.hdf</cite> and <cite>*.pickle</cite> pairs,
-which refers to feature and label files, respectively.</p>
-</dd>
-<dt><strong>feature_files: list[Path]</strong></dt><dd><p>List of path of <cite>*.hdf</cite> feature files. Corresponding label files should also
-under the same folder.</p>
-</dd>
-<dt><strong>num_samples: int</strong></dt><dd><p>Total number of samples to yield.</p>
-</dd>
-<dt><strong>timesteps: int</strong></dt><dd><p>Time length of the feature.</p>
-</dd>
-<dt><strong>channels: list[int]</strong></dt><dd><p>Channels to be used for training. Allowed values are [1, 2, 3].</p>
-</dd>
-<dt><strong>feature_num: int</strong></dt><dd><p>Target input size of feature dimension. Padding zeros to the bottom and top
-if the input feature size and target size is inconsistent.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Yields</dt>
-<dd class="field-even"><dl class="simple">
-<dt>feature:</dt><dd><p>Input feature for training the model.</p>
-</dd>
-<dt>label:</dt><dd><p>Coressponding label representation.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="section" id="app">
+<h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.music.app.MusicTranscription">
 <em class="property">class </em><code class="sig-prename descclassname">omnizart.music.app.</code><code class="sig-name descname">MusicTranscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription" title="Permalink to this definition">¶</a></dt>
@@ -452,9 +417,49 @@ the folder that contains <cite>arch.yaml</cite>, <cite>weights.h5</cite>, and <c
 </dd></dl>
 
 </div>
-</div>
 <div class="section" id="dataset">
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="omnizart.music.app.MusicDatasetLoader">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.music.app.</code><code class="sig-name descname">MusicDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_conversion_func</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">[1, 3]</span></em>, <em class="sig-param"><span class="n">feature_num</span><span class="o">=</span><span class="default_value">352</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
+<p>Feature loader for training <code class="docutils literal notranslate"><span class="pre">music</span></code> model.</p>
+<p>Load feature and label for training. Also converts the custom format of
+label into piano roll representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>label_conversion_func: callable</strong></dt><dd><p>The function that will be used for converting the customized label format
+into numpy array.</p>
+</dd>
+<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the extracted feature files, including <cite>*.hdf</cite> and <cite>*.pickle</cite> pairs,
+which refers to feature and label files, respectively.</p>
+</dd>
+<dt><strong>feature_files: list[Path]</strong></dt><dd><p>List of path of <cite>*.hdf</cite> feature files. Corresponding label files should also
+under the same folder.</p>
+</dd>
+<dt><strong>num_samples: int</strong></dt><dd><p>Total number of samples to yield.</p>
+</dd>
+<dt><strong>timesteps: int</strong></dt><dd><p>Time length of the feature.</p>
+</dd>
+<dt><strong>channels: list[int]</strong></dt><dd><p>Channels to be used for training. Allowed values are [1, 2, 3].</p>
+</dd>
+<dt><strong>feature_num: int</strong></dt><dd><p>Target input size of feature dimension. Padding zeros to the bottom and top
+if the input feature size and target size is inconsistent.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><dl class="simple">
+<dt>feature:</dt><dd><p>Input feature for training the model.</p>
+</dd>
+<dt>label:</dt><dd><p>Coressponding label representation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-omnizart.music.inference">
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.music.inference" title="Permalink to this headline">¶</a></h2>
@@ -1345,8 +1350,8 @@ The level of <em>/Settings</em> is removed among all fields.</p>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../chord/cli.html"
-       title="previous chapter">← omnizart chord</a>
+    <a href="../vocal/cli.html"
+       title="previous chapter">← omnizart vocal</a>
   </li>
   <li class="next">
     <a href="../drum/api.html"

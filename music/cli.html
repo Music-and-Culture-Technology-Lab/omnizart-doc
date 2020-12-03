@@ -147,6 +147,12 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
@@ -169,6 +175,12 @@
 
         
           <li class="toctree-l1 "><a href="../chord/api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal/api.html" class="reference internal ">Vocal Transcription</a>
 
             
           </li>
@@ -317,13 +329,13 @@ extension will be replaced with ‘.mid’.</p>
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-generate-feature-o">
 <span id="cmdoption-omnizart-music-generate-feature-output-path"></span><code class="sig-name descname">-o</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--output-path</code><code class="sig-prename descclassname"> &lt;output_path&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-o" title="Permalink to this definition">¶</a></dt>
-<dd><p>Path for svaing the extracted feature. Default to the folder under the dataset.</p>
+<dd><p>Path for saving the extracted feature. Default to the folder under the dataset.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-generate-feature-n">
 <span id="cmdoption-omnizart-music-generate-feature-num-threads"></span><code class="sig-name descname">-n</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--num-threads</code><code class="sig-prename descclassname"> &lt;num_threads&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-n" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parallel extract the feature by using multiple threads.</p>
+<dd><p>Number of threads used for parallel feature extraction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>4</p>
@@ -363,7 +375,7 @@ extension will be replaced with ‘.mid’.</p>
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-i">
 <span id="cmdoption-omnizart-music-train-model-input-model"></span><code class="sig-name descname">-i</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--input-model</code><code class="sig-prename descclassname"> &lt;input_model&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-i" title="Permalink to this definition">¶</a></dt>
-<dd><p>If given, the training will continue to fine-tune on the pre-trained model.</p>
+<dd><p>If given, the training will continue to fine-tune the pre-trained model.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -399,7 +411,7 @@ extension will be replaced with ‘.mid’.</p>
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-early-stop">
 <code class="sig-name descname">--early-stop</code><code class="sig-prename descclassname"> &lt;early_stop&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-early-stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stop the training after the given epoch number if the validation accuracy did not improve.</p>
+<dd><p>Stop the training if validation accuracy does not improve over the given number of epochs.</p>
 </dd></dl>
 
 <dl class="std option">
