@@ -41,14 +41,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link  router-link-active">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link ">
          API Reference
       </a>
@@ -71,14 +71,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link  router-link-active">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link ">
          API Reference
       </a>
@@ -103,7 +103,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#demo">Contents</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Contents</a></span>
       </p>
       <ul class="current">
         
@@ -118,15 +118,9 @@
             
               <ul>
                 
-                  <li class="toctree-l2"><a href="#transcribe" class="reference internal">Transcribe</a></li>
+                  <li class="toctree-l2"><a href="#core" class="reference internal">Core</a></li>
                 
-                  <li class="toctree-l2"><a href="#generate-feature" class="reference internal">Generate Feature</a></li>
-                
-                  <li class="toctree-l2"><a href="#train-model" class="reference internal">Train Model</a></li>
-                
-                  <li class="toctree-l2"><a href="#download-datasets" class="reference internal">Download Datasets</a></li>
-                
-                  <li class="toctree-l2"><a href="#download-checkpoints" class="reference internal">Download Checkpoints</a></li>
+                  <li class="toctree-l2"><a href="#utility" class="reference internal">Utility</a></li>
                 
               </ul>
             
@@ -157,12 +151,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#demo">API Reference</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">API Reference</a></span>
       </p>
       <ul class="">
         
@@ -185,6 +185,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal/api.html" class="reference internal ">Vocal Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
 
             
           </li>
@@ -259,45 +265,64 @@
             
   <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
-<p>This page describes the basic concept and usage of <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> command.</p>
-<p>The root entry is <code class="docutils literal notranslate"><span class="pre">omnizart</span></code>, and followed by several sub-commands. To see a list of available sub-commands, type <code class="docutils literal notranslate"><span class="pre">omnizart</span> <span class="pre">--help</span></code>.
-All the sub-command follows the same structure (e.g. all have the <code class="docutils literal notranslate"><span class="pre">transcribe</span></code> command).</p>
-<p>More detailed descriptions and the usage of each sub-commands can be found from their own page.</p>
-<div class="section" id="transcribe">
-<h2>Transcribe<a class="headerlink" href="#transcribe" title="Permalink to this headline">¶</a></h2>
-<p>Available sub-commands are:</p>
+<p>This page describes the workflow and usage of <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> command-line interface,
+covering core and utility.</p>
+<p>The root entry is <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> followed by sub-commands.
+The available sub-commands can be found by typing <code class="docutils literal notranslate"><span class="pre">omnizart</span> <span class="pre">--help</span></code>.</p>
+<div class="section" id="core">
+<h2>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h2>
+<p>In general, the core sub-commands follow a pipeline of <code class="docutils literal notranslate"><span class="pre">application</span></code>-<code class="docutils literal notranslate"><span class="pre">action</span></code>-<code class="docutils literal notranslate"><span class="pre">arguments</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart application action --arguments
+</pre></div>
+</div>
+<p>where we apply an <code class="docutils literal notranslate"><span class="pre">action</span></code> to the <code class="docutils literal notranslate"><span class="pre">application</span></code> of interest, with corresponding <code class="docutils literal notranslate"><span class="pre">arguments</span></code>.
+Detailed descriptions for the usage of each sub-command can be found in the dedicated pages for each <code class="docutils literal notranslate"><span class="pre">application</span></code>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">music</span></code> - Trancribes instrument notes, outputs MIDI.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">drum</span></code> - Transcribes drum percussions, outputs MIDI.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">chord</span></code> - Transcribes chord progression, outputs MIDI and CSV.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">vocal</span></code> <em>(preparing)</em> - Transcribes vocal melodies.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">beat</span></code> <em>(preparing)</em> - MIDI-domain beat tracking.</p></li>
+<li><p><a class="reference internal" href="music/cli.html"><span class="doc">omnizart music</span></a></p></li>
+<li><p><a class="reference internal" href="drum/cli.html"><span class="doc">omnizart drum</span></a></p></li>
+<li><p><a class="reference internal" href="chord/cli.html"><span class="doc">omnizart chord</span></a></p></li>
+<li><p><a class="reference internal" href="vocal-contour/cli.html"><span class="doc">omnizart vocal-contour</span></a></p></li>
+<li><p><a class="reference internal" href="vocal/cli.html"><span class="doc">omnizart vocal</span></a></p></li>
+<li><p>beat <em>(preparing)</em></p></li>
 </ul>
-<p>Input for the former four should be wav file, and for <code class="docutils literal notranslate"><span class="pre">beat</span></code> module
-should be a MIDI file.</p>
-<p>Example Usage:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the default settings and the model</span>
-omnizart music transcribe example.wav
-
-<span class="c1"># Specify your own model and output path</span>
+<p>All the applications share a same set of actions: <strong>transcribe</strong>, <strong>generate-feature</strong>, and <strong>train-model</strong>.
+Let’s have a walkthrough of each <code class="docutils literal notranslate"><span class="pre">action</span></code>.</p>
+<div class="section" id="transcribe">
+<h3>Transcribe<a class="headerlink" href="#transcribe" title="Permalink to this headline">¶</a></h3>
+<p>As the name suggests, this action transcribes a given input.
+The supported applications are as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">music</span></code> - Transcribe musical notes of pitched instruments in MIDI.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">drum</span></code> - Transcribe events of percussive instruments in MIDI.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chord</span></code> - Transcribe chord progressions in MIDI and CSV.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vocal</span></code> - Transcribe note-level vocal melody in MIDI.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vocal-contour</span></code> - Transcribe frame-level vocal melody (F0) in text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beat</span></code> <em>(preparing)</em> - Transcribe beat position.</p></li>
+</ul>
+<p>Note that all the applications receive polyphonic music in WAV, except <code class="docutils literal notranslate"><span class="pre">beat</span></code> receives inputs in MIDI.</p>
+<p>Example usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transcribe percussive events given pop.wav, with specified model path and output directory</span>
 omnizart drum transcribe pop.wav --model-path ./my-model --output ./trans_pop.mid
 </pre></div>
 </div>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">--model-path</span></code> can be left unspecified, and the default will be the downloaded checkpoints.
+Execute <code class="docutils literal notranslate"><span class="pre">omnizart</span> <span class="pre">download-checkpoints</span></code> if you have not done in the installation from <a class="reference internal" href="quick-start.html"><span class="doc">Quick Start</span></a>.</p>
 </div>
 <div class="section" id="generate-feature">
-<h2>Generate Feature<a class="headerlink" href="#generate-feature" title="Permalink to this headline">¶</a></h2>
-<p>Generate the training feature of different datasets. Training and testing feature will be
-stored in <em>&lt;path/to/dataset&gt;/train_feature</em> and <em>&lt;path/to/dataset&gt;/test_feature</em>, respectively.</p>
-<p>Different module supports a subset of downloadable datasets. Datasets that each module supports
-are listed below:</p>
+<h3>Generate Feature<a class="headerlink" href="#generate-feature" title="Permalink to this headline">¶</a></h3>
+<p>This action generates the features that are necessary for training and testing.
+You can definitely skip this if you are only into transcribing with the given checkpoints.
+The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_feature</em> and <em>&lt;path/to/dataset&gt;/test_feature</em>.</p>
+<p>The supported datasets for feature processing are application-dependent, summarized as follows:</p>
 <table class="docutils align-default">
 <colgroup>
+<col style="width: 21%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 11%" />
 <col style="width: 25%" />
-<col style="width: 16%" />
-<col style="width: 14%" />
-<col style="width: 16%" />
-<col style="width: 14%" />
-<col style="width: 16%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Module</p></th>
@@ -306,11 +331,13 @@ are listed below:</p>
 <th class="head"><p>chord</p></th>
 <th class="head"><p>beat</p></th>
 <th class="head"><p>vocal</p></th>
+<th class="head"><p>vocal-contour</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Maestro</p></td>
 <td><p>O</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -322,9 +349,11 @@ are listed below:</p>
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>MusicNet</p></td>
 <td><p>O</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -336,9 +365,11 @@ are listed below:</p>
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>Ext-Su</p></td>
 <td><p>O</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -350,6 +381,7 @@ are listed below:</p>
 <td><p>O</p></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>BPS-FH</p></td>
 <td></td>
@@ -357,34 +389,69 @@ are listed below:</p>
 <td></td>
 <td></td>
 <td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>MIR-1K</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>MedleyDB</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tonas</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>O</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>Example command for generating the feature is as following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart music generate-feature --dataset-path &lt;path/to/dataset&gt;
+<p>Before running the commands below, make sure to download the corresponding datasets first.
+This can be easily done in <a class="reference internal" href="#download-datasets"><span class="std std-ref">Download Datasets</span></a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate features for the music application</span>
+omnizart music generate-feature --dataset-path &lt;path/to/dataset&gt;
+
+<span class="c1"># Generate features for the drum application</span>
 omnizart drum generate-feature --dataset-path &lt;path/to/dataset&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="train-model">
-<h2>Train Model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h2>
-<p>After feature extraction finished, you can now train your own model~</p>
+<h3>Train Model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h3>
+<p>This action trains a model from scratch given the generated features from <a class="reference internal" href="#generate-feature"><span class="std std-ref">Generate Feature</span></a>.
+Once again, you can skip this if you are only up to transcribing music, and use the provided checkpoints.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart music train-model -d &lt;path/to/feature/folder&gt; --model-name My-Music
 omnizart drum train-model -d &lt;path/to/feature/folder&gt; --model-name My-Drum
 omnizart chord train-model -d &lt;path/to/feature/folder&gt; --model-name My-Chord
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="utility">
+<h2>Utility<a class="headerlink" href="#utility" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="download-datasets">
-<h2>Download Datasets<a class="headerlink" href="#download-datasets" title="Permalink to this headline">¶</a></h2>
-<p>Download datasets for training models and evaluation by executing
-<code class="docutils literal notranslate"><span class="pre">omnizart</span> <span class="pre">download-dataset</span> <span class="pre">&lt;DATASET&gt;</span></code>. Current supported datasets are:</p>
+<h3>Download Datasets<a class="headerlink" href="#download-datasets" title="Permalink to this headline">¶</a></h3>
+<p>This sub-command belongs to the utility, used to download the datasets for training and testing the models.
+Current supported datasets are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Maestro</span></code> - MIDI and Audio Edited for Synchronous TRacks and Organization dataset.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MusicNet</span></code> - MusicNet dataset with a collection of 330 freely-licensed classical music recordings.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">McGill</span></code> - McGill BillBoard dataset.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">BPS-FH</span></code> - Beethoven Piano Sonata with Function Harmony dataset.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Ext-Su</span></code> - Extended Su dataset.</p></li>
+<li><p><a class="reference external" href="https://magenta.tensorflow.org/datasets/maestro">Maestro</a> - MIDI and Audio Edited for Synchronous TRacks and Organization dataset.</p></li>
+<li><p><a class="reference external" href="https://homes.cs.washington.edu/~thickstn/musicnet.html">MusicNet</a> - MusicNet dataset with a collection of 330 freely-licensed classical music recordings.</p></li>
+<li><p><a class="reference external" href="https://ddmal.music.mcgill.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/">McGill</a> - McGill BillBoard dataset.</p></li>
+<li><p><a class="reference external" href="https://github.com/Tsung-Ping/functional-harmony">BPS-FH</a> - Beethoven Piano Sonata with Function Harmony dataset.</p></li>
+<li><p>Ext-Su - Extended Su dataset.</p></li>
+<li><p><a class="reference external" href="https://sites.google.com/site/unvoicedsoundseparation/mir-1k">MIR-1K</a> - 1000 short clips of Mandarin pop songs.</p></li>
+<li><p><a class="reference external" href="http://medleydb.weebly.com/">MedleyDB</a> - 122 multitracks.</p></li>
 </ul>
 <p>Example usage:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the MAESTRO dataset and output to the */data* folder.</span>
@@ -399,12 +466,12 @@ omnizart download-dataset --help
 </div>
 </div>
 <div class="section" id="download-checkpoints">
-<h2>Download Checkpoints<a class="headerlink" href="#download-checkpoints" title="Permalink to this headline">¶</a></h2>
-<p>Download the archived checkpoints of different pre-trained models.
-This command will download the checkpoints to where <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> being installed.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simply run the following command, and no other options need to be specified.</span>
+<h3>Download Checkpoints<a class="headerlink" href="#download-checkpoints" title="Permalink to this headline">¶</a></h3>
+<p>This is the other sub-command for the utility, used to download the archived checkpoints of pre-trained models.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simply run the following command, and no other options are needed to be specified.</span>
 omnizart download-checkpoints
 </pre></div>
+</div>
 </div>
 </div>
 </div>

@@ -39,14 +39,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link ">
          API Reference
       </a>
@@ -69,14 +69,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link ">
          API Reference
       </a>
@@ -101,7 +101,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#demo">Contents</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Contents</a></span>
       </p>
       <ul class="">
         
@@ -141,12 +141,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#demo">API Reference</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">API Reference</a></span>
       </p>
       <ul class="">
         
@@ -169,6 +175,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal/api.html" class="reference internal ">Vocal Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
 
             
           </li>
@@ -260,10 +272,13 @@ release = ‘0.1.0’</p>
 extensions = [</p>
 <blockquote>
 <div><p>‘numpydoc’,
-‘sphinx_click’</p>
+‘sphinx_click’,
+‘sphinxcontrib.bibtex’,
+‘sphinx.ext.autosectionlabel’</p>
 </div></blockquote>
-<p>]
-numpydoc_show_inherited_class_members = False</p>
+<p>]</p>
+<p>bibtex_bibfiles = [‘refs.bib’]</p>
+<p>numpydoc_show_inherited_class_members = False</p>
 <p># Add any paths that contain templates here, relative to this directory.
 templates_path = [‘_templates’]</p>
 <p># List of patterns, relative to source directory, that match files and

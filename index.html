@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>Omniscient Mozart</title>
+      <title>OMNIZART: MUSIC TRANSCRIPTION MADE EASY</title>
     
       <link rel="stylesheet" href="_static/pygments.css">
       <link rel="stylesheet" href="_static/theme.css">
@@ -40,14 +40,14 @@
 
   
     <div class="nav-item">
-      <a href="#demo"
+      <a href="#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="#demo"
+      <a href="#sound-samples"
          class="nav-link ">
          API Reference
       </a>
@@ -70,14 +70,14 @@
 
   
     <div class="nav-item">
-      <a href="#demo"
+      <a href="#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="#demo"
+      <a href="#sound-samples"
          class="nav-link ">
          API Reference
       </a>
@@ -102,7 +102,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="#demo">Contents</a></span>
+        <span class="caption-text"><a href="#sound-samples">Contents</a></span>
       </p>
       <ul class="">
         
@@ -142,12 +142,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="#demo">API Reference</a></span>
+        <span class="caption-text"><a href="#sound-samples">API Reference</a></span>
       </p>
       <ul class="">
         
@@ -170,6 +176,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal/api.html" class="reference internal ">Vocal Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
 
             
           </li>
@@ -223,7 +235,7 @@
   <ul class="breadcrumbs">
     <li><a href="#">Docs</a> &raquo;</li>
     
-    <li>Omniscient Mozart</li>
+    <li>OMNIZART: MUSIC TRANSCRIPTION MADE EASY</li>
   </ul>
   
 
@@ -238,56 +250,62 @@
 <hr>
           <div class="content" role="main">
             
-  <div class="section" id="omniscient-mozart">
-<h1>Omniscient Mozart<a class="headerlink" href="#omniscient-mozart" title="Permalink to this headline">¶</a></h1>
-<p><strong>Omnizart</strong>, a command line tool for all kinds of transcription tasks, including vocal melody, drum percussion,
-chord progression, notes of instruments, and beat tracking.</p>
-<p>Provides a consistent way for managing the life-cycle of transcription tasks, from dataset
-downloading, feature pre-processing, model training, to the final MIDI inference and synthesizing
-the output MIDI to raw audio. Pre-trained models are also provided for immediate use.</p>
-<p>Everything are deliberately designed for the ease of use. We’ve put a large amount of energies
-and time for making <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> comfortable to use.</p>
-<div class="figure align-center" id="id1">
-<img alt="_images/features.png" src="_images/features.png" />
-<p class="caption"><span class="caption-text">Omnizart provides a complete solution for managing every stage in the life-cycle of transcription tasks.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="omnizart-music-transcription-made-easy">
+<h1>OMNIZART: MUSIC TRANSCRIPTION MADE EASY<a class="headerlink" href="#omnizart-music-transcription-made-easy" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center">
+<img alt="_images/features2.png" src="_images/features2.png" />
 </div>
-<div class="section" id="demo">
-<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
-<p>Here is an demonstration of the chord and drum transcription using our system.</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hjJhweRlE-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Result of chord transcription.</p>
+<p>Omnizart is a Python library and a streamlined solution for automatic music transcription.
+This library gathers the research outcomes from <a class="reference external" href="https://sites.google.com/view/mctl/home">Music and Cultural Technology Lab</a>,
+analyzing polyphonic music and transcribes
+<strong>musical notes of instruments</strong> <span class="bibtex" id="id1">[music]</span>,
+<strong>chord progression</strong> <span class="bibtex" id="id2">[chord]</span>,
+<strong>drum events</strong> <span class="bibtex" id="id3">[drum]</span>,
+<strong>frame-level vocal melody</strong> <span class="bibtex" id="id4">[vocalcontour]</span>,
+<strong>note-level vocal melody</strong>  <span class="bibtex" id="id5">[vocal]</span>, and
+<strong>beat</strong> <span class="bibtex" id="id6">[beat]</span>.</p>
+<p>Omnizart provides the main functionalities that construct the life-cycle of deep learning-based music transcription,
+covering from <em>dataset downloading</em>, <em>feature pre-processing</em>, <em>model training</em>, to <em>transcription</em> and <em>sonification</em>.
+Pre-trained checkpoints are also provided for the immediate usage of transcription.</p>
+<div class="section" id="demonstration">
+<h2>Demonstration<a class="headerlink" href="#demonstration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="colab">
+<h3>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">¶</a></h3>
+<p>Play with the <a class="reference external" href="https://bit.ly/omnizart-colab">Colab notebook</a> to transcribe your favorite song almost immediately!</p>
+</div>
+<div class="section" id="sound-samples">
+<h3>Sound samples<a class="headerlink" href="#sound-samples" title="Permalink to this headline">¶</a></h3>
+<p>Original song</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hjJhweRlE-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Chord transcription</p>
 <audio controls="controls">
    <source src="_audio/high_chord_synth.mp3" type="audio/mpeg">
    Your browser does not support the <code>audio</code> element.
-</audio><p>Result of drum transcription.</p>
+</audio><p>Drum transcription</p>
 <audio controls="controls">
    <source src="_audio/high_drum_synth.mp3" type="audio/mpeg">
    Your browser does not support the <code>audio</code> element.
-</audio><p>Result of vocal transcription.</p>
+</audio><p>Note-level vocal transcription</p>
 <audio controls="controls">
    <source src="_audio/high_vocal_synth.mp3" type="audio/mpeg">
    Your browser does not support the <code>audio</code> element.
-</audio><p>Result of vocal pitch contour transcription.</p>
+</audio><p>Frame-level vocal transcription*</p>
 <audio controls="controls">
    <source src="_audio/high_vocal_contour.mp3" type="audio/mpeg">
    Your browser does not support the <code>audio</code> element.
 </audio><p>Source files can be downloaded <a class="reference external" href="https://drive.google.com/file/d/15VqHearznV9L83cyl61ccACsXXJ4vBHo/view?usp=sharing">here</a>.
-You can use <em>Audacity</em> to open it.</p>
-<p>All works are developed under <a class="reference external" href="https://sites.google.com/view/mctl/home">MCTLab</a>.</p>
+You can use <em>Audacity</em> to open the files.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#colab">Colab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quick-start.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quick-start.html#transcribe-a-song">Transcribe a song</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quick-start.html#synthesize">Synthesize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#cli">CLI</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html#transcribe">Transcribe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html#generate-feature">Generate Feature</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html#train-model">Train Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html#download-datasets">Download Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html#download-checkpoints">Download Checkpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#core">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#utility">Utility</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="music/cli.html">omnizart music</a><ul>
@@ -312,6 +330,12 @@ You can use <em>Audacity</em> to open it.</p>
 <li class="toctree-l2"><a class="reference internal" href="vocal/cli.html#transcribe">transcribe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vocal/cli.html#generate-feature">generate-feature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vocal/cli.html#train-model">train-model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vocal-contour/cli.html">omnizart vocal-contour</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vocal-contour/cli.html#transcribe">transcribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal-contour/cli.html#generate-feature">generate-feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal-contour/cli.html#train-model">train-model</a></li>
 </ul>
 </li>
 </ul>
@@ -359,6 +383,14 @@ You can use <em>Audacity</em> to open it.</p>
 <li class="toctree-l2"><a class="reference internal" href="vocal/api.html#settings">Settings</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="vocal-contour/api.html">Vocal-Contour Transcription</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vocal-contour/api.html#feature-storage-format">Feature Storage Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal-contour/api.html#module-omnizart.vocal_contour.app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal-contour/api.html#module-omnizart.vocal_contour.inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal-contour/api.html#module-omnizart.music.losses">Loss Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vocal-contour/api.html#settings">Settings</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="feature.html">Feature</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="feature.html#module-omnizart.feature.cfp">CFP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feature.html#module-omnizart.feature.hcfp">HCFP</a></li>
@@ -399,6 +431,11 @@ You can use <em>Audacity</em> to open it.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-index-1"></p>
 </div>
 </div>
 

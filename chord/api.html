@@ -41,14 +41,14 @@
 
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -71,14 +71,14 @@
 
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -103,7 +103,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#demo">Contents</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Contents</a></span>
       </p>
       <ul class="">
         
@@ -143,12 +143,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#demo">API Reference</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">API Reference</a></span>
       </p>
       <ul class="current">
         
@@ -187,6 +193,12 @@
 
         
           <li class="toctree-l1 "><a href="../vocal/api.html" class="reference internal ">Vocal Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
 
             
           </li>
@@ -262,7 +274,7 @@
   <div class="section" id="module-omnizart.chord">
 <span id="chord-transcription"></span><h1>Chord Transcription<a class="headerlink" href="#module-omnizart.chord" title="Permalink to this headline">¶</a></h1>
 <p>Chord transcription for both MIDI and audio domain.</p>
-<p>Re-implementation from the repository
+<p>Re-implementation of the repository
 <a class="reference external" href="https://github.com/Tsung-Ping/Harmony-Transformer">Tsung-Ping/Harmony-Transformer</a>.</p>
 <div class="section" id="feature-storage-format">
 <h2>Feature Storage Format<a class="headerlink" href="#feature-storage-format" title="Permalink to this headline">¶</a></h2>
@@ -553,7 +565,7 @@ gt_chord_change -&gt; Ground-truth chord change label.</p>
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.chord.inference" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="omnizart.chord.inference.inference">
-<code class="sig-prename descclassname">omnizart.chord.inference.</code><code class="sig-name descname">inference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">chord_pred</span></em>, <em class="sig-param"><span class="n">t_unit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.inference.inference" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">omnizart.chord.inference.</code><code class="sig-name descname">inference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">chord_pred</span></em>, <em class="sig-param"><span class="n">t_unit</span></em>, <em class="sig-param"><span class="n">min_dura</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.inference.inference" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -648,6 +660,13 @@ The level of <em>/Settings</em> is removed among all fields.</p>
                 <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">To be added...</span>
                 <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
                 <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1</span>
+    <span class="nt">Inference</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings when infering notes.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">MinDura</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Minimum duration (in seconds) for each chord. If shorter than expected, will append the duration to the previous chord.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1</span>
     <span class="nt">Training</span><span class="p">:</span>
         <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Hyper parameters for training</span>
         <span class="nt">Settings</span><span class="p">:</span>

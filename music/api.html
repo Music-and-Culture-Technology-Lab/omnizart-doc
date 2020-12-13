@@ -25,7 +25,7 @@
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
   <link rel="next" title="Drum Transcription" href="../drum/api.html" />
-  <link rel="prev" title="omnizart vocal" href="../vocal/cli.html" /> 
+  <link rel="prev" title="omnizart vocal-contour" href="../vocal-contour/cli.html" /> 
   </head>
 
   <body>
@@ -41,14 +41,14 @@
 
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -71,14 +71,14 @@
 
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -103,7 +103,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#demo">Contents</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Contents</a></span>
       </p>
       <ul class="">
         
@@ -143,12 +143,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#demo">API Reference</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">API Reference</a></span>
       </p>
       <ul class="current">
         
@@ -191,6 +197,12 @@
 
         
           <li class="toctree-l1 "><a href="../vocal/api.html" class="reference internal ">Vocal Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
 
             
           </li>
@@ -250,8 +262,8 @@
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../vocal/cli.html"
-       title="previous chapter">← omnizart vocal</a>
+    <a href="../vocal-contour/cli.html"
+       title="previous chapter">← omnizart vocal-contour</a>
   </li>
   <li class="next">
     <a href="../drum/api.html"
@@ -266,7 +278,11 @@
   <div class="section" id="module-omnizart.music">
 <span id="music-transcription"></span><h1>Music Transcription<a class="headerlink" href="#module-omnizart.music" title="Permalink to this headline">¶</a></h1>
 <p>Music transcription module.</p>
-<p>This module provides utilities for transcribing pitch and instruments in the audio.</p>
+<p>This module provides utilities for transcribing pitch and instruments in the audio.
+This module is also an improved version of the original repository
+<a class="reference external" href="https://github.com/BreezeWhite/Music-Transcription-with-Semantic-Segmentation">BreezeWhite/Music-Transcription-with-Semantic-Segmentation</a>,
+with a cleaner architecture and consistent coding style, also provides command line interface
+for easy usage.</p>
 <div class="section" id="feature-storage-format">
 <h2>Feature Storage Format<a class="headerlink" href="#feature-storage-format" title="Permalink to this headline">¶</a></h2>
 <p>Processed feature will be stored in <code class="docutils literal notranslate"><span class="pre">.hdf</span></code> and <code class="docutils literal notranslate"><span class="pre">.pickle</span></code> file format. The former format
@@ -285,12 +301,12 @@ representation. Each piece will have both two different files.</p>
 Instance Segmentation.” in IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2020.</p>
 </dd>
 <dt class="label" id="r96142b21d69a-2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Yu-Te Wu, Berlin Chen, and Li Su. “Automatic Music Yranscription Leveraging Generalized Cepstral Features and
-Deep Learning.” IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2018.</p>
-</dd>
-<dt class="label" id="r96142b21d69a-3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
 <dd><p>Yu-Te Wu, Berlin Chen, and Li Su. “Polyphonic Music Transcription with Semantic Segmentation.”
 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2019.</p>
+</dd>
+<dt class="label" id="r96142b21d69a-3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Yu-Te Wu, Berlin Chen, and Li Su. “Automatic Music Yranscription Leveraging Generalized Cepstral Features and
+Deep Learning.” IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2018.</p>
 </dd>
 </dl>
 </div>
@@ -312,7 +328,7 @@ needed got override.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.generate_feature" title="omnizart.music.app.MusicTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, …])</p></td>
-<td><p>Extract the feature of the whole dataset.</p></td>
+<td><p>Extract the feature from the given dataset.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.train" title="omnizart.music.app.MusicTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, …])</p></td>
 <td><p>Model training.</p></td>
@@ -325,14 +341,13 @@ needed got override.</p>
 <dl class="py method">
 <dt id="omnizart.music.app.MusicTranscription.generate_feature">
 <code class="sig-name descname">generate_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em>, <em class="sig-param"><span class="n">music_settings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_threads</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
-<dd><p>Extract the feature of the whole dataset.</p>
-<p>To train the model, the first thing is to pre-process the data into feature
+<dd><p>Extract the feature from the given dataset.</p>
+<p>To train the model, the first step is to pre-process the data into feature
 representations. After downloading the dataset, use this function to generate
-the feature by giving the path to where the dataset stored, and the program
-will do all the rest of things.</p>
+the feature by giving the path of the stored dataset.</p>
 <p>To specify the output path, modify the attribute
-<code class="docutils literal notranslate"><span class="pre">music_settings.dataset.feature_save_path</span></code> to the value you want.
-It will default to the folder under where the dataset stored, generating
+<code class="docutils literal notranslate"><span class="pre">music_settings.dataset.feature_save_path</span></code>.
+It defaults to the folder under where the dataset stored, generating
 two folders: <code class="docutils literal notranslate"><span class="pre">train_feature</span></code> and <code class="docutils literal notranslate"><span class="pre">test_feature</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -342,7 +357,7 @@ two folders: <code class="docutils literal notranslate"><span class="pre">train_
 <dt><strong>music_settings: MusicSettings</strong></dt><dd><p>The configuration instance that holds all relative settings for
 the life-cycle of building a model.</p>
 </dd>
-<dt><strong>num_threads:</strong></dt><dd><p>Number of threads for parallel extracting the features.</p>
+<dt><strong>num_threads:</strong></dt><dd><p>Number of threads for parallel extraction the feature.</p>
 </dd>
 </dl>
 </dd>
@@ -350,7 +365,7 @@ the life-cycle of building a model.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="../constants.html#module-omnizart.constants.datasets" title="omnizart.constants.datasets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.constants.datasets</span></code></a></dt><dd><p>Supported dataset that can be applied and the split of training/testing pieces.</p>
+<dt><a class="reference internal" href="../constants.html#module-omnizart.constants.datasets" title="omnizart.constants.datasets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.constants.datasets</span></code></a></dt><dd><p>The supported datasets and the corresponding training/testing splits.</p>
 </dd>
 </dl>
 </div>
@@ -360,7 +375,7 @@ the life-cycle of building a model.</p>
 <dt id="omnizart.music.app.MusicTranscription.train">
 <code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">music_settings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Model training.</p>
-<p>Train a new music model or continue to train on a pre-trained model.</p>
+<p>Train the model from scratch or continue training given a model checkpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -369,11 +384,11 @@ the life-cycle of building a model.</p>
 <dt><strong>model_name: str</strong></dt><dd><p>The name of the trained model. If not given, will default to the
 current timestamp.</p>
 </dd>
-<dt><strong>input_model_path: Path</strong></dt><dd><p>Specify the path to the pre-trained model if you want to continue
-to fine-tune on the model.</p>
+<dt><strong>input_model_path: Path</strong></dt><dd><p>Specify the path to the model checkpoint in order to fine-tune
+the model.</p>
 </dd>
-<dt><strong>music_settings: MusicSettings</strong></dt><dd><p>The configuration instance that holds all relative settings for
-the life-cycle of building a model.</p>
+<dt><strong>music_settings: MusicSettings</strong></dt><dd><p>The configuration that holds all relative settings for
+the life-cycle of model building.</p>
 </dd>
 </dl>
 </dd>
@@ -423,7 +438,7 @@ the folder that contains <cite>arch.yaml</cite>, <cite>weights.h5</cite>, and <c
 <dt id="omnizart.music.app.MusicDatasetLoader">
 <em class="property">class </em><code class="sig-prename descclassname">omnizart.music.app.</code><code class="sig-name descname">MusicDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_conversion_func</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">[1, 3]</span></em>, <em class="sig-param"><span class="n">feature_num</span><span class="o">=</span><span class="default_value">352</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
-<p>Feature loader for training <code class="docutils literal notranslate"><span class="pre">music</span></code> model.</p>
+<p>Data loader for training the mdoel of <code class="docutils literal notranslate"><span class="pre">music</span></code>.</p>
 <p>Load feature and label for training. Also converts the custom format of
 label into piano roll representation.</p>
 <dl class="field-list simple">
@@ -444,16 +459,16 @@ under the same folder.</p>
 </dd>
 <dt><strong>channels: list[int]</strong></dt><dd><p>Channels to be used for training. Allowed values are [1, 2, 3].</p>
 </dd>
-<dt><strong>feature_num: int</strong></dt><dd><p>Target input size of feature dimension. Padding zeros to the bottom and top
-if the input feature size and target size is inconsistent.</p>
+<dt><strong>feature_num: int</strong></dt><dd><p>Target size of feature dimension.
+Zero padding is done to resolve mismatched input and target size.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Yields</dt>
 <dd class="field-even"><dl class="simple">
-<dt>feature:</dt><dd><p>Input feature for training the model.</p>
+<dt>feature:</dt><dd><p>Input features for model training.</p>
 </dd>
-<dt>label:</dt><dd><p>Coressponding label representation.</p>
+<dt>label:</dt><dd><p>Coressponding labels.</p>
 </dd>
 </dl>
 </dd>
@@ -1350,8 +1365,8 @@ The level of <em>/Settings</em> is removed among all fields.</p>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../vocal/cli.html"
-       title="previous chapter">← omnizart vocal</a>
+    <a href="../vocal-contour/cli.html"
+       title="previous chapter">← omnizart vocal-contour</a>
   </li>
   <li class="next">
     <a href="../drum/api.html"

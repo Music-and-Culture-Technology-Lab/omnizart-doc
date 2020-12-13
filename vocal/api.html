@@ -24,7 +24,7 @@
     
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
-  <link rel="next" title="Feature" href="../feature.html" />
+  <link rel="next" title="Vocal-Contour Transcription" href="../vocal-contour/api.html" />
   <link rel="prev" title="Chord Transcription" href="../chord/api.html" /> 
   </head>
 
@@ -41,14 +41,14 @@
 
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -71,14 +71,14 @@
 
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link ">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="../index.html#demo"
+      <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -103,7 +103,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#demo">Contents</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Contents</a></span>
       </p>
       <ul class="">
         
@@ -143,12 +143,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#demo">API Reference</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">API Reference</a></span>
       </p>
       <ul class="current">
         
@@ -190,6 +196,12 @@
                   <li class="toctree-l2"><a href="#settings" class="reference internal">Settings</a></li>
                 
               </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
+
             
           </li>
 
@@ -252,8 +264,8 @@
        title="previous chapter">← Chord Transcription</a>
   </li>
   <li class="next">
-    <a href="../feature.html"
-       title="next chapter">Feature →</a>
+    <a href="../vocal-contour/api.html"
+       title="next chapter">Vocal-Contour Transcription →</a>
   </li>
 </ul>
   
@@ -285,7 +297,10 @@ Some changes have also been made to improve the performance.</p>
 </div>
 <div class="section" id="see-also">
 <h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
-<p>omnizart.feature.cfp.extract_vocal_cfp: Function to extract specialized CFP feature for <code class="docutils literal notranslate"><span class="pre">vocal</span></code>.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">omnizart.feature.cfp.extract_vocal_cfp</span></code>:</dt><dd><p>Function to extract specialized CFP feature for <code class="docutils literal notranslate"><span class="pre">vocal</span></code>.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="app">
@@ -495,7 +510,7 @@ This function is just leaving for reference.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>interval: list[tuple[float, float]]</strong></dt><dd><p>The return value of <code class="docutils literal notranslate"><span class="pre">infer_interval</span></code> function.</p>
+<dt><strong>interval: list[tuple[float, float]]</strong></dt><dd><p>The return value of <code class="docutils literal notranslate"><span class="pre">infer_interval</span></code> function. List of onset/offset pairs in seconds.</p>
 </dd>
 <dt><strong>agg_f0: list[dict]</strong></dt><dd><p>Aggregated f0 information. Each elements in the list should contain three columns:
 <em>start_time</em>, <em>end_time</em>, and <em>pitch</em>. Time units should be in seonds, and pitch
@@ -544,7 +559,7 @@ and returns a list of <code class="xref py py-class docutils literal notranslate
 <dt id="omnizart.vocal.labels.BaseLabelExtraction.extract_label">
 <em class="property">classmethod </em><code class="sig-name descname">extract_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.BaseLabelExtraction.extract_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract SDT label.</p>
-<p>There are 6 types of event as defined in the original paper:
+<p>There are 6 types of events as defined in the original paper:
 activation, silence, onset, non-onset, offset, and non-offset.
 The corresponding annotations used in the paper are [a, s, o, o’, f, f’].
 The ‘activation’ includes the onset and offset time. And non-onset and
@@ -738,7 +753,7 @@ attributes will be converted to snake-case (e.g. HopSize -&gt; hop_size). There
 is also a path transformation process when applying the settings into the
 <code class="docutils literal notranslate"><span class="pre">VocalSettings</span></code> instance. For example, if you want to access the attribute
 <code class="docutils literal notranslate"><span class="pre">BatchSize</span></code> defined in the yaml path <em>General/Training/Settings/BatchSize</em>,
-the coressponding attribute will be <em>MusicSettings.training.batch_size</em>.
+the coressponding attribute will be <em>VocalSettings.training.batch_size</em>.
 The level of <em>/Settings</em> is removed among all fields.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
     <span class="nt">TranscriptionMode</span><span class="p">:</span>
@@ -903,8 +918,8 @@ The level of <em>/Settings</em> is removed among all fields.</p>
        title="previous chapter">← Chord Transcription</a>
   </li>
   <li class="next">
-    <a href="../feature.html"
-       title="next chapter">Feature →</a>
+    <a href="../vocal-contour/api.html"
+       title="next chapter">Vocal-Contour Transcription →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.

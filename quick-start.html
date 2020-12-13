@@ -25,7 +25,7 @@
   <link rel="index" title="Index" href="genindex.html" />
   <link rel="search" title="Search" href="search.html" />
   <link rel="next" title="Tutorial" href="tutorial.html" />
-  <link rel="prev" title="Omniscient Mozart" href="index.html" /> 
+  <link rel="prev" title="OMNIZART: MUSIC TRANSCRIPTION MADE EASY" href="index.html" /> 
   </head>
 
   <body>
@@ -41,14 +41,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link  router-link-active">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link ">
          API Reference
       </a>
@@ -71,14 +71,14 @@
 
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link  router-link-active">
          Contents
       </a>
     </div>
   
     <div class="nav-item">
-      <a href="index.html#demo"
+      <a href="index.html#sound-samples"
          class="nav-link ">
          API Reference
       </a>
@@ -103,7 +103,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#demo">Contents</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Contents</a></span>
       </p>
       <ul class="current">
         
@@ -112,11 +112,11 @@
             
               <ul>
                 
+                  <li class="toctree-l2"><a href="#colab" class="reference internal">Colab</a></li>
+                
                   <li class="toctree-l2"><a href="#installation" class="reference internal">Installation</a></li>
                 
-                  <li class="toctree-l2"><a href="#transcribe-a-song" class="reference internal">Transcribe a song</a></li>
-                
-                  <li class="toctree-l2"><a href="#synthesize" class="reference internal">Synthesize</a></li>
+                  <li class="toctree-l2"><a href="#cli" class="reference internal">CLI</a></li>
                 
               </ul>
             
@@ -153,12 +153,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#demo">API Reference</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">API Reference</a></span>
       </p>
       <ul class="">
         
@@ -181,6 +187,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal/api.html" class="reference internal ">Vocal Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
 
             
           </li>
@@ -241,7 +253,7 @@
   <ul class="page-nav">
   <li class="prev">
     <a href="index.html"
-       title="previous chapter">← Omniscient Mozart</a>
+       title="previous chapter">← OMNIZART: MUSIC TRANSCRIPTION MADE EASY</a>
   </li>
   <li class="next">
     <a href="tutorial.html"
@@ -255,100 +267,63 @@
             
   <div class="section" id="quick-start">
 <h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://bit.ly/omnizart-colab">Colab</a> &lt;- Try <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> online now, without any local installation and efforts!!</p>
+<div class="section" id="colab">
+<h2>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">¶</a></h2>
+<p>Play with the <a class="reference external" href="https://bit.ly/omnizart-colab">Colab notebook</a>  to transcribe your favorite song without hassles.
+You can also follow the installation below to enjoy Omnizart locally.</p>
+</div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="using-pip">
 <h3>Using pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install omnizart
+<p>Omnizart is under developement and will be updated regularly on PyPI.
+Use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install the latest stable version.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Omnizart</span>
+pip install omnizart
 
-<span class="c1"># Download the checkpoints after pip install</span>
+<span class="c1"># Then download the checkpoints</span>
 omnizart download-checkpoints
 </pre></div>
 </div>
 </div>
-<div class="section" id="from-source">
-<h3>From source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h3>
-<p>The most guaranteed way for installing the pacakge from source.
-This will create a virtual environment under the same folder,
-and thus not installed system-wide. For the system-wide installation
-approach, please refer to the following section.</p>
+<div class="section" id="development-installation">
+<h3>Development installation<a class="headerlink" href="#development-installation" title="Permalink to this headline">¶</a></h3>
+<p>For the development installation, clone the git repo and the installation
+creates a virtual environment under the directory <em>omnizart/</em> by default.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Music-and-Culture-Technology-Lab/omnizart.git
+
+<span class="c1"># Install dependenies, with checkpoints automatically downloaded</span>
 <span class="nb">cd</span> omnizart
 make install
-</pre></div>
-</div>
-<p>The second way is by using the provided shell script to install, which
-is almost identical to execute <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> command, except you
-can specify more settings for the installtoin including to install
-system-wide this time.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">### Under the `omnizart` folder</span>
-<span class="c1"># System-wide installation</span>
-./scripts/install.sh
 
-<span class="c1"># Install with virtual environment</span>
-./scripts/install.sh venv
-
-<span class="c1">## For conda user, the following approach is recommanded, since there</span>
-<span class="c1">## are some conflicts between poetry and conda.</span>
-<span class="c1"># Use pip for installation. Takes longer time.</span>
-<span class="nb">export</span> <span class="nv">DEFAULT_INSTALL_APPROACH</span><span class="o">=</span>pip
-./scripts/install.sh
-
-<span class="c1"># Use poetry for installation. Install pacakges in parallel, and thus much faster.</span>
-<span class="nb">export</span> <span class="nv">DEFAULT_INSTALL_APPROACH</span><span class="o">=</span>poetry
-./scripts/install.sh
-</pre></div>
-</div>
-<p>A more manual way for installing this package is by using <code class="docutils literal notranslate"><span class="pre">poetry</span></code>, which we use this
-tool for the dependency management.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Under the `omnizart` folder</span>
-pip install --upgrade pip
-pip install --upgrade setuptools
-pip install poetry
+<span class="c1"># Install Dev dependencies, since they will not be installed by default</span>
 poetry install
-
-<span class="c1"># Activate the virtual environment and download the checkpoints</span>
-poetry shell
-<span class="nb">source</span> <span class="k">$(</span>dirname <span class="k">$(</span>poetry run which python<span class="k">))</span>/activate
-omnizart download-checkpoints
-</pre></div>
-</div>
-<p>The last and the most unstable, conventional way for installation
-is by using the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> files.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Under the `omnizart` folder</span>
-pip install --upgrade pip
-pip install --upgrade setuptools
-
-<span class="c1"># May encounter problems when installing the dependency &#39;madmom&#39;</span>
-pip install -r requirements.txt
-python setup.py install
-
-<span class="c1"># Download the checkpoints</span>
-omnizart download-checkpoints
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="transcribe-a-song">
-<h2>Transcribe a song<a class="headerlink" href="#transcribe-a-song" title="Permalink to this headline">¶</a></h2>
-<p>Transcribes a song into a MIDI file and a CSV file that contains more complete
-and representative information.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart music transcribe &lt;path/to/audio.wav&gt;
+<div class="section" id="cli">
+<h2>CLI<a class="headerlink" href="#cli" title="Permalink to this headline">¶</a></h2>
+<p>Below is an example usuage of pitched instrument transcription with the command-line interface,
+first transcribing a piece of music and then synthesizing the results.
+For more details and other types of transcription, refer to <a class="reference internal" href="tutorial.html"><span class="doc">Tutorial</span></a>.</p>
+<div class="section" id="transcription">
+<h3>Transcription<a class="headerlink" href="#transcription" title="Permalink to this headline">¶</a></h3>
+<p>The example transcribes a piece of music, being monophonic or polyphonic,
+to a MIDI file of the transcribed pitched notes and a CSV file with more information.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart music transcribe &lt;path/to/example.wav&gt;
 </pre></div>
 </div>
 </div>
-<div class="section" id="synthesize">
-<h2>Synthesize<a class="headerlink" href="#synthesize" title="Permalink to this headline">¶</a></h2>
-<p>After transcribing, it is usually hard to directly listen to the MIDI, which needs
-additional soundfont to synthesize the symbolic representation into raw audio.</p>
-<p>We hear your voice! We provide a built-in command, with default soundfont already
-included, to transform the MIDI into wav file. Execute following:</p>
+<div class="section" id="sonification">
+<h3>Sonification<a class="headerlink" href="#sonification" title="Permalink to this headline">¶</a></h3>
+<p>Omnizart renders the transcribed MIDI file with default soundfonts,
+synthesizing an audio in WAV by the command below.
+For the first-time execution, it is expected to take a bit for downloading the free-licensed soundfonts.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart synth example.mid
 </pre></div>
 </div>
-<p>When you execute the first time, it takes a little while for downloading the
-free-licensed soundfont.</p>
+</div>
 </div>
 </div>
 
@@ -358,7 +333,7 @@ free-licensed soundfont.</p>
             <div class="inner"><ul class="page-nav">
   <li class="prev">
     <a href="index.html"
-       title="previous chapter">← Omniscient Mozart</a>
+       title="previous chapter">← OMNIZART: MUSIC TRANSCRIPTION MADE EASY</a>
   </li>
   <li class="next">
     <a href="tutorial.html"
