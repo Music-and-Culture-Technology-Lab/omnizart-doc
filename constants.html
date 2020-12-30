@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="_static/pygments.css">
       <link rel="stylesheet" href="_static/theme.css">
       <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
 
@@ -15,7 +16,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
@@ -49,6 +49,13 @@
   
     <div class="nav-item">
       <a href="index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -74,6 +81,13 @@
       <a href="index.html#sound-samples"
          class="nav-link ">
          Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
       </a>
     </div>
   
@@ -119,6 +133,21 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="add-new-modules.html" class="reference internal ">Add New Modules</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+      </p>
+      <ul class="">
+        
           <li class="toctree-l1 "><a href="music/cli.html" class="reference internal ">omnizart music</a>
 
             
@@ -144,6 +173,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/cli.html" class="reference internal ">omnizart patch-cnn</a>
 
             
           </li>
@@ -183,6 +218,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/api.html" class="reference internal ">Patch-CNN Transcription</a>
 
             
           </li>
@@ -751,6 +792,27 @@ The function should then return a list like:</p>
 <em class="property">class </em><code class="sig-prename descclassname">omnizart.constants.datasets.</code><code class="sig-name descname">McGillBillBoard</code><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#omnizart.constants.datasets.BaseStructure" title="omnizart.constants.datasets.BaseStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets.BaseStructure</span></code></a></p>
 <p>Constant settings of McGill BillBoard dataset.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.constants.datasets.McGillBillBoard.get_test_labels" title="omnizart.constants.datasets.McGillBillBoard.get_test_labels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_test_labels</span></code></a>(dataset_path)</p></td>
+<td><p>Get list of complete test label paths</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.constants.datasets.McGillBillBoard.get_test_wavs" title="omnizart.constants.datasets.McGillBillBoard.get_test_wavs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_test_wavs</span></code></a>(dataset_path)</p></td>
+<td><p>Get list of complete test wav paths</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.constants.datasets.McGillBillBoard.get_train_labels" title="omnizart.constants.datasets.McGillBillBoard.get_train_labels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_train_labels</span></code></a>(dataset_path)</p></td>
+<td><p>Get list of complete train label paths</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.constants.datasets.McGillBillBoard.get_train_wavs" title="omnizart.constants.datasets.McGillBillBoard.get_train_wavs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_train_wavs</span></code></a>(dataset_path)</p></td>
+<td><p>Get list of complete train wav paths</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="py attribute">
 <dt id="omnizart.constants.datasets.McGillBillBoard.feature_file_name">
 <code class="sig-name descname">feature_file_name</code><em class="property"> = 'bothchroma.csv'</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.feature_file_name" title="Permalink to this definition">¶</a></dt>
@@ -761,6 +823,36 @@ The function should then return a list like:</p>
 <dt id="omnizart.constants.datasets.McGillBillBoard.feature_folder">
 <code class="sig-name descname">feature_folder</code><em class="property"> = './McGill-Billboard-Features'</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.feature_folder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to the feature folder relative to dataset</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.McGillBillBoard.get_test_labels">
+<em class="property">classmethod </em><code class="sig-name descname">get_test_labels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.get_test_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of complete test label paths</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.McGillBillBoard.get_test_wavs">
+<em class="property">classmethod </em><code class="sig-name descname">get_test_wavs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.get_test_wavs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of complete test wav paths</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.McGillBillBoard.get_train_labels">
+<em class="property">classmethod </em><code class="sig-name descname">get_train_labels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.get_train_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of complete train label paths</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.constants.datasets.McGillBillBoard.get_train_wavs">
+<em class="property">classmethod </em><code class="sig-name descname">get_train_wavs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.get_train_wavs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of complete train wav paths</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="omnizart.constants.datasets.McGillBillBoard.ignore_ids">
+<code class="sig-name descname">ignore_ids</code><em class="property"> = [353, 634, 1106]</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.ignore_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>File IDs to be ignored</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -784,7 +876,7 @@ The function should then return a list like:</p>
 <dl class="py attribute">
 <dt id="omnizart.constants.datasets.McGillBillBoard.train_test_split_id">
 <code class="sig-name descname">train_test_split_id</code><em class="property"> = 1000</em><a class="headerlink" href="#omnizart.constants.datasets.McGillBillBoard.train_test_split_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Split ID of train/val set.</p>
+<dd><p>Split ID of train/test set.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -1078,7 +1170,7 @@ Guitar, bass, strings, organ, piano, and others</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

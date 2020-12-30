@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="_static/pygments.css">
       <link rel="stylesheet" href="_static/theme.css">
       <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
 
@@ -15,7 +16,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
@@ -49,6 +49,13 @@
     <div class="nav-item">
       <a href="#sound-samples"
          class="nav-link ">
+         Commnad Line Interface
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#sound-samples"
+         class="nav-link ">
          API Reference
       </a>
     </div>
@@ -73,6 +80,13 @@
       <a href="#sound-samples"
          class="nav-link ">
          Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
       </a>
     </div>
   
@@ -118,6 +132,21 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="add-new-modules.html" class="reference internal ">Add New Modules</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#sound-samples">Commnad Line Interface</a></span>
+      </p>
+      <ul class="">
+        
           <li class="toctree-l1 "><a href="music/cli.html" class="reference internal ">omnizart music</a>
 
             
@@ -143,6 +172,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/cli.html" class="reference internal ">omnizart patch-cnn</a>
 
             
           </li>
@@ -182,6 +217,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/api.html" class="reference internal ">Patch-CNN Transcription</a>
 
             
           </li>
@@ -258,12 +299,12 @@
 <p>Omnizart is a Python library and a streamlined solution for automatic music transcription.
 This library gathers the research outcomes from <a class="reference external" href="https://sites.google.com/view/mctl/home">Music and Cultural Technology Lab</a>,
 analyzing polyphonic music and transcribes
-<strong>musical notes of instruments</strong> <a class="bibtex reference internal" href="#music" id="id1">[WCS20]</a>,
-<strong>chord progression</strong> <a class="bibtex reference internal" href="#chord" id="id2">[CS19]</a>,
-<strong>drum events</strong> <a class="bibtex reference internal" href="#drum" id="id3">[WWS20]</a>,
-<strong>frame-level vocal melody</strong> <a class="bibtex reference internal" href="#vocalcontour" id="id4">[LS18]</a>,
-<strong>note-level vocal melody</strong> <span class="bibtex" id="id5">[vocal]</span>, and
-<strong>beat</strong> <a class="bibtex reference internal" href="#beat" id="id6">[CS20]</a>.</p>
+<strong>musical notes of instruments</strong> <span id="id1">[<a class="reference internal" href="#id8"><span>WCS20</span></a>]</span>,
+<strong>chord progression</strong> <span id="id2">[<a class="reference internal" href="#id9"><span>CS19</span></a>]</span>,
+<strong>drum events</strong> <span id="id3">[<a class="reference internal" href="#id10"><span>WWS20</span></a>]</span>,
+<strong>frame-level vocal melody</strong> <span id="id4">[<a class="reference internal" href="#id11"><span>LS18</span></a>]</span>,
+<strong>note-level vocal melody</strong>  <span id="id5">[<span>vocal</span>]</span>, and
+<strong>beat</strong> <span id="id6">[<a class="reference internal" href="#id12"><span>CS20</span></a>]</span>.</p>
 <p>Omnizart provides the main functionalities that construct the life-cycle of deep learning-based music transcription,
 covering from <em>dataset downloading</em>, <em>feature pre-processing</em>, <em>model training</em>, to <em>transcription</em> and <em>sonification</em>.
 Pre-trained checkpoints are also provided for the immediate usage of transcription.</p>
@@ -271,12 +312,12 @@ Pre-trained checkpoints are also provided for the immediate usage of transcripti
 <h2>Demonstration<a class="headerlink" href="#demonstration" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="colab">
 <h3>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">¶</a></h3>
-<p>Play with the <a class="reference external" href="https://bit.ly/OmnizartColab">Colab notebook</a> to transcribe your favorite song almost immediately!</p>
+<p>Play with the <a class="reference external" href="https://bit.ly/omnizart-colab">Colab notebook</a> to transcribe your favorite song almost immediately!</p>
 </div>
 <div class="section" id="sound-samples">
 <h3>Sound samples<a class="headerlink" href="#sound-samples" title="Permalink to this headline">¶</a></h3>
 <p>Original song</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hjJhweRlE-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Chord transcription</p>
+<iframe src="https://www.youtube-nocookie.com/embed/hjJhweRlE-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Chord transcription</p>
 <audio controls="controls">
    <source src="_audio/high_chord_synth.mp3" type="audio/mpeg">
    Your browser does not support the <code>audio</code> element.
@@ -308,6 +349,24 @@ You can use <em>Audacity</em> to open the files.</p>
 <li class="toctree-l2"><a class="reference internal" href="tutorial.html#utility">Utility</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="add-new-modules.html">Add New Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#principles">Principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#implement-feature-generation">Implement Feature Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#implement-model-training">Implement Model Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#implement-transcription">Implement Transcription</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#add-unit-tests">Add Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#commit-checkpoints">Commit Checkpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#implement-cli">Implement CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#add-documentation">Add Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-new-modules.html#optional">Optional</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Commnad Line Interface</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="music/cli.html">omnizart music</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="music/cli.html#transcribe">transcribe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="music/cli.html#generate-feature">generate-feature</a></li>
@@ -336,6 +395,12 @@ You can use <em>Audacity</em> to open the files.</p>
 <li class="toctree-l2"><a class="reference internal" href="vocal-contour/cli.html#transcribe">transcribe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vocal-contour/cli.html#generate-feature">generate-feature</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vocal-contour/cli.html#train-model">train-model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="patch-cnn/cli.html">omnizart patch-cnn</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="patch-cnn/cli.html#transcribe">transcribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patch-cnn/cli.html#generate-feature">generate-feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patch-cnn/cli.html#train-model">train-model</a></li>
 </ul>
 </li>
 </ul>
@@ -391,6 +456,15 @@ You can use <em>Audacity</em> to open the files.</p>
 <li class="toctree-l2"><a class="reference internal" href="vocal-contour/api.html#settings">Settings</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="patch-cnn/api.html">Patch-CNN Transcription</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="patch-cnn/api.html#feature-storage-format">Feature Storage Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patch-cnn/api.html#app">App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patch-cnn/api.html#dataset">Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patch-cnn/api.html#module-omnizart.patch_cnn.inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patch-cnn/api.html#labels">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="patch-cnn/api.html#settings">Settings</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="feature.html">Feature</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="feature.html#module-omnizart.feature.cfp">CFP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feature.html#module-omnizart.feature.hcfp">HCFP</a></li>
@@ -435,24 +509,29 @@ You can use <em>Audacity</em> to open the files.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p id="bibtex-bibliography-index-0"><dl class="citation">
-<dt class="bibtex label" id="chord"><span class="brackets"><a class="fn-backref" href="#id2">CS19</a></span></dt>
+<p id="id7"><dl class="citation">
+<dt class="label" id="id9"><span class="brackets">CS19</span></dt>
 <dd><p>T.-P. Chen and L. Su. Harmony transformer: incorporating chord segmentation into harmony recognition. In <em>ISMIR</em>. 2019.</p>
 </dd>
-<dt class="bibtex label" id="beat"><span class="brackets"><a class="fn-backref" href="#id6">CS20</a></span></dt>
+<dt class="label" id="id12"><span class="brackets">CS20</span></dt>
 <dd><p>Y.-C. Chuang and L. Su. Beat and downbeat tracking of symbolic music data using deep recurrent neural networks. In <em>APSIPA ASC</em>. 2020.</p>
 </dd>
-<dt class="bibtex label" id="vocalcontour"><span class="brackets"><a class="fn-backref" href="#id4">LS18</a></span></dt>
+<dt class="label" id="id11"><span class="brackets">LS18</span></dt>
 <dd><p>W.-T. Lu and L. Su. Vocal melody extraction with semantic segmentation and audio-symbolic domain transfer learning. In <em>ISMIR</em>. 2018.</p>
 </dd>
-<dt class="bibtex label" id="drum"><span class="brackets"><a class="fn-backref" href="#id3">WWS20</a></span></dt>
+<dt class="label" id="id10"><span class="brackets">WWS20</span></dt>
 <dd><p>I.-C. Wei, C.-W. Wu, and L. Su. Improving automatic drum transcription using large-scale audio-to-midi aligned data. In <em>ICASSP (Under Review)</em>. 2020.</p>
 </dd>
-<dt class="bibtex label" id="music"><span class="brackets"><a class="fn-backref" href="#id1">WCS20</a></span></dt>
+<dt class="label" id="id8"><span class="brackets">WCS20</span></dt>
 <dd><p>Y.-T Wu, B. Chen, and L. Su. Multi-instrument automatic music transcription with self-attention-based instance segmentation. In <em>TASLP</em>. 2020.</p>
 </dd>
 </dl>
 </p>
+<p><a href="#id16"><span class="problematic" id="id13">[1]_</span></a> Tsung-Ping Chen and Lis Su, “Harmony Transformer: Incorporating Chord Segmentation Into Harmony Recognition,”
+International Society of Music Information Retrieval Conference (ISMIR), 2019.</p>
+<p><a href="#id17"><span class="problematic" id="id14">[2]_</span></a></p>
+<p><a href="#id18"><span class="problematic" id="id15">[3]_</span></a> Wei-Tsung Lu and Li Su, “Vocal Melody Extraction With Semantic Segmentation and Audio-Symbolic Domain
+Transfer Learning,” International Society of Music Information Retrieval Conference (ISMIR), 2018.</p>
 </div>
 </div>
 
@@ -467,7 +546,7 @@ You can use <em>Audacity</em> to open the files.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

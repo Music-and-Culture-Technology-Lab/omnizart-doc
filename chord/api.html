@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="../_static/pygments.css">
       <link rel="stylesheet" href="../_static/theme.css">
       <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
 
@@ -15,7 +16,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
@@ -49,6 +49,13 @@
   
     <div class="nav-item">
       <a href="../index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -74,6 +81,13 @@
       <a href="../index.html#sound-samples"
          class="nav-link ">
          Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
       </a>
     </div>
   
@@ -119,6 +133,21 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../add-new-modules.html" class="reference internal ">Add New Modules</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
+      </p>
+      <ul class="">
+        
           <li class="toctree-l1 "><a href="../music/cli.html" class="reference internal ">omnizart music</a>
 
             
@@ -144,6 +173,12 @@
 
         
           <li class="toctree-l1 "><a href="../vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../patch-cnn/cli.html" class="reference internal ">omnizart patch-cnn</a>
 
             
           </li>
@@ -199,6 +234,12 @@
 
         
           <li class="toctree-l1 "><a href="../vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../patch-cnn/api.html" class="reference internal ">Patch-CNN Transcription</a>
 
             
           </li>
@@ -471,35 +512,6 @@ Steps include:</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.features.get_train_test_split_ids">
-<code class="sig-prename descclassname">omnizart.chord.features.</code><code class="sig-name descname">get_train_test_split_ids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index_file_path</span></em>, <em class="sig-param"><span class="n">train_test_split_id</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">ignore_ids</span><span class="o">=</span><span class="default_value">[353, 634, 1106]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.get_train_test_split_ids" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get train/test set split indexes.</p>
-<p>Default will use the folder ID as the partition base.
-The index number smaller than <cite>train_test_split_id</cite> will be taken as the
-training set, and others for testing set.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>index_file_path: Path</strong></dt><dd><p>Path to the meta index file which records basic information of each piece.</p>
-</dd>
-<dt><strong>train_test_split_id: int</strong></dt><dd><p>Split index of training and testing set.</p>
-</dd>
-<dt><strong>ignore_ids: list[int]</strong></dt><dd><p>IDs to be ignored.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>train_ids: list[str]</dt><dd><p>Folder ids of training set.</p>
-</dd>
-<dt>test_ids: list[str]</dt><dd><p>Folder ids of testing set</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt id="omnizart.chord.features.load_feature">
 <code class="sig-prename descclassname">omnizart.chord.features.</code><code class="sig-name descname">load_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feat_path</span></em>, <em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.load_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load and parse the feature into the desired format.</p>
@@ -722,7 +734,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

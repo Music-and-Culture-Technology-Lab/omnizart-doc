@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="_static/pygments.css">
       <link rel="stylesheet" href="_static/theme.css">
       <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
 
@@ -15,7 +16,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
@@ -49,6 +49,13 @@
   
     <div class="nav-item">
       <a href="index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -74,6 +81,13 @@
       <a href="index.html#sound-samples"
          class="nav-link ">
          Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
       </a>
     </div>
   
@@ -119,6 +133,21 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="add-new-modules.html" class="reference internal ">Add New Modules</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+      </p>
+      <ul class="">
+        
           <li class="toctree-l1 "><a href="music/cli.html" class="reference internal ">omnizart music</a>
 
             
@@ -144,6 +173,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/cli.html" class="reference internal ">omnizart patch-cnn</a>
 
             
           </li>
@@ -183,6 +218,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/api.html" class="reference internal ">Patch-CNN Transcription</a>
 
             
           </li>
@@ -339,6 +380,8 @@ and parse the necessary columns into attributes this class holds.</p>
 </dd>
 <dt><strong>note: int</strong></dt><dd><p>Midi number of the number, should be within 21~108.</p>
 </dd>
+<dt><strong>instrument: int</strong></dt><dd><p>Instrument number in Midi.</p>
+</dd>
 <dt><strong>velocity: int</strong></dt><dd><p>Velocity of keypress, should be wihtin 0~127</p>
 </dd>
 <dt><strong>start_beat: float</strong></dt><dd><p>Start beat index of the note.</p>
@@ -424,7 +467,7 @@ must be specified.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

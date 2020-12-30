@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Add New Modules</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="omnizart music" href="music/cli.html" />
+  <link rel="prev" title="Tutorial" href="tutorial.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">omnizart</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
+         class="nav-link  router-link-active">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
+         class="nav-link ">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
+         class="nav-link  router-link-active">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
+         class="nav-link ">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#sound-samples">Contents</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="quick-start.html" class="reference internal ">Quick Start</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="tutorial.html" class="reference internal ">Tutorial</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Add New Modules</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#principles" class="reference internal">Principles</a></li>
+                
+                  <li class="toctree-l2"><a href="#setup" class="reference internal">Setup</a></li>
+                
+                  <li class="toctree-l2"><a href="#implement-feature-generation" class="reference internal">Implement Feature Generation</a></li>
+                
+                  <li class="toctree-l2"><a href="#implement-model-training" class="reference internal">Implement Model Training</a></li>
+                
+                  <li class="toctree-l2"><a href="#implement-transcription" class="reference internal">Implement Transcription</a></li>
+                
+                  <li class="toctree-l2"><a href="#add-unit-tests" class="reference internal">Add Unit Tests</a></li>
+                
+                  <li class="toctree-l2"><a href="#commit-checkpoints" class="reference internal">Commit Checkpoints</a></li>
+                
+                  <li class="toctree-l2"><a href="#implement-cli" class="reference internal">Implement CLI</a></li>
+                
+                  <li class="toctree-l2"><a href="#add-documentation" class="reference internal">Add Documentation</a></li>
+                
+                  <li class="toctree-l2"><a href="#optional" class="reference internal">Optional</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="music/cli.html" class="reference internal ">omnizart music</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="drum/cli.html" class="reference internal ">omnizart drum</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/cli.html" class="reference internal ">omnizart chord</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/cli.html" class="reference internal ">omnizart patch-cnn</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#sound-samples">API Reference</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="music/api.html" class="reference internal ">Music Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="drum/api.html" class="reference internal ">Drum Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="chord/api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal/api.html" class="reference internal ">Vocal Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/api.html" class="reference internal ">Patch-CNN Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="feature.html" class="reference internal ">Feature</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="models.html" class="reference internal ">Models</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="training.html" class="reference internal ">Training</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="base.html" class="reference internal ">Base Classes</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="constants.html" class="reference internal ">Constants</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="utils.html" class="reference internal ">Utilities</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Add New Modules</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="tutorial.html"
+       title="previous chapter">← Tutorial</a>
+  </li>
+  <li class="next">
+    <a href="music/cli.html"
+       title="next chapter">omnizart music →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="add-new-modules">
+<h1>Add New Modules<a class="headerlink" href="#add-new-modules" title="Permalink to this headline">¶</a></h1>
+<p>This page describes how to add new modules into Omnizart project, adapt the original implementations
+to omnizart’s architecture.</p>
+<p>Before starting walking through the integration process, be sure you have already read the
+<a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a>,
+and the <a class="reference external" href="https://drive.google.com/file/d/1IO1lh07nMvSi0X0nzRDT7kuE1f468Rl1/view?usp=sharing">slides of omnziart</a>
+could also be helpful for your understanding of this project.
+Additionally, there are few more things to be always kept in mind while developing omnizart.</p>
+<div class="section" id="principles">
+<h2>Principles<a class="headerlink" href="#principles" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Find an existing module and start development</strong> - There are already several implemented modules
+that are fully functional, and being great examples that give you hints on your way developing
+new modules. Most of them are very similar of their overall architecture, but vary in detail.
+Most the time, you could just copy and paste the small pieces to your module, and modify just a
+small part of them to adapt to your task.</p></li>
+<li><p><strong>Try not to make your own wheels</strong> - There have been many useful and validated functions that are
+developed to deal with the daily works. They are already there to cover 90% of every details of a
+module, thus new logics are in very small chances being needed.
+Most of the time you need to implement the most would be the part of feature and label extraction,
+which will be explained in the upcoming sections.</p></li>
+<li><p><strong>Check with linters frequently</strong> - You should always do <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">lint</span></code> before you push to github,
+checking that there aren’t any errors with the code format, or the build process would fail.</p></li>
+<li><p><strong>Don’t permit linter errors easily</strong> - You may find some comments that permits the linter errors
+while surfing the code. Those are quick solutions while in the early development of omnizart, which
+saves lots of time fixing those lint errors. But it should not be the main concern now, as the
+architecture is more stable and less error prone. You should follow every hints by the linters
+and fix them before you file a pull request.</p></li>
+</ul>
+<hr class="docutils" />
+<p>So now we are all set and ready to add a new module to omnizart. Here we will take the
+<a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/pull/11">PR #11</a> as the example.</p>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>IMPORTANT</strong> - Give your module a short, yet descriptive name. In the example, the name is
+<code class="docutils literal notranslate"><span class="pre">PatchCNN</span></code> (camel-case), <code class="docutils literal notranslate"><span class="pre">patch_cnn</span></code> (snake-case), and <code class="docutils literal notranslate"><span class="pre">patch-cnn</span></code> (for CLI use).</p></li>
+<li><p>Create a folder named after your module under <code class="docutils literal notranslate"><span class="pre">omnizart</span></code>. There should be at least two files:
+<code class="docutils literal notranslate"><span class="pre">app.py</span></code> and <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="implement-feature-generation">
+<h2>Implement Feature Generation<a class="headerlink" href="#implement-feature-generation" title="Permalink to this headline">¶</a></h2>
+<p>The process unit should be <strong>a dataset</strong>, means the function accepts the path to the dataset itself, and will handle the rest
+of the things like dataset type inferring, folder structure handling, file parsing, feature extraction, and output storage.</p>
+<div class="section" id="commits">
+<h3>Commits<a class="headerlink" href="#commits" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/pull/11/commits/3ff6c4abe5ab98242d33c146353b5282ce5f6b66">3ff6c4a</a>
+- Builds the main structure of feature extraction.</p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/pull/11/commits/f3138eb4a0650c91692f70e09bab1578be11c132">f3138eb</a>
+- Contains the patch of label extraction function.</p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/pull/11/commits/0190f1895027cf859647c2099d3c03a24f73246a">0190f18</a>
+- Contains the patch of label extraction function.</p></li>
+</ul>
+</div>
+<div class="section" id="critical-files-functions">
+<h3>Critical Files/Functions<a class="headerlink" href="#critical-files-functions" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L106-L193">omnizart.patch_cnn.app.PatchCNNTranscription.generate_feature</a>
+- The main function for managing the process of feature generation.</p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/feature/cfp.py#L355-L451">omnizart.feature.cfp.extract_patch_cfp</a>
+- The function for feature extraction, which takes audio path as the input and outputs the required feature representations.</p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L278-L327">omnizart.patch_cnn.app.extract_label</a>
+- The function for label extraction, generating the representation of ground-truth. Accepts the path to the ground-truth file, parses the contents
+into intermediate format (see <a class="reference internal" href="base.html#omnizart.base.Label" title="omnizart.base.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.Label</span></code></a>), and extracts necessary informations.</p>
+<p>Normally, it should be defined in a separate file called <code class="docutils literal notranslate"><span class="pre">labels.py</span></code> under <em>omnizart/&lt;module&gt;/</em> when the extraction process contains lots of logics.
+Since the label extraction in this example is relativly simple, it is okay to put it under <code class="docutils literal notranslate"><span class="pre">omnizart.patch_cnn.app</span></code>.
+See the conventional case <a class="reference internal" href="drum/api.html#module-omnizart.drum.labels" title="omnizart.drum.labels"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.drum.labels</span></code></a>.</p>
+</li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L336-L373">omnizart.patch_cnn._parallel_feature_extraction</a></p>
+<ul class="simple">
+<li><p>To boost the process of feature extraction, files are processed in parallel. You can use the function</p></li>
+</ul>
+<p><a class="reference internal" href="utils.html#omnizart.utils.parallel_generator" title="omnizart.utils.parallel_generator"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.utils.parallel_generator</span></code></a> to accelerate the process.</p>
+</li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/setting_loaders.py#L330-L357">omnizart.setting_loaders.PatchCNNSettings</a>
+- The data class that holds the necessary hyper parameters that will be used by different functions of this module. For feature extraction, the
+parameters are registered under <code class="docutils literal notranslate"><span class="pre">PatchCNNSettings.feature</span></code> attribute.</p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/checkpoints/patch_cnn/patch_cnn_melody/configurations.yaml#L13-L53">omnizart/defatuls/patch_cnn.yaml</a>
+- The configuration file of the module, records the values of hyper parameters and will be consumed by the data class (i.e. PatchCNNSettings).</p></li>
+</ul>
+</div>
+<div class="section" id="overall-process-flow">
+<h3>Overall Process Flow<a class="headerlink" href="#overall-process-flow" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Determine the dataset type from the given dataset path.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/omnizart/music/app.py#L169-L179">music module</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Choose the coressponding dataset strcuture class.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L135">patch-cnn</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/omnizart/music/app.py#L182-L186">music module</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Parse audio/ground-truth file pairs.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L163-L167">patch-cnn</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Make sure feature output path exists.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L169-L172">patch-cnn</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Parallel generate feature and label representation.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L174-L188">patch-cnn</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Write the settings to the output path, named as <em>.success.yaml</em>.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L190-L193">patch-cnn</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="implement-model-training">
+<h2>Implement Model Training<a class="headerlink" href="#implement-model-training" title="Permalink to this headline">¶</a></h2>
+<p>All the training should happen in the <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> function to fine-tune the model. There is supposed no need to manually
+write the training loop.</p>
+<div class="section" id="id6">
+<h3>Commits<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/pull/11/commits/2d6f74da88e52cef7ef6e96f3b93be97771bdf31">2d6f74d</a></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Critical Files/Functions<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L195-L275">omnizart.patch_cnn.app.PatchCNNTranscription.train</a>
+- The main function for managing the training flow.</p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/omnizart/models/patch_cnn.py">omnizart.models.patch_cnn</a>
+- Definition of the model. You can also customize the <code class="docutils literal notranslate"><span class="pre">train_step</span></code> function to do more sophisticated loss computation. See examples
+in <a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/omnizart/models/pyramid_net.py#L233-L284">vocal</a>
+and <a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/omnizart/models/chord_model.py#L547-L600">chord</a>
+modules.</p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L376-L380">omnizart.patch_cnn.app.PatchCNNDatasetLoader</a>
+- The dataset loader for feeding data to models. Dealing with listing files, iterating through all feature/label pairs,
+indexing, and additionally augmenting, cliping, or transforming the feature/label on the fly.</p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/setting_loaders.py#L366-L386">omnizart.setting_loaders.PatchCNNSettings</a>
+- The data class that holds the necessary hyper parameters that will be used by different functions of this module. For model training,
+related hyper parameters are registered under <code class="docutils literal notranslate"><span class="pre">PatchCNNSettings.dataset</span></code>, <code class="docutils literal notranslate"><span class="pre">PatchCNNSettings.model</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">PatchCNNSettings.training</span></code> attributes.</p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/checkpoints/patch_cnn/patch_cnn_melody/configurations.yaml#L54-L75">omnizart/defatuls/patch_cnn.yaml (1)</a> /
+<a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/checkpoints/patch_cnn/patch_cnn_melody/configurations.yaml#L88-L118">omnizart/defatuls/patch_cnn.yaml (2)</a>
+- The configuration file of the module, records the values of hyper parameters and will be consumed by the data class (i.e. PatchCNNSettings).</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>Overall Process Flow<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Check whether there is an input model or not. If given input model path, this indicating the user wants to fine-tune on a previously trained model. The coressponding settings should also be updated.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L216-L219">patch-cnn</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/omnizart/drum/app.py#L167-L172">drum</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Decide the portion of training and validation set.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L221-L223">patch-cnn</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/omnizart/drum/app.py#L174-L176">drum</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Construct dataset loader instances for training and validation.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L225-L236">patch-cnn</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Construct a fresh model if there is no input model.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L238-L240">patch-cnn</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Compile the model with loss function</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L242-L244">patch-cnn</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/omnizart/drum/app.py#L167-L172">music</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Resolve the output path of the model</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L246-L255">patch-cnn</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Construct the callbacks for storing the checkpoints, early stopping the training, and others.</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L257-L262">patch-cnn</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Start training</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L264-L274">patch-cnn</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="implement-transcription">
+<h2>Implement Transcription<a class="headerlink" href="#implement-transcription" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="add-unit-tests">
+<h2>Add Unit Tests<a class="headerlink" href="#add-unit-tests" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="commit-checkpoints">
+<h2>Commit Checkpoints<a class="headerlink" href="#commit-checkpoints" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="implement-cli">
+<h2>Implement CLI<a class="headerlink" href="#implement-cli" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="add-documentation">
+<h2>Add Documentation<a class="headerlink" href="#add-documentation" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="optional">
+<h2>Optional<a class="headerlink" href="#optional" title="Permalink to this headline">¶</a></h2>
+<p>This section holds the optional actions you can do, while it is not necessary to be done
+during implementing a new module.</p>
+<div class="section" id="add-new-supported-datasets">
+<h3>Add new supported datasets<a class="headerlink" href="#add-new-supported-datasets" title="Permalink to this headline">¶</a></h3>
+<p>If you want to add a new dataset that is currently not supported by <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> (which is defined in
+<a class="reference internal" href="constants.html#module-omnizart.constants.datasets" title="omnizart.constants.datasets"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets</span></code></a>), things should be noticed are explained in this section.</p>
+<p>(To be continue…)</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="tutorial.html"
+       title="previous chapter">← Tutorial</a>
+  </li>
+  <li class="next">
+    <a href="music/cli.html"
+       title="next chapter">omnizart music →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, MCTLab.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

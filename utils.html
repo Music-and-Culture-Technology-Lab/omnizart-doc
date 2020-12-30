@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="_static/pygments.css">
       <link rel="stylesheet" href="_static/theme.css">
       <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
 
@@ -15,7 +16,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
@@ -48,6 +48,13 @@
   
     <div class="nav-item">
       <a href="index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
          class="nav-link  router-link-active">
          API Reference
       </a>
@@ -73,6 +80,13 @@
       <a href="index.html#sound-samples"
          class="nav-link ">
          Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#sound-samples"
+         class="nav-link ">
+         Commnad Line Interface
       </a>
     </div>
   
@@ -118,6 +132,21 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="add-new-modules.html" class="reference internal ">Add New Modules</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+      </p>
+      <ul class="">
+        
           <li class="toctree-l1 "><a href="music/cli.html" class="reference internal ">omnizart music</a>
 
             
@@ -143,6 +172,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/cli.html" class="reference internal ">omnizart patch-cnn</a>
 
             
           </li>
@@ -182,6 +217,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="patch-cnn/api.html" class="reference internal ">Patch-CNN Transcription</a>
 
             
           </li>
@@ -366,6 +407,32 @@ the original downloaded file.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="omnizart.utils.aggregate_f0_info">
+<code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">aggregate_f0_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">t_unit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.aggregate_f0_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregation function of F0 contour.</p>
+<p>Aggregate the repeated frequencies in continuous frames into higher-level
+representation, with information of start time, end time, and frequency.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pred: 1D numpy array</strong></dt><dd><p>Array that contains F0 information (Hz) in frame-level.</p>
+</dd>
+<dt><strong>t_unit: float</strong></dt><dd><p>Time unit of each frame.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>agg_f0: list[dict]</dt><dd><p>Aggregated F0 information. Each element in the list represents
+a single freqeuncy with start time, end time, and frequency
+recorded in <em>dict</em>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="omnizart.utils.camel_to_snake">
 <code class="sig-prename descclassname">omnizart.utils.</code><code class="sig-name descname">camel_to_snake</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.camel_to_snake" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a camel case to snake case</p>
@@ -501,7 +568,7 @@ __dict__ attribute.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

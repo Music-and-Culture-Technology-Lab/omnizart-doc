@@ -18,7 +18,7 @@ analyzing polyphonic music and transcribes
 **chord progression** :cite:`chord`,
 **drum events** :cite:`drum`,
 **frame-level vocal melody** :cite:`vocalcontour`,
-**note-level vocal melody** :cite:`vocal`, and
+**note-level vocal melody**  :cite:`vocal`, and
 **beat** :cite:`beat`.
 
 Omnizart provides the main functionalities that construct the life-cycle of deep learning-based music transcription,
@@ -31,7 +31,7 @@ Demonstration
 Colab
 *****
 
-Play with the `Colab notebook <https://bit.ly/OmnizartColab>`_ to transcribe your favorite song almost immediately!
+Play with the `Colab notebook <https://bit.ly/omnizart-colab>`_ to transcribe your favorite song almost immediately!
 
 Sound samples
 *************
@@ -40,7 +40,7 @@ Original song
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hjJhweRlE-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <iframe src="https://www.youtube-nocookie.com/embed/hjJhweRlE-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Chord transcription
 
@@ -92,11 +92,19 @@ You can use *Audacity* to open the files.
 
    quick-start.rst
    tutorial.rst
+   add-new-modules.rst
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Commnad Line Interface
+
    music/cli.rst
    drum/cli.rst
    chord/cli.rst
    vocal/cli.rst
    vocal-contour/cli.rst
+   patch-cnn/cli.rst
 
 
 .. toctree::
@@ -108,6 +116,7 @@ You can use *Audacity* to open the files.
    chord/api.rst
    vocal/api.rst
    vocal-contour/api.rst
+   patch-cnn/api.rst
    feature.rst
    models.rst
    training.rst
@@ -125,4 +134,13 @@ You can use *Audacity* to open the files.
 References
 ##########
 
-.. bibliography:: refs.bib
+.. bibliography::
+   refs.bib
+
+[1]_ Tsung-Ping Chen and Lis Su, "Harmony Transformer: Incorporating Chord Segmentation Into Harmony Recognition,"
+International Society of Music Information Retrieval Conference (ISMIR), 2019.
+
+[2]_ 
+
+[3]_ Wei-Tsung Lu and Li Su, "Vocal Melody Extraction With Semantic Segmentation and Audio-Symbolic Domain
+Transfer Learning," International Society of Music Information Retrieval Conference (ISMIR), 2018.
