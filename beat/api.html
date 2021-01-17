@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Beat Transcription</title>
+    
+      <link rel="stylesheet" href="../_static/pygments.css">
+      <link rel="stylesheet" href="../_static/theme.css">
+      <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+      
+      <script src="../_static/theme-vendors.js"></script>
+      <script src="../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../genindex.html" />
+  <link rel="search" title="Search" href="../search.html" />
+  <link rel="next" title="Feature" href="../feature.html" />
+  <link rel="prev" title="Patch-CNN Transcription" href="../patch-cnn/api.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../index.html" class="home-link">
+    
+      <span class="site-name">omnizart</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="../index.html#sound-samples"
+         class="nav-link ">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../index.html#sound-samples"
+         class="nav-link ">
+         Command Line Interface
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../index.html#sound-samples"
+         class="nav-link  router-link-active">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="../index.html#sound-samples"
+         class="nav-link ">
+         Contents
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../index.html#sound-samples"
+         class="nav-link ">
+         Command Line Interface
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../index.html#sound-samples"
+         class="nav-link  router-link-active">
+         API Reference
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#sound-samples">Contents</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../quick-start.html" class="reference internal ">Quick Start</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../tutorial.html" class="reference internal ">Tutorial</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../music/cli.html" class="reference internal ">omnizart music</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../drum/cli.html" class="reference internal ">omnizart drum</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../chord/cli.html" class="reference internal ">omnizart chord</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal/cli.html" class="reference internal ">omnizart vocal</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="cli.html" class="reference internal ">omnizart beat</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../patch-cnn/cli.html" class="reference internal ">omnizart patch-cnn</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../index.html#sound-samples">API Reference</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="../music/api.html" class="reference internal ">Music Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../drum/api.html" class="reference internal ">Drum Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../chord/api.html" class="reference internal ">Chord Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal/api.html" class="reference internal ">Vocal Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../vocal-contour/api.html" class="reference internal ">Vocal-Contour Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../patch-cnn/api.html" class="reference internal ">Patch-CNN Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Beat Transcription</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#feature-storage-format" class="reference internal">Feature Storage Format</a></li>
+                
+                  <li class="toctree-l2"><a href="#app" class="reference internal">App</a></li>
+                
+                  <li class="toctree-l2"><a href="#dataset" class="reference internal">Dataset</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.beat.inference" class="reference internal">Inference</a></li>
+                
+                  <li class="toctree-l2"><a href="#loss-functions" class="reference internal">Loss Functions</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.beat.features" class="reference internal">Features</a></li>
+                
+                  <li class="toctree-l2"><a href="#module-omnizart.beat.prediction" class="reference internal">Prediction</a></li>
+                
+                  <li class="toctree-l2"><a href="#settings" class="reference internal">Settings</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../feature.html" class="reference internal ">Feature</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../models.html" class="reference internal ">Models</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../training.html" class="reference internal ">Training</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../base.html" class="reference internal ">Base Classes</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../constants.html" class="reference internal ">Constants</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../utils.html" class="reference internal ">Utilities</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+    <li>Beat Transcription</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="../patch-cnn/api.html"
+       title="previous chapter">← Patch-CNN Transcription</a>
+  </li>
+  <li class="next">
+    <a href="../feature.html"
+       title="next chapter">Feature →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="module-omnizart.beat">
+<span id="beat-transcription"></span><h1>Beat Transcription<a class="headerlink" href="#module-omnizart.beat" title="Permalink to this headline">¶</a></h1>
+<p>MIDI domain beat tracking.</p>
+<p>Track beats and downbeat in symbolic domain. Outputs the predicted beat positions
+in seconds. Re-implementation of the work <a class="reference internal" href="#r985f0f089ca2-1" id="id1">[1]</a> with tensorflow 2.3.0.</p>
+<div class="section" id="feature-storage-format">
+<h2>Feature Storage Format<a class="headerlink" href="#feature-storage-format" title="Permalink to this headline">¶</a></h2>
+<p>Processed feature will be stored in <code class="docutils literal notranslate"><span class="pre">.hdf</span></code> format, one file per piece.</p>
+<p>Columns in the file are:</p>
+<ul class="simple">
+<li><p><strong>feature</strong>: Piano roll like representation with mixed information.</p></li>
+<li><p><strong>label</strong>:</p></li>
+</ul>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<dl class="citation">
+<dt class="label" id="r985f0f089ca2-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://github.com/chuang76/symbolic-beat-tracking">https://github.com/chuang76/symbolic-beat-tracking</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="app">
+<h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="omnizart.beat.app.BeatTranscription">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.beat.app.</code><code class="sig-name descname">BeatTranscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
+<p>Application class for beat tracking in MIDI domain.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.beat.app.BeatTranscription.generate_feature" title="omnizart.beat.app.BeatTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, …])</p></td>
+<td><p>Extract the feature from the given dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.beat.app.BeatTranscription.train" title="omnizart.beat.app.BeatTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, …])</p></td>
+<td><p>Model training.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.beat.app.BeatTranscription.transcribe" title="omnizart.beat.app.BeatTranscription.transcribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transcribe</span></code></a>(input_audio[, model_path, output])</p></td>
+<td><p>Transcribe beat positions in the given MIDI.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="omnizart.beat.app.BeatTranscription.generate_feature">
+<code class="sig-name descname">generate_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em>, <em class="sig-param"><span class="n">beat_settings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_threads</span><span class="o">=</span><span class="default_value">8</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the feature from the given dataset.</p>
+<p>To train the model, the first step is to pre-process the data into feature
+representations. After downloading the dataset, use this function to generate
+the feature by giving the path of the stored dataset.</p>
+<p>To specify the output path, modify the attribute
+<code class="docutils literal notranslate"><span class="pre">beat_settings.dataset.feature_save_path</span></code>.
+It defaults to the folder under where the dataset stored, generating
+two folders: <code class="docutils literal notranslate"><span class="pre">train_feature</span></code> and <code class="docutils literal notranslate"><span class="pre">test_feature</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dataset_path: Path</strong></dt><dd><p>Path to the downloaded dataset.</p>
+</dd>
+<dt><strong>beat_settings: BeatSettings</strong></dt><dd><p>The configuration instance that holds all relative settings for
+the life-cycle of building a model.</p>
+</dd>
+<dt><strong>num_threads:</strong></dt><dd><p>Number of threads for parallel extraction the feature.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.beat.app.BeatTranscription.train">
+<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">beat_settings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model training.</p>
+<p>Train the model from scratch or continue training given a model checkpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the generated feature.</p>
+</dd>
+<dt><strong>model_name: str</strong></dt><dd><p>The name of the trained model. If not given, will default to the
+current timestamp.</p>
+</dd>
+<dt><strong>input_model_path: Path</strong></dt><dd><p>Specify the path to the model checkpoint in order to fine-tune
+the model.</p>
+</dd>
+<dt><strong>beat_settings: BeatSettings</strong></dt><dd><p>The configuration that holds all relative settings for
+the life-cycle of model building.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="omnizart.beat.app.BeatTranscription.transcribe">
+<code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transcribe beat positions in the given MIDI.</p>
+<p>Tracks the beat in symbolic domain. Outputs three files if the output path is given:
+<em>&lt;filename&gt;.mid</em>, &lt;filename&gt;_beat.csv, and &lt;filename&gt;_down_beat.csv, where <em>filename</em>
+is the name of the input MIDI without extension. The <a href="#id2"><span class="problematic" id="id3">*</span></a>.csv files records the beat
+positions in seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>input_audio: Path</strong></dt><dd><p>Path to the MIDI file (.mid).</p>
+</dd>
+<dt><strong>model_path: Path</strong></dt><dd><p>Path to the trained model or the supported transcription mode.</p>
+</dd>
+<dt><strong>output: Path (optional)</strong></dt><dd><p>Path for writing out the transcribed MIDI file. Default to the current path.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>midi: pretty_midi.PrettyMIDI</dt><dd><p>The transcribed beat positions. There are two types of beat: beat and down beat.
+Each are recorded in independent instrument track.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.cli.beat.transcribe</span></code></dt><dd><p>CLI entry point of this function.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="omnizart.beat.app.BeatDatasetLoader">
+<em class="property">class </em><code class="sig-prename descclassname">omnizart.beat.app.</code><code class="sig-name descname">BeatDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">slice_hop</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">feat_col_name</span><span class="o">=</span><span class="default_value">'feature'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
+<p>Data loader for training the model of <code class="docutils literal notranslate"><span class="pre">beat</span></code>.</p>
+<p>Each feature slice will have an overlap size of <em>timesteps//2</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature_folder: Path</strong></dt><dd><p>Path to the extracted feature files, including <cite>*.hdf</cite> and <cite>*.pickle</cite> pairs,
+which refers to feature and label files, respectively.</p>
+</dd>
+<dt><strong>feature_files: list[Path]</strong></dt><dd><p>List of path of <cite>*.hdf</cite> feature files. Corresponding label files should also
+under the same folder.</p>
+</dd>
+<dt><strong>num_samples: int</strong></dt><dd><p>Total number of samples to yield.</p>
+</dd>
+<dt><strong>timesteps: int</strong></dt><dd><p>Time length of the feature.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><dl class="simple">
+<dt>feature:</dt><dd><p>Input features for model training.</p>
+</dd>
+<dt>label:</dt><dd><p>Corresponding labels.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.beat.inference">
+<span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.beat.inference" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.beat.inference.inference">
+<code class="sig-prename descclassname">omnizart.beat.inference.</code><code class="sig-name descname">inference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">beat_th</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">down_beat_th</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">min_dist</span><span class="o">=</span><span class="default_value">0.3</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.inference.inference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infers the beat and down beat positions from the raw prediction values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pred: 2D numpy array</strong></dt><dd><p>The prediction of the model.</p>
+</dd>
+<dt><strong>beat_th: float</strong></dt><dd><p>Threshold for beat channel.</p>
+</dd>
+<dt><strong>down_beat_th: float</strong></dt><dd><p>Threshold for down beat channel.</p>
+</dd>
+<dt><strong>min_dist: float</strong></dt><dd><p>Minimum distance between two beat positions in seconds.</p>
+</dd>
+<dt><strong>t_unit: float</strong></dt><dd><p>Time unit of each frame in seconds.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>midi: pretty_midi.PrettyMIDI</dt><dd><p>Inferred beat positions recorded as MIDI notes. Information of beat
+and down beat are recorded in two different instrument tracks.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="loss-functions">
+<h2>Loss Functions<a class="headerlink" href="#loss-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.beat.app.weighted_binary_crossentropy">
+<code class="sig-prename descclassname">omnizart.beat.app.</code><code class="sig-name descname">weighted_binary_crossentropy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">down_beat_weight</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.weighted_binary_crossentropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap around binary crossentropy loss with weighting to different channels.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.beat.features">
+<span id="features"></span><h2>Features<a class="headerlink" href="#module-omnizart.beat.features" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="omnizart.beat.features.extract_feature">
+<code class="sig-prename descclassname">omnizart.beat.features.</code><code class="sig-name descname">extract_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">labels</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract feature representation required by beat module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>labels: list[Label]</strong></dt><dd><p>List of <a class="reference internal" href="../base.html#omnizart.base.Label" title="omnizart.base.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.Label</span></code></a> instances.</p>
+</dd>
+<dt><strong>t_unit: float</strong></dt><dd><p>Time unit of each frame of the output representation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>feature: 2D numpy array</dt><dd><p>A piano roll like representation. Please refer to the original paper
+for more details.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.beat.features.extract_feature_from_midi">
+<code class="sig-prename descclassname">omnizart.beat.features.</code><code class="sig-name descname">extract_feature_from_midi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">midi_path</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_feature_from_midi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract feature for beat module from MIDI file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#omnizart.beat.features.extract_feature" title="omnizart.beat.features.extract_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.beat.features.extract_feature</span></code></a></dt><dd><p>The main feature extraction function of beat module.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.beat.features.extract_musicnet_feature">
+<code class="sig-prename descclassname">omnizart.beat.features.</code><code class="sig-name descname">extract_musicnet_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">csv_path</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_musicnet_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract feature for beat module from MusicNet label file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#omnizart.beat.features.extract_feature" title="omnizart.beat.features.extract_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">omnizart.beat.features.extract_feature</span></code></a></dt><dd><p>The main feature extraction function of beat module.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.beat.features.extract_musicnet_label">
+<code class="sig-prename descclassname">omnizart.beat.features.</code><code class="sig-name descname">extract_musicnet_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">csv_path</span></em>, <em class="sig-param"><span class="n">meter</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.01</span></em>, <em class="sig-param"><span class="n">rounding</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">fade_out</span><span class="o">=</span><span class="default_value">15</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_musicnet_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Label extraction function for MusicNet.</p>
+<p>This function extracts the beat and down beat information given the symbolic
+representations of MusicNet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>csv_path: Path</strong></dt><dd><p>Path to the ground-truth file in CSV format.</p>
+</dd>
+<dt><strong>meter: int</strong></dt><dd><p>Meter information of the piece. Currently it is default to the most common
+meter, which is 4. Since there is no meter information recorded in MusicNet,
+the meter value will always be 4 and apparently this is not always true.</p>
+</dd>
+<dt><strong>t_unit: int</strong></dt><dd><p>Time unit of each frame in seconds.</p>
+</dd>
+<dt><strong>rounding: int</strong></dt><dd><p>Round to position below decimal of start beat.</p>
+</dd>
+<dt><strong>fade_out: int</strong></dt><dd><p>Used to augment the sparse positive label in a fade-out manner, reducing
+the value from 1 to 1/fade_out, totaling in length of &lt;fade_out&gt;.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-omnizart.beat.prediction">
+<span id="prediction"></span><h2>Prediction<a class="headerlink" href="#module-omnizart.beat.prediction" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt id="omnizart.beat.prediction.STEP_SIZE_RATIO">
+<code class="sig-prename descclassname">omnizart.beat.prediction.</code><code class="sig-name descname">STEP_SIZE_RATIO</code><em class="property"> = 0.5</em><a class="headerlink" href="#omnizart.beat.prediction.STEP_SIZE_RATIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step size for slicing the feature. Ratio to the timesteps of the model input feature.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.beat.prediction.create_batches">
+<code class="sig-prename descclassname">omnizart.beat.prediction.</code><code class="sig-name descname">create_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span></em>, <em class="sig-param"><span class="n">timesteps</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">8</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a 4D output from the 2D feature for model prediciton.</p>
+<p>Create overlapped input features, and collect feature slices into batches.
+The overlap size is 1/4 length to the timesteps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature: 2D numpy array</strong></dt><dd><p>The feature representation for the model.</p>
+</dd>
+<dt><strong>timesteps: int</strong></dt><dd><p>Size of the input feature dimension.</p>
+</dd>
+<dt><strong>batch_size: int</strong></dt><dd><p>Batch size.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>batches: 4D numpy array</dt><dd><p>Batched feature slices with dimension: batches x batch_size x timesteps x feat.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.beat.prediction.merge_batches">
+<code class="sig-prename descclassname">omnizart.beat.prediction.</code><code class="sig-name descname">merge_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batch_pred</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge the batched predictions back to the 2D output.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="omnizart.beat.prediction.predict">
+<code class="sig-prename descclassname">omnizart.beat.prediction.</code><code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">64</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict on the given feature with the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature: 2D numpy array</strong></dt><dd><p>Input feature of the model.</p>
+</dd>
+<dt><strong>model:</strong></dt><dd><p>The pre-trained Tensorflow model.</p>
+</dd>
+<dt><strong>timesteps: int</strong></dt><dd><p>Size of the input feature dimension.</p>
+</dd>
+<dt><strong>batch_size: int</strong></dt><dd><p>Batch size for the model input.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pred: 2D numpy array</dt><dd><p>The predicted probabilities of beat and down beat positions.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>Below are the default settings for building the beat model. It will be loaded
+by the class <code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.setting_loaders.BeatSettings</span></code>. The name of the
+attributes will be converted to snake-case (e.g. HopSize -&gt; hop_size). There
+is also a path transformation process when applying the settings into the
+<code class="docutils literal notranslate"><span class="pre">BeatSettings</span></code> instance. For example, if you want to access the attribute
+<code class="docutils literal notranslate"><span class="pre">BatchSize</span></code> defined in the yaml path <em>General/Training/Settings/BatchSize</em>,
+the coressponding attribute will be <em>BeatSettings.training.batch_size</em>.
+The level of <em>/Settings</em> is removed among all fields.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+    <span class="nt">TranscriptionMode</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Mode of transcription by executing the `omnizart beat transcribe` command.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+        <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">BLSTM</span>
+    <span class="nt">CheckpointPath</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to the pre-trained models.</span>
+        <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Map</span>
+        <span class="nt">SubType</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">String</span><span class="p p-Indicator">,</span> <span class="nv">String</span><span class="p p-Indicator">]</span>
+        <span class="nt">Value</span><span class="p">:</span>
+            <span class="nt">BLSTM</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/beat/beat_blstm</span>
+    <span class="nt">Feature</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction for drum transcription.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">TimeUnit</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Time unit of each frame in seconds.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.01</span>
+    <span class="nt">Dataset</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Settings of datasets.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the downloaded datasets.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./</span>
+            <span class="nt">FeatureSavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path for storing the extracted feature. Default to the path under the dataset folder.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">+</span>
+    <span class="nt">Model</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of training / testing the model.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">SavePrefix</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Prefix of the trained model&#39;s name to be saved.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">beat</span>
+            <span class="nt">SavePath</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to save the trained model.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./checkpoints/beat</span>
+            <span class="nt">ModelType</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">One of &#39;blstm&#39; or &#39;blstm_attn&#39;.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">blstm</span>
+            <span class="nt">Timesteps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Input length of the model.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+            <span class="nt">LstmHiddenDim</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Dimension of LSTM hidden layers.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">25</span>
+            <span class="nt">NumLstmLayers</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of LSTM layers.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+            <span class="nt">AttnHiddenDim</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Dimension of multi-head attention layers.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">256</span>
+    <span class="nt">Inference</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings when infering notes.</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">BeatThreshold</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold that will be applied to clip the predicted beat values to either 0 or 1.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.5</span>
+            <span class="nt">DownBeatThreshold</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Same as above, but for down beat.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.3</span>
+            <span class="nt">MinDistance</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Minimum required distance between each note in seconds.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.3</span>
+    <span class="nt">Training</span><span class="p">:</span>
+        <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Hyper parameters for training</span>
+        <span class="nt">Settings</span><span class="p">:</span>
+            <span class="nt">Epoch</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Maximum number of epochs for training.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+            <span class="nt">Steps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of training steps for each epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1000</span>
+            <span class="nt">ValSteps</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of validation steps after each training epoch.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">50</span>
+            <span class="nt">BatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batch size of each training step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">64</span>
+            <span class="nt">ValBatchSize</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Batch size of each validation step.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">64</span>
+            <span class="nt">EarlyStop</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Terminate the training if the validation performance doesn&#39;t imrove after n epochs.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Integer</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">7</span>
+            <span class="nt">InitLearningRate</span><span class="p">:</span>
+                <span class="nt">Descriptoin</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Initial learning rate.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.001</span>
+            <span class="nt">DownBeatWeight</span><span class="p">:</span>
+                <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Weighting of down beat loss. Beat loss is always set to one.</span>
+                <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="../patch-cnn/api.html"
+       title="previous chapter">← Patch-CNN Transcription</a>
+  </li>
+  <li class="next">
+    <a href="../feature.html"
+       title="next chapter">Feature →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, MCTLab.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

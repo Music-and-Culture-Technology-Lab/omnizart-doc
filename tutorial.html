@@ -24,7 +24,7 @@
     
   <link rel="index" title="Index" href="genindex.html" />
   <link rel="search" title="Search" href="search.html" />
-  <link rel="next" title="Add New Modules" href="add-new-modules.html" />
+  <link rel="next" title="omnizart music" href="music/cli.html" />
   <link rel="prev" title="Quick Start" href="quick-start.html" /> 
   </head>
 
@@ -50,7 +50,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -87,7 +87,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -141,18 +141,12 @@
           </li>
 
         
-          <li class="toctree-l1 "><a href="add-new-modules.html" class="reference internal ">Add New Modules</a>
-
-            
-          </li>
-
-        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -181,6 +175,12 @@
 
         
           <li class="toctree-l1 "><a href="vocal-contour/cli.html" class="reference internal ">omnizart vocal-contour</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="beat/cli.html" class="reference internal ">omnizart beat</a>
 
             
           </li>
@@ -232,6 +232,12 @@
 
         
           <li class="toctree-l1 "><a href="patch-cnn/api.html" class="reference internal ">Patch-CNN Transcription</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="beat/api.html" class="reference internal ">Beat Transcription</a>
 
             
           </li>
@@ -295,8 +301,8 @@
        title="previous chapter">← Quick Start</a>
   </li>
   <li class="next">
-    <a href="add-new-modules.html"
-       title="next chapter">Add New Modules →</a>
+    <a href="music/cli.html"
+       title="next chapter">omnizart music →</a>
   </li>
 </ul>
   
@@ -324,7 +330,7 @@ Detailed descriptions for the usage of each sub-command can be found in the dedi
 <li><p><a class="reference internal" href="chord/cli.html"><span class="doc">omnizart chord</span></a></p></li>
 <li><p><a class="reference internal" href="vocal-contour/cli.html"><span class="doc">omnizart vocal-contour</span></a></p></li>
 <li><p><a class="reference internal" href="vocal/cli.html"><span class="doc">omnizart vocal</span></a></p></li>
-<li><p>beat <em>(preparing)</em></p></li>
+<li><p><a class="reference internal" href="beat/cli.html"><span class="doc">omnizart beat</span></a></p></li>
 </ul>
 <p>All the applications share a same set of actions: <strong>transcribe</strong>, <strong>generate-feature</strong>, and <strong>train-model</strong>.
 Let’s have a walkthrough of each <code class="docutils literal notranslate"><span class="pre">action</span></code>.</p>
@@ -338,7 +344,7 @@ The supported applications are as follows:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">chord</span></code> - Transcribe chord progressions in MIDI and CSV.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">vocal</span></code> - Transcribe note-level vocal melody in MIDI.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">vocal-contour</span></code> - Transcribe frame-level vocal melody (F0) in text.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">beat</span></code> <em>(preparing)</em> - Transcribe beat position.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beat</span></code> - Transcribe beat position.</p></li>
 </ul>
 <p>Note that all the applications receive polyphonic music in WAV, except <code class="docutils literal notranslate"><span class="pre">beat</span></code> receives inputs in MIDI.</p>
 <p>Example usage:</p>
@@ -357,13 +363,14 @@ The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_featu
 <p>The supported datasets for feature processing are application-dependent, summarized as follows:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 11%" />
+<col style="width: 19%" />
 <col style="width: 10%" />
-<col style="width: 11%" />
+<col style="width: 9%" />
 <col style="width: 10%" />
-<col style="width: 11%" />
-<col style="width: 25%" />
+<col style="width: 9%" />
+<col style="width: 10%" />
+<col style="width: 22%" />
+<col style="width: 9%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Module</p></th>
@@ -373,11 +380,13 @@ The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_featu
 <th class="head"><p>beat</p></th>
 <th class="head"><p>vocal</p></th>
 <th class="head"><p>vocal-contour</p></th>
+<th class="head"><p>beat</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Maestro</p></td>
 <td><p>O</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -391,6 +400,7 @@ The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_featu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>MusicNet</p></td>
 <td><p>O</p></td>
@@ -399,6 +409,7 @@ The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_featu
 <td></td>
 <td></td>
 <td></td>
+<td><p>O</p></td>
 </tr>
 <tr class="row-odd"><td><p>Pop</p></td>
 <td><p>O</p></td>
@@ -407,9 +418,11 @@ The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_featu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>Ext-Su</p></td>
 <td><p>O</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -423,8 +436,10 @@ The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_featu
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>BPS-FH</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -439,6 +454,7 @@ The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_featu
 <td></td>
 <td><p>O</p></td>
 <td><p>O</p></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>MedleyDB</p></td>
 <td></td>
@@ -447,6 +463,7 @@ The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_featu
 <td></td>
 <td></td>
 <td><p>O</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>Tonas</p></td>
 <td></td>
@@ -454,6 +471,7 @@ The processed features will be stored in <em>&lt;path/to/dataset&gt;/train_featu
 <td></td>
 <td></td>
 <td><p>O</p></td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -526,13 +544,13 @@ omnizart download-checkpoints
        title="previous chapter">← Quick Start</a>
   </li>
   <li class="next">
-    <a href="add-new-modules.html"
-       title="next chapter">Add New Modules →</a>
+    <a href="music/cli.html"
+       title="next chapter">omnizart music →</a>
   </li>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>
