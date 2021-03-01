@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="../_static/theme.css">
       <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
           <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/css/waveform-list.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
 
@@ -16,7 +17,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="../_static/theme-vendors.js"></script>
@@ -50,7 +50,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -87,7 +87,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -133,12 +133,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../demo.html" class="reference internal ">Demonstration</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -362,7 +368,7 @@ Audio-to-MIDI Aligned Data” (in submission)</p>
 <h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.drum.app.DrumTranscription">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.drum.app.</code><code class="sig-name descname">DrumTranscription</code><a class="headerlink" href="#omnizart.drum.app.DrumTranscription" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.drum.app.</span></code><code class="sig-name descname"><span class="pre">DrumTranscription</span></code><a class="headerlink" href="#omnizart.drum.app.DrumTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
 <p>Application class for drum transcriptions.</p>
 <p class="rubric">Methods</p>
@@ -385,7 +391,7 @@ Audio-to-MIDI Aligned Data” (in submission)</p>
 </table>
 <dl class="py method">
 <dt id="omnizart.drum.app.DrumTranscription.generate_feature">
-<code class="sig-name descname">generate_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em>, <em class="sig-param"><span class="n">drum_settings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_threads</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">generate_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drum_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract the feature of the whole dataset.</p>
 <p>Currently only supports Pop dataset. To train the model, you have to prepare the training
 data first, then process it into feature representations. After downloading the dataset,
@@ -418,7 +424,7 @@ the life-cycle of building a model.</p>
 
 <dl class="py method">
 <dt id="omnizart.drum.app.DrumTranscription.train">
-<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">drum_settings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.train" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">train</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drum_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Model training.</p>
 <p>Train a new model or continue to train on a previously trained model.</p>
 <dl class="field-list simple">
@@ -441,7 +447,7 @@ the life-cycle of building a model.</p>
 
 <dl class="py method">
 <dt id="omnizart.drum.app.DrumTranscription.transcribe">
-<code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">transcribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.DrumTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transcribe drum in the audio.</p>
 <p>This function transcribes drum activations in the music. Currently the model
 predicts 13 classes of different drum sets, and 3 of them will be written to
@@ -480,7 +486,7 @@ the MIDI file.</p>
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.drum.app.PopDatasetLoader">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.drum.app.</code><code class="sig-name descname">PopDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mini_beat_per_seg</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">slice_hop</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.PopDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.drum.app.</span></code><code class="sig-name descname"><span class="pre">PopDatasetLoader</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mini_beat_per_seg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.app.PopDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
 <p>Pop dataset loader for training drum model.</p>
 </dd></dl>
@@ -490,12 +496,12 @@ the MIDI file.</p>
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.drum.inference" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="omnizart.drum.inference.get_3inst_ary">
-<code class="sig-prename descclassname">omnizart.drum.inference.</code><code class="sig-name descname">get_3inst_ary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inst_13_ary_in</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.inference.get_3inst_ary" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.drum.inference.</span></code><code class="sig-name descname"><span class="pre">get_3inst_ary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst_13_ary_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.inference.get_3inst_ary" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="omnizart.drum.inference.inference">
-<code class="sig-prename descclassname">omnizart.drum.inference.</code><code class="sig-name descname">inference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">m_beat_arr</span></em>, <em class="sig-param"><span class="n">bass_drum_th</span><span class="o">=</span><span class="default_value">0.85</span></em>, <em class="sig-param"><span class="n">snare_th</span><span class="o">=</span><span class="default_value">1.2</span></em>, <em class="sig-param"><span class="n">hihat_th</span><span class="o">=</span><span class="default_value">0.17</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.inference.inference" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.drum.inference.</span></code><code class="sig-name descname"><span class="pre">inference</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_beat_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bass_drum_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.85</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snare_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hihat_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.17</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.inference.inference" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -503,7 +509,7 @@ the MIDI file.</p>
 <span id="labels"></span><h2>Labels<a class="headerlink" href="#module-omnizart.drum.labels" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="omnizart.drum.labels.extract_label">
-<code class="sig-prename descclassname">omnizart.drum.labels.</code><code class="sig-name descname">extract_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em>, <em class="sig-param"><span class="n">m_beat_arr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.labels.extract_label" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.drum.labels.</span></code><code class="sig-name descname"><span class="pre">extract_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_beat_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.labels.extract_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract drum label notes.</p>
 <p>Process ground-truth midi into numpy array representation.</p>
 <dl class="field-list simple">
@@ -534,7 +540,7 @@ of drum notes.</p>
 
 <dl class="py function">
 <dt id="omnizart.drum.labels.extract_label_13_inst">
-<code class="sig-prename descclassname">omnizart.drum.labels.</code><code class="sig-name descname">extract_label_13_inst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em>, <em class="sig-param"><span class="n">m_beat_arr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.labels.extract_label_13_inst" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.drum.labels.</span></code><code class="sig-name descname"><span class="pre">extract_label_13_inst</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_beat_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.labels.extract_label_13_inst" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract 13 types of drum label notes.</p>
 <p>Process the MIDI drum notes into numpy array and concludes them
 into 13 different sub-classes of drum notes.</p>
@@ -570,7 +576,7 @@ into 13 different sub-classes of drum notes.</p>
 <span id="prediction"></span><h2>Prediction<a class="headerlink" href="#module-omnizart.drum.prediction" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="omnizart.drum.prediction.create_batches">
-<code class="sig-prename descclassname">omnizart.drum.prediction.</code><code class="sig-name descname">create_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span></em>, <em class="sig-param"><span class="n">mini_beat_per_seg</span></em>, <em class="sig-param"><span class="n">b_size</span><span class="o">=</span><span class="default_value">6</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.drum.prediction.</span></code><code class="sig-name descname"><span class="pre">create_batches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mini_beat_per_seg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a 4D input for model prediction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -596,14 +602,14 @@ into 13 different sub-classes of drum notes.</p>
 
 <dl class="py function">
 <dt id="omnizart.drum.prediction.merge_batches">
-<code class="sig-prename descclassname">omnizart.drum.prediction.</code><code class="sig-name descname">merge_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batch_pred</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.drum.prediction.</span></code><code class="sig-name descname"><span class="pre">merge_batches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverse process of create_batches.</p>
 <p>Merges a 5D batched-prediction into 2D output.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="omnizart.drum.prediction.predict">
-<code class="sig-prename descclassname">omnizart.drum.prediction.</code><code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">patch_cqt_feature</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">mini_beat_per_seg</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">32</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.drum.prediction.</span></code><code class="sig-name descname"><span class="pre">predict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patch_cqt_feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mini_beat_per_seg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.drum.prediction.predict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -751,7 +757,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

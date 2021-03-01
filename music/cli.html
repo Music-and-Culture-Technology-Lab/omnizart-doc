@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="../_static/theme.css">
       <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
           <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/css/waveform-list.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
 
@@ -16,7 +17,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="../_static/theme-vendors.js"></script>
@@ -25,7 +25,7 @@
   <link rel="index" title="Index" href="../genindex.html" />
   <link rel="search" title="Search" href="../search.html" />
   <link rel="next" title="omnizart drum" href="../drum/cli.html" />
-  <link rel="prev" title="Tutorial" href="../tutorial.html" /> 
+  <link rel="prev" title="Demonstration" href="../demo.html" /> 
   </head>
 
   <body>
@@ -50,7 +50,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -87,7 +87,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -133,12 +133,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../demo.html" class="reference internal ">Demonstration</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
       </p>
       <ul class="current">
         
@@ -299,8 +305,8 @@
 
   <ul class="page-nav">
   <li class="prev">
-    <a href="../tutorial.html"
-       title="previous chapter">← Tutorial</a>
+    <a href="../demo.html"
+       title="previous chapter">← Demonstration</a>
   </li>
   <li class="next">
     <a href="../drum/cli.html"
@@ -338,13 +344,13 @@ extension will be replaced with ‘.mid’.</p>
 <p class="rubric">Options</p>
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-transcribe-m">
-<span id="cmdoption-omnizart-music-transcribe-model-path"></span><code class="sig-name descname">-m</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--model-path</code><code class="sig-prename descclassname"> &lt;model_path&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-transcribe-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-transcribe-model-path"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--model-path</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;model_path&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-transcribe-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to the pre-trained model or the supported transcription mode.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-transcribe-o">
-<span id="cmdoption-omnizart-music-transcribe-output"></span><code class="sig-name descname">-o</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--output</code><code class="sig-prename descclassname"> &lt;output&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-transcribe-o" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-transcribe-output"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--output</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;output&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-transcribe-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to output the prediction file (could be MIDI, CSV, …, etc.)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
@@ -356,7 +362,7 @@ extension will be replaced with ‘.mid’.</p>
 <p class="rubric">Arguments</p>
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-transcribe-arg-INPUT_AUDIO">
-<span id="cmdoption-omnizart-music-transcribe-arg-input-audio"></span><code class="sig-name descname">INPUT_AUDIO</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-omnizart-music-transcribe-arg-INPUT_AUDIO" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-transcribe-arg-input-audio"></span><code class="sig-name descname"><span class="pre">INPUT_AUDIO</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-omnizart-music-transcribe-arg-INPUT_AUDIO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Required argument</p>
 </dd></dl>
 
@@ -381,19 +387,19 @@ extension will be replaced with ‘.mid’.</p>
 <p class="rubric">Options</p>
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-generate-feature-d">
-<span id="cmdoption-omnizart-music-generate-feature-dataset-path"></span><code class="sig-name descname">-d</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--dataset-path</code><code class="sig-prename descclassname"> &lt;dataset_path&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-d" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-generate-feature-dataset-path"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--dataset-path</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;dataset_path&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-d" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>Required</strong> Path to the downloaded dataset</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-generate-feature-o">
-<span id="cmdoption-omnizart-music-generate-feature-output-path"></span><code class="sig-name descname">-o</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--output-path</code><code class="sig-prename descclassname"> &lt;output_path&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-o" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-generate-feature-output-path"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--output-path</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;output_path&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path for saving the extracted feature. Default to the folder under the dataset.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-generate-feature-n">
-<span id="cmdoption-omnizart-music-generate-feature-num-threads"></span><code class="sig-name descname">-n</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--num-threads</code><code class="sig-prename descclassname"> &lt;num_threads&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-generate-feature-num-threads"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--num-threads</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;num_threads&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of threads used for parallel feature extraction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
@@ -404,7 +410,7 @@ extension will be replaced with ‘.mid’.</p>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-generate-feature-h">
-<span id="cmdoption-omnizart-music-generate-feature-harmonic"></span><code class="sig-name descname">-h</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--harmonic</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-h" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-generate-feature-harmonic"></span><code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--harmonic</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-omnizart-music-generate-feature-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether to use harmonic version of the feature</p>
 </dd></dl>
 
@@ -421,117 +427,117 @@ extension will be replaced with ‘.mid’.</p>
 <p class="rubric">Options</p>
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-d">
-<span id="cmdoption-omnizart-music-train-model-feature-path"></span><code class="sig-name descname">-d</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--feature-path</code><code class="sig-prename descclassname"> &lt;feature_path&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-d" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-feature-path"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--feature-path</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;feature_path&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-d" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>Required</strong> Path to the folder of extracted feature</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-m">
-<span id="cmdoption-omnizart-music-train-model-model-name"></span><code class="sig-name descname">-m</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--model-name</code><code class="sig-prename descclassname"> &lt;model_name&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-model-name"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--model-name</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;model_name&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name for the output model (can be a path)</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-i">
-<span id="cmdoption-omnizart-music-train-model-input-model"></span><code class="sig-name descname">-i</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--input-model</code><code class="sig-prename descclassname"> &lt;input_model&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-i" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-input-model"></span><code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--input-model</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;input_model&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>If given, the training will continue to fine-tune the pre-trained model.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-e">
-<span id="cmdoption-omnizart-music-train-model-epochs"></span><code class="sig-name descname">-e</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--epochs</code><code class="sig-prename descclassname"> &lt;epochs&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-e" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-epochs"></span><code class="sig-name descname"><span class="pre">-e</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--epochs</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;epochs&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of training epochs</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-s">
-<span id="cmdoption-omnizart-music-train-model-steps"></span><code class="sig-name descname">-s</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--steps</code><code class="sig-prename descclassname"> &lt;steps&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-steps"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--steps</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;steps&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of training steps of each epoch</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-vs">
-<span id="cmdoption-omnizart-music-train-model-val-steps"></span><code class="sig-name descname">-vs</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--val-steps</code><code class="sig-prename descclassname"> &lt;val_steps&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-vs" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-val-steps"></span><code class="sig-name descname"><span class="pre">-vs</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--val-steps</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;val_steps&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-vs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of validation steps of each epoch</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-b">
-<span id="cmdoption-omnizart-music-train-model-batch-size"></span><code class="sig-name descname">-b</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--batch-size</code><code class="sig-prename descclassname"> &lt;batch_size&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-b" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-batch-size"></span><code class="sig-name descname"><span class="pre">-b</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--batch-size</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;batch_size&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Batch size of each training step</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-vb">
-<span id="cmdoption-omnizart-music-train-model-val-batch-size"></span><code class="sig-name descname">-vb</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--val-batch-size</code><code class="sig-prename descclassname"> &lt;val_batch_size&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-vb" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-val-batch-size"></span><code class="sig-name descname"><span class="pre">-vb</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--val-batch-size</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;val_batch_size&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-vb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Batch size of each validation step</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-early-stop">
-<code class="sig-name descname">--early-stop</code><code class="sig-prename descclassname"> &lt;early_stop&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-early-stop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">--early-stop</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;early_stop&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-early-stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop the training if validation accuracy does not improve over the given number of epochs.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-y">
-<span id="cmdoption-omnizart-music-train-model-model-type"></span><code class="sig-name descname">-y</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--model-type</code><code class="sig-prename descclassname"> &lt;model_type&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-y" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-model-type"></span><code class="sig-name descname"><span class="pre">-y</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--model-type</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;model_type&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type of the neural network model</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>attn</p>
 </dd>
 <dt class="field-even">Options</dt>
-<dd class="field-even"><p>attn|aspp</p>
+<dd class="field-even"><p>attn | aspp</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-f">
-<span id="cmdoption-omnizart-music-train-model-feature-type"></span><code class="sig-name descname">-f</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--feature-type</code><code class="sig-prename descclassname"> &lt;feature_type&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-feature-type"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--feature-type</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;feature_type&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the input feature types for training</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>Spec, Ceps</p>
 </dd>
 <dt class="field-even">Options</dt>
-<dd class="field-even"><p>Spec|Ceps|GCoS</p>
+<dd class="field-even"><p>Spec | Ceps | GCoS</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-l">
-<span id="cmdoption-omnizart-music-train-model-label-type"></span><code class="sig-name descname">-l</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--label-type</code><code class="sig-prename descclassname"> &lt;label_type&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-l" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-label-type"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--label-type</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;label_type&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the output label should be note- (onset, duration) or stream-level (onset, duration, instrument)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>note-stream</p>
 </dd>
 <dt class="field-even">Options</dt>
-<dd class="field-even"><p>note|note-stream|pop-note-stream|frame|frame-stream</p>
+<dd class="field-even"><p>note | note-stream | pop-note-stream | frame | frame-stream</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-n">
-<span id="cmdoption-omnizart-music-train-model-loss-function"></span><code class="sig-name descname">-n</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--loss-function</code><code class="sig-prename descclassname"> &lt;loss_function&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-loss-function"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--loss-function</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;loss_function&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Detemine which loss function to use</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>smooth</p>
 </dd>
 <dt class="field-even">Options</dt>
-<dd class="field-even"><p>focal|smooth|bce</p>
+<dd class="field-even"><p>focal | smooth | bce</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="std option">
 <dt id="cmdoption-omnizart-music-train-model-t">
-<span id="cmdoption-omnizart-music-train-model-timesteps"></span><code class="sig-name descname">-t</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--timesteps</code><code class="sig-prename descclassname"> &lt;timesteps&gt;</code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-t" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-omnizart-music-train-model-timesteps"></span><code class="sig-name descname"><span class="pre">-t</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--timesteps</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;timesteps&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-music-train-model-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time width of each input feature</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
@@ -549,8 +555,8 @@ extension will be replaced with ‘.mid’.</p>
           <div class="page-nav">
             <div class="inner"><ul class="page-nav">
   <li class="prev">
-    <a href="../tutorial.html"
-       title="previous chapter">← Tutorial</a>
+    <a href="../demo.html"
+       title="previous chapter">← Demonstration</a>
   </li>
   <li class="next">
     <a href="../drum/cli.html"
@@ -559,7 +565,7 @@ extension will be replaced with ‘.mid’.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

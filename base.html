@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="_static/theme.css">
       <link rel="stylesheet" href="_static/sphinx_press_theme.css">
           <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+          <link rel="stylesheet" href="_static/css/waveform-list.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
 
@@ -16,7 +17,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="_static/theme-vendors.js"></script>
@@ -50,7 +50,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -87,7 +87,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -133,12 +133,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="demo.html" class="reference internal ">Demonstration</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#sound-samples">Command Line Interface</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -320,7 +326,7 @@
 <h2>Transcription<a class="headerlink" href="#transcription" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.base.BaseTranscription">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.base.</code><code class="sig-name descname">BaseTranscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">setting_class</span></em>, <em class="sig-param"><span class="n">conf_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.BaseTranscription" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.base.</span></code><code class="sig-name descname"><span class="pre">BaseTranscription</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setting_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.BaseTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class of transcription applications.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -347,7 +353,7 @@
 </table>
 <dl class="py method">
 <dt id="omnizart.base.BaseTranscription.get_model">
-<code class="sig-name descname">get_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.BaseTranscription.get_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.BaseTranscription.get_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the model from the python source file.</p>
 <p>This is only for those customized models that can’t export <em>arch.yaml</em> file,
 and hence need to instanitiate the model from python class, which is not
@@ -372,7 +378,7 @@ models in such format when these are customized models.</p>
 <h2>Label<a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.base.Label">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.base.</code><code class="sig-name descname">Label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_time</span></em>, <em class="sig-param"><span class="n">end_time</span></em>, <em class="sig-param"><span class="n">note</span></em>, <em class="sig-param"><span class="n">instrument</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">velocity</span><span class="o">=</span><span class="default_value">64</span></em>, <em class="sig-param"><span class="n">start_beat</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">end_beat</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">note_value</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">is_drum</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.Label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.base.</span></code><code class="sig-name descname"><span class="pre">Label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_beat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_beat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_drum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.Label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interface of different label format.</p>
 <p>Plays the role for generalize the label format, and subsequent dataset class should
 implement functions transforming labels (whether in .mid, .txt, or .csv format)
@@ -414,7 +420,7 @@ and parse the necessary columns into attributes this class holds.</p>
 <h2>Dataset Loader<a class="headerlink" href="#dataset-loader" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.base.BaseDatasetLoader">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.base.</code><code class="sig-name descname">BaseDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">slice_hop</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">feat_col_name</span><span class="o">=</span><span class="default_value">'feature'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.BaseDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.base.</span></code><code class="sig-name descname"><span class="pre">BaseDatasetLoader</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat_col_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'feature'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.base.BaseDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base dataset loader for yielding training samples.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -473,7 +479,7 @@ must be specified.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

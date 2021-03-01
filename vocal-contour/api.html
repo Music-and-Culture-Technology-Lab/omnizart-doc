@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="../_static/theme.css">
       <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
           <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/css/waveform-list.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
 
@@ -50,7 +51,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -87,7 +88,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -133,12 +134,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../demo.html" class="reference internal ">Demonstration</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -351,7 +358,7 @@ model training, feature pre-processing, and audio transcription.</p>
 <p>omnizart.base.BaseTranscription: The base class of all transcription/application classes.</p>
 <dl class="py class">
 <dt id="omnizart.vocal_contour.app.VocalContourDatasetLoader">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.vocal_contour.app.</code><code class="sig-name descname">VocalContourDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">feature_num</span><span class="o">=</span><span class="default_value">384</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.vocal_contour.app.</span></code><code class="sig-name descname"><span class="pre">VocalContourDatasetLoader</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">384</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
 <p>Data loader for training the mdoel of <code class="docutils literal notranslate"><span class="pre">vocal-contour</span></code>.</p>
 <p>Load feature and label for training.</p>
@@ -386,7 +393,7 @@ Zero padding is done to resolve mismatched input and target size.</p>
 
 <dl class="py class">
 <dt id="omnizart.vocal_contour.app.VocalContourTranscription">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.vocal_contour.app.</code><code class="sig-name descname">VocalContourTranscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.vocal_contour.app.</span></code><code class="sig-name descname"><span class="pre">VocalContourTranscription</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
 <p>Application class for vocal-contour transcription.</p>
 <p class="rubric">Methods</p>
@@ -409,7 +416,7 @@ Zero padding is done to resolve mismatched input and target size.</p>
 </table>
 <dl class="py method">
 <dt id="omnizart.vocal_contour.app.VocalContourTranscription.generate_feature">
-<code class="sig-name descname">generate_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em>, <em class="sig-param"><span class="n">vocalcontour_settings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_threads</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">generate_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocalcontour_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract the feature from the given dataset.</p>
 <p>To train the model, the first step is to pre-process the data into feature
 representations. After downloading the dataset, use this function to generate
@@ -442,7 +449,7 @@ the life-cycle of building a model.</p>
 
 <dl class="py method">
 <dt id="omnizart.vocal_contour.app.VocalContourTranscription.train">
-<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">vocalcontour_settings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription.train" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">train</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocalcontour_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Model training.</p>
 <p>Train the model from scratch or continue training given a model checkpoint.</p>
 <dl class="field-list simple">
@@ -466,7 +473,7 @@ the life-cycle of model building.</p>
 
 <dl class="py method">
 <dt id="omnizart.vocal_contour.app.VocalContourTranscription.transcribe">
-<code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">transcribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transcribe frame-level fundamental frequency of vocal from the given audio.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -508,7 +515,7 @@ the folder that contains <cite>arch.yaml</cite>, <cite>weights.h5</cite>, and <c
 <p>Loss functions for Music module.</p>
 <dl class="py function">
 <dt id="omnizart.music.losses.focal_loss">
-<code class="sig-prename descclassname">omnizart.music.losses.</code><code class="sig-name descname">focal_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_tensor</span></em>, <em class="sig-param"><span class="n">prediction_tensor</span></em>, <em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">0.25</span></em>, <em class="sig-param"><span class="n">gamma</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.focal_loss" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.music.losses.</span></code><code class="sig-name descname"><span class="pre">focal_loss</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.focal_loss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute focal loss for predictions.</p>
 <p>Multi-labels Focal loss formula:</p>
 <div class="math notranslate nohighlight">
@@ -542,7 +549,7 @@ targets.</p>
 
 <dl class="py function">
 <dt id="omnizart.music.losses.smooth_loss">
-<code class="sig-prename descclassname">omnizart.music.losses.</code><code class="sig-name descname">smooth_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">y_true</span></em>, <em class="sig-param"><span class="n">y_pred</span></em>, <em class="sig-param"><span class="n">gamma</span><span class="o">=</span><span class="default_value">0.15</span></em>, <em class="sig-param"><span class="n">total_chs</span><span class="o">=</span><span class="default_value">22</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.smooth_loss" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.music.losses.</span></code><code class="sig-name descname"><span class="pre">smooth_loss</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_chs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">22</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.smooth_loss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute loss after applying <strong>label-smoothing</strong>.</p>
 </dd></dl>
 
@@ -655,7 +662,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>

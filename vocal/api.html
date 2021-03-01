@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="../_static/theme.css">
       <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
           <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/css/waveform-list.css" type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
 
@@ -16,7 +17,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
       
       <script src="../_static/theme-vendors.js"></script>
@@ -50,7 +50,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -87,7 +87,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Command Line Interface
+         Commnad Line Interface
       </a>
     </div>
   
@@ -133,12 +133,18 @@
           </li>
 
         
+          <li class="toctree-l1 "><a href="../demo.html" class="reference internal ">Demonstration</a>
+
+            
+          </li>
+
+        
       </ul>
     </div>
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -354,7 +360,7 @@ Some changes have also been made to improve the performance.</p>
 <h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.vocal.app.VocalTranscription">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.vocal.app.</code><code class="sig-name descname">VocalTranscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.vocal.app.</span></code><code class="sig-name descname"><span class="pre">VocalTranscription</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
 <p>Application class for vocal note transcription.</p>
 <p>This application implements the training procedure in a semi-supervised way.</p>
@@ -381,7 +387,7 @@ Some changes have also been made to improve the performance.</p>
 </table>
 <dl class="py method">
 <dt id="omnizart.vocal.app.VocalTranscription.generate_feature">
-<code class="sig-name descname">generate_feature</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_path</span></em>, <em class="sig-param"><span class="n">vocal_settings</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_threads</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">generate_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocal_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract the feature of the whole dataset.</p>
 <p>Currently supports MIR-1K and TONAS datasets. To train the model, you have to prepare the training
 data first, then process it into feature representations. After downloading the dataset,
@@ -407,7 +413,7 @@ the life-cycle of building a model.</p>
 
 <dl class="py method">
 <dt id="omnizart.vocal.app.VocalTranscription.get_model">
-<code class="sig-name descname">get_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription.get_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription.get_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the Pyramid model.</p>
 <p>More comprehensive reasons to having this method, please refer to
 <code class="docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription.get_model</span></code>.</p>
@@ -415,7 +421,7 @@ the life-cycle of building a model.</p>
 
 <dl class="py method">
 <dt id="omnizart.vocal.app.VocalTranscription.train">
-<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_folder</span></em>, <em class="sig-param"><span class="n">semi_feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">model_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">vocal_settings</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription.train" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">train</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">semi_feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocal_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Model training.</p>
 <p>Train a new model or continue to train on a previously trained model.</p>
 <dl class="field-list simple">
@@ -441,7 +447,7 @@ the life-cycle of building a model.</p>
 
 <dl class="py method">
 <dt id="omnizart.vocal.app.VocalTranscription.transcribe">
-<code class="sig-name descname">transcribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_audio</span></em>, <em class="sig-param"><span class="n">model_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'./'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">transcribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transcribe vocal notes in the audio.</p>
 <p>This function transcribes onset, offset, and pitch of the vocal in the audio.
 This module is reponsible for predicting onset and offset time of each note,
@@ -482,7 +488,7 @@ and pitches are estimated by the <cite>vocal-contour</cite> submodule.</p>
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.vocal.app.VocalDatasetLoader">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.vocal.app.</code><code class="sig-name descname">VocalDatasetLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ctx_len</span><span class="o">=</span><span class="default_value">9</span></em>, <em class="sig-param"><span class="n">feature_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_files</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_samples</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">slice_hop</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.vocal.app.</span></code><code class="sig-name descname"><span class="pre">VocalDatasetLoader</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.app.VocalDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
 <p>Dataset loader of ‘vocal’ module.</p>
 <p>Defines an additional parameter ‘ctx_len’ to determine the context length
@@ -494,7 +500,7 @@ of the input feature with repect to the current timestamp.</p>
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.vocal.inference" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="omnizart.vocal.inference.infer_interval">
-<code class="sig-prename descclassname">omnizart.vocal.inference.</code><code class="sig-name descname">infer_interval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">ctx_len</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">min_dura</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.inference.infer_interval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.vocal.inference.</span></code><code class="sig-name descname"><span class="pre">infer_interval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_dura</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.inference.infer_interval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Improved version of interval inference function.</p>
 <p>Inference the onset and offset time of notes given the raw prediction values.</p>
 <dl class="field-list simple">
@@ -523,7 +529,7 @@ of the input feature with repect to the current timestamp.</p>
 
 <dl class="py function">
 <dt id="omnizart.vocal.inference.infer_interval_original">
-<code class="sig-prename descclassname">omnizart.vocal.inference.</code><code class="sig-name descname">infer_interval_original</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred</span></em>, <em class="sig-param"><span class="n">ctx_len</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.inference.infer_interval_original" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.vocal.inference.</span></code><code class="sig-name descname"><span class="pre">infer_interval_original</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.inference.infer_interval_original" title="Permalink to this definition">¶</a></dt>
 <dd><p>Original implementation of interval inference.</p>
 <p>After checking the inference results of this implementation, we found
 there are lots of missing notes that aren’t in the inferenced results.
@@ -552,7 +558,7 @@ This function is just leaving for reference.</p>
 
 <dl class="py function">
 <dt id="omnizart.vocal.inference.infer_midi">
-<code class="sig-prename descclassname">omnizart.vocal.inference.</code><code class="sig-name descname">infer_midi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">agg_f0</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.inference.infer_midi" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.vocal.inference.</span></code><code class="sig-name descname"><span class="pre">infer_midi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agg_f0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.inference.infer_midi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inference the given interval and aggregated F0 to MIDI file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -560,7 +566,7 @@ This function is just leaving for reference.</p>
 <dt><strong>interval: list[tuple[float, float]]</strong></dt><dd><p>The return value of <code class="docutils literal notranslate"><span class="pre">infer_interval</span></code> function. List of onset/offset pairs in seconds.</p>
 </dd>
 <dt><strong>agg_f0: list[dict]</strong></dt><dd><p>Aggregated f0 information. Each elements in the list should contain three columns:
-<em>start_time</em>, <em>end_time</em>, and <em>frequency</em>. Time units should be in seonds, and pitch
+<em>start_time</em>, <em>end_time</em>, and <em>pitch</em>. Time units should be in seonds, and pitch
 should be Hz.</p>
 </dd>
 <dt><strong>t_unit: float</strong></dt><dd><p>Time unit of each frame.</p>
@@ -581,7 +587,7 @@ should be Hz.</p>
 <span id="labels"></span><h2>Labels<a class="headerlink" href="#module-omnizart.vocal.labels" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="omnizart.vocal.labels.BaseLabelExtraction">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.vocal.labels.</code><code class="sig-name descname">BaseLabelExtraction</code><a class="headerlink" href="#omnizart.vocal.labels.BaseLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.vocal.labels.</span></code><code class="sig-name descname"><span class="pre">BaseLabelExtraction</span></code><a class="headerlink" href="#omnizart.vocal.labels.BaseLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for extract label information.</p>
 <p>Provides basic functions to parse the original label format
 into the target format for training.
@@ -604,7 +610,7 @@ and returns a list of <code class="xref py py-class docutils literal notranslate
 </table>
 <dl class="py method">
 <dt id="omnizart.vocal.labels.BaseLabelExtraction.extract_label">
-<em class="property">classmethod </em><code class="sig-name descname">extract_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em>, <em class="sig-param"><span class="n">t_unit</span><span class="o">=</span><span class="default_value">0.02</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.BaseLabelExtraction.extract_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">extract_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.BaseLabelExtraction.extract_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract SDT label.</p>
 <p>There are 6 types of events as defined in the original paper:
 activation, silence, onset, non-onset, offset, and non-offset.
@@ -631,7 +637,7 @@ non-offset events refer to when there are no onset/offset events.</p>
 
 <dl class="py method">
 <dt id="omnizart.vocal.labels.BaseLabelExtraction.load_label">
-<em class="property">abstract classmethod </em><code class="sig-name descname">load_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.BaseLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span> <span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">load_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.BaseLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -655,7 +661,7 @@ format.</p>
 
 <dl class="py class">
 <dt id="omnizart.vocal.labels.CMediaLabelExtraction">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.vocal.labels.</code><code class="sig-name descname">CMediaLabelExtraction</code><a class="headerlink" href="#omnizart.vocal.labels.CMediaLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.vocal.labels.</span></code><code class="sig-name descname"><span class="pre">CMediaLabelExtraction</span></code><a class="headerlink" href="#omnizart.vocal.labels.CMediaLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction for CMedia dataset.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -671,7 +677,7 @@ format.</p>
 </table>
 <dl class="py method">
 <dt id="omnizart.vocal.labels.CMediaLabelExtraction.load_label">
-<em class="property">classmethod </em><code class="sig-name descname">load_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.CMediaLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">load_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.CMediaLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -695,7 +701,7 @@ format.</p>
 
 <dl class="py class">
 <dt id="omnizart.vocal.labels.MIR1KlabelExtraction">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.vocal.labels.</code><code class="sig-name descname">MIR1KlabelExtraction</code><a class="headerlink" href="#omnizart.vocal.labels.MIR1KlabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.vocal.labels.</span></code><code class="sig-name descname"><span class="pre">MIR1KlabelExtraction</span></code><a class="headerlink" href="#omnizart.vocal.labels.MIR1KlabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction for MIR-1K dataset.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -711,7 +717,7 @@ format.</p>
 </table>
 <dl class="py method">
 <dt id="omnizart.vocal.labels.MIR1KlabelExtraction.load_label">
-<em class="property">classmethod </em><code class="sig-name descname">load_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.MIR1KlabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">load_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.MIR1KlabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -735,7 +741,7 @@ format.</p>
 
 <dl class="py class">
 <dt id="omnizart.vocal.labels.TonasLabelExtraction">
-<em class="property">class </em><code class="sig-prename descclassname">omnizart.vocal.labels.</code><code class="sig-name descname">TonasLabelExtraction</code><a class="headerlink" href="#omnizart.vocal.labels.TonasLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.vocal.labels.</span></code><code class="sig-name descname"><span class="pre">TonasLabelExtraction</span></code><a class="headerlink" href="#omnizart.vocal.labels.TonasLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction for TONAS dataset.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -751,7 +757,7 @@ format.</p>
 </table>
 <dl class="py method">
 <dt id="omnizart.vocal.labels.TonasLabelExtraction.load_label">
-<em class="property">classmethod </em><code class="sig-name descname">load_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.TonasLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">load_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.labels.TonasLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -778,17 +784,17 @@ format.</p>
 <span id="prediction"></span><h2>Prediction<a class="headerlink" href="#module-omnizart.vocal.prediction" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="omnizart.vocal.prediction.create_batches">
-<code class="sig-prename descclassname">omnizart.vocal.prediction.</code><code class="sig-name descname">create_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span></em>, <em class="sig-param"><span class="n">ctx_len</span><span class="o">=</span><span class="default_value">9</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">64</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.vocal.prediction.</span></code><code class="sig-name descname"><span class="pre">create_batches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="omnizart.vocal.prediction.merge_batches">
-<code class="sig-prename descclassname">omnizart.vocal.prediction.</code><code class="sig-name descname">merge_batches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batch_pred</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.vocal.prediction.</span></code><code class="sig-name descname"><span class="pre">merge_batches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt id="omnizart.vocal.prediction.predict">
-<code class="sig-prename descclassname">omnizart.vocal.prediction.</code><code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">ctx_len</span><span class="o">=</span><span class="default_value">9</span></em>, <em class="sig-param"><span class="n">batch_size</span><span class="o">=</span><span class="default_value">16</span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">omnizart.vocal.prediction.</span></code><code class="sig-name descname"><span class="pre">predict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal.prediction.predict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -971,7 +977,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>
