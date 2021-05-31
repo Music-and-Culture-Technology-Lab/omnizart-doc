@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Chord Transcription</title>
     
-      <link rel="stylesheet" href="../_static/pygments.css">
-      <link rel="stylesheet" href="../_static/theme.css">
-      <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="../_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
 
       
-      <script src="../_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
       <script src="../_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="../genindex.html" />
@@ -29,7 +29,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -50,7 +51,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -87,7 +88,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -144,7 +145,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -322,14 +323,14 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="module-omnizart.chord">
+  <section id="module-omnizart.chord">
 <span id="chord-transcription"></span><h1>Chord Transcription<a class="headerlink" href="#module-omnizart.chord" title="Permalink to this headline">¶</a></h1>
 <p>Chord transcription for both MIDI and audio domain.</p>
 <p>Re-implementation of the repository
 <a class="reference external" href="https://github.com/Tsung-Ping/Harmony-Transformer">Tsung-Ping/Harmony-Transformer</a>.</p>
-<div class="section" id="feature-storage-format">
+<section id="feature-storage-format">
 <h2>Feature Storage Format<a class="headerlink" href="#feature-storage-format" title="Permalink to this headline">¶</a></h2>
 <p>Processed feature will be stored in <code class="docutils literal notranslate"><span class="pre">.hdf</span></code> file format, one file per piece.</p>
 <p>Columns in the file are:</p>
@@ -341,7 +342,7 @@
 <li><p><strong>sequence_len</strong></p></li>
 <li><p><strong>num_sequence</strong></p></li>
 </ul>
-<div class="section" id="references">
+<section id="references">
 <h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
 <p>The related publications and techinical details can be found in <a class="reference internal" href="#r1980e01904df-1" id="id1">[1]</a> and <a class="reference internal" href="#r1980e01904df-2" id="id2">[2]</a></p>
 <dl class="citation">
@@ -356,13 +357,13 @@ Multi-task Recurrent Neural Networks,” International Society of Music Informat
 Retrieval Conference (ISMIR), September 2018</p>
 </dd>
 </dl>
-</div>
-</div>
-<div class="section" id="app">
+</section>
+</section>
+<section id="app">
 <h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.chord.app.ChordTranscription">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.chord.app.</span></code><code class="sig-name descname"><span class="pre">ChordTranscription</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.app.ChordTranscription">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.chord.app.</span></span><span class="sig-name descname"><span class="pre">ChordTranscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
 <p>Application class for chord transcription.</p>
 <p class="rubric">Methods</p>
@@ -387,8 +388,8 @@ Retrieval Conference (ISMIR), September 2018</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.chord.app.ChordTranscription.generate_feature">
-<code class="sig-name descname"><span class="pre">generate_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chord_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.app.ChordTranscription.generate_feature">
+<span class="sig-name descname"><span class="pre">generate_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chord_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract feature of McGill BillBoard dataset.</p>
 <p>There are three main features that will be used in the training:</p>
 <ul class="simple">
@@ -402,16 +403,16 @@ with named field, makes it works like a dict type.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.chord.app.ChordTranscription.get_model">
-<code class="sig-name descname"><span class="pre">get_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.get_model" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.app.ChordTranscription.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.get_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the chord model.</p>
 <p>More comprehensive reasons to having this method, please refer to
 <code class="docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription.get_model</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.chord.app.ChordTranscription.train">
-<code class="sig-name descname"><span class="pre">train</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chord_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.train" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.app.ChordTranscription.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chord_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Model training.</p>
 <p>Train a new music model or continue to train on a pre-trained model.</p>
 <dl class="field-list simple">
@@ -434,8 +435,8 @@ the life-cycle of building a model.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.chord.app.ChordTranscription.transcribe">
-<code class="sig-name descname"><span class="pre">transcribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.app.ChordTranscription.transcribe">
+<span class="sig-name descname"><span class="pre">transcribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.ChordTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transcribe chords in the audio.</p>
 <p>This function transcribes chord progression in the audio and will outputs MIDI
 and CSV files. The MIDI file is provided for quick validation by directly listen
@@ -472,25 +473,25 @@ which contains the chord’s name and the start and end time.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.chord.features">
+</section>
+<section id="module-omnizart.chord.features">
 <span id="feature"></span><h2>Feature<a class="headerlink" href="#module-omnizart.chord.features" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.chord.features.augment_feature">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></code><code class="sig-name descname"><span class="pre">augment_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.augment_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.features.augment_feature">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></span><span class="sig-name descname"><span class="pre">augment_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.augment_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Feature augmentation</p>
 <p>Variying pitches with 12 different shifts.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.features.compute_tonal_centroids">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></code><code class="sig-name descname"><span class="pre">compute_tonal_centroids</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chromagram</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filtering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.compute_tonal_centroids" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.features.compute_tonal_centroids">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></span><span class="sig-name descname"><span class="pre">compute_tonal_centroids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chromagram</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filtering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.compute_tonal_centroids" title="Permalink to this definition">¶</a></dt>
 <dd><p>chromagram with shape [time, 12]</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.features.extract_feature_label">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></code><code class="sig-name descname"><span class="pre">extract_feature_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lab_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.extract_feature_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.features.extract_feature_label">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></span><span class="sig-name descname"><span class="pre">extract_feature_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lab_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.extract_feature_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Basic feature extraction block.</p>
 <p>Including multiple steps for processing the feature.
 Steps include:</p>
@@ -524,47 +525,47 @@ Steps include:</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.features.load_feature">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></code><code class="sig-name descname"><span class="pre">load_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.load_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.features.load_feature">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></span><span class="sig-name descname"><span class="pre">load_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.load_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load and parse the feature into the desired format.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.features.load_label">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></code><code class="sig-name descname"><span class="pre">load_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lab_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.load_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.features.load_label">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></span><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lab_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load and parse the label into the desired format for later process.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.features.reshape_feature">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></code><code class="sig-name descname"><span class="pre">reshape_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.reshape_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.features.reshape_feature">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></span><span class="sig-name descname"><span class="pre">reshape_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.reshape_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reshape the feature into the final output.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.features.segment_feature">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></code><code class="sig-name descname"><span class="pre">segment_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.segment_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.features.segment_feature">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></span><span class="sig-name descname"><span class="pre">segment_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">21</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.segment_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Partition feature into segments.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.features.shift_chord">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></code><code class="sig-name descname"><span class="pre">shift_chord</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.shift_chord" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.features.shift_chord">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></span><span class="sig-name descname"><span class="pre">shift_chord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.shift_chord" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shift chord</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.features.shift_chromagram">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></code><code class="sig-name descname"><span class="pre">shift_chromagram</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chromagram</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.shift_chromagram" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.features.shift_chromagram">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.features.</span></span><span class="sig-name descname"><span class="pre">shift_chromagram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chromagram</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.features.shift_chromagram" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shift chord’s chromagram.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="dataset">
+</section>
+<section id="dataset">
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.chord.app.McGillDatasetLoader">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.chord.app.</span></code><code class="sig-name descname"><span class="pre">McGillDatasetLoader</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.McGillDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.app.McGillDatasetLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.chord.app.</span></span><span class="sig-name descname"><span class="pre">McGillDatasetLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.app.McGillDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
 <p>McGill BillBoard dataset loader.</p>
 <p>The feature column name stored in the .hdf files is slightly different from
@@ -584,21 +585,21 @@ gt_chord_change -&gt; Ground-truth chord change label.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.chord.inference">
+</section>
+<section id="module-omnizart.chord.inference">
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.chord.inference" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.chord.inference.inference">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.inference.</span></code><code class="sig-name descname"><span class="pre">inference</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chord_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_dura</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.inference.inference" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.inference.inference">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.inference.</span></span><span class="sig-name descname"><span class="pre">inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chord_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_dura</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.inference.inference" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.chord.inference.write_csv">
-<code class="sig-prename descclassname"><span class="pre">omnizart.chord.inference.</span></code><code class="sig-name descname"><span class="pre">write_csv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./chord.csv'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.inference.write_csv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.chord.inference.write_csv">
+<span class="sig-prename descclassname"><span class="pre">omnizart.chord.inference.</span></span><span class="sig-name descname"><span class="pre">write_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./chord.csv'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.chord.inference.write_csv" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</div>
-<div class="section" id="settings">
+</section>
+<section id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>Below are the default settings for building the chord model. It will be loaded
 by the class <code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.setting_loaders.ChordSettings</span></code>. The name of the
@@ -728,8 +729,8 @@ The level of <em>/Settings</em> is removed among all fields.</p>
                 <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.96</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -746,12 +747,12 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

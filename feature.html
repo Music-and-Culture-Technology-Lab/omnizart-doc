@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Feature</title>
     
-      <link rel="stylesheet" href="_static/pygments.css">
-      <link rel="stylesheet" href="_static/theme.css">
-      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
 
       
-      <script src="_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
       <script src="_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="genindex.html" />
@@ -29,7 +29,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -50,7 +51,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -87,7 +88,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -144,7 +145,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -318,28 +319,28 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="feature">
+  <section id="feature">
 <h1>Feature<a class="headerlink" href="#feature" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-omnizart.feature"></span><p>Collection of functions for processing raw audio into required input representation.</p>
-<div class="section" id="module-omnizart.feature.cfp">
+<section id="module-omnizart.feature.cfp">
 <span id="cfp"></span><h2>CFP<a class="headerlink" href="#module-omnizart.feature.cfp" title="Permalink to this headline">¶</a></h2>
 <p>Author: Lisu</p>
 <p>Mantainer: BreezeWhite</p>
 <dl class="py function">
-<dt id="omnizart.feature.cfp.STFT">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">STFT</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.STFT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.STFT">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">STFT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.STFT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cfp.cfp_filterbank">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">cfp_filterbank</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_per_octave</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.cfp_filterbank" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.cfp_filterbank">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">cfp_filterbank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_per_octave</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.cfp_filterbank" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cfp.extract_cfp">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">extract_cfp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_cfp" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.extract_cfp">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">extract_cfp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_cfp" title="Permalink to this definition">¶</a></dt>
 <dd><p>CFP feature extraction function.</p>
 <p>Given the audio path, returns the CFP feature. Will automatically process
 the feature in parallel to accelerate the computation.</p>
@@ -395,8 +396,8 @@ Music,” in IEEE/ACM Transactions on Audio, Speech, and Language Processing, 20
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cfp.extract_patch_cfp">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">extract_patch_cfp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2049</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.24,</span> <span class="pre">0.6,</span> <span class="pre">1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_per_octave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">48</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_patch_cfp" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.extract_patch_cfp">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">extract_patch_cfp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2049</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.24,</span> <span class="pre">0.6,</span> <span class="pre">1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_per_octave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">48</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_patch_cfp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract patch CFP feature for PatchCNN module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -446,55 +447,55 @@ of len(patch) x 2.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cfp.extract_vocal_cfp">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">extract_vocal_cfp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_vocal_cfp" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.extract_vocal_cfp">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">extract_vocal_cfp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.extract_vocal_cfp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specialized CFP feature extraction for vocal submodule.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cfp.freq_to_log_freq_mapping">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">freq_to_log_freq_mapping</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tfr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NumPerOct</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.freq_to_log_freq_mapping" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.freq_to_log_freq_mapping">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">freq_to_log_freq_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tfr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NumPerOct</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.freq_to_log_freq_mapping" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cfp.nonlinear_func">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">nonlinear_func</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.nonlinear_func" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.nonlinear_func">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">nonlinear_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.nonlinear_func" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cfp.parallel_extract">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">parallel_extract</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_per_octave</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.parallel_extract" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.parallel_extract">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">parallel_extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Hop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_per_octave</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.parallel_extract" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cfp.quef_to_log_freq_mapping">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">quef_to_log_freq_mapping</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ceps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NumPerOct</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.quef_to_log_freq_mapping" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.quef_to_log_freq_mapping">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">quef_to_log_freq_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ceps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NumPerOct</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.quef_to_log_freq_mapping" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cfp.spectral_flux">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></code><code class="sig-name descname"><span class="pre">spectral_flux</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.spectral_flux" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cfp.spectral_flux">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cfp.</span></span><span class="sig-name descname"><span class="pre">spectral_flux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">invert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cfp.spectral_flux" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.feature.hcfp">
+</section>
+<section id="module-omnizart.feature.hcfp">
 <span id="hcfp"></span><h2>HCFP<a class="headerlink" href="#module-omnizart.feature.hcfp" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.feature.hcfp.extract_hcfp">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.hcfp.</span></code><code class="sig-name descname"><span class="pre">extract_hcfp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7939</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.24,</span> <span class="pre">0.6,</span> <span class="pre">1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_per_octave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">48</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">harmonic_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.hcfp.extract_hcfp" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.hcfp.extract_hcfp">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.hcfp.</span></span><span class="sig-name descname"><span class="pre">extract_hcfp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7939</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.24,</span> <span class="pre">0.6,</span> <span class="pre">1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_per_octave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">48</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">harmonic_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.hcfp.extract_hcfp" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.hcfp.fetch_harmonic">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.hcfp.</span></code><code class="sig-name descname"><span class="pre">fetch_harmonic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cenf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ith_har</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">27.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_per_octave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">48</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.hcfp.fetch_harmonic" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.hcfp.fetch_harmonic">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.hcfp.</span></span><span class="sig-name descname"><span class="pre">fetch_harmonic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cenf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ith_har</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">27.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_per_octave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">48</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.hcfp.fetch_harmonic" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.feature.cqt">
+</section>
+<section id="module-omnizart.feature.cqt">
 <span id="cqt"></span><h2>CQT<a class="headerlink" href="#module-omnizart.feature.cqt" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.feature.cqt.extract_cqt">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cqt.</span></code><code class="sig-name descname"><span class="pre">extract_cqt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowest_note</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cqt.extract_cqt" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cqt.extract_cqt">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cqt.</span></span><span class="sig-name descname"><span class="pre">extract_cqt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowest_note</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cqt.extract_cqt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute some audio data’s constant-Q spectrogram, normalize, and log-scale
 it</p>
 <dl class="field-list simple">
@@ -525,8 +526,8 @@ data.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.cqt.post_process_cqt">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.cqt.</span></code><code class="sig-name descname"><span class="pre">post_process_cqt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gram</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cqt.post_process_cqt" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.cqt.post_process_cqt">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.cqt.</span></span><span class="sig-name descname"><span class="pre">post_process_cqt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gram</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.cqt.post_process_cqt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normalize and log-scale a Constant-Q spectrogram</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -544,12 +545,12 @@ data.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.feature.beat_for_drum">
+</section>
+<section id="module-omnizart.feature.beat_for_drum">
 <span id="beat-tracking"></span><h2>Beat Tracking<a class="headerlink" href="#module-omnizart.feature.beat_for_drum" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.feature.beat_for_drum.MadmomBeatTracking">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.feature.beat_for_drum.</span></code><code class="sig-name descname"><span class="pre">MadmomBeatTracking</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.MadmomBeatTracking" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.beat_for_drum.MadmomBeatTracking">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.feature.beat_for_drum.</span></span><span class="sig-name descname"><span class="pre">MadmomBeatTracking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.MadmomBeatTracking" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract beat information with madmom library.</p>
 <p>Three different beat tracking methods are used together for producing a more
 stable beat tracking result.</p>
@@ -566,16 +567,16 @@ stable beat tracking result.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.feature.beat_for_drum.MadmomBeatTracking.process">
-<code class="sig-name descname"><span class="pre">process</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.MadmomBeatTracking.process" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.beat_for_drum.MadmomBeatTracking.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.MadmomBeatTracking.process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate beat tracking results with multiple approaches.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.beat_for_drum.extract_beat_with_madmom">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.beat_for_drum.</span></code><code class="sig-name descname"><span class="pre">extract_beat_with_madmom</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.extract_beat_with_madmom" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.beat_for_drum.extract_beat_with_madmom">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.beat_for_drum.</span></span><span class="sig-name descname"><span class="pre">extract_beat_with_madmom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.extract_beat_with_madmom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract beat position (in seconds) of the audio.</p>
 <p>Extract beat with mixture of beat tracking techiniques using madmom.</p>
 <dl class="field-list simple">
@@ -599,14 +600,14 @@ stable beat tracking result.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.beat_for_drum.</span></code><code class="sig-name descname"><span class="pre">extract_mini_beat_from_audio_path</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mini_beat_div_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.beat_for_drum.</span></span><span class="sig-name descname"><span class="pre">extract_mini_beat_from_audio_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">audio_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mini_beat_div_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.extract_mini_beat_from_audio_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrapper of extracting mini beats from audio path.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.feature.beat_for_drum.extract_mini_beat_from_beat_arr">
-<code class="sig-prename descclassname"><span class="pre">omnizart.feature.beat_for_drum.</span></code><code class="sig-name descname"><span class="pre">extract_mini_beat_from_beat_arr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beat_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_len_sec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mini_beat_div_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.extract_mini_beat_from_beat_arr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.feature.beat_for_drum.extract_mini_beat_from_beat_arr">
+<span class="sig-prename descclassname"><span class="pre">omnizart.feature.beat_for_drum.</span></span><span class="sig-name descname"><span class="pre">extract_mini_beat_from_beat_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beat_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_len_sec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mini_beat_div_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.feature.beat_for_drum.extract_mini_beat_from_beat_arr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract mini beats from the beat array.</p>
 <p>Furhter split beat into shorter beat interval, which we call it <em>mini beat</em>, to increase the
 beat resolution. We use linear interpolation to generate the mini beats.</p>
@@ -630,8 +631,8 @@ beat resolution. We use linear interpolation to generate the mini beats.</p>
 </dl>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -648,12 +649,12 @@ beat resolution. We use linear interpolation to generate the mini beats.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

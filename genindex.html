@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
       <title>Index</title>
     
-      <link rel="stylesheet" href="_static/pygments.css">
-      <link rel="stylesheet" href="_static/theme.css">
-      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
 
       
-      <script src="_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
       <script src="_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="#" />
@@ -28,7 +27,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -49,7 +49,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -86,7 +86,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -143,7 +143,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -297,7 +297,7 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
 
 <h1 id="index">Index</h1>
@@ -1014,10 +1014,10 @@
 </li>
       <li><a href="models.html#omnizart.models.chord_model.chord_block_compression">chord_block_compression() (in module omnizart.models.chord_model)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="models.html#omnizart.models.chord_model.chord_block_decompression">chord_block_decompression() (in module omnizart.models.chord_model)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="constants.html#omnizart.constants.feature.CHORD_INT_MAPPING">CHORD_INT_MAPPING (in module omnizart.constants.feature)</a>
 </li>
       <li><a href="models.html#omnizart.models.chord_model.ChordModel">ChordModel (class in omnizart.models.chord_model)</a>
@@ -1046,6 +1046,8 @@
 
       <ul>
         <li><a href="drum/api.html#omnizart.drum.prediction.create_batches">(in module omnizart.drum.prediction)</a>
+</li>
+        <li><a href="music/api.html#omnizart.music.prediction.create_batches">(in module omnizart.music.prediction)</a>
 </li>
         <li><a href="vocal/api.html#omnizart.vocal.prediction.create_batches">(in module omnizart.vocal.prediction)</a>
 </li>
@@ -1185,6 +1187,8 @@
       <li><a href="models.html#omnizart.models.t2t.gather_blocks_2d">gather_blocks_2d() (in module omnizart.models.t2t)</a>
 </li>
       <li><a href="models.html#omnizart.models.t2t.gather_indices_2d">gather_indices_2d() (in module omnizart.models.t2t)</a>
+</li>
+      <li><a href="utils.html#omnizart.remote.GDFileAccessLimited">GDFileAccessLimited</a>
 </li>
       <li><a href="training.html#omnizart.train.gen_bar_postfix">gen_bar_postfix() (in module omnizart.train)</a>
 </li>
@@ -1379,8 +1383,6 @@
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard.label_file_name">label_file_name (omnizart.constants.datasets.McGillBillBoard attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="constants.html#omnizart.constants.datasets.McGillBillBoard.label_folder">label_folder (omnizart.constants.datasets.McGillBillBoard attribute)</a>
 </li>
       <li><a href="constants.html#omnizart.constants.datasets.MedleyDBStructure.label_postfix">label_postfix (omnizart.constants.datasets.MedleyDBStructure attribute)</a>
@@ -1389,11 +1391,27 @@
 </li>
       <li><a href="utils.html#omnizart.utils.LazyLoader">LazyLoader (class in omnizart.utils)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="chord/api.html#omnizart.chord.features.load_feature">load_feature() (in module omnizart.chord.features)</a>
 </li>
       <li><a href="chord/api.html#omnizart.chord.features.load_label">load_label() (in module omnizart.chord.features)</a>
 
       <ul>
+        <li><a href="constants.html#omnizart.constants.datasets.BaseStructure.load_label">(omnizart.constants.datasets.BaseStructure class method)</a>
+</li>
+        <li><a href="constants.html#omnizart.constants.datasets.CMediaStructure.load_label">(omnizart.constants.datasets.CMediaStructure class method)</a>
+</li>
+        <li><a href="constants.html#omnizart.constants.datasets.MapsStructure.load_label">(omnizart.constants.datasets.MapsStructure class method)</a>
+</li>
+        <li><a href="constants.html#omnizart.constants.datasets.MedleyDBStructure.load_label">(omnizart.constants.datasets.MedleyDBStructure class method)</a>
+</li>
+        <li><a href="constants.html#omnizart.constants.datasets.MIR1KStructure.load_label">(omnizart.constants.datasets.MIR1KStructure class method)</a>
+</li>
+        <li><a href="constants.html#omnizart.constants.datasets.MusicNetStructure.load_label">(omnizart.constants.datasets.MusicNetStructure class method)</a>
+</li>
+        <li><a href="constants.html#omnizart.constants.datasets.TonasStructure.load_label">(omnizart.constants.datasets.TonasStructure class method)</a>
+</li>
         <li><a href="music/api.html#omnizart.music.labels.BaseLabelExtraction.load_label">(omnizart.music.labels.BaseLabelExtraction class method)</a>
 </li>
         <li><a href="music/api.html#omnizart.music.labels.MaestroLabelExtraction.load_label">(omnizart.music.labels.MaestroLabelExtraction class method)</a>
@@ -1441,6 +1459,8 @@
 
       <ul>
         <li><a href="drum/api.html#omnizart.drum.prediction.merge_batches">(in module omnizart.drum.prediction)</a>
+</li>
+        <li><a href="music/api.html#omnizart.music.prediction.merge_batches">(in module omnizart.music.prediction)</a>
 </li>
         <li><a href="vocal/api.html#omnizart.vocal.prediction.merge_batches">(in module omnizart.vocal.prediction)</a>
 </li>
@@ -2502,6 +2522,8 @@
         <li><a href="vocal/api.html#omnizart.vocal.prediction.predict">(in module omnizart.vocal.prediction)</a>
 </li>
       </ul></li>
+      <li><a href="music/api.html#omnizart.music.prediction.predict_old">predict_old() (in module omnizart.music.prediction)</a>
+</li>
       <li><a href="feature.html#omnizart.feature.beat_for_drum.MadmomBeatTracking.process">process() (omnizart.feature.beat_for_drum.MadmomBeatTracking method)</a>
 
       <ul>
@@ -2811,12 +2833,12 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

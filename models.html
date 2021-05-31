@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Models</title>
     
-      <link rel="stylesheet" href="_static/pygments.css">
-      <link rel="stylesheet" href="_static/theme.css">
-      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
 
       
-      <script src="_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
       <script src="_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="genindex.html" />
@@ -29,7 +29,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -50,7 +51,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -87,7 +88,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -144,7 +145,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -322,19 +323,19 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="models">
+  <section id="models">
 <h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-omnizart.models"></span><p>Definitions of models and corresponding layers</p>
 <p>This folder contains all the definition of model architectures, including common layers that
 could share among different models.</p>
-<div class="section" id="module-omnizart.models.u_net">
+<section id="module-omnizart.models.u_net">
 <span id="u-net"></span><h2>U-Net<a class="headerlink" href="#module-omnizart.models.u_net" title="Permalink to this headline">¶</a></h2>
 <p>Definition of customized U-Net like model architecture.</p>
 <dl class="py class">
-<dt id="omnizart.models.u_net.MultiHeadAttention">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></code><code class="sig-name descname"><span class="pre">MultiHeadAttention</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.MultiHeadAttention" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.u_net.MultiHeadAttention">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></span><span class="sig-name descname"><span class="pre">MultiHeadAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.MultiHeadAttention" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Attention layer for 2D input feature.</p>
 <p>As the attention mechanism consumes a large amount of memory, here we leverage a divide-and-conquer approach
@@ -382,8 +383,8 @@ computed is: (query_shape[0]+memory_flange[0]) x (query_shape[1]+memory_flange[1
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.u_net.MultiHeadAttention.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.MultiHeadAttention.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.u_net.MultiHeadAttention.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.MultiHeadAttention.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is where the layer’s logic lives.</p>
 <p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
 from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
@@ -399,8 +400,8 @@ method to support masking.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.u_net.MultiHeadAttention.get_config">
-<code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.MultiHeadAttention.get_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.u_net.MultiHeadAttention.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.MultiHeadAttention.get_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the config of the layer.</p>
 <p>A layer config is a Python dictionary (serializable)
 containing the configuration of a layer.
@@ -418,39 +419,39 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.u_net.conv_block">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></code><code class="sig-name descname"><span class="pre">conv_block</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.conv_block" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.u_net.conv_block">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></span><span class="sig-name descname"><span class="pre">conv_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.conv_block" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convolutional encoder block of U-net.</p>
 <p>The block is a fully convolutional block. The encoder block does not downsample the input feature,
 and thus the output will have the same dimension as the input.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.u_net.semantic_segmentation">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></code><code class="sig-name descname"><span class="pre">semantic_segmentation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_grid_layer_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_grid_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.semantic_segmentation" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.u_net.semantic_segmentation">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></span><span class="sig-name descname"><span class="pre">semantic_segmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_grid_layer_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_grid_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.semantic_segmentation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Improved U-net model with Atrous Spatial Pyramid Pooling (ASPP) block.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.u_net.semantic_segmentation_attn">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></code><code class="sig-name descname"><span class="pre">semantic_segmentation_attn</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.semantic_segmentation_attn" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.u_net.semantic_segmentation_attn">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></span><span class="sig-name descname"><span class="pre">semantic_segmentation_attn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.semantic_segmentation_attn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Customized attention U-net model.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.u_net.transpose_conv_block">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></code><code class="sig-name descname"><span class="pre">transpose_conv_block</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.transpose_conv_block" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.u_net.transpose_conv_block">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></span><span class="sig-name descname"><span class="pre">transpose_conv_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.transpose_conv_block" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.models.t2t">
+</section>
+<section id="module-omnizart.models.t2t">
 <span id="tensor2tensor"></span><h2>Tensor2Tensor<a class="headerlink" href="#module-omnizart.models.t2t" title="Permalink to this headline">¶</a></h2>
 <p>Implementation of memory efficient attention.</p>
 <p>Original implemetation are from <a class="reference external" href="https://github.com/tensorflow/tensor2tensor">tensor2tensor</a>.
 Rewrite in tensorflow 2.0.</p>
 <dl class="py class">
-<dt id="omnizart.models.t2t.MultiHeadAttention">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">MultiHeadAttention</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.MultiHeadAttention" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.MultiHeadAttention">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">MultiHeadAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.MultiHeadAttention" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multi-head attention keras layer wrapper</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -468,8 +469,8 @@ Rewrite in tensorflow 2.0.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.t2t.MultiHeadAttention.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.MultiHeadAttention.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.MultiHeadAttention.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.MultiHeadAttention.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is where the layer’s logic lives.</p>
 <p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
 from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
@@ -485,8 +486,8 @@ method to support masking.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.t2t.MultiHeadAttention.get_config">
-<code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.MultiHeadAttention.get_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.MultiHeadAttention.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.MultiHeadAttention.get_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the config of the layer.</p>
 <p>A layer config is a Python dictionary (serializable)
 containing the configuration of a layer.
@@ -504,14 +505,14 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.cast_like">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">cast_like</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.cast_like" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.cast_like">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">cast_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.cast_like" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cast x to y’s dtype, if necessary.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.combine_heads_2d">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">combine_heads_2d</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.combine_heads_2d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.combine_heads_2d">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">combine_heads_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.combine_heads_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverse of split_heads_2d.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -530,8 +531,8 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.combine_last_two_dimensions">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">combine_last_two_dimensions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.combine_last_two_dimensions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.combine_last_two_dimensions">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">combine_last_two_dimensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.combine_last_two_dimensions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reshape x so that the last two dimension become one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -550,8 +551,8 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.dot_product_attention">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">dot_product_attention</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_weights_to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_broadcast_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.dot_product_attention" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.dot_product_attention">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">dot_product_attention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_weights_to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_broadcast_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.dot_product_attention" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dot-product attention.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -596,8 +597,8 @@ mixed precision.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.dropout_with_broadcast_dims">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">dropout_with_broadcast_dims</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_prob</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.dropout_with_broadcast_dims" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.dropout_with_broadcast_dims">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">dropout_with_broadcast_dims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_prob</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.dropout_with_broadcast_dims" title="Permalink to this definition">¶</a></dt>
 <dd><p>Like tf.nn.dropout but takes broadcast_dims instead of noise_shape.</p>
 <p>Instead of specifying noise_shape, this function takes broadcast_dims -
 a list of dimension numbers in which noise_shape should be 1.  The random
@@ -627,8 +628,8 @@ the dimensions along which to broadcast the keep/drop flags.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.embedding_to_padding">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">embedding_to_padding</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">emb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.embedding_to_padding" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.embedding_to_padding">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">embedding_to_padding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">emb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.embedding_to_padding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the padding mask based on which embeddings are all zero.</p>
 <p>We have hacked symbol_modality to return all-zero embeddings for padding.</p>
 <dl class="field-list simple">
@@ -649,20 +650,20 @@ embedding vector is all zero, and is 0 otherwise.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.gather_blocks_2d">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">gather_blocks_2d</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.gather_blocks_2d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.gather_blocks_2d">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">gather_blocks_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.gather_blocks_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gathers flattened blocks from x.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.gather_indices_2d">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">gather_indices_2d</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_stride</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.gather_indices_2d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.gather_indices_2d">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">gather_indices_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_stride</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.gather_indices_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Getting gather indices.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.local_attention_2d">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">local_attention_2d</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">16)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_flange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">16)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.local_attention_2d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.local_attention_2d">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">local_attention_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">16)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_flange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(8,</span> <span class="pre">16)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.local_attention_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Strided block local self-attention.</p>
 <p>The 2-D sequence is divided into 2-D blocks of shape query_shape. Attention
 for a given query position can only see memory positions less than or equal to
@@ -698,18 +699,18 @@ from each query block.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.maybe_upcast">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">maybe_upcast</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hparams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.maybe_upcast" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.maybe_upcast">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">maybe_upcast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hparams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.maybe_upcast" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.mixed_precision_is_enabled">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">mixed_precision_is_enabled</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">activation_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hparams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.mixed_precision_is_enabled" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.mixed_precision_is_enabled">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">mixed_precision_is_enabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">activation_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hparams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.mixed_precision_is_enabled" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.pad_to_multiple_2d">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">pad_to_multiple_2d</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.pad_to_multiple_2d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.pad_to_multiple_2d">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">pad_to_multiple_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.pad_to_multiple_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Making sure x is a multiple of shape.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -730,30 +731,30 @@ from each query block.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.positional_encoding">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">positional_encoding</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.positional_encoding" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.positional_encoding">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">positional_encoding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.positional_encoding" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.relative_positional_encoding">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">relative_positional_encoding</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.relative_positional_encoding" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.relative_positional_encoding">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">relative_positional_encoding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.relative_positional_encoding" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.reshape_range">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">reshape_range</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.reshape_range" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.reshape_range">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">reshape_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.reshape_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reshapes a tensor between dimensions i and j.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.scatter_blocks_2d">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">scatter_blocks_2d</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.scatter_blocks_2d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.scatter_blocks_2d">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">scatter_blocks_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.scatter_blocks_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>scatters blocks from x into shape with indices.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.split_heads_2d">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">split_heads_2d</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_heads</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.split_heads_2d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.split_heads_2d">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">split_heads_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_heads</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.split_heads_2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split channels (dimension 3) into multiple heads (becomes dimension 1).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -774,8 +775,8 @@ from each query block.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.t2t.split_last_dimension">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></code><code class="sig-name descname"><span class="pre">split_last_dimension</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.split_last_dimension" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.t2t.split_last_dimension">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">split_last_dimension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.split_last_dimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reshape x so that the last dimension becomes two dimensions.</p>
 <p>The first of these two dimensions is n.</p>
 <dl class="field-list simple">
@@ -796,8 +797,8 @@ from each query block.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.models.spectral_norm_net">
+</section>
+<section id="module-omnizart.models.spectral_norm_net">
 <span id="spectral-normalization-model"></span><h2>Spectral Normalization Model<a class="headerlink" href="#module-omnizart.models.spectral_norm_net" title="Permalink to this headline">¶</a></h2>
 <p>Transcription model of drum leveraging spectral normalization.</p>
 <p>The model was originally developed with tensorflow 1.12.
@@ -806,8 +807,8 @@ the functionalities for better readability.</p>
 <p>Original Author: I-Chieh, Wei
 Rewrite by: BreezeWhite</p>
 <dl class="py class">
-<dt id="omnizart.models.spectral_norm_net.ConvSN2D">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></code><code class="sig-name descname"><span class="pre">ConvSN2D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.ConvSN2D" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.ConvSN2D">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">ConvSN2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.ConvSN2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Just a wrapper layer for using spectral normalization.</p>
 <p>Original implementation referes to <a class="reference external" href="https://github.com/thisisiron/spectral_normalization-tf2">here</a>.</p>
@@ -827,8 +828,8 @@ Rewrite by: BreezeWhite</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.spectral_norm_net.ConvSN2D.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.ConvSN2D.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.ConvSN2D.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.ConvSN2D.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is where the layer’s logic lives.</p>
 <p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
 from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
@@ -844,16 +845,16 @@ method to support masking.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.spectral_norm_net.ConvSN2D.get_config">
-<code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.ConvSN2D.get_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.ConvSN2D.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.ConvSN2D.get_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is neccessary to save the model architecture.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.models.spectral_norm_net.SpectralNormalization">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></code><code class="sig-name descname"><span class="pre">SpectralNormalization</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.SpectralNormalization">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">SpectralNormalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.layers.wrappers.Wrapper</span></code></p>
 <p>Spectral normalization layer.</p>
 <p>Original implementation referes to <a class="reference external" href="https://github.com/thisisiron/spectral_normalization-tf2">here</a>.</p>
@@ -887,8 +888,8 @@ method to support masking.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.spectral_norm_net.SpectralNormalization.build">
-<code class="sig-name descname"><span class="pre">build</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization.build" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.SpectralNormalization.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization.build" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the variables of the layer (optional, for subclass implementers).</p>
 <p>This is a method that implementers of subclasses of <cite>Layer</cite> or <cite>Model</cite>
 can override if they need a state-creation step in-between
@@ -905,8 +906,8 @@ layer instantiation and layer call.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.spectral_norm_net.SpectralNormalization.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.SpectralNormalization.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is where the layer’s logic lives.</p>
 <p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
 from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
@@ -922,35 +923,35 @@ method to support masking.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.spectral_norm_net.SpectralNormalization.restore_weights">
-<code class="sig-name descname"><span class="pre">restore_weights</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization.restore_weights" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.SpectralNormalization.restore_weights">
+<span class="sig-name descname"><span class="pre">restore_weights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization.restore_weights" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.spectral_norm_net.SpectralNormalization.update_weights">
-<code class="sig-name descname"><span class="pre">update_weights</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization.update_weights" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.SpectralNormalization.update_weights">
+<span class="sig-name descname"><span class="pre">update_weights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization.update_weights" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.spectral_norm_net.cnn_attention">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></code><code class="sig-name descname"><span class="pre">cnn_attention</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'attention'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.cnn_attention" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.cnn_attention">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">cnn_attention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'attention'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.cnn_attention" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.spectral_norm_net.conv_sa">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></code><code class="sig-name descname"><span class="pre">conv_sa</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(4,</span> <span class="pre">4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zero'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'conv_0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.conv_sa" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.conv_sa">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">conv_sa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(4,</span> <span class="pre">4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zero'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'conv_0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.conv_sa" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.spectral_norm_net.down_sample">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></code><code class="sig-name descname"><span class="pre">down_sample</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.down_sample" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.down_sample">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">down_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.down_sample" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.spectral_norm_net.drum_model">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></code><code class="sig-name descname"><span class="pre">drum_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mini_beat_per_seg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res_block_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.drum_model" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.drum_model">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">drum_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mini_beat_per_seg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res_block_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.drum_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the drum transcription model.</p>
 <p>Constructs the drum transcription model instance for training/inference.</p>
 <dl class="field-list simple">
@@ -976,21 +977,21 @@ to be considered for training.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.spectral_norm_net.residual_block">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></code><code class="sig-name descname"><span class="pre">residual_block</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'resblock'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.residual_block" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.residual_block">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">residual_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'resblock'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.residual_block" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.spectral_norm_net.transpose_residual_block">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></code><code class="sig-name descname"><span class="pre">transpose_residual_block</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_down</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'transblock'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.transpose_residual_block" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.transpose_residual_block">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">transpose_residual_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_down</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'transblock'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.transpose_residual_block" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.models.chord_model">
+</section>
+<section id="module-omnizart.models.chord_model">
 <span id="chord-transformer"></span><h2>Chord Transformer<a class="headerlink" href="#module-omnizart.models.chord_model" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.models.chord_model.ChordModel">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">ChordModel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.ChordModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">ChordModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.training.Model</span></code></p>
 <p>Chord model in written in keras.</p>
 <p>Keras model of <code class="docutils literal notranslate"><span class="pre">chord</span></code> submodule. The original implementation is written in
@@ -1067,8 +1068,8 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.chord_model.ChordModel.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.ChordModel.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls the model on new inputs.</p>
 <p>In this case <cite>call</cite> just reapplies
 all ops in the graph to the new inputs
@@ -1091,8 +1092,8 @@ a list of tensors if there are more than one outputs.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.chord_model.ChordModel.get_config">
-<code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.get_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.ChordModel.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.get_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the config of the layer.</p>
 <p>A layer config is a Python dictionary (serializable)
 containing the configuration of a layer.
@@ -1108,13 +1109,13 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.chord_model.ChordModel.step_in_slope">
-<code class="sig-name descname"><span class="pre">step_in_slope</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.step_in_slope" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.ChordModel.step_in_slope">
+<span class="sig-name descname"><span class="pre">step_in_slope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.step_in_slope" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.chord_model.ChordModel.test_step">
-<code class="sig-name descname"><span class="pre">test_step</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.test_step" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.ChordModel.test_step">
+<span class="sig-name descname"><span class="pre">test_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.test_step" title="Permalink to this definition">¶</a></dt>
 <dd><p>The logic for one evaluation step.</p>
 <p>This method can be overridden to support custom evaluation logic.
 This method is called by <cite>Model.make_test_function</cite>.</p>
@@ -1136,8 +1137,8 @@ values of the <cite>Model</cite>’s metrics are returned.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.chord_model.ChordModel.train_step">
-<code class="sig-name descname"><span class="pre">train_step</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.train_step" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.ChordModel.train_step">
+<span class="sig-name descname"><span class="pre">train_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel.train_step" title="Permalink to this definition">¶</a></dt>
 <dd><p>The logic for one training step.</p>
 <p>This method can be overridden to support custom training logic.
 This method is called by <cite>Model.make_train_function</cite>.</p>
@@ -1161,8 +1162,8 @@ values of the <cite>Model</cite>’s metrics are returned. Example:
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.models.chord_model.Decoder">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">Decoder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Decoder" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.Decoder">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">Decoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Decoder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Decoder layer of the transformer model.</p>
 <dl class="field-list simple">
@@ -1205,8 +1206,8 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.chord_model.Decoder.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_input_emb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chord_change_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Decoder.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.Decoder.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_input_emb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chord_change_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Decoder.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is where the layer’s logic lives.</p>
 <p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
 from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
@@ -1222,8 +1223,8 @@ method to support masking.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.chord_model.Decoder.get_config">
-<code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Decoder.get_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.Decoder.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Decoder.get_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the config of the layer.</p>
 <p>A layer config is a Python dictionary (serializable)
 containing the configuration of a layer.
@@ -1241,8 +1242,8 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.models.chord_model.EncodeSegmentFrequency">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">EncodeSegmentFrequency</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentFrequency" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.EncodeSegmentFrequency">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">EncodeSegmentFrequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentFrequency" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Encode feature along the frequency axis.</p>
 <dl class="field-list simple">
@@ -1279,8 +1280,8 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.chord_model.EncodeSegmentFrequency.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentFrequency.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.EncodeSegmentFrequency.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentFrequency.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is where the layer’s logic lives.</p>
 <p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
 from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
@@ -1296,8 +1297,8 @@ method to support masking.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.chord_model.EncodeSegmentFrequency.get_config">
-<code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentFrequency.get_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.EncodeSegmentFrequency.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentFrequency.get_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the config of the layer.</p>
 <p>A layer config is a Python dictionary (serializable)
 containing the configuration of a layer.
@@ -1315,8 +1316,8 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.models.chord_model.EncodeSegmentTime">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">EncodeSegmentTime</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentTime" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.EncodeSegmentTime">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">EncodeSegmentTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentTime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Encode feature along the time axis.</p>
 <dl class="field-list simple">
@@ -1353,8 +1354,8 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.chord_model.EncodeSegmentTime.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentTime.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.EncodeSegmentTime.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentTime.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is where the layer’s logic lives.</p>
 <p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
 from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
@@ -1370,8 +1371,8 @@ method to support masking.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.chord_model.EncodeSegmentTime.get_config">
-<code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentTime.get_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.EncodeSegmentTime.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentTime.get_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the config of the layer.</p>
 <p>A layer config is a Python dictionary (serializable)
 containing the configuration of a layer.
@@ -1389,8 +1390,8 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.models.chord_model.Encoder">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">Encoder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Encoder" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.Encoder">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">Encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Encoder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Encoder layer of the transformer model.</p>
 <dl class="field-list simple">
@@ -1431,8 +1432,8 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.chord_model.Encoder.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Encoder.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.Encoder.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Encoder.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is where the layer’s logic lives.</p>
 <p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
 from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
@@ -1448,8 +1449,8 @@ method to support masking.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.chord_model.Encoder.get_config">
-<code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Encoder.get_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.Encoder.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Encoder.get_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the config of the layer.</p>
 <p>A layer config is a Python dictionary (serializable)
 containing the configuration of a layer.
@@ -1467,8 +1468,8 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.models.chord_model.FeedForward">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">FeedForward</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.FeedForward" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.FeedForward">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">FeedForward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.FeedForward" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Feedfoward layer of the transformer model.</p>
 <p class="rubric">Methods</p>
@@ -1487,8 +1488,8 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.chord_model.FeedForward.call">
-<code class="sig-name descname"><span class="pre">call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.FeedForward.call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.FeedForward.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.FeedForward.call" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is where the layer’s logic lives.</p>
 <p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
 from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
@@ -1504,8 +1505,8 @@ method to support masking.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.models.chord_model.FeedForward.get_config">
-<code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.FeedForward.get_config" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.FeedForward.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.FeedForward.get_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the config of the layer.</p>
 <p>A layer config is a Python dictionary (serializable)
 containing the configuration of a layer.
@@ -1523,8 +1524,8 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.models.chord_model.ReduceSlope">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">ReduceSlope</span></code><a class="headerlink" href="#omnizart.models.chord_model.ReduceSlope" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.ReduceSlope">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">ReduceSlope</span></span><a class="headerlink" href="#omnizart.models.chord_model.ReduceSlope" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.callbacks.Callback</span></code></p>
 <p>Custom keras callback for reducing slope value after each epoch.</p>
 <p class="rubric">Methods</p>
@@ -1540,8 +1541,8 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.models.chord_model.ReduceSlope.on_epoch_end">
-<code class="sig-name descname"><span class="pre">on_epoch_end</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ReduceSlope.on_epoch_end" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.ReduceSlope.on_epoch_end">
+<span class="sig-name descname"><span class="pre">on_epoch_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ReduceSlope.on_epoch_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called at the end of an epoch.</p>
 <p>Subclasses should override for any actions to run. This function should only
 be called during TRAIN mode.</p>
@@ -1559,34 +1560,34 @@ are prefixed with <cite>val_</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.chord_model.binary_round">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">binary_round</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cast_to_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.binary_round" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.binary_round">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">binary_round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cast_to_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.binary_round" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.chord_model.chord_block_compression">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">chord_block_compression</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_states</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chord_changes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.chord_block_compression" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.chord_block_compression">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">chord_block_compression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hidden_states</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chord_changes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.chord_block_compression" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.models.chord_model.chord_block_decompression">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></code><code class="sig-name descname"><span class="pre">chord_block_decompression</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compressed_seq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.chord_block_decompression" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.chord_model.chord_block_decompression">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">chord_block_decompression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compressed_seq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.chord_block_decompression" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</div>
-<div class="section" id="pyramid-net">
+</section>
+<section id="pyramid-net">
 <h2>Pyramid Net<a class="headerlink" href="#pyramid-net" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-omnizart.models.utils">
+</section>
+<section id="module-omnizart.models.utils">
 <span id="utils"></span><h2>Utils<a class="headerlink" href="#module-omnizart.models.utils" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.models.utils.shape_list">
-<code class="sig-prename descclassname"><span class="pre">omnizart.models.utils.</span></code><code class="sig-name descname"><span class="pre">shape_list</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.utils.shape_list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.models.utils.shape_list">
+<span class="sig-prename descclassname"><span class="pre">omnizart.models.utils.</span></span><span class="sig-name descname"><span class="pre">shape_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.utils.shape_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return list of dims, statically where possible.</p>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1603,12 +1604,12 @@ are prefixed with <cite>val_</cite>.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

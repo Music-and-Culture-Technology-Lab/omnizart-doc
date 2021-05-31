@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Beat Transcription</title>
     
-      <link rel="stylesheet" href="../_static/pygments.css">
-      <link rel="stylesheet" href="../_static/theme.css">
-      <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="../_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
 
       
-      <script src="../_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
       <script src="../_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="../genindex.html" />
@@ -29,7 +29,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -50,7 +51,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -87,7 +88,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -144,7 +145,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -326,14 +327,14 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="module-omnizart.beat">
+  <section id="module-omnizart.beat">
 <span id="beat-transcription"></span><h1>Beat Transcription<a class="headerlink" href="#module-omnizart.beat" title="Permalink to this headline">¶</a></h1>
 <p>MIDI domain beat tracking.</p>
 <p>Track beats and downbeat in symbolic domain. Outputs the predicted beat positions
 in seconds. Re-implementation of the work <a class="reference internal" href="#r985f0f089ca2-1" id="id1">[1]</a> with tensorflow 2.3.0.</p>
-<div class="section" id="feature-storage-format">
+<section id="feature-storage-format">
 <h2>Feature Storage Format<a class="headerlink" href="#feature-storage-format" title="Permalink to this headline">¶</a></h2>
 <p>Processed feature will be stored in <code class="docutils literal notranslate"><span class="pre">.hdf</span></code> format, one file per piece.</p>
 <p>Columns in the file are:</p>
@@ -341,20 +342,20 @@ in seconds. Re-implementation of the work <a class="reference internal" href="#r
 <li><p><strong>feature</strong>: Piano roll like representation with mixed information.</p></li>
 <li><p><strong>label</strong>:</p></li>
 </ul>
-<div class="section" id="references">
+<section id="references">
 <h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
 <dl class="citation">
 <dt class="label" id="r985f0f089ca2-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p><a class="reference external" href="https://github.com/chuang76/symbolic-beat-tracking">https://github.com/chuang76/symbolic-beat-tracking</a></p>
 </dd>
 </dl>
-</div>
-</div>
-<div class="section" id="app">
+</section>
+</section>
+<section id="app">
 <h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.beat.app.BeatTranscription">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.beat.app.</span></code><code class="sig-name descname"><span class="pre">BeatTranscription</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.app.BeatTranscription">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.beat.app.</span></span><span class="sig-name descname"><span class="pre">BeatTranscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
 <p>Application class for beat tracking in MIDI domain.</p>
 <p class="rubric">Methods</p>
@@ -376,8 +377,8 @@ in seconds. Re-implementation of the work <a class="reference internal" href="#r
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.beat.app.BeatTranscription.generate_feature">
-<code class="sig-name descname"><span class="pre">generate_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beat_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.app.BeatTranscription.generate_feature">
+<span class="sig-name descname"><span class="pre">generate_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beat_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract the feature from the given dataset.</p>
 <p>To train the model, the first step is to pre-process the data into feature
 representations. After downloading the dataset, use this function to generate
@@ -402,8 +403,8 @@ the life-cycle of building a model.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.beat.app.BeatTranscription.train">
-<code class="sig-name descname"><span class="pre">train</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beat_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription.train" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.app.BeatTranscription.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beat_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Model training.</p>
 <p>Train the model from scratch or continue training given a model checkpoint.</p>
 <dl class="field-list simple">
@@ -426,8 +427,8 @@ the life-cycle of model building.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.beat.app.BeatTranscription.transcribe">
-<code class="sig-name descname"><span class="pre">transcribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.app.BeatTranscription.transcribe">
+<span class="sig-name descname"><span class="pre">transcribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transcribe beat positions in the given MIDI.</p>
 <p>Tracks the beat in symbolic domain. Outputs three files if the output path is given:
 <em>&lt;filename&gt;.mid</em>, &lt;filename&gt;_beat.csv, and &lt;filename&gt;_down_beat.csv, where <em>filename</em>
@@ -463,12 +464,12 @@ Each are recorded in independent instrument track.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="dataset">
+</section>
+<section id="dataset">
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.beat.app.BeatDatasetLoader">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.beat.app.</span></code><code class="sig-name descname"><span class="pre">BeatDatasetLoader</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat_col_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'feature'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.app.BeatDatasetLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.beat.app.</span></span><span class="sig-name descname"><span class="pre">BeatDatasetLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat_col_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'feature'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.BeatDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
 <p>Data loader for training the model of <code class="docutils literal notranslate"><span class="pre">beat</span></code>.</p>
 <p>Each feature slice will have an overlap size of <em>timesteps//2</em>.</p>
@@ -498,12 +499,12 @@ under the same folder.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.beat.inference">
+</section>
+<section id="module-omnizart.beat.inference">
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.beat.inference" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.beat.inference.inference">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.inference.</span></code><code class="sig-name descname"><span class="pre">inference</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beat_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_beat_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.inference.inference" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.inference.inference">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.inference.</span></span><span class="sig-name descname"><span class="pre">inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beat_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_beat_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.inference.inference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Infers the beat and down beat positions from the raw prediction values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -530,21 +531,21 @@ and down beat are recorded in two different instrument tracks.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="loss-functions">
+</section>
+<section id="loss-functions">
 <h2>Loss Functions<a class="headerlink" href="#loss-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.beat.app.weighted_binary_crossentropy">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.app.</span></code><code class="sig-name descname"><span class="pre">weighted_binary_crossentropy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_beat_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.weighted_binary_crossentropy" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.app.weighted_binary_crossentropy">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.app.</span></span><span class="sig-name descname"><span class="pre">weighted_binary_crossentropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_beat_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.app.weighted_binary_crossentropy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrap around binary crossentropy loss with weighting to different channels.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.beat.features">
+</section>
+<section id="module-omnizart.beat.features">
 <span id="features"></span><h2>Features<a class="headerlink" href="#module-omnizart.beat.features" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.beat.features.extract_feature">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.features.</span></code><code class="sig-name descname"><span class="pre">extract_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.features.extract_feature">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.features.</span></span><span class="sig-name descname"><span class="pre">extract_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract feature representation required by beat module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -566,8 +567,8 @@ for more details.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.beat.features.extract_feature_from_midi">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.features.</span></code><code class="sig-name descname"><span class="pre">extract_feature_from_midi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">midi_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_feature_from_midi" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.features.extract_feature_from_midi">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.features.</span></span><span class="sig-name descname"><span class="pre">extract_feature_from_midi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">midi_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_feature_from_midi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract feature for beat module from MIDI file.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -579,8 +580,8 @@ for more details.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.beat.features.extract_musicnet_feature">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.features.</span></code><code class="sig-name descname"><span class="pre">extract_musicnet_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_musicnet_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.features.extract_musicnet_feature">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.features.</span></span><span class="sig-name descname"><span class="pre">extract_musicnet_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_musicnet_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract feature for beat module from MusicNet label file.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -592,8 +593,8 @@ for more details.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.beat.features.extract_musicnet_label">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.features.</span></code><code class="sig-name descname"><span class="pre">extract_musicnet_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fade_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_musicnet_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.features.extract_musicnet_label">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.features.</span></span><span class="sig-name descname"><span class="pre">extract_musicnet_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fade_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.features.extract_musicnet_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction function for MusicNet.</p>
 <p>This function extracts the beat and down beat information given the symbolic
 representations of MusicNet.</p>
@@ -618,18 +619,18 @@ the value from 1 to 1/fade_out, totaling in length of &lt;fade_out&gt;.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.beat.prediction">
+</section>
+<section id="module-omnizart.beat.prediction">
 <span id="prediction"></span><h2>Prediction<a class="headerlink" href="#module-omnizart.beat.prediction" title="Permalink to this headline">¶</a></h2>
 <dl class="py data">
-<dt id="omnizart.beat.prediction.STEP_SIZE_RATIO">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.prediction.</span></code><code class="sig-name descname"><span class="pre">STEP_SIZE_RATIO</span></code><em class="property"> <span class="pre">=</span> <span class="pre">0.5</span></em><a class="headerlink" href="#omnizart.beat.prediction.STEP_SIZE_RATIO" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.prediction.STEP_SIZE_RATIO">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.prediction.</span></span><span class="sig-name descname"><span class="pre">STEP_SIZE_RATIO</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0.5</span></em><a class="headerlink" href="#omnizart.beat.prediction.STEP_SIZE_RATIO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Step size for slicing the feature. Ratio to the timesteps of the model input feature.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.beat.prediction.create_batches">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.prediction.</span></code><code class="sig-name descname"><span class="pre">create_batches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.prediction.create_batches">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.prediction.</span></span><span class="sig-name descname"><span class="pre">create_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a 4D output from the 2D feature for model prediciton.</p>
 <p>Create overlapped input features, and collect feature slices into batches.
 The overlap size is 1/4 length to the timesteps.</p>
@@ -654,14 +655,14 @@ The overlap size is 1/4 length to the timesteps.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.beat.prediction.merge_batches">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.prediction.</span></code><code class="sig-name descname"><span class="pre">merge_batches</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.prediction.merge_batches">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.prediction.</span></span><span class="sig-name descname"><span class="pre">merge_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
 <dd><p>Merge the batched predictions back to the 2D output.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.beat.prediction.predict">
-<code class="sig-prename descclassname"><span class="pre">omnizart.beat.prediction.</span></code><code class="sig-name descname"><span class="pre">predict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.beat.prediction.predict">
+<span class="sig-prename descclassname"><span class="pre">omnizart.beat.prediction.</span></span><span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.beat.prediction.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict on the given feature with the model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -685,8 +686,8 @@ The overlap size is 1/4 length to the timesteps.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="settings">
+</section>
+<section id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>Below are the default settings for building the beat model. It will be loaded
 by the class <code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.setting_loaders.BeatSettings</span></code>. The name of the
@@ -808,8 +809,8 @@ The level of <em>/Settings</em> is removed among all fields.</p>
                 <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -826,12 +827,12 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

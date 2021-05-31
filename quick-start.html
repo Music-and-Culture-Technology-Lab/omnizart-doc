@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Quick Start</title>
     
-      <link rel="stylesheet" href="_static/pygments.css">
-      <link rel="stylesheet" href="_static/theme.css">
-      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
 
       
-      <script src="_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
       <script src="_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="genindex.html" />
@@ -29,7 +29,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -50,7 +51,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -87,7 +88,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -154,7 +155,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -316,18 +317,18 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="quick-start">
+  <section id="quick-start">
 <h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="colab">
+<section id="colab">
 <h2>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">¶</a></h2>
 <p>Play with the <a class="reference external" href="https://bit.ly/omnizart-colab">Colab notebook</a>  to transcribe your favorite song without hassles.
 You can also follow the installation below to enjoy Omnizart locally.</p>
-</div>
-<div class="section" id="installation">
+</section>
+<section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="using-pip">
+<section id="using-pip">
 <h3>Using pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
 <p>Omnizart is under developement and will be updated regularly on PyPI.
 Use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install the latest stable version.</p>
@@ -338,8 +339,8 @@ pip install omnizart
 omnizart download-checkpoints
 </pre></div>
 </div>
-</div>
-<div class="section" id="development-installation">
+</section>
+<section id="development-installation">
 <h3>Development installation<a class="headerlink" href="#development-installation" title="Permalink to this headline">¶</a></h3>
 <p>For the development installation, clone the git repo and the installation
 creates a virtual environment under the directory <em>omnizart/</em> by default.</p>
@@ -353,22 +354,22 @@ make install
 poetry install
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="cli">
+</section>
+</section>
+<section id="cli">
 <h2>CLI<a class="headerlink" href="#cli" title="Permalink to this headline">¶</a></h2>
 <p>Below is an example usuage of pitched instrument transcription with the command-line interface,
 first transcribing a piece of music and then synthesizing the results.
 For more details and other types of transcription, refer to <a class="reference internal" href="tutorial.html"><span class="doc">Tutorial</span></a>.</p>
-<div class="section" id="transcription">
+<section id="transcription">
 <h3>Transcription<a class="headerlink" href="#transcription" title="Permalink to this headline">¶</a></h3>
 <p>The example transcribes a piece of music, being monophonic or polyphonic,
 to a MIDI file of the transcribed pitched notes and a CSV file with more information.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart music transcribe &lt;path/to/example.wav&gt;
 </pre></div>
 </div>
-</div>
-<div class="section" id="sonification">
+</section>
+<section id="sonification">
 <h3>Sonification<a class="headerlink" href="#sonification" title="Permalink to this headline">¶</a></h3>
 <p>Omnizart renders the transcribed MIDI file with default soundfonts,
 synthesizing an audio in WAV by the command below.
@@ -376,9 +377,9 @@ For the first-time execution, it is expected to take a bit for downloading the f
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>omnizart synth example.mid
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -395,12 +396,12 @@ For the first-time execution, it is expected to take a bit for downloading the f
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

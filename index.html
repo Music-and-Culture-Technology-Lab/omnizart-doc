@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>OMNIZART: MUSIC TRANSCRIPTION MADE EASY</title>
     
-      <link rel="stylesheet" href="_static/pygments.css">
-      <link rel="stylesheet" href="_static/theme.css">
-      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
 
       
-      <script src="_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
       <script src="_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="#" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -49,7 +50,7 @@
     <div class="nav-item">
       <a href="#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -86,7 +87,7 @@
     <div class="nav-item">
       <a href="#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -143,7 +144,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -301,32 +302,32 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="omnizart-music-transcription-made-easy">
+  <section id="omnizart-music-transcription-made-easy">
 <h1>OMNIZART: MUSIC TRANSCRIPTION MADE EASY<a class="headerlink" href="#omnizart-music-transcription-made-easy" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="_images/features2.png" src="_images/features2.png" />
-</div>
+</figure>
 <p>Omnizart is a Python library and a streamlined solution for automatic music transcription.
 This library gathers the research outcomes from <a class="reference external" href="https://sites.google.com/view/mctl/home">Music and Cultural Technology Lab</a>,
 analyzing polyphonic music and transcribes
-<strong>musical notes of instruments</strong> <span id="id1">[<a class="reference internal" href="#id8"><span>WCS20</span></a>]</span>,
-<strong>chord progression</strong> <span id="id2">[<a class="reference internal" href="#id9"><span>CS19</span></a>]</span>,
-<strong>drum events</strong> <span id="id3">[<a class="reference internal" href="#id10"><span>WWS20</span></a>]</span>,
-<strong>frame-level vocal melody</strong> <span id="id4">[<a class="reference internal" href="#id11"><span>LS18</span></a>]</span>,
-<strong>note-level vocal melody</strong>  <span id="id5">[<a class="reference internal" href="#id13"><span>HS20</span></a>]</span>, and
-<strong>beat</strong> <span id="id6">[<a class="reference internal" href="#id12"><span>CS20</span></a>]</span>.</p>
+<strong>musical notes of instruments</strong> <span id="id1">[<a class="reference internal" href="#id8">WCS20</a>]</span>,
+<strong>chord progression</strong> <span id="id2">[<a class="reference internal" href="#id9">CS19</a>]</span>,
+<strong>drum events</strong> <span id="id3">[<a class="reference internal" href="#id10">WWS20</a>]</span>,
+<strong>frame-level vocal melody</strong> <span id="id4">[<a class="reference internal" href="#id11">LS18</a>]</span>,
+<strong>note-level vocal melody</strong>  <span id="id5">[<a class="reference internal" href="#id13">HS20</a>]</span>, and
+<strong>beat</strong> <span id="id6">[<a class="reference internal" href="#id12">CS20</a>]</span>.</p>
 <p>Omnizart provides the main functionalities that construct the life-cycle of deep learning-based music transcription,
 covering from <em>dataset downloading</em>, <em>feature pre-processing</em>, <em>model training</em>, to <em>transcription</em> and <em>sonification</em>.
 Pre-trained checkpoints are also provided for the immediate usage of transcription.</p>
-<div class="section" id="demonstration">
+<section id="demonstration">
 <h2>Demonstration<a class="headerlink" href="#demonstration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="colab">
+<section id="colab">
 <h3>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">¶</a></h3>
 <p>Play with the <a class="reference external" href="https://bit.ly/omnizart-colab">Colab notebook</a> to transcribe your favorite song almost immediately!</p>
-</div>
-<div class="section" id="sound-samples">
+</section>
+<section id="sound-samples">
 <h3>Sound samples<a class="headerlink" href="#sound-samples" title="Permalink to this headline">¶</a></h3>
 <p>Original song</p>
 <iframe src="https://www.youtube-nocookie.com/embed/hjJhweRlE-A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Chord transcription</p>
@@ -372,7 +373,7 @@ You can use <em>Audacity</em> to open the files.</p>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Commnad Line Interface</span></p>
+<p class="caption"><span class="caption-text">Command Line Interface</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="music/cli.html">omnizart music</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="music/cli.html#transcribe">transcribe</a></li>
@@ -529,9 +530,9 @@ You can use <em>Audacity</em> to open the files.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="section" id="references">
+</section>
+</section>
+<section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="id7"><dl class="citation">
 <dt class="label" id="id9"><span class="brackets">CS19</span></dt>
@@ -559,8 +560,8 @@ International Society of Music Information Retrieval Conference (ISMIR), 2019.</
 <p><a href="#id18"><span class="problematic" id="id15">[2]_</span></a></p>
 <p><a href="#id19"><span class="problematic" id="id16">[3]_</span></a> Wei-Tsung Lu and Li Su, “Vocal Melody Extraction With Semantic Segmentation and Audio-Symbolic Domain
 Transfer Learning,” International Society of Music Information Retrieval Conference (ISMIR), 2018.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -573,12 +574,12 @@ Transfer Learning,” International Society of Music Information Retrieval Confe
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Training</title>
     
-      <link rel="stylesheet" href="_static/pygments.css">
-      <link rel="stylesheet" href="_static/theme.css">
-      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
 
       
-      <script src="_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
       <script src="_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="genindex.html" />
@@ -29,7 +29,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -50,7 +51,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -87,7 +88,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -144,7 +145,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -314,17 +315,17 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="training">
+  <section id="training">
 <h1>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h1>
 <p>Including logics of main training loop, progress visualization, and callback
 functions.</p>
-<div class="section" id="id1">
+<section id="id1">
 <h2>Training<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="py data">
-<dt id="omnizart.train.PROGRESS_BAR_FORMAT">
-<code class="sig-prename descclassname"><span class="pre">omnizart.train.</span></code><code class="sig-name descname"><span class="pre">PROGRESS_BAR_FORMAT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">Format</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">training</span> <span class="pre">progress</span> <span class="pre">bar</span></em><a class="headerlink" href="#omnizart.train.PROGRESS_BAR_FORMAT" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.train.PROGRESS_BAR_FORMAT">
+<span class="sig-prename descclassname"><span class="pre">omnizart.train.</span></span><span class="sig-name descname"><span class="pre">PROGRESS_BAR_FORMAT</span></span><em class="property"> <span class="pre">=</span> <span class="pre">Format</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">training</span> <span class="pre">progress</span> <span class="pre">bar</span></em><a class="headerlink" href="#omnizart.train.PROGRESS_BAR_FORMAT" title="Permalink to this definition">¶</a></dt>
 <dd><p>str(object=’’) -&gt; str
 str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
 <p>Create a new string object from the given object. If encoding or
@@ -337,20 +338,20 @@ errors defaults to ‘strict’.</p>
 </dd></dl>
 
 <span class="target" id="module-omnizart.train"></span><dl class="py function">
-<dt id="omnizart.train.execute_callbacks">
-<code class="sig-prename descclassname"><span class="pre">omnizart.train.</span></code><code class="sig-name descname"><span class="pre">execute_callbacks</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callbacks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.execute_callbacks" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.train.execute_callbacks">
+<span class="sig-prename descclassname"><span class="pre">omnizart.train.</span></span><span class="sig-name descname"><span class="pre">execute_callbacks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callbacks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.execute_callbacks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute callbacks at different training stage.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.train.format_num">
-<code class="sig-prename descclassname"><span class="pre">omnizart.train.</span></code><code class="sig-name descname"><span class="pre">format_num</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.format_num" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.train.format_num">
+<span class="sig-prename descclassname"><span class="pre">omnizart.train.</span></span><span class="sig-name descname"><span class="pre">format_num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.format_num" title="Permalink to this definition">¶</a></dt>
 <dd><p>Formatting the float values as string.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.train.gen_bar_postfix">
-<code class="sig-prename descclassname"><span class="pre">omnizart.train.</span></code><code class="sig-name descname"><span class="pre">gen_bar_postfix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">history</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['loss',</span> <span class="pre">'accuracy']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['loss',</span> <span class="pre">'acc']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.gen_bar_postfix" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.train.gen_bar_postfix">
+<span class="sig-prename descclassname"><span class="pre">omnizart.train.</span></span><span class="sig-name descname"><span class="pre">gen_bar_postfix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">history</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['loss',</span> <span class="pre">'accuracy']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['loss',</span> <span class="pre">'acc']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.gen_bar_postfix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate string of metrics status to be appended to the end of the progress bar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -374,13 +375,13 @@ Should be the same length, same order as <code class="docutils literal notransla
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.train.get_train_val_feat_file_list">
-<code class="sig-prename descclassname"><span class="pre">omnizart.train.</span></code><code class="sig-name descname"><span class="pre">get_train_val_feat_file_list</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.get_train_val_feat_file_list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.train.get_train_val_feat_file_list">
+<span class="sig-prename descclassname"><span class="pre">omnizart.train.</span></span><span class="sig-name descname"><span class="pre">get_train_val_feat_file_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.get_train_val_feat_file_list" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.train.train_epochs">
-<code class="sig-prename descclassname"><span class="pre">omnizart.train.</span></code><code class="sig-name descname"><span class="pre">train_epochs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate_dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.train_epochs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.train.train_epochs">
+<span class="sig-prename descclassname"><span class="pre">omnizart.train.</span></span><span class="sig-name descname"><span class="pre">train_epochs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate_dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.train_epochs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logic of training loop.</p>
 <p>The main loop of the training, with events-based life-cycle management
 that triggers different events for all callbacks. Event types are the
@@ -443,8 +444,8 @@ and validation.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.train.train_steps">
-<code class="sig-prename descclassname"><span class="pre">omnizart.train.</span></code><code class="sig-name descname"><span class="pre">train_steps</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bar_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.train_steps" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.train.train_steps">
+<span class="sig-prename descclassname"><span class="pre">omnizart.train.</span></span><span class="sig-name descname"><span class="pre">train_steps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bar_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.train.train_steps" title="Permalink to this definition">¶</a></dt>
 <dd><p>A single training epoch with multiple steps.</p>
 <p>Customized training epoch compared to the built-in <code class="docutils literal notranslate"><span class="pre">.fit(...)</span></code> function
 of tensorflow keras model. The major difference is that the <code class="docutils literal notranslate"><span class="pre">.fit()</span></code>
@@ -482,12 +483,12 @@ training loop that should update the weights of the model.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.callbacks">
+</section>
+<section id="module-omnizart.callbacks">
 <span id="callbacks"></span><h2>Callbacks<a class="headerlink" href="#module-omnizart.callbacks" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.callbacks.Callback">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.callbacks.</span></code><code class="sig-name descname"><span class="pre">Callback</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.Callback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.callbacks.Callback">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.callbacks.</span></span><span class="sig-name descname"><span class="pre">Callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.Callback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class of all callback classes</p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
@@ -525,8 +526,8 @@ training loop that should update the weights of the model.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.callbacks.EarlyStopping">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.callbacks.</span></code><code class="sig-name descname"><span class="pre">EarlyStopping</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'val_acc'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.EarlyStopping" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.callbacks.EarlyStopping">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.callbacks.</span></span><span class="sig-name descname"><span class="pre">EarlyStopping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patience</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'val_acc'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.EarlyStopping" title="Permalink to this definition">¶</a></dt>
 <dd><p>Early stop the training after no improvement on the monitor for a certain period.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -559,8 +560,8 @@ training loop that should update the weights of the model.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.callbacks.ModelCheckpoint">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.callbacks.</span></code><code class="sig-name descname"><span class="pre">ModelCheckpoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'val_acc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_best_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_weights_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.ModelCheckpoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.callbacks.ModelCheckpoint">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.callbacks.</span></span><span class="sig-name descname"><span class="pre">ModelCheckpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'val_acc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_best_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_weights_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.ModelCheckpoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saving the model during training.</p>
 <p>The newest checkpoint will override the original checkpoint during a single
 training period.</p>
@@ -596,8 +597,8 @@ training period.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.callbacks.TFModelCheckpoint">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.callbacks.</span></code><code class="sig-name descname"><span class="pre">TFModelCheckpoint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'val_loss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_best_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_weights_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'epoch'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.TFModelCheckpoint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.callbacks.TFModelCheckpoint">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.callbacks.</span></span><span class="sig-name descname"><span class="pre">TFModelCheckpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'val_loss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_best_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_weights_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'epoch'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.TFModelCheckpoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Re-implementation of Tensorflow ModelCheckpoint.</p>
 <p>Customize the behaviour of saving the checkpoints.
 When specify save_weights_only to ‘True’, save the weights only during training, and save
@@ -628,8 +629,8 @@ use model.to_yaml() function.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.callbacks.TFModelCheckpoint.on_train_end">
-<code class="sig-name descname"><span class="pre">on_train_end</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.TFModelCheckpoint.on_train_end" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.callbacks.TFModelCheckpoint.on_train_end">
+<span class="sig-name descname"><span class="pre">on_train_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.callbacks.TFModelCheckpoint.on_train_end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called at the end of training.</p>
 <p>Subclasses should override for any actions to run.</p>
 <dl class="simple">
@@ -644,8 +645,8 @@ the future.</p>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -662,12 +663,12 @@ the future.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

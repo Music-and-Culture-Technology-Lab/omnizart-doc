@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Patch-CNN Transcription</title>
     
-      <link rel="stylesheet" href="../_static/pygments.css">
-      <link rel="stylesheet" href="../_static/theme.css">
-      <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="../_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
 
       
-      <script src="../_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
       <script src="../_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="../genindex.html" />
@@ -29,7 +29,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -50,7 +51,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -87,7 +88,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -144,7 +145,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -322,15 +323,15 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="module-omnizart.patch_cnn">
+  <section id="module-omnizart.patch_cnn">
 <span id="patch-cnn-transcription"></span><h1>Patch-CNN Transcription<a class="headerlink" href="#module-omnizart.patch_cnn" title="Permalink to this headline">¶</a></h1>
 <p>Vocal pitch contour transcription PatchCNN ver.</p>
 <p>Transcribes monophonic pitch contour of vocal in the given polyphonic audio
 by using the PatchCNN approach.
 Re-implementation of the repository <a class="reference external" href="https://github.com/leo-so/VocalMelodyExtPatchCNN">VocalMelodyExtPatchCNN</a>.</p>
-<div class="section" id="feature-storage-format">
+<section id="feature-storage-format">
 <h2>Feature Storage Format<a class="headerlink" href="#feature-storage-format" title="Permalink to this headline">¶</a></h2>
 <p>Processed feature and label will be stored in <code class="docutils literal notranslate"><span class="pre">.hdf</span></code> format, one file per piece.</p>
 <p>Columns contained in each file are:</p>
@@ -340,7 +341,7 @@ Re-implementation of the repository <a class="reference external" href="https://
 <li><p><strong>Z</strong>: The original CFP feature.</p></li>
 <li><p><strong>mapping</strong>: Records the original frequency and time indexes of each patch.</p></li>
 </ul>
-<div class="section" id="references">
+<section id="references">
 <h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
 <p>Publication of this module can be found in <a class="reference internal" href="#r9676ee434b52-1" id="id1">[1]</a>.</p>
 <dl class="citation">
@@ -349,13 +350,13 @@ Re-implementation of the repository <a class="reference external" href="https://
 Speech, and Signal Processing (ICASSP), 2018.</p>
 </dd>
 </dl>
-</div>
-</div>
-<div class="section" id="app">
+</section>
+</section>
+<section id="app">
 <h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.patch_cnn.app.PatchCNNTranscription">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.patch_cnn.app.</span></code><code class="sig-name descname"><span class="pre">PatchCNNTranscription</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNTranscription" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.patch_cnn.app.PatchCNNTranscription">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.patch_cnn.app.</span></span><span class="sig-name descname"><span class="pre">PatchCNNTranscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
 <p>Application class of PatchCNN module.</p>
 <p class="rubric">Methods</p>
@@ -377,8 +378,8 @@ Speech, and Signal Processing (ICASSP), 2018.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.patch_cnn.app.PatchCNNTranscription.generate_feature">
-<code class="sig-name descname"><span class="pre">generate_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_cnn_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.patch_cnn.app.PatchCNNTranscription.generate_feature">
+<span class="sig-name descname"><span class="pre">generate_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_cnn_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract the feature from the given dataset.</p>
 <p>To train the model, the first step is to pre-process the data into feature
 representations. After downloading the dataset, use this function to generate
@@ -410,8 +411,8 @@ the life-cycle of building a model.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.patch_cnn.app.PatchCNNTranscription.train">
-<code class="sig-name descname"><span class="pre">train</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_cnn_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNTranscription.train" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.patch_cnn.app.PatchCNNTranscription.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_cnn_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNTranscription.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Model training.</p>
 <p>Train the model from scratch or continue training given a model checkpoint.</p>
 <dl class="field-list simple">
@@ -434,8 +435,8 @@ the life-cycle of model building.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.patch_cnn.app.PatchCNNTranscription.transcribe">
-<code class="sig-name descname"><span class="pre">transcribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.patch_cnn.app.PatchCNNTranscription.transcribe">
+<span class="sig-name descname"><span class="pre">transcribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transcribe frame-level fundamental frequency of vocal from the given audio.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -468,22 +469,22 @@ and freqeuncy (Hz).</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="dataset">
+</section>
+<section id="dataset">
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.patch_cnn.app.PatchCNNDatasetLoader">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.patch_cnn.app.</span></code><code class="sig-name descname"><span class="pre">PatchCNNDatasetLoader</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat_col_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'feature'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.patch_cnn.app.PatchCNNDatasetLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.patch_cnn.app.</span></span><span class="sig-name descname"><span class="pre">PatchCNNDatasetLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_hop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feat_col_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'feature'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.PatchCNNDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
 <p>Dataset loader for PatchCNN module.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.patch_cnn.inference">
+</section>
+<section id="module-omnizart.patch_cnn.inference">
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.patch_cnn.inference" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.patch_cnn.inference.inference">
-<code class="sig-prename descclassname"><span class="pre">omnizart.patch_cnn.inference.</span></code><code class="sig-name descname"><span class="pre">inference</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zzz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cenf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'posterior'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.inference.inference" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.patch_cnn.inference.inference">
+<span class="sig-prename descclassname"><span class="pre">omnizart.patch_cnn.inference.</span></span><span class="sig-name descname"><span class="pre">inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zzz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cenf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'posterior'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.inference.inference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Infers pitch contour from the model prediction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -514,12 +515,12 @@ uses the given <code class="docutils literal notranslate"><span class="pre">zzz<
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="labels">
+</section>
+<section id="labels">
 <h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.patch_cnn.app.extract_label">
-<code class="sig-prename descclassname"><span class="pre">omnizart.patch_cnn.app.</span></code><code class="sig-name descname"><span class="pre">extract_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_loader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cenf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.extract_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.patch_cnn.app.extract_label">
+<span class="sig-prename descclassname"><span class="pre">omnizart.patch_cnn.app.</span></span><span class="sig-name descname"><span class="pre">extract_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_loader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cenf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.patch_cnn.app.extract_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction function of PatchCNN module.</p>
 <p>Extracts the label representation required by PatchCNN module.
 The output dimesions are: patch_length x 2. The second dimension indicates whether
@@ -554,8 +555,8 @@ of vocal.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="settings">
+</section>
+<section id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>Below are the default settings for building the PatchCNN model. It will be loaded
 by the class <code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.setting_loaders.PatchCNNSettings</span></code>. The name of the
@@ -684,8 +685,8 @@ The level of <em>/Settings</em> is removed among all fields.</p>
                 <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.00001</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -702,12 +703,12 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

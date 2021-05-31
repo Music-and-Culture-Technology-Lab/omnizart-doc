@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>omnizart vocal-contour</title>
     
-      <link rel="stylesheet" href="../_static/pygments.css">
-      <link rel="stylesheet" href="../_static/theme.css">
-      <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="../_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
 
       
-      <script src="../_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
       <script src="../_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="../genindex.html" />
@@ -29,7 +29,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -50,7 +51,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -87,7 +88,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link  router-link-active">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -144,7 +145,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="current">
         
@@ -316,14 +317,14 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="omnizart-vocal-contour">
+  <section id="omnizart-vocal-contour">
 <h1>omnizart vocal-contour<a class="headerlink" href="#omnizart-vocal-contour" title="Permalink to this headline">¶</a></h1>
 <p>Lists the available options of each sub-command.</p>
-<div class="section" id="transcribe">
+<section id="transcribe">
 <h2>transcribe<a class="headerlink" href="#transcribe" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="omnizart-vocal-contour-transcribe">
+<section id="omnizart-vocal-contour-transcribe">
 <h3>omnizart vocal-contour transcribe<a class="headerlink" href="#omnizart-vocal-contour-transcribe" title="Permalink to this headline">¶</a></h3>
 <p>Transcribe a single audio and output as a WAV file.</p>
 <p>This will output a WAV file with the same name as the given audio, except the
@@ -342,14 +343,14 @@ extension will be replaced with ‘.wav’.</p>
 </div>
 <p class="rubric">Options</p>
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal-contour-transcribe-m">
-<span id="cmdoption-omnizart-vocal-contour-transcribe-model-path"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--model-path</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;model_path&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal-contour-transcribe-m" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal-contour-transcribe-m">
+<span id="cmdoption-omnizart-vocal-contour-transcribe-model-path"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--model-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;model_path&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal-contour-transcribe-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to the pre-trained model or the supported transcription mode.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal-contour-transcribe-o">
-<span id="cmdoption-omnizart-vocal-contour-transcribe-output"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--output</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;output&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal-contour-transcribe-o" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal-contour-transcribe-o">
+<span id="cmdoption-omnizart-vocal-contour-transcribe-output"></span><span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--output</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal-contour-transcribe-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to output the prediction file (could be MIDI, CSV, …, etc.)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
@@ -360,16 +361,16 @@ extension will be replaced with ‘.wav’.</p>
 
 <p class="rubric">Arguments</p>
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal-contour-transcribe-arg-INPUT_AUDIO">
-<span id="cmdoption-omnizart-vocal-contour-transcribe-arg-input-audio"></span><code class="sig-name descname"><span class="pre">INPUT_AUDIO</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-omnizart-vocal-contour-transcribe-arg-INPUT_AUDIO" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal-contour-transcribe-arg-INPUT_AUDIO">
+<span id="cmdoption-omnizart-vocal-contour-transcribe-arg-input-audio"></span><span class="sig-name descname"><span class="pre">INPUT_AUDIO</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-omnizart-vocal-contour-transcribe-arg-INPUT_AUDIO" title="Permalink to this definition">¶</a></dt>
 <dd><p>Required argument</p>
 </dd></dl>
 
-</div>
-</div>
-<div class="section" id="generate-feature">
+</section>
+</section>
+<section id="generate-feature">
 <h2>generate-feature<a class="headerlink" href="#generate-feature" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="omnizart-vocal-contour-generate-feature">
+<section id="omnizart-vocal-contour-generate-feature">
 <h3>omnizart vocal_contour generate-feature<a class="headerlink" href="#omnizart-vocal-contour-generate-feature" title="Permalink to this headline">¶</a></h3>
 <p>Extract the feature of the whole dataset for training.</p>
 <p>The command will try to infer the dataset type from the given dataset path.</p>
@@ -382,20 +383,20 @@ extension will be replaced with ‘.wav’.</p>
 </div>
 <p class="rubric">Options</p>
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-generate-feature-d">
-<span id="cmdoption-omnizart-vocal-contour-generate-feature-d"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-dataset-path"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-dataset-path"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--dataset-path</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;dataset_path&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-generate-feature-d">
+<span id="cmdoption-omnizart-vocal-contour-generate-feature-d"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-dataset-path"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-dataset-path"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--dataset-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;dataset_path&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-d" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>Required</strong> Path to the downloaded dataset</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-generate-feature-o">
-<span id="cmdoption-omnizart-vocal-contour-generate-feature-o"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-output-path"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-output-path"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--output-path</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;output_path&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-o" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-generate-feature-o">
+<span id="cmdoption-omnizart-vocal-contour-generate-feature-o"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-output-path"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-output-path"></span><span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--output-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output_path&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path for saving the extracted feature. Default to the folder under the dataset.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-generate-feature-n">
-<span id="cmdoption-omnizart-vocal-contour-generate-feature-n"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-num-threads"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-num-threads"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--num-threads</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;num_threads&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-n" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-generate-feature-n">
+<span id="cmdoption-omnizart-vocal-contour-generate-feature-n"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-num-threads"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-num-threads"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--num-threads</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;num_threads&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of threads used for parallel feature extraction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
@@ -405,8 +406,8 @@ extension will be replaced with ‘.wav’.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-generate-feature-h">
-<span id="cmdoption-omnizart-vocal-contour-generate-feature-h"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-hop-size"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-hop-size"></span><code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--hop-size</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;hop_size&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-h" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-generate-feature-h">
+<span id="cmdoption-omnizart-vocal-contour-generate-feature-h"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-hop-size"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-hop-size"></span><span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--hop-size</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;hop_size&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hop size in seconds with respect to sampling rate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
@@ -416,8 +417,8 @@ extension will be replaced with ‘.wav’.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-generate-feature-s">
-<span id="cmdoption-omnizart-vocal-contour-generate-feature-s"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-sampling-rate"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-sampling-rate"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--sampling-rate</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;sampling_rate&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-s" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-generate-feature-s">
+<span id="cmdoption-omnizart-vocal-contour-generate-feature-s"></span><span id="cmdoption-omnizart-vocal_contour-generate-feature-sampling-rate"></span><span id="cmdoption-omnizart-vocal-contour-generate-feature-sampling-rate"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--sampling-rate</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;sampling_rate&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-generate-feature-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adjust input sampling rate to this value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
@@ -426,11 +427,11 @@ extension will be replaced with ‘.wav’.</p>
 </dl>
 </dd></dl>
 
-</div>
-</div>
-<div class="section" id="train-model">
+</section>
+</section>
+<section id="train-model">
 <h2>train-model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="omnizart-vocal-contour-train-model">
+<section id="omnizart-vocal-contour-train-model">
 <h3>omnizart vocal_contour train-model<a class="headerlink" href="#omnizart-vocal-contour-train-model" title="Permalink to this headline">¶</a></h3>
 <p>Train a new model or continue to train on a pre-trained model</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>omnizart vocal_contour train-model <span class="o">[</span>OPTIONS<span class="o">]</span>
@@ -438,62 +439,62 @@ extension will be replaced with ‘.wav’.</p>
 </div>
 <p class="rubric">Options</p>
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-train-model-d">
-<span id="cmdoption-omnizart-vocal-contour-train-model-d"></span><span id="cmdoption-omnizart-vocal_contour-train-model-feature-path"></span><span id="cmdoption-omnizart-vocal-contour-train-model-feature-path"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--feature-path</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;feature_path&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-train-model-d">
+<span id="cmdoption-omnizart-vocal-contour-train-model-d"></span><span id="cmdoption-omnizart-vocal_contour-train-model-feature-path"></span><span id="cmdoption-omnizart-vocal-contour-train-model-feature-path"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--feature-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;feature_path&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-d" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>Required</strong> Path to the folder of extracted feature</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-train-model-m">
-<span id="cmdoption-omnizart-vocal-contour-train-model-m"></span><span id="cmdoption-omnizart-vocal_contour-train-model-model-name"></span><span id="cmdoption-omnizart-vocal-contour-train-model-model-name"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--model-name</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;model_name&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-m" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-train-model-m">
+<span id="cmdoption-omnizart-vocal-contour-train-model-m"></span><span id="cmdoption-omnizart-vocal_contour-train-model-model-name"></span><span id="cmdoption-omnizart-vocal-contour-train-model-model-name"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--model-name</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;model_name&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name for the output model (can be a path)</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-train-model-i">
-<span id="cmdoption-omnizart-vocal-contour-train-model-i"></span><span id="cmdoption-omnizart-vocal_contour-train-model-input-model"></span><span id="cmdoption-omnizart-vocal-contour-train-model-input-model"></span><code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--input-model</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;input_model&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-i" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-train-model-i">
+<span id="cmdoption-omnizart-vocal-contour-train-model-i"></span><span id="cmdoption-omnizart-vocal_contour-train-model-input-model"></span><span id="cmdoption-omnizart-vocal-contour-train-model-input-model"></span><span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--input-model</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;input_model&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>If given, the training will continue to fine-tune the pre-trained model.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-train-model-e">
-<span id="cmdoption-omnizart-vocal-contour-train-model-e"></span><span id="cmdoption-omnizart-vocal_contour-train-model-epochs"></span><span id="cmdoption-omnizart-vocal-contour-train-model-epochs"></span><code class="sig-name descname"><span class="pre">-e</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--epochs</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;epochs&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-e" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-train-model-e">
+<span id="cmdoption-omnizart-vocal-contour-train-model-e"></span><span id="cmdoption-omnizart-vocal_contour-train-model-epochs"></span><span id="cmdoption-omnizart-vocal-contour-train-model-epochs"></span><span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--epochs</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;epochs&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of training epochs</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-train-model-s">
-<span id="cmdoption-omnizart-vocal-contour-train-model-s"></span><span id="cmdoption-omnizart-vocal_contour-train-model-steps"></span><span id="cmdoption-omnizart-vocal-contour-train-model-steps"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--steps</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;steps&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-s" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-train-model-s">
+<span id="cmdoption-omnizart-vocal-contour-train-model-s"></span><span id="cmdoption-omnizart-vocal_contour-train-model-steps"></span><span id="cmdoption-omnizart-vocal-contour-train-model-steps"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--steps</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;steps&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of training steps of each epoch</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-train-model-vs">
-<span id="cmdoption-omnizart-vocal-contour-train-model-vs"></span><span id="cmdoption-omnizart-vocal_contour-train-model-val-steps"></span><span id="cmdoption-omnizart-vocal-contour-train-model-val-steps"></span><code class="sig-name descname"><span class="pre">-vs</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--val-steps</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;val_steps&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-vs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-train-model-vs">
+<span id="cmdoption-omnizart-vocal-contour-train-model-vs"></span><span id="cmdoption-omnizart-vocal_contour-train-model-val-steps"></span><span id="cmdoption-omnizart-vocal-contour-train-model-val-steps"></span><span class="sig-name descname"><span class="pre">-vs</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--val-steps</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;val_steps&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-vs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of validation steps of each epoch</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-train-model-b">
-<span id="cmdoption-omnizart-vocal-contour-train-model-b"></span><span id="cmdoption-omnizart-vocal_contour-train-model-batch-size"></span><span id="cmdoption-omnizart-vocal-contour-train-model-batch-size"></span><code class="sig-name descname"><span class="pre">-b</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--batch-size</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;batch_size&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-b" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-train-model-b">
+<span id="cmdoption-omnizart-vocal-contour-train-model-b"></span><span id="cmdoption-omnizart-vocal_contour-train-model-batch-size"></span><span id="cmdoption-omnizart-vocal-contour-train-model-batch-size"></span><span class="sig-name descname"><span class="pre">-b</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--batch-size</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;batch_size&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Batch size of each training step</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-train-model-vb">
-<span id="cmdoption-omnizart-vocal-contour-train-model-vb"></span><span id="cmdoption-omnizart-vocal_contour-train-model-val-batch-size"></span><span id="cmdoption-omnizart-vocal-contour-train-model-val-batch-size"></span><code class="sig-name descname"><span class="pre">-vb</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--val-batch-size</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;val_batch_size&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-vb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-train-model-vb">
+<span id="cmdoption-omnizart-vocal-contour-train-model-vb"></span><span id="cmdoption-omnizart-vocal_contour-train-model-val-batch-size"></span><span id="cmdoption-omnizart-vocal-contour-train-model-val-batch-size"></span><span class="sig-name descname"><span class="pre">-vb</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--val-batch-size</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;val_batch_size&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-vb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Batch size of each validation step</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-omnizart-vocal_contour-train-model-early-stop">
-<span id="cmdoption-omnizart-vocal-contour-train-model-early-stop"></span><code class="sig-name descname"><span class="pre">--early-stop</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;early_stop&gt;</span></code><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-early-stop" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-omnizart-vocal_contour-train-model-early-stop">
+<span id="cmdoption-omnizart-vocal-contour-train-model-early-stop"></span><span class="sig-name descname"><span class="pre">--early-stop</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;early_stop&gt;</span></span><a class="headerlink" href="#cmdoption-omnizart-vocal_contour-train-model-early-stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop the training if validation accuracy does not improve over the given number of epochs.</p>
 </dd></dl>
 
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -510,12 +511,12 @@ extension will be replaced with ‘.wav’.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

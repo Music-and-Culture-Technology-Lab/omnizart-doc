@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Utilities</title>
     
-      <link rel="stylesheet" href="_static/pygments.css">
-      <link rel="stylesheet" href="_static/theme.css">
-      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
 
       
-      <script src="_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
       <script src="_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="genindex.html" />
@@ -28,7 +28,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -49,7 +50,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -86,7 +87,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -143,7 +144,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -309,25 +310,33 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="utilities">
+  <section id="utilities">
 <h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h1>
 <p>Some common utility functionalities.</p>
-<div class="section" id="module-omnizart.remote">
+<section id="module-omnizart.remote">
 <span id="remote"></span><h2>Remote<a class="headerlink" href="#module-omnizart.remote" title="Permalink to this headline">¶</a></h2>
 <p>Functions related to networking.</p>
 <p>Containing functions to download files from the internet. Supports
 download <em>zipped</em> files from Google Drive.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="omnizart.remote.GDFileAccessLimited">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.remote.</span></span><span class="sig-name descname"><span class="pre">GDFileAccessLimited</span></span><a class="headerlink" href="#omnizart.remote.GDFileAccessLimited" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom exception on failing to download GD file.</p>
+<p>This exception is raised when the GD file is overly accessed during a certain
+period.</p>
+</dd></dl>
+
 <dl class="py data">
-<dt id="omnizart.remote.SIZE_MAPPING">
-<code class="sig-prename descclassname"><span class="pre">omnizart.remote.</span></code><code class="sig-name descname"><span class="pre">SIZE_MAPPING</span></code><em class="property"> <span class="pre">=</span> <span class="pre">[(1,</span> <span class="pre">'B'),</span> <span class="pre">(1024,</span> <span class="pre">'KB'),</span> <span class="pre">(1048576,</span> <span class="pre">'MB'),</span> <span class="pre">(1073741824,</span> <span class="pre">'GB'),</span> <span class="pre">(1099511627776,</span> <span class="pre">'TB')]</span></em><a class="headerlink" href="#omnizart.remote.SIZE_MAPPING" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.remote.SIZE_MAPPING">
+<span class="sig-prename descclassname"><span class="pre">omnizart.remote.</span></span><span class="sig-name descname"><span class="pre">SIZE_MAPPING</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[(1,</span> <span class="pre">'B'),</span> <span class="pre">(1024,</span> <span class="pre">'KB'),</span> <span class="pre">(1048576,</span> <span class="pre">'MB'),</span> <span class="pre">(1073741824,</span> <span class="pre">'GB'),</span> <span class="pre">(1099511627776,</span> <span class="pre">'TB')]</span></em><a class="headerlink" href="#omnizart.remote.SIZE_MAPPING" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mapping bytes to human-readable size unit.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.remote.download">
-<code class="sig-prename descclassname"><span class="pre">omnizart.remote.</span></code><code class="sig-name descname"><span class="pre">download</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookie_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unzip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.remote.download" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.remote.download">
+<span class="sig-prename descclassname"><span class="pre">omnizart.remote.</span></span><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookie_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unzip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.remote.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download file from the internet.</p>
 <p>Download file from the remote URL, with progress visualization and dynamic downloading
 rate adjustment. Uses pure python built-in packages, no additional package requirement.</p>
@@ -362,8 +371,8 @@ the original downloaded file.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.remote.download_large_file_from_google_drive">
-<code class="sig-prename descclassname"><span class="pre">omnizart.remote.</span></code><code class="sig-name descname"><span class="pre">download_large_file_from_google_drive</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unzip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.remote.download_large_file_from_google_drive" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.remote.download_large_file_from_google_drive">
+<span class="sig-prename descclassname"><span class="pre">omnizart.remote.</span></span><span class="sig-name descname"><span class="pre">download_large_file_from_google_drive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unzip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.remote.download_large_file_from_google_drive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Google Drive file downloader.</p>
 <p>Download function dedicated for Google Drive files. Mainly to deal with download
 large files and the confirmation page.</p>
@@ -396,18 +405,18 @@ the original downloaded file.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.remote.format_byte">
-<code class="sig-prename descclassname"><span class="pre">omnizart.remote.</span></code><code class="sig-name descname"><span class="pre">format_byte</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.remote.format_byte" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.remote.format_byte">
+<span class="sig-prename descclassname"><span class="pre">omnizart.remote.</span></span><span class="sig-name descname"><span class="pre">format_byte</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.remote.format_byte" title="Permalink to this definition">¶</a></dt>
 <dd><p>Format the given byte size into human-readable string.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.utils">
+</section>
+<section id="module-omnizart.utils">
 <span id="utility-functions"></span><h2>Utility Functions<a class="headerlink" href="#module-omnizart.utils" title="Permalink to this headline">¶</a></h2>
 <p>Various utility functions for this project.</p>
 <dl class="py class">
-<dt id="omnizart.utils.LazyLoader">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">LazyLoader</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_module_globals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.LazyLoader" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.LazyLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">LazyLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_module_globals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.LazyLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lazily import a module, mainly to avoid pulling in large dependencies.</p>
 <p>Original implementations are from tensorflow <a class="reference internal" href="#r4293d5747efb-1" id="id1">[1]</a>.</p>
 <p class="rubric">References</p>
@@ -419,8 +428,8 @@ the original downloaded file.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.aggregate_f0_info">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">aggregate_f0_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.aggregate_f0_info" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.aggregate_f0_info">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">aggregate_f0_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.aggregate_f0_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aggregation function of F0 contour.</p>
 <p>Aggregate the repeated frequencies in continuous frames into higher-level
 representation, with information of start time, end time, and frequency.</p>
@@ -445,24 +454,24 @@ recorded in <em>dict</em>.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.camel_to_snake">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">camel_to_snake</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.camel_to_snake" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.camel_to_snake">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">camel_to_snake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.camel_to_snake" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a camel case to snake case</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.ensure_path_exists">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">ensure_path_exists</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.ensure_path_exists" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.ensure_path_exists">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">ensure_path_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.ensure_path_exists" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.get_filename">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">get_filename</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.get_filename" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.get_filename">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">get_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.get_filename" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.get_logger">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">get_logger</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'warn'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.get_logger" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.get_logger">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'warn'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.get_logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the logger for printing informations.</p>
 <p>Used for layout the information of various stages while executing the program.
 Set the environment variable <code class="docutils literal notranslate"><span class="pre">LOG_LEVEL</span></code> to change the default level.</p>
@@ -482,8 +491,8 @@ design is to categorize the message layout into several different formats.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.json_serializable">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">json_serializable</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.json_serializable" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.json_serializable">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">json_serializable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.json_serializable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class-level decorator for making a class json-serializable object.</p>
 <p>This decorator makes a class serializable as a json object. All attributes
 will be outputed as a key-value pair recursively if there are also attributes
@@ -545,29 +554,29 @@ __dict__ attribute.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.parallel_generator">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">parallel_generator</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_thread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.parallel_generator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.parallel_generator">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">parallel_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_thread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.parallel_generator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.resolve_dataset_type">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">resolve_dataset_type</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.resolve_dataset_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.resolve_dataset_type">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">resolve_dataset_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.resolve_dataset_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.snake_to_camel">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">snake_to_camel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.snake_to_camel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.snake_to_camel">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">snake_to_camel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.snake_to_camel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a snake case to camel case</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.utils.synth_midi">
-<code class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></code><code class="sig-name descname"><span class="pre">synth_midi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">midi_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sf2_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/home/runner/work/omnizart/omnizart/omnizart/resource/soundfonts.sf2'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.synth_midi" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.utils.synth_midi">
+<span class="sig-prename descclassname"><span class="pre">omnizart.utils.</span></span><span class="sig-name descname"><span class="pre">synth_midi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">midi_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">44100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sf2_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/home/runner/work/omnizart/omnizart/omnizart/resource/soundfonts.sf2'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.utils.synth_midi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Synthesize MIDI into wav audio.</p>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -580,12 +589,12 @@ __dict__ attribute.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

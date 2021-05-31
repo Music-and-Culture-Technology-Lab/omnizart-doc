@@ -2,25 +2,25 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Music Transcription</title>
     
-      <link rel="stylesheet" href="../_static/pygments.css">
-      <link rel="stylesheet" href="../_static/theme.css">
-      <link rel="stylesheet" href="../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="../_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
       
-      <script src="../_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="../_static/theme-vendors.js"></script> -->
       <script src="../_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="../genindex.html" />
@@ -30,7 +30,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="../index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -51,7 +52,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -88,7 +89,7 @@
     <div class="nav-item">
       <a href="../index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -145,7 +146,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="../index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="../index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -327,9 +328,9 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="module-omnizart.music">
+  <section id="module-omnizart.music">
 <span id="music-transcription"></span><h1>Music Transcription<a class="headerlink" href="#module-omnizart.music" title="Permalink to this headline">¶</a></h1>
 <p>Music transcription module.</p>
 <p>This module provides utilities for transcribing pitch and instruments in the audio.
@@ -337,7 +338,7 @@ This module is also an improved version of the original repository
 <a class="reference external" href="https://github.com/BreezeWhite/Music-Transcription-with-Semantic-Segmentation">BreezeWhite/Music-Transcription-with-Semantic-Segmentation</a>,
 with a cleaner architecture and consistent coding style, also provides command line interface
 for easy usage.</p>
-<div class="section" id="feature-storage-format">
+<section id="feature-storage-format">
 <h2>Feature Storage Format<a class="headerlink" href="#feature-storage-format" title="Permalink to this headline">¶</a></h2>
 <p>Processed feature will be stored in <code class="docutils literal notranslate"><span class="pre">.hdf</span></code> and <code class="docutils literal notranslate"><span class="pre">.pickle</span></code> file format. The former format
 is used to store the feature representation, and the later is used for customized label
@@ -346,7 +347,7 @@ representation. Each piece will have both two different files.</p>
 <ul class="simple">
 <li><p><strong>feature</strong></p></li>
 </ul>
-<div class="section" id="references">
+<section id="references">
 <h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
 <p>Technical details can be found in the publications <a class="reference internal" href="#r96142b21d69a-1" id="id1">[1]</a>, <a class="reference internal" href="#r96142b21d69a-2" id="id2">[2]</a>, and <a class="reference internal" href="#r96142b21d69a-3" id="id3">[3]</a>.</p>
 <dl class="citation">
@@ -363,13 +364,13 @@ IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP
 Deep Learning.” IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2018.</p>
 </dd>
 </dl>
-</div>
-</div>
-<div class="section" id="app">
+</section>
+</section>
+<section id="app">
 <h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.music.app.MusicTranscription">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.music.app.</span></code><code class="sig-name descname"><span class="pre">MusicTranscription</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.app.MusicTranscription">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.app.</span></span><span class="sig-name descname"><span class="pre">MusicTranscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
 <p>Application class for music transcription.</p>
 <p>Inherited from the BaseTranscription class to make sure everything
@@ -393,8 +394,8 @@ needed got override.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.music.app.MusicTranscription.generate_feature">
-<code class="sig-name descname"><span class="pre">generate_feature</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">music_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.app.MusicTranscription.generate_feature">
+<span class="sig-name descname"><span class="pre">generate_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">music_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.generate_feature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract the feature from the given dataset.</p>
 <p>To train the model, the first step is to pre-process the data into feature
 representations. After downloading the dataset, use this function to generate
@@ -426,8 +427,8 @@ the life-cycle of building a model.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.app.MusicTranscription.train">
-<code class="sig-name descname"><span class="pre">train</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">music_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.train" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.app.MusicTranscription.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">music_settings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Model training.</p>
 <p>Train the model from scratch or continue training given a model checkpoint.</p>
 <dl class="field-list simple">
@@ -450,8 +451,8 @@ the life-cycle of model building.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.app.MusicTranscription.transcribe">
-<code class="sig-name descname"><span class="pre">transcribe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.app.MusicTranscription.transcribe">
+<span class="sig-name descname"><span class="pre">transcribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_audio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription.transcribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transcribe notes and instruments of the given audio.</p>
 <p>This function transcribes notes (onset, duration) of each instruments in the audio.
 The results will be written out as a MIDI file.</p>
@@ -485,12 +486,12 @@ the folder that contains <cite>arch.yaml</cite>, <cite>weights.h5</cite>, and <c
 
 </dd></dl>
 
-</div>
-<div class="section" id="dataset">
+</section>
+<section id="dataset">
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.music.app.MusicDatasetLoader">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.music.app.</span></code><code class="sig-name descname"><span class="pre">MusicDatasetLoader</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_conversion_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1,</span> <span class="pre">3]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.app.MusicDatasetLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.app.</span></span><span class="sig-name descname"><span class="pre">MusicDatasetLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_conversion_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1,</span> <span class="pre">3]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
 <p>Data loader for training the mdoel of <code class="docutils literal notranslate"><span class="pre">music</span></code>.</p>
 <p>Load feature and label for training. Also converts the custom format of
@@ -529,20 +530,18 @@ Zero padding is done to resolve mismatched input and target size.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.music.inference">
+</section>
+<section id="module-omnizart.music.inference">
 <span id="inference"></span><h2>Inference<a class="headerlink" href="#module-omnizart.music.inference" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="omnizart.music.inference.down_sample">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">down_sample</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">occur_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.down_sample" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.down_sample">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">down_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.down_sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Down sample multi-channel predictions along the feature dimension.</p>
 <p>Down sample the feature size from 354 to 88 for infering the notes from a multi-channel prediction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>pred: 3D numpy array</strong></dt><dd><p>Thresholded prediction with multiple channels. Dimension: [timesteps x pitch x instruments]</p>
-</dd>
-<dt><strong>occur_num: int</strong></dt><dd><p>Minimum occurance of each pitch for determining true activation of the pitch.</p>
 </dd>
 </dl>
 </dd>
@@ -556,8 +555,8 @@ Zero padding is done to resolve mismatched input and target size.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.find_min_max_stren">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">find_min_max_stren</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.find_min_max_stren" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.find_min_max_stren">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">find_min_max_stren</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.find_min_max_stren" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function for detemine the note velocity accroding to prediction value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -570,8 +569,8 @@ Zero padding is done to resolve mismatched input and target size.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.find_occur">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">find_occur</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pitch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.find_occur" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.find_occur">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">find_occur</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pitch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.find_occur" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the onset and offset of a thresholded prediction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -588,14 +587,14 @@ Zero padding is done to resolve mismatched input and target size.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.infer_piece">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">infer_piece</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">piece</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shortest_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.infer_piece" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.infer_piece">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">infer_piece</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">piece</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shortest_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.infer_piece" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dim: time x 88 x 4 (off, dura, onset, offset)</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.interpolation">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">interpolation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tar_t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.interpolation" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.interpolation">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">interpolation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tar_t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.interpolation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate between each frame to increase the time resolution.</p>
 <p>The default setting of feature extraction has time resolution of 0.02 seconds for each frame.
 To fit the conventional evaluation settings, which has time resolution of 0.01 seconds, we additionally
@@ -604,8 +603,8 @@ estimation.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.multi_inst_note_inference">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">multi_inst_note_inference</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'note-stream'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dura_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frm_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inst_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_program_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">6,</span> <span class="pre">40,</span> <span class="pre">41,</span> <span class="pre">42,</span> <span class="pre">43,</span> <span class="pre">60,</span> <span class="pre">68,</span> <span class="pre">70,</span> <span class="pre">71,</span> <span class="pre">73]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.multi_inst_note_inference" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.multi_inst_note_inference">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">multi_inst_note_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'note-stream'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dura_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frm_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inst_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_program_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">6,</span> <span class="pre">40,</span> <span class="pre">41,</span> <span class="pre">42,</span> <span class="pre">43,</span> <span class="pre">60,</span> <span class="pre">68,</span> <span class="pre">70,</span> <span class="pre">71,</span> <span class="pre">73]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.multi_inst_note_inference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function for infering raw multi-instrument predictions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -645,14 +644,14 @@ extraction</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.norm_onset_dura">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">norm_onset_dura</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dura_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.norm_onset_dura" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.norm_onset_dura">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">norm_onset_dura</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dura_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.norm_onset_dura" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normalizes prediction values of onset and duration channel.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.norm_split_onset_dura">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">norm_split_onset_dura</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_onset_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dura_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.norm_split_onset_dura" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.norm_split_onset_dura">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">norm_split_onset_dura</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_onset_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dura_th</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.norm_split_onset_dura" title="Permalink to this definition">¶</a></dt>
 <dd><p>An advanced version of function for normalizing onset and duration channel.</p>
 <p>From the extensive experiments, we observe that the average prediction value for high and low frequency are
 different. Lower pitches tend to have smaller values, while higher pitches having larger. To acheive better
@@ -685,17 +684,14 @@ high frequency part. And this is what this function provides for the purpose.</p
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.roll_down_sample">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">roll_down_sample</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">occur_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">88</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.roll_down_sample" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.roll_down_sample">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">roll_down_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">88</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.roll_down_sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Down sample feature size for a single pitch.</p>
 <p>Down sample the feature size from 354 to 88 for infering the notes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>data: 2D numpy array</strong></dt><dd><p>The thresholded 2D prediction..</p>
-</dd>
-<dt><strong>occur_num: int</strong></dt><dd><p>For each pitch, the original prediction expands 4 bins wide. This value determines how many positive bins
-should there be to say there is a real activation after down sampling.</p>
 </dd>
 <dt><strong>base</strong></dt><dd><p>Should be constant as there are 88 pitches on the piano.</p>
 </dd>
@@ -715,24 +711,24 @@ should there be to say there is a real activation after down sampling.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.threshold_type_converter">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">threshold_type_converter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.threshold_type_converter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.threshold_type_converter">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">threshold_type_converter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.threshold_type_converter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert scalar value to a list with the same value.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.inference.to_midi">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></code><code class="sig-name descname"><span class="pre">to_midi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.to_midi" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.inference.to_midi">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.inference.</span></span><span class="sig-name descname"><span class="pre">to_midi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.inference.to_midi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Translate the intermediate data into final output MIDI file.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.music.losses">
+</section>
+<section id="module-omnizart.music.losses">
 <span id="loss-functions"></span><h2>Loss Functions<a class="headerlink" href="#module-omnizart.music.losses" title="Permalink to this headline">¶</a></h2>
 <p>Loss functions for Music module.</p>
 <dl class="py function">
-<dt id="omnizart.music.losses.focal_loss">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.losses.</span></code><code class="sig-name descname"><span class="pre">focal_loss</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.focal_loss" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.losses.focal_loss">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.losses.</span></span><span class="sig-name descname"><span class="pre">focal_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.focal_loss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute focal loss for predictions.</p>
 <p>Multi-labels Focal loss formula:</p>
 <div class="math notranslate nohighlight">
@@ -765,17 +761,17 @@ targets.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.losses.smooth_loss">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.losses.</span></code><code class="sig-name descname"><span class="pre">smooth_loss</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_chs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">22</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.smooth_loss" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.losses.smooth_loss">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.losses.</span></span><span class="sig-name descname"><span class="pre">smooth_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_chs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">22</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.losses.smooth_loss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute loss after applying <strong>label-smoothing</strong>.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.music.labels">
+</section>
+<section id="module-omnizart.music.labels">
 <span id="labels"></span><h2>Labels<a class="headerlink" href="#module-omnizart.music.labels" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="omnizart.music.labels.BaseLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></code><code class="sig-name descname"><span class="pre">BaseLabelExtraction</span></code><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">BaseLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for extract label informations.</p>
 <p>Provides basic functions to process native label format into the format
 required by <code class="docutils literal notranslate"><span class="pre">music</span></code> module. All sub-classes should parse the original
@@ -808,8 +804,8 @@ label information into <code class="xref py py-class docutils literal notranslat
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.music.labels.BaseLabelExtraction.extract_label">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">extract_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.extract_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction.extract_label">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">extract_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.extract_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract labels into customized storage format.</p>
 <p>Process the given path of label into list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Label</span></code> instances,
 then further convert them into deliberately customized storage format.</p>
@@ -830,8 +826,8 @@ probabilities will be in a ‘fade-out’ manner until the note offset.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.BaseLabelExtraction.load_label">
-<em class="property"><span class="pre">abstract</span> <span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">load_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction.load_label">
+<em class="property"><span class="pre">abstract</span> <span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -852,8 +848,8 @@ format.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.BaseLabelExtraction.name_transform">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">name_transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction.name_transform">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">name_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maps the filename of label to the same name of the corresponding wav file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -872,8 +868,8 @@ format.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.BaseLabelExtraction.process">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">process</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.process" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction.process">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process the given list of label files and output to the target folder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -896,8 +892,8 @@ probabilities will be in a ‘fade-out’ manner until the note offset.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.music.labels.LabelType">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></code><code class="sig-name descname"><span class="pre">LabelType</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.LabelType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">LabelType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines different types of <cite>music</cite> label for training.</p>
 <p>Defines functions that converts the customized label format into numpy
 array. With the customized format, it is more flexible to transform
@@ -953,50 +949,50 @@ format.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.music.labels.LabelType.get_available_modes">
-<code class="sig-name descname"><span class="pre">get_available_modes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_available_modes" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.LabelType.get_available_modes">
+<span class="sig-name descname"><span class="pre">get_available_modes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_available_modes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.LabelType.get_conversion_func">
-<code class="sig-name descname"><span class="pre">get_conversion_func</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_conversion_func" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.LabelType.get_conversion_func">
+<span class="sig-name descname"><span class="pre">get_conversion_func</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_conversion_func" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.LabelType.get_frame">
-<code class="sig-name descname"><span class="pre">get_frame</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_frame" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.LabelType.get_frame">
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_frame" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.LabelType.get_frame_onset">
-<code class="sig-name descname"><span class="pre">get_frame_onset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_frame_onset" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.LabelType.get_frame_onset">
+<span class="sig-name descname"><span class="pre">get_frame_onset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_frame_onset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.LabelType.get_out_classes">
-<code class="sig-name descname"><span class="pre">get_out_classes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_out_classes" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.LabelType.get_out_classes">
+<span class="sig-name descname"><span class="pre">get_out_classes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.get_out_classes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.LabelType.multi_inst_frm">
-<code class="sig-name descname"><span class="pre">multi_inst_frm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.multi_inst_frm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.LabelType.multi_inst_frm">
+<span class="sig-name descname"><span class="pre">multi_inst_frm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.multi_inst_frm" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.LabelType.multi_inst_note">
-<code class="sig-name descname"><span class="pre">multi_inst_note</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.multi_inst_note" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.LabelType.multi_inst_note">
+<span class="sig-name descname"><span class="pre">multi_inst_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.multi_inst_note" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="omnizart.music.labels.LabelType.multi_pop_note">
-<code class="sig-name descname"><span class="pre">multi_pop_note</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.multi_pop_note" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.LabelType.multi_pop_note">
+<span class="sig-name descname"><span class="pre">multi_pop_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType.multi_pop_note" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.music.labels.MaestroLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></code><code class="sig-name descname"><span class="pre">MaestroLabelExtraction</span></code><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.MaestroLabelExtraction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">MaestroLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for Maestro dataset</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -1011,8 +1007,8 @@ format.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.music.labels.MaestroLabelExtraction.load_label">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">load_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.MaestroLabelExtraction.load_label">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -1035,8 +1031,8 @@ format.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.music.labels.MapsLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></code><code class="sig-name descname"><span class="pre">MapsLabelExtraction</span></code><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.MapsLabelExtraction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">MapsLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for Maps dataset</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -1051,8 +1047,8 @@ format.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.music.labels.MapsLabelExtraction.load_label">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">load_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.MapsLabelExtraction.load_label">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -1075,8 +1071,8 @@ format.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.music.labels.MusicNetLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></code><code class="sig-name descname"><span class="pre">MusicNetLabelExtraction</span></code><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.MusicNetLabelExtraction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">MusicNetLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for MusicNet dataset</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -1091,8 +1087,8 @@ format.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.music.labels.MusicNetLabelExtraction.load_label">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">load_label</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.MusicNetLabelExtraction.load_label">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -1115,8 +1111,8 @@ format.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.music.labels.PopLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></code><code class="sig-name descname"><span class="pre">PopLabelExtraction</span></code><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.PopLabelExtraction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">PopLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for Pop Rhythm dataset</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -1131,8 +1127,8 @@ format.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="omnizart.music.labels.PopLabelExtraction.name_transform">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">name_transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.PopLabelExtraction.name_transform">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">name_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maps the filename of label to the same name of the corresponding wav file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1153,15 +1149,15 @@ format.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="omnizart.music.labels.SuLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></code><code class="sig-name descname"><span class="pre">SuLabelExtraction</span></code><a class="headerlink" href="#omnizart.music.labels.SuLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.SuLabelExtraction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">SuLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.SuLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for Extended-Su dataset</p>
 <p>Uses the same process as Maestro dataset</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="omnizart.music.labels.label_conversion">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></code><code class="sig-name descname"><span class="pre">label_conversion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_feature_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">88</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onsets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.label_conversion" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.labels.label_conversion">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">label_conversion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_feature_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">88</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onsets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.label_conversion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the customized label format into numpy array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1194,13 +1190,93 @@ to indicate which channel should represent what instruments.</p>
 </div>
 </dd></dl>
 
-</div>
-<div class="section" id="module-omnizart.music.prediction">
+</section>
+<section id="module-omnizart.music.prediction">
 <span id="prediction"></span><h2>Prediction<a class="headerlink" href="#module-omnizart.music.prediction" title="Permalink to this headline">¶</a></h2>
 <p>Utility functions for Music module</p>
 <dl class="py function">
-<dt id="omnizart.music.prediction.predict">
-<code class="sig-prename descclassname"><span class="pre">omnizart.music.prediction.</span></code><code class="sig-name descname"><span class="pre">predict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">384</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="omnizart.music.prediction.create_batches">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.prediction.</span></span><span class="sig-name descname"><span class="pre">create_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.create_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a series of batch input.</p>
+<p>The size of the last batch could smaller than the given <code class="docutils literal notranslate"><span class="pre">b_size</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature: numpy.ndarray</strong></dt><dd><p>The only constraint is the first dimension should time index. There is no limit
+on the number of dimensions.</p>
+</dd>
+<dt><strong>timesteps: int</strong></dt><dd><p>Input feature length of the model.</p>
+</dd>
+<dt><strong>b_size: int</strong></dt><dd><p>Batch size of the input.</p>
+</dd>
+<dt><strong>step_size: int</strong></dt><dd><p>Step size for hopping the feature. Value smaller than <code class="docutils literal notranslate"><span class="pre">timesteps</span></code> indicates there
+will be overlapping between each feature slice.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>batches: list</dt><dd><p>List of input batches.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="omnizart.music.prediction.merge_batches">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.prediction.</span></span><span class="sig-name descname"><span class="pre">merge_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batches</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.merge_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse process of <code class="docutils literal notranslate"><span class="pre">create_batches</span></code>.</p>
+<p>Merge the list of batch predictions into the complete predicted results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>batches: numpy.ndarray</strong></dt><dd><p>List of predicted batches.</p>
+</dd>
+<dt><strong>step_size: int</strong></dt><dd><p>Should be the same as passing to <code class="docutils literal notranslate"><span class="pre">create_batches</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pred: numpy.ndarray</dt><dd><p>The final predicted results.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="omnizart.music.prediction.predict">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.prediction.</span></span><span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make predictions on the feature.</p>
+<p>Generate predictions by using the loaded model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>feature: numpy.ndarray</strong></dt><dd><p>Extracted feature of the audio. Dimension: timesteps x feature_size x channels</p>
+</dd>
+<dt><strong>model: keras.Model</strong></dt><dd><p>The loaded model instance.</p>
+</dd>
+<dt><strong>batch_size: int</strong></dt><dd><p>Batch size for the prediction iteration.</p>
+</dd>
+<dt><strong>step_size: int</strong></dt><dd><p>Step size for hopping the feature. Value smaller then <code class="docutils literal notranslate"><span class="pre">timesteps</span></code> means there will be
+overlapping.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pred: numpy.ndarray</dt><dd><p>The predicted results.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="omnizart.music.prediction.predict_old">
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.prediction.</span></span><span class="sig-name descname"><span class="pre">predict_old</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">384</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.predict_old" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make predictions on the feature.</p>
 <p>Generate predictions by using the loaded model.</p>
 <dl class="field-list simple">
@@ -1226,8 +1302,8 @@ Dimension:  timesteps x feature_size x channels</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="settings">
+</section>
+<section id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>Below are the default settings for building the music model. It will be loaded
 by the class <code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.setting_loaders.MusicSettings</span></code>. The name of the
@@ -1411,8 +1487,8 @@ The level of <em>/Settings</em> is removed among all fields.</p>
                 <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">352</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1429,12 +1505,12 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

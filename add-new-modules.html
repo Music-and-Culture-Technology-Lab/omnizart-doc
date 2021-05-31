@@ -2,24 +2,24 @@
 <html >
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
       <title>Add New Modules</title>
     
-      <link rel="stylesheet" href="_static/pygments.css">
-      <link rel="stylesheet" href="_static/theme.css">
-      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
           <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
           <link rel="stylesheet" href="_static/css/waveform-list.css" type="text/css" />
       
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-
       <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
 
       
-      <script src="_static/theme-vendors.js"></script>
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
       <script src="_static/theme.js" defer></script>
     
   <link rel="index" title="Index" href="genindex.html" />
@@ -27,7 +27,8 @@
   </head>
 
   <body>
-    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
   <router-link to="index.html" class="home-link">
     
       <span class="site-name">omnizart</span>
@@ -48,7 +49,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -85,7 +86,7 @@
     <div class="nav-item">
       <a href="index.html#sound-samples"
          class="nav-link ">
-         Commnad Line Interface
+         Command Line Interface
       </a>
     </div>
   
@@ -142,7 +143,7 @@
   
     <div class="sidebar-group">
       <p class="caption">
-        <span class="caption-text"><a href="index.html#sound-samples">Commnad Line Interface</a></span>
+        <span class="caption-text"><a href="index.html#sound-samples">Command Line Interface</a></span>
       </p>
       <ul class="">
         
@@ -296,9 +297,9 @@
   
 </div>
 <hr>
-          <div class="content" role="main">
+          <div class="content" role="main" v-pre>
             
-  <div class="section" id="add-new-modules">
+  <section id="add-new-modules">
 <h1>Add New Modules<a class="headerlink" href="#add-new-modules" title="Permalink to this headline">¶</a></h1>
 <p>This page describes how to add new modules into Omnizart project, adapt the original implementations
 to omnizart’s architecture.</p>
@@ -307,7 +308,7 @@ to omnizart’s architecture.</p>
 and the <a class="reference external" href="https://drive.google.com/file/d/1IO1lh07nMvSi0X0nzRDT7kuE1f468Rl1/view?usp=sharing">slides of omnziart</a>
 could also be helpful for your understanding of this project.
 Additionally, there are few more things to be always kept in mind while developing omnizart.</p>
-<div class="section" id="principles">
+<section id="principles">
 <h2>Principles<a class="headerlink" href="#principles" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Find an existing module and start development</strong> - There are already several implemented modules
@@ -331,8 +332,8 @@ and fix them before you file a pull request.</p></li>
 <hr class="docutils" />
 <p>So now we are all set and ready to add a new module to omnizart. Here we will take the
 <a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/pull/11">PR #11</a> as the example.</p>
-</div>
-<div class="section" id="setup">
+</section>
+<section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p><strong>IMPORTANT</strong> - Give your module a short, yet descriptive name. In the example, the name is
@@ -340,12 +341,12 @@ and fix them before you file a pull request.</p></li>
 <li><p>Create a folder named after your module under <code class="docutils literal notranslate"><span class="pre">omnizart</span></code>. There should be at least two files:
 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> and <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>.</p></li>
 </ol>
-</div>
-<div class="section" id="implement-feature-generation">
+</section>
+<section id="implement-feature-generation">
 <h2>Implement Feature Generation<a class="headerlink" href="#implement-feature-generation" title="Permalink to this headline">¶</a></h2>
 <p>The process unit should be <strong>a dataset</strong>, means the function accepts the path to the dataset itself, and will handle the rest
 of the things like dataset type inferring, folder structure handling, file parsing, feature extraction, and output storage.</p>
-<div class="section" id="commits">
+<section id="commits">
 <h3>Commits<a class="headerlink" href="#commits" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/pull/11/commits/3ff6c4abe5ab98242d33c146353b5282ce5f6b66">3ff6c4a</a>
@@ -355,8 +356,8 @@ of the things like dataset type inferring, folder structure handling, file parsi
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/pull/11/commits/0190f1895027cf859647c2099d3c03a24f73246a">0190f18</a>
 - Contains the patch of label extraction function.</p></li>
 </ul>
-</div>
-<div class="section" id="critical-files-functions">
+</section>
+<section id="critical-files-functions">
 <h3>Critical Files/Functions<a class="headerlink" href="#critical-files-functions" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L106-L193">omnizart.patch_cnn.app.PatchCNNTranscription.generate_feature</a>
@@ -382,8 +383,8 @@ parameters are registered under <code class="docutils literal notranslate"><span
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/checkpoints/patch_cnn/patch_cnn_melody/configurations.yaml#L13-L53">omnizart/defatuls/patch_cnn.yaml</a>
 - The configuration file of the module, records the values of hyper parameters and will be consumed by the data class (i.e. PatchCNNSettings).</p></li>
 </ul>
-</div>
-<div class="section" id="overall-process-flow">
+</section>
+<section id="overall-process-flow">
 <h3>Overall Process Flow<a class="headerlink" href="#overall-process-flow" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><dl class="simple">
@@ -430,19 +431,19 @@ parameters are registered under <code class="docutils literal notranslate"><span
 </dl>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="implement-model-training">
+</section>
+</section>
+<section id="implement-model-training">
 <h2>Implement Model Training<a class="headerlink" href="#implement-model-training" title="Permalink to this headline">¶</a></h2>
 <p>All the training should happen in the <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> function to fine-tune the model. There is supposed no need to manually
 write the training loop.</p>
-<div class="section" id="id6">
+<section id="id6">
 <h3>Commits<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/pull/11/commits/2d6f74da88e52cef7ef6e96f3b93be97771bdf31">2d6f74d</a></p></li>
 </ul>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h3>Critical Files/Functions<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L195-L275">omnizart.patch_cnn.app.PatchCNNTranscription.train</a>
@@ -463,8 +464,8 @@ related hyper parameters are registered under <code class="docutils literal notr
 <a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/checkpoints/patch_cnn/patch_cnn_melody/configurations.yaml#L88-L118">omnizart/defatuls/patch_cnn.yaml (2)</a>
 - The configuration file of the module, records the values of hyper parameters and will be consumed by the data class (i.e. PatchCNNSettings).</p></li>
 </ul>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Overall Process Flow<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><dl class="simple">
@@ -527,36 +528,36 @@ related hyper parameters are registered under <code class="docutils literal notr
 </dl>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="implement-transcription">
+</section>
+</section>
+<section id="implement-transcription">
 <h2>Implement Transcription<a class="headerlink" href="#implement-transcription" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="add-unit-tests">
+</section>
+<section id="add-unit-tests">
 <h2>Add Unit Tests<a class="headerlink" href="#add-unit-tests" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="commit-checkpoints">
+</section>
+<section id="commit-checkpoints">
 <h2>Commit Checkpoints<a class="headerlink" href="#commit-checkpoints" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="implement-cli">
+</section>
+<section id="implement-cli">
 <h2>Implement CLI<a class="headerlink" href="#implement-cli" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="add-documentation">
+</section>
+<section id="add-documentation">
 <h2>Add Documentation<a class="headerlink" href="#add-documentation" title="Permalink to this headline">¶</a></h2>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="optional">
+<section id="optional">
 <h2>Optional<a class="headerlink" href="#optional" title="Permalink to this headline">¶</a></h2>
 <p>This section holds the optional actions you can do, while it is not necessary to be done
 during implementing a new module.</p>
-<div class="section" id="add-new-supported-datasets">
+<section id="add-new-supported-datasets">
 <h3>Add new supported datasets<a class="headerlink" href="#add-new-supported-datasets" title="Permalink to this headline">¶</a></h3>
 <p>If you want to add a new dataset that is currently not supported by <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> (which is defined in
 <a class="reference internal" href="constants.html#module-omnizart.constants.datasets" title="omnizart.constants.datasets"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets</span></code></a>), things should be noticed are explained in this section.</p>
 <p>(To be continue…)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -565,12 +566,12 @@ during implementing a new module.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
       </page>
-    </div>
+    </div></div>
     
     
   </body>

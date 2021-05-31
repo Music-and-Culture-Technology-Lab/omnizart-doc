@@ -96,7 +96,7 @@ You can use *Audacity* to open the files.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Commnad Line Interface
+   :caption: Command Line Interface
 
    music/cli.rst
    drum/cli.rst
