@@ -869,7 +869,7 @@ format.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction.process">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.process" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process the given list of label files and output to the target folder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1248,7 +1248,7 @@ will be overlapping between each feature slice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="omnizart.music.prediction.predict">
-<span class="sig-prename descclassname"><span class="pre">omnizart.music.prediction.</span></span><span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.predict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.prediction.</span></span><span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make predictions on the feature.</p>
 <p>Generate predictions by using the loaded model.</p>
 <dl class="field-list simple">
@@ -1276,7 +1276,7 @@ overlapping.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="omnizart.music.prediction.predict_old">
-<span class="sig-prename descclassname"><span class="pre">omnizart.music.prediction.</span></span><span class="sig-name descname"><span class="pre">predict_old</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">384</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.predict_old" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">omnizart.music.prediction.</span></span><span class="sig-name descname"><span class="pre">predict_old</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.prediction.predict_old" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make predictions on the feature.</p>
 <p>Generate predictions by using the loaded model.</p>
 <dl class="field-list simple">
@@ -1286,8 +1286,6 @@ overlapping.</p>
 Dimension:  timesteps x feature_size x channels</p>
 </dd>
 <dt><strong>model: keras.Model</strong></dt><dd><p>The loaded model instance</p>
-</dd>
-<dt><strong>feature_num: int</strong></dt><dd><p>Padding along the feature dimension to the size <cite>feature_num</cite></p>
 </dd>
 <dt><strong>batch_size: int</strong></dt><dd><p>Batch size for each step of prediction. The size is depending on the available GPU memory.</p>
 </dd>
@@ -1331,6 +1329,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
             <span class="nt">Piano</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/music/music_piano</span>
             <span class="nt">Pop</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/music/music_pop</span>
             <span class="nt">Stream</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/music/music_note_stream</span>
+            <span class="nt">PianoV2</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/music/music_piano-v2</span>
     <span class="nt">Feature</span><span class="p">:</span>
         <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction</span>
         <span class="nt">Settings</span><span class="p">:</span>
@@ -1418,7 +1417,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
             <span class="nt">OnsetTh</span><span class="p">:</span>
                 <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold of predicted onset channel.</span>
                 <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
-                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6.0</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.5</span>
             <span class="nt">DuraTh</span><span class="p">:</span>
                 <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Threshold of predicted duration channel.</span>
                 <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Float</span>
