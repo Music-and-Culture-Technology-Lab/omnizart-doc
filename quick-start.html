@@ -332,7 +332,12 @@ You can also follow the installation below to enjoy Omnizart locally.</p>
 <h3>Using pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
 <p>Omnizart is under developement and will be updated regularly on PyPI.
 Use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install the latest stable version.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Omnizart</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the prerequisites manually since there are some dependencies can&#39;t be</span>
+<span class="c1"># resolved automatically.</span>
+pip install numpy Cython
+sudo apt-get install libsndfile-dev
+
+<span class="c1"># Install Omnizart</span>
 pip install omnizart
 
 <span class="c1"># Then download the checkpoints</span>
@@ -410,7 +415,7 @@ For the first-time execution, it is expected to take a bit for downloading the f
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.7.3.
 </div>
             </div>
           </div>
