@@ -22,7 +22,7 @@ Use ``pip`` to install the latest stable version.
     pip install numpy Cython
 
     # Additional system pacakges are required to fully use Omnizart.
-    sudo apt-get install libsndfile-dev fluidsynth libgl1-mesa-glx ffmpeg
+    sudo apt-get install libsndfile-dev fluidsynth ffmpeg
 
     # Install Omnizart
     pip install omnizart
@@ -45,7 +45,7 @@ creates a virtual environment under the directory *omnizart/* by default.
     make install
 
     # Install Dev dependencies, since they will not be installed by default
-    make install-dev
+    poetry install
 
 
 CLI

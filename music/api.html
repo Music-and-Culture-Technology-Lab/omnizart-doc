@@ -16,7 +16,7 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
       
       <!-- bundled in js (rollup iife) -->
@@ -439,7 +439,7 @@ Deep Learning.” IEEE International Conference on Acoustics, Speech and Signal 
 <h2>App<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.music.app.MusicTranscription">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.app.</span></span><span class="sig-name descname"><span class="pre">MusicTranscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.music.app.</span></span><span class="sig-name descname"><span class="pre">MusicTranscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
 <p>Application class for music transcription.</p>
 <p>Inherited from the BaseTranscription class to make sure everything
@@ -451,10 +451,10 @@ needed got override.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.generate_feature" title="omnizart.music.app.MusicTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.generate_feature" title="omnizart.music.app.MusicTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, ...])</p></td>
 <td><p>Extract the feature from the given dataset.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.train" title="omnizart.music.app.MusicTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.train" title="omnizart.music.app.MusicTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, ...])</p></td>
 <td><p>Model training.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.app.MusicTranscription.transcribe" title="omnizart.music.app.MusicTranscription.transcribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transcribe</span></code></a>(input_audio[, model_path, output])</p></td>
@@ -560,7 +560,7 @@ the folder that contains <cite>arch.yaml</cite>, <cite>weights.h5</cite>, and <c
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.music.app.MusicDatasetLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.app.</span></span><span class="sig-name descname"><span class="pre">MusicDatasetLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_conversion_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1,</span> <span class="pre">3]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.music.app.</span></span><span class="sig-name descname"><span class="pre">MusicDatasetLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_conversion_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1,</span> <span class="pre">3]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">352</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.app.MusicDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
 <p>Data loader for training the mdoel of <code class="docutils literal notranslate"><span class="pre">music</span></code>.</p>
 <p>Load feature and label for training. Also converts the custom format of
@@ -840,7 +840,7 @@ targets.</p>
 <span id="labels"></span><h2>Labels<a class="headerlink" href="#module-omnizart.music.labels" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">BaseLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">BaseLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for extract label informations.</p>
 <p>Provides basic functions to process native label format into the format
 required by <code class="docutils literal notranslate"><span class="pre">music</span></code> module. All sub-classes should parse the original
@@ -858,7 +858,7 @@ label information into <code class="xref py py-class docutils literal notranslat
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.extract_label" title="omnizart.music.labels.BaseLabelExtraction.extract_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_label</span></code></a>(label_path, t_unit[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.extract_label" title="omnizart.music.labels.BaseLabelExtraction.extract_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_label</span></code></a>(label_path, t_unit[, ...])</p></td>
 <td><p>Extract labels into customized storage format.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.load_label" title="omnizart.music.labels.BaseLabelExtraction.load_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_label</span></code></a>(label_path)</p></td>
@@ -867,14 +867,14 @@ label information into <code class="xref py py-class docutils literal notranslat
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.name_transform" title="omnizart.music.labels.BaseLabelExtraction.name_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name_transform</span></code></a>(name)</p></td>
 <td><p>Maps the filename of label to the same name of the corresponding wav file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.process" title="omnizart.music.labels.BaseLabelExtraction.process"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process</span></code></a>(label_list, out_path[, t_unit, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.music.labels.BaseLabelExtraction.process" title="omnizart.music.labels.BaseLabelExtraction.process"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process</span></code></a>(label_list, out_path[, t_unit, ...])</p></td>
 <td><p>Process the given list of label files and output to the target folder.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction.extract_label">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">extract_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.extract_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extract_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.extract_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract labels into customized storage format.</p>
 <p>Process the given path of label into list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Label</span></code> instances,
 then further convert them into deliberately customized storage format.</p>
@@ -896,7 +896,7 @@ probabilities will be in a ‘fade-out’ manner until the note offset.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction.load_label">
-<em class="property"><span class="pre">abstract</span> <span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -918,7 +918,7 @@ format.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction.name_transform">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">name_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maps the filename of label to the same name of the corresponding wav file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -938,7 +938,7 @@ format.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="omnizart.music.labels.BaseLabelExtraction.process">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.process" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onset_len_sec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.BaseLabelExtraction.process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process the given list of label files and output to the target folder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -962,7 +962,7 @@ probabilities will be in a ‘fade-out’ manner until the note offset.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.music.labels.LabelType">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">LabelType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">LabelType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.LabelType" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines different types of <cite>music</cite> label for training.</p>
 <p>Defines functions that converts the customized label format into numpy
 array. With the customized format, it is more flexible to transform
@@ -1061,7 +1061,7 @@ format.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.music.labels.MaestroLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">MaestroLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">MaestroLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for Maestro dataset</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -1077,7 +1077,7 @@ format.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="omnizart.music.labels.MaestroLabelExtraction.load_label">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MaestroLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -1101,7 +1101,7 @@ format.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.music.labels.MapsLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">MapsLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">MapsLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for Maps dataset</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -1117,7 +1117,7 @@ format.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="omnizart.music.labels.MapsLabelExtraction.load_label">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MapsLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -1141,7 +1141,7 @@ format.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.music.labels.MusicNetLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">MusicNetLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">MusicNetLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for MusicNet dataset</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -1157,7 +1157,7 @@ format.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="omnizart.music.labels.MusicNetLabelExtraction.load_label">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.MusicNetLabelExtraction.load_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the label file and parse information into <code class="docutils literal notranslate"><span class="pre">Label</span></code> class.</p>
 <p>Sub-classes should override this function to process their own label
 format.</p>
@@ -1181,7 +1181,7 @@ format.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.music.labels.PopLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">PopLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">PopLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for Pop Rhythm dataset</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -1197,7 +1197,7 @@ format.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="omnizart.music.labels.PopLabelExtraction.name_transform">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">name_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.music.labels.PopLabelExtraction.name_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maps the filename of label to the same name of the corresponding wav file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1219,7 +1219,7 @@ format.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.music.labels.SuLabelExtraction">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">SuLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.SuLabelExtraction" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.music.labels.</span></span><span class="sig-name descname"><span class="pre">SuLabelExtraction</span></span><a class="headerlink" href="#omnizart.music.labels.SuLabelExtraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label extraction class for Extended-Su dataset</p>
 <p>Uses the same process as Maestro dataset</p>
 </dd></dl>
@@ -1573,7 +1573,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

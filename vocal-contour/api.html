@@ -16,7 +16,7 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
       
       <!-- bundled in js (rollup iife) -->
@@ -428,7 +428,7 @@ model training, feature pre-processing, and audio transcription.</p>
 <p>omnizart.base.BaseTranscription: The base class of all transcription/application classes.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.vocal_contour.app.VocalContourDatasetLoader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.vocal_contour.app.</span></span><span class="sig-name descname"><span class="pre">VocalContourDatasetLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">384</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourDatasetLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.vocal_contour.app.</span></span><span class="sig-name descname"><span class="pre">VocalContourDatasetLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timesteps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">384</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourDatasetLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseDatasetLoader" title="omnizart.base.BaseDatasetLoader"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseDatasetLoader</span></code></a></p>
 <p>Data loader for training the mdoel of <code class="docutils literal notranslate"><span class="pre">vocal-contour</span></code>.</p>
 <p>Load feature and label for training.</p>
@@ -463,7 +463,7 @@ Zero padding is done to resolve mismatched input and target size.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.vocal_contour.app.VocalContourTranscription">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.vocal_contour.app.</span></span><span class="sig-name descname"><span class="pre">VocalContourTranscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.vocal_contour.app.</span></span><span class="sig-name descname"><span class="pre">VocalContourTranscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.vocal_contour.app.VocalContourTranscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../base.html#omnizart.base.BaseTranscription" title="omnizart.base.BaseTranscription"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.BaseTranscription</span></code></a></p>
 <p>Application class for vocal-contour transcription.</p>
 <p class="rubric">Methods</p>
@@ -473,10 +473,10 @@ Zero padding is done to resolve mismatched input and target size.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.vocal_contour.app.VocalContourTranscription.generate_feature" title="omnizart.vocal_contour.app.VocalContourTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.vocal_contour.app.VocalContourTranscription.generate_feature" title="omnizart.vocal_contour.app.VocalContourTranscription.generate_feature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_feature</span></code></a>(dataset_path[, ...])</p></td>
 <td><p>Extract the feature from the given dataset.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.vocal_contour.app.VocalContourTranscription.train" title="omnizart.vocal_contour.app.VocalContourTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.vocal_contour.app.VocalContourTranscription.train" title="omnizart.vocal_contour.app.VocalContourTranscription.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(feature_folder[, model_name, ...])</p></td>
 <td><p>Model training.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.vocal_contour.app.VocalContourTranscription.transcribe" title="omnizart.vocal_contour.app.VocalContourTranscription.transcribe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transcribe</span></code></a>(input_audio[, model_path, output])</p></td>
@@ -643,7 +643,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
         <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Map</span>
         <span class="nt">SubType</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">String</span><span class="p p-Indicator">,</span> <span class="nv">String</span><span class="p p-Indicator">]</span>
         <span class="nt">Value</span><span class="p">:</span> 
-            <span class="nt">VocalContour</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/vocal/contour</span>
+            <span class="nt">VocalContour</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">checkpoints/vocal/vocal_contour</span>
     <span class="nt">Feature</span><span class="p">:</span>
         <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Default settings of feature extraction</span>
         <span class="nt">Settings</span><span class="p">:</span>
@@ -675,7 +675,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
             <span class="nt">SavePrefix</span><span class="p">:</span>
                 <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Prefix of the trained model&#39;s name to be saved.</span>
                 <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
-                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">vocal-contour</span>
+                <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">vocal_contour</span>
             <span class="nt">SavePath</span><span class="p">:</span>
                 <span class="nt">Description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Path to save the trained model.</span>
                 <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">String</span>
@@ -732,7 +732,7 @@ The level of <em>/Settings</em> is removed among all fields.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>

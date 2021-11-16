@@ -404,7 +404,7 @@ could share among different models.</p>
 <p>Definition of customized U-Net like model architecture.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.u_net.MultiHeadAttention">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></span><span class="sig-name descname"><span class="pre">MultiHeadAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.MultiHeadAttention" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.u_net.</span></span><span class="sig-name descname"><span class="pre">MultiHeadAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.u_net.MultiHeadAttention" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Attention layer for 2D input feature.</p>
 <p>As the attention mechanism consumes a large amount of memory, here we leverage a divide-and-conquer approach
@@ -444,7 +444,7 @@ computed is: (query_shape[0]+memory_flange[0]) x (query_shape[1]+memory_flange[1
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.u_net.MultiHeadAttention.call" title="omnizart.models.u_net.MultiHeadAttention.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inputs)</p></td>
-<td><p>This is where the layer’s logic lives.</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.u_net.MultiHeadAttention.get_config" title="omnizart.models.u_net.MultiHeadAttention.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
 <td><p>Returns the config of the layer.</p></td>
@@ -460,8 +460,9 @@ from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support mas
 layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
 method to support masking.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
-<a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id3"><span class="problematic" id="id4">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id5"><span class="problematic" id="id6">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
 </dd>
@@ -479,6 +480,9 @@ The same layer can be reinstantiated later
 <p>The config of a layer does not include connectivity
 information, nor the layer class name. These are handled
 by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>Python dictionary.</p>
 </dd>
@@ -520,7 +524,7 @@ and thus the output will have the same dimension as the input.</p>
 Rewrite in tensorflow 2.0.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.t2t.MultiHeadAttention">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">MultiHeadAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.MultiHeadAttention" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.t2t.</span></span><span class="sig-name descname"><span class="pre">MultiHeadAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.t2t.MultiHeadAttention" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multi-head attention keras layer wrapper</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -530,7 +534,7 @@ Rewrite in tensorflow 2.0.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.t2t.MultiHeadAttention.call" title="omnizart.models.t2t.MultiHeadAttention.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(q, k, v)</p></td>
-<td><p>This is where the layer’s logic lives.</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.t2t.MultiHeadAttention.get_config" title="omnizart.models.t2t.MultiHeadAttention.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
 <td><p>Returns the config of the layer.</p></td>
@@ -546,8 +550,9 @@ from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support mas
 layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
 method to support masking.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
-<a href="#id6"><span class="problematic" id="id7">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id8"><span class="problematic" id="id9">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id10"><span class="problematic" id="id11">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
 </dd>
@@ -565,6 +570,9 @@ The same layer can be reinstantiated later
 <p>The config of a layer does not include connectivity
 information, nor the layer class name. These are handled
 by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>Python dictionary.</p>
 </dd>
@@ -877,7 +885,7 @@ the functionalities for better readability.</p>
 Rewrite by: BreezeWhite</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.ConvSN2D">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">ConvSN2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.ConvSN2D" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">ConvSN2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.ConvSN2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Just a wrapper layer for using spectral normalization.</p>
 <p>Original implementation referes to <a class="reference external" href="https://github.com/thisisiron/spectral_normalization-tf2">here</a>.</p>
@@ -889,7 +897,7 @@ Rewrite by: BreezeWhite</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.spectral_norm_net.ConvSN2D.call" title="omnizart.models.spectral_norm_net.ConvSN2D.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inputs)</p></td>
-<td><p>This is where the layer’s logic lives.</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.spectral_norm_net.ConvSN2D.get_config" title="omnizart.models.spectral_norm_net.ConvSN2D.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
 <td><p>This is neccessary to save the model architecture.</p></td>
@@ -905,8 +913,9 @@ from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support mas
 layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
 method to support masking.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
-<a href="#id8"><span class="problematic" id="id9">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id12"><span class="problematic" id="id13">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id14"><span class="problematic" id="id15">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
 </dd>
@@ -923,7 +932,7 @@ method to support masking.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.spectral_norm_net.SpectralNormalization">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">SpectralNormalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.spectral_norm_net.</span></span><span class="sig-name descname"><span class="pre">SpectralNormalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.spectral_norm_net.SpectralNormalization" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.layers.wrappers.Wrapper</span></code></p>
 <p>Spectral normalization layer.</p>
 <p>Original implementation referes to <a class="reference external" href="https://github.com/thisisiron/spectral_normalization-tf2">here</a>.</p>
@@ -938,7 +947,7 @@ method to support masking.</p>
 <td><p>Creates the variables of the layer (optional, for subclass implementers).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.spectral_norm_net.SpectralNormalization.call" title="omnizart.models.spectral_norm_net.SpectralNormalization.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inputs)</p></td>
-<td><p>This is where the layer’s logic lives.</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
 </tr>
 </tbody>
 </table>
@@ -965,7 +974,7 @@ can override if they need a state-creation step in-between
 layer instantiation and layer call.</p>
 <p>This is typically used to create the weights of <cite>Layer</cite> subclasses.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
 <dt>input_shape: Instance of <cite>TensorShape</cite>, or list of instances of</dt><dd><p><cite>TensorShape</cite> if the layer expects a list of inputs
 (one instance per input).</p>
 </dd>
@@ -983,8 +992,9 @@ from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support mas
 layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
 method to support masking.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
-<a href="#id11"><span class="problematic" id="id12">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id17"><span class="problematic" id="id18">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id19"><span class="problematic" id="id20">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
 </dd>
@@ -1060,7 +1070,7 @@ to be considered for training.</p>
 <span id="chord-transformer"></span><h2>Chord Transformer<a class="headerlink" href="#module-omnizart.models.chord_model" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.chord_model.ChordModel">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">ChordModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">ChordModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.ChordModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.training.Model</span></code></p>
 <p>Chord model in written in keras.</p>
 <p>Keras model of <code class="docutils literal notranslate"><span class="pre">chord</span></code> submodule. The original implementation is written in
@@ -1143,8 +1153,12 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 <p>In this case <cite>call</cite> just reapplies
 all ops in the graph to the new inputs
 (e.g. build a new computational graph from the provided inputs).</p>
+<p>Note: This method should not be called directly. It is only meant to be
+overridden when subclassing <cite>tf.keras.Model</cite>.
+To call a model on an input, always use the <cite>__call__</cite> method,
+i.e. <cite>model(inputs)</cite>, which relies on the underlying <cite>call</cite> method.</p>
 <dl>
-<dt>Arguments:</dt><dd><p>inputs: A tensor or list of tensors.
+<dt>Args:</dt><dd><p>inputs: A tensor or list of tensors.
 training: Boolean or boolean scalar tensor, indicating whether to run</p>
 <blockquote>
 <div><p>the <cite>Network</cite> in training mode or inference mode.</p>
@@ -1171,6 +1185,9 @@ The same layer can be reinstantiated later
 <p>The config of a layer does not include connectivity
 information, nor the layer class name. These are handled
 by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>Python dictionary.</p>
 </dd>
@@ -1188,7 +1205,7 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 <dd><p>The logic for one evaluation step.</p>
 <p>This method can be overridden to support custom evaluation logic.
 This method is called by <cite>Model.make_test_function</cite>.</p>
-<p>This function should contain the mathemetical logic for one step of
+<p>This function should contain the mathematical logic for one step of
 evaluation.
 This typically includes the forward pass, loss calculation, and metrics
 updates.</p>
@@ -1196,7 +1213,7 @@ updates.</p>
 <cite>tf.distribute.Strategy</cite> settings), should be left to
 <cite>Model.make_test_function</cite>, which can also be overridden.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>data: A nested structure of <a href="#id14"><span class="problematic" id="id15">`</span></a>Tensor`s.</p>
+<dt>Args:</dt><dd><p>data: A nested structure of <a href="#id22"><span class="problematic" id="id23">`</span></a>Tensor`s.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A <cite>dict</cite> containing values that will be passed to
 <cite>tf.keras.callbacks.CallbackList.on_train_batch_end</cite>. Typically, the
@@ -1211,14 +1228,14 @@ values of the <cite>Model</cite>’s metrics are returned.</p>
 <dd><p>The logic for one training step.</p>
 <p>This method can be overridden to support custom training logic.
 This method is called by <cite>Model.make_train_function</cite>.</p>
-<p>This method should contain the mathemetical logic for one step of training.
+<p>This method should contain the mathematical logic for one step of training.
 This typically includes the forward pass, loss calculation, backpropagation,
 and metric updates.</p>
 <p>Configuration details for <em>how</em> this logic is run (e.g. <cite>tf.function</cite> and
 <cite>tf.distribute.Strategy</cite> settings), should be left to
 <cite>Model.make_train_function</cite>, which can also be overridden.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>data: A nested structure of <a href="#id16"><span class="problematic" id="id17">`</span></a>Tensor`s.</p>
+<dt>Args:</dt><dd><p>data: A nested structure of <a href="#id24"><span class="problematic" id="id25">`</span></a>Tensor`s.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A <cite>dict</cite> containing values that will be passed to
 <cite>tf.keras.callbacks.CallbackList.on_train_batch_end</cite>. Typically, the
@@ -1232,7 +1249,7 @@ values of the <cite>Model</cite>’s metrics are returned. Example:
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.chord_model.Decoder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">Decoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Decoder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">Decoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Decoder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Decoder layer of the transformer model.</p>
 <dl class="field-list simple">
@@ -1267,7 +1284,7 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.chord_model.Decoder.call" title="omnizart.models.chord_model.Decoder.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inp, encoder_input_emb, chord_change_pred)</p></td>
-<td><p>This is where the layer’s logic lives.</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.chord_model.Decoder.get_config" title="omnizart.models.chord_model.Decoder.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
 <td><p>Returns the config of the layer.</p></td>
@@ -1283,8 +1300,9 @@ from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support mas
 layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
 method to support masking.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
-<a href="#id18"><span class="problematic" id="id19">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id26"><span class="problematic" id="id27">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id28"><span class="problematic" id="id29">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
 </dd>
@@ -1302,6 +1320,9 @@ The same layer can be reinstantiated later
 <p>The config of a layer does not include connectivity
 information, nor the layer class name. These are handled
 by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>Python dictionary.</p>
 </dd>
@@ -1312,7 +1333,7 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.chord_model.EncodeSegmentFrequency">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">EncodeSegmentFrequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentFrequency" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">EncodeSegmentFrequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentFrequency" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Encode feature along the frequency axis.</p>
 <dl class="field-list simple">
@@ -1341,7 +1362,7 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.chord_model.EncodeSegmentFrequency.call" title="omnizart.models.chord_model.EncodeSegmentFrequency.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inp)</p></td>
-<td><p>This is where the layer’s logic lives.</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.chord_model.EncodeSegmentFrequency.get_config" title="omnizart.models.chord_model.EncodeSegmentFrequency.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
 <td><p>Returns the config of the layer.</p></td>
@@ -1357,8 +1378,9 @@ from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support mas
 layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
 method to support masking.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
-<a href="#id20"><span class="problematic" id="id21">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id30"><span class="problematic" id="id31">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id32"><span class="problematic" id="id33">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
 </dd>
@@ -1376,6 +1398,9 @@ The same layer can be reinstantiated later
 <p>The config of a layer does not include connectivity
 information, nor the layer class name. These are handled
 by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>Python dictionary.</p>
 </dd>
@@ -1386,7 +1411,7 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.chord_model.EncodeSegmentTime">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">EncodeSegmentTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentTime" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">EncodeSegmentTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.EncodeSegmentTime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Encode feature along the time axis.</p>
 <dl class="field-list simple">
@@ -1415,7 +1440,7 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.chord_model.EncodeSegmentTime.call" title="omnizart.models.chord_model.EncodeSegmentTime.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inp)</p></td>
-<td><p>This is where the layer’s logic lives.</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.chord_model.EncodeSegmentTime.get_config" title="omnizart.models.chord_model.EncodeSegmentTime.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
 <td><p>Returns the config of the layer.</p></td>
@@ -1431,8 +1456,9 @@ from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support mas
 layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
 method to support masking.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
-<a href="#id22"><span class="problematic" id="id23">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id34"><span class="problematic" id="id35">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id36"><span class="problematic" id="id37">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
 </dd>
@@ -1450,6 +1476,9 @@ The same layer can be reinstantiated later
 <p>The config of a layer does not include connectivity
 information, nor the layer class name. These are handled
 by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>Python dictionary.</p>
 </dd>
@@ -1460,7 +1489,7 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.chord_model.Encoder">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">Encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Encoder" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">Encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.Encoder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Encoder layer of the transformer model.</p>
 <dl class="field-list simple">
@@ -1493,7 +1522,7 @@ to the current frame, resulting a feature dimenstion of <em>segment_width x freq
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.chord_model.Encoder.call" title="omnizart.models.chord_model.Encoder.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inp[, slope])</p></td>
-<td><p>This is where the layer’s logic lives.</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.chord_model.Encoder.get_config" title="omnizart.models.chord_model.Encoder.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
 <td><p>Returns the config of the layer.</p></td>
@@ -1509,8 +1538,9 @@ from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support mas
 layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
 method to support masking.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
-<a href="#id24"><span class="problematic" id="id25">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id38"><span class="problematic" id="id39">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id40"><span class="problematic" id="id41">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
 </dd>
@@ -1528,6 +1558,9 @@ The same layer can be reinstantiated later
 <p>The config of a layer does not include connectivity
 information, nor the layer class name. These are handled
 by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>Python dictionary.</p>
 </dd>
@@ -1538,7 +1571,7 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.chord_model.FeedForward">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">FeedForward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.FeedForward" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">FeedForward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.chord_model.FeedForward" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
 <p>Feedfoward layer of the transformer model.</p>
 <p class="rubric">Methods</p>
@@ -1549,7 +1582,7 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.chord_model.FeedForward.call" title="omnizart.models.chord_model.FeedForward.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inp)</p></td>
-<td><p>This is where the layer’s logic lives.</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.chord_model.FeedForward.get_config" title="omnizart.models.chord_model.FeedForward.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
 <td><p>Returns the config of the layer.</p></td>
@@ -1565,8 +1598,9 @@ from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support mas
 layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
 method to support masking.</p>
 <dl class="simple">
-<dt>Arguments:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
-<a href="#id26"><span class="problematic" id="id27">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id42"><span class="problematic" id="id43">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id44"><span class="problematic" id="id45">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
 </dd>
 <dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
 </dd>
@@ -1584,6 +1618,9 @@ The same layer can be reinstantiated later
 <p>The config of a layer does not include connectivity
 information, nor the layer class name. These are handled
 by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>Python dictionary.</p>
 </dd>
@@ -1594,7 +1631,7 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="omnizart.models.chord_model.ReduceSlope">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">ReduceSlope</span></span><a class="headerlink" href="#omnizart.models.chord_model.ReduceSlope" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.chord_model.</span></span><span class="sig-name descname"><span class="pre">ReduceSlope</span></span><a class="headerlink" href="#omnizart.models.chord_model.ReduceSlope" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.callbacks.Callback</span></code></p>
 <p>Custom keras callback for reducing slope value after each epoch.</p>
 <p class="rubric">Methods</p>
@@ -1616,11 +1653,17 @@ by <cite>Network</cite> (one layer of abstraction above).</p>
 <p>Subclasses should override for any actions to run. This function should only
 be called during TRAIN mode.</p>
 <dl>
-<dt>Arguments:</dt><dd><p>epoch: Integer, index of epoch.
+<dt>Args:</dt><dd><p>epoch: Integer, index of epoch.
 logs: Dict, metric results for this training epoch, and for the</p>
 <blockquote>
+<div><blockquote>
 <div><p>validation epoch if validation is performed. Validation result keys
-are prefixed with <cite>val_</cite>.</p>
+are prefixed with <cite>val_</cite>. For training epoch, the values of the</p>
+</div></blockquote>
+<dl>
+<dt><cite>Model</cite>’s metrics are returned. Example<span class="classifier"><a href="#id46"><span class="problematic" id="id47">`</span></a>{‘loss’: 0.2, ‘accuracy’:</span></dt><dd><p>0.7}`.</p>
+</dd>
+</dl>
 </div></blockquote>
 </dd>
 </dl>
@@ -1673,7 +1716,7 @@ are prefixed with <cite>val_</cite>.</p>
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2020, MCTLab.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
 </div>
             </div>
           </div>
