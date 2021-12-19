@@ -318,7 +318,7 @@
                 
                   <li class="toctree-l2"><a href="#module-omnizart.models.chord_model" class="reference internal">Chord Transformer</a></li>
                 
-                  <li class="toctree-l2"><a href="#pyramid-net" class="reference internal">Pyramid Net</a></li>
+                  <li class="toctree-l2"><a href="#module-omnizart.models.pyramid_net" class="reference internal">Pyramid Net</a></li>
                 
                   <li class="toctree-l2"><a href="#module-omnizart.models.utils" class="reference internal">Utils</a></li>
                 
@@ -1687,8 +1687,257 @@ are prefixed with <cite>val_</cite>. For training epoch, the values of the</p>
 <dd></dd></dl>
 
 </section>
-<section id="pyramid-net">
-<h2>Pyramid Net<a class="headerlink" href="#pyramid-net" title="Permalink to this headline">¶</a></h2>
+<section id="module-omnizart.models.pyramid_net">
+<span id="pyramid-net"></span><h2>Pyramid Net<a class="headerlink" href="#module-omnizart.models.pyramid_net" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.PyramidBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.pyramid_net.</span></span><span class="sig-name descname"><span class="pre">PyramidBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.PyramidBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
+<p>Pyramid block for building pyramid net.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.pyramid_net.PyramidBlock.call" title="omnizart.models.pyramid_net.PyramidBlock.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inputs[, is_training])</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.pyramid_net.PyramidBlock.get_config" title="omnizart.models.pyramid_net.PyramidBlock.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
+<td><p>Returns the config of the layer.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.PyramidBlock.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.PyramidBlock.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is where the layer’s logic lives.</p>
+<p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
+from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
+layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
+method to support masking.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id48"><span class="problematic" id="id49">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id50"><span class="problematic" id="id51">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.PyramidBlock.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.PyramidBlock.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the config of the layer.</p>
+<p>A layer config is a Python dictionary (serializable)
+containing the configuration of a layer.
+The same layer can be reinstantiated later
+(without its trained weights) from this configuration.</p>
+<p>The config of a layer does not include connectivity
+information, nor the layer class name. These are handled
+by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Python dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.PyramidNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.pyramid_net.</span></span><span class="sig-name descname"><span class="pre">PyramidNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.PyramidNet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.training.Model</span></code></p>
+<p>Pyramid Net with shake drop layer.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.pyramid_net.PyramidNet.call" title="omnizart.models.pyramid_net.PyramidNet.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inputs[, is_training])</p></td>
+<td><p>Calls the model on new inputs.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.pyramid_net.PyramidNet.get_config" title="omnizart.models.pyramid_net.PyramidNet.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
+<td><p>Returns the config of the layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.pyramid_net.PyramidNet.test_step" title="omnizart.models.pyramid_net.PyramidNet.test_step"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test_step</span></code></a>(data)</p></td>
+<td><p>The logic for one evaluation step.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.pyramid_net.PyramidNet.train_step" title="omnizart.models.pyramid_net.PyramidNet.train_step"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train_step</span></code></a>(data)</p></td>
+<td><p>The logic for one training step.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.PyramidNet.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.PyramidNet.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the model on new inputs.</p>
+<p>In this case <cite>call</cite> just reapplies
+all ops in the graph to the new inputs
+(e.g. build a new computational graph from the provided inputs).</p>
+<p>Note: This method should not be called directly. It is only meant to be
+overridden when subclassing <cite>tf.keras.Model</cite>.
+To call a model on an input, always use the <cite>__call__</cite> method,
+i.e. <cite>model(inputs)</cite>, which relies on the underlying <cite>call</cite> method.</p>
+<dl>
+<dt>Args:</dt><dd><p>inputs: A tensor or list of tensors.
+training: Boolean or boolean scalar tensor, indicating whether to run</p>
+<blockquote>
+<div><p>the <cite>Network</cite> in training mode or inference mode.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>mask: A mask or list of masks. A mask can be</dt><dd><p>either a tensor or None (no mask).</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>A tensor if there is a single output, or
+a list of tensors if there are more than one outputs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.PyramidNet.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.PyramidNet.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the config of the layer.</p>
+<p>A layer config is a Python dictionary (serializable)
+containing the configuration of a layer.
+The same layer can be reinstantiated later
+(without its trained weights) from this configuration.</p>
+<p>The config of a layer does not include connectivity
+information, nor the layer class name. These are handled
+by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Python dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.PyramidNet.test_step">
+<span class="sig-name descname"><span class="pre">test_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.PyramidNet.test_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logic for one evaluation step.</p>
+<p>This method can be overridden to support custom evaluation logic.
+This method is called by <cite>Model.make_test_function</cite>.</p>
+<p>This function should contain the mathematical logic for one step of
+evaluation.
+This typically includes the forward pass, loss calculation, and metrics
+updates.</p>
+<p>Configuration details for <em>how</em> this logic is run (e.g. <cite>tf.function</cite> and
+<cite>tf.distribute.Strategy</cite> settings), should be left to
+<cite>Model.make_test_function</cite>, which can also be overridden.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>data: A nested structure of <a href="#id52"><span class="problematic" id="id53">`</span></a>Tensor`s.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A <cite>dict</cite> containing values that will be passed to
+<cite>tf.keras.callbacks.CallbackList.on_train_batch_end</cite>. Typically, the
+values of the <cite>Model</cite>’s metrics are returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.PyramidNet.train_step">
+<span class="sig-name descname"><span class="pre">train_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.PyramidNet.train_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logic for one training step.</p>
+<p>This method can be overridden to support custom training logic.
+This method is called by <cite>Model.make_train_function</cite>.</p>
+<p>This method should contain the mathematical logic for one step of training.
+This typically includes the forward pass, loss calculation, backpropagation,
+and metric updates.</p>
+<p>Configuration details for <em>how</em> this logic is run (e.g. <cite>tf.function</cite> and
+<cite>tf.distribute.Strategy</cite> settings), should be left to
+<cite>Model.make_train_function</cite>, which can also be overridden.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>data: A nested structure of <a href="#id54"><span class="problematic" id="id55">`</span></a>Tensor`s.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A <cite>dict</cite> containing values that will be passed to
+<cite>tf.keras.callbacks.CallbackList.on_train_batch_end</cite>. Typically, the
+values of the <cite>Model</cite>’s metrics are returned. Example:
+<cite>{‘loss’: 0.2, ‘accuracy’: 0.7}</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.ShakeDrop">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">omnizart.models.pyramid_net.</span></span><span class="sig-name descname"><span class="pre">ShakeDrop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.ShakeDrop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tensorflow.python.keras.engine.base_layer.Layer</span></code></p>
+<p>Shake drop layer.</p>
+<p>Most of the code follows the implementation from tensorflow research <a class="reference internal" href="#r447ea3cd1c04-1" id="id56">[1]</a>.</p>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="r447ea3cd1c04-1"><span class="brackets"><a class="fn-backref" href="#id56">1</a></span></dt>
+<dd><p><a class="reference external" href="https://github.com/tensorflow/models/blob/master/research/autoaugment/shake_drop.py">https://github.com/tensorflow/models/blob/master/research/autoaugment/shake_drop.py</a></p>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#omnizart.models.pyramid_net.ShakeDrop.call" title="omnizart.models.pyramid_net.ShakeDrop.call"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call</span></code></a>(inputs[, is_training])</p></td>
+<td><p>This is where the layer's logic lives.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#omnizart.models.pyramid_net.ShakeDrop.get_config" title="omnizart.models.pyramid_net.ShakeDrop.get_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_config</span></code></a>()</p></td>
+<td><p>Returns the config of the layer.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.ShakeDrop.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.ShakeDrop.call" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is where the layer’s logic lives.</p>
+<p>Note here that <cite>call()</cite> method in <cite>tf.keras</cite> is little bit different
+from <cite>keras</cite> API. In <cite>keras</cite> API, you can pass support masking for
+layers as additional arguments. Whereas <cite>tf.keras</cite> has <cite>compute_mask()</cite>
+method to support masking.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inputs: Input tensor, or list/tuple of input tensors.
+<a href="#id58"><span class="problematic" id="id59">*</span></a>args: Additional positional arguments. Currently unused.
+<a href="#id60"><span class="problematic" id="id61">**</span></a>kwargs: Additional keyword arguments. Currently unused.</p>
+</dd>
+<dt>Returns:</dt><dd><p>A tensor or list/tuple of tensors.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="omnizart.models.pyramid_net.ShakeDrop.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#omnizart.models.pyramid_net.ShakeDrop.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the config of the layer.</p>
+<p>A layer config is a Python dictionary (serializable)
+containing the configuration of a layer.
+The same layer can be reinstantiated later
+(without its trained weights) from this configuration.</p>
+<p>The config of a layer does not include connectivity
+information, nor the layer class name. These are handled
+by <cite>Network</cite> (one layer of abstraction above).</p>
+<p>Note that <cite>get_config()</cite> does not guarantee to return a fresh copy of dict
+every time it is called. The callers should make a copy of the returned dict
+if they want to modify it.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Python dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-omnizart.models.utils">
 <span id="utils"></span><h2>Utils<a class="headerlink" href="#module-omnizart.models.utils" title="Permalink to this headline">¶</a></h2>

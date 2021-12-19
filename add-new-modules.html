@@ -437,7 +437,7 @@ of the things like dataset type inferring, folder structure handling, file parsi
 - The function for label extraction, generating the representation of ground-truth. Accepts the path to the ground-truth file, parses the contents
 into intermediate format (see <a class="reference internal" href="base.html#omnizart.base.Label" title="omnizart.base.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.base.Label</span></code></a>), and extracts necessary informations.</p>
 <p>Normally, it should be defined in a separate file called <code class="docutils literal notranslate"><span class="pre">labels.py</span></code> under <em>omnizart/&lt;module&gt;/</em> when the extraction process contains lots of logics.
-Since the label extraction in this example is relativly simple, it is okay to put it under <code class="docutils literal notranslate"><span class="pre">omnizart.patch_cnn.app</span></code>.
+Since the label extraction in this example is relatively simple, it is okay to put it under <code class="docutils literal notranslate"><span class="pre">omnizart.patch_cnn.app</span></code>.
 See the conventional case <a class="reference internal" href="drum/api.html#module-omnizart.drum.labels" title="omnizart.drum.labels"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.drum.labels</span></code></a>.</p>
 </li>
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L336-L373">omnizart.patch_cnn._parallel_feature_extraction</a></p>
@@ -464,7 +464,7 @@ parameters are registered under <code class="docutils literal notranslate"><span
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Choose the coressponding dataset strcuture class.</dt><dd><ul class="simple">
+<dt>Choose the corresponding dataset structure class.</dt><dd><ul class="simple">
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L135">patch-cnn</a></p></li>
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/master/omnizart/music/app.py#L182-L186">music module</a></p></li>
 </ul>
@@ -524,7 +524,7 @@ and <a class="reference external" href="https://github.com/Music-and-Culture-Tec
 modules.</p></li>
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/patch_cnn/app.py#L376-L380">omnizart.patch_cnn.app.PatchCNNDatasetLoader</a>
 - The dataset loader for feeding data to models. Dealing with listing files, iterating through all feature/label pairs,
-indexing, and additionally augmenting, cliping, or transforming the feature/label on the fly.</p></li>
+indexing, and additionally augmenting, clipping, or transforming the feature/label on the fly.</p></li>
 <li><p><a class="reference external" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart/blob/273fc60fbc6e3728c07abf71e06cf8f092bfabeb/omnizart/setting_loaders.py#L366-L386">omnizart.setting_loaders.PatchCNNSettings</a>
 - The data class that holds the necessary hyper parameters that will be used by different functions of this module. For model training,
 related hyper parameters are registered under <code class="docutils literal notranslate"><span class="pre">PatchCNNSettings.dataset</span></code>, <code class="docutils literal notranslate"><span class="pre">PatchCNNSettings.model</span></code>, and
@@ -623,7 +623,7 @@ during implementing a new module.</p>
 <h3>Add new supported datasets<a class="headerlink" href="#add-new-supported-datasets" title="Permalink to this headline">¶</a></h3>
 <p>If you want to add a new dataset that is currently not supported by <code class="docutils literal notranslate"><span class="pre">omnizart</span></code> (which is defined in
 <a class="reference internal" href="constants.html#module-omnizart.constants.datasets" title="omnizart.constants.datasets"><code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.constants.datasets</span></code></a>), things should be noticed are explained in this section.</p>
-<p>(To be continue…)</p>
+<p>(To be continued…)</p>
 </section>
 </section>
 </section>

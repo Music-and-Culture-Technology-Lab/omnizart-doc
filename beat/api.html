@@ -760,11 +760,11 @@ The overlap size is 1/4 length to the timesteps.</p>
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>Below are the default settings for building the beat model. It will be loaded
 by the class <code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.setting_loaders.BeatSettings</span></code>. The name of the
-attributes will be converted to snake-case (e.g. HopSize -&gt; hop_size). There
+attributes will be converted to snake-case (e.g., HopSize -&gt; hop_size). There
 is also a path transformation process when applying the settings into the
 <code class="docutils literal notranslate"><span class="pre">BeatSettings</span></code> instance. For example, if you want to access the attribute
 <code class="docutils literal notranslate"><span class="pre">BatchSize</span></code> defined in the yaml path <em>General/Training/Settings/BatchSize</em>,
-the coressponding attribute will be <em>BeatSettings.training.batch_size</em>.
+the corresponding attribute will be <em>BeatSettings.training.batch_size</em>.
 The level of <em>/Settings</em> is removed among all fields.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
     <span class="nt">TranscriptionMode</span><span class="p">:</span>

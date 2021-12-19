@@ -1374,11 +1374,11 @@ Dimension:  timesteps x feature_size x channels</p>
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>Below are the default settings for building the music model. It will be loaded
 by the class <code class="xref py py-class docutils literal notranslate"><span class="pre">omnizart.setting_loaders.MusicSettings</span></code>. The name of the
-attributes will be converted to snake-case (e.g. HopSize -&gt; hop_size). There
+attributes will be converted to snake-case (e.g., HopSize -&gt; hop_size). There
 is also a path transformation process when applying the settings into the
 <code class="docutils literal notranslate"><span class="pre">MusicSettings</span></code> instance. For example, if you want to access the attribute
 <code class="docutils literal notranslate"><span class="pre">BatchSize</span></code> defined in the yaml path <em>General/Training/Settings/BatchSize</em>,
-the coressponding attribute will be <em>MusicSettings.training.batch_size</em>.
+the corresponding attribute will be <em>MusicSettings.training.batch_size</em>.
 The level of <em>/Settings</em> is removed among all fields.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Self-documented configurable settings, with description, type hint, and available</span>
 <span class="c1"># options. All the parameters can be overriden by another specified configuration file </span>

@@ -399,13 +399,13 @@ You can also follow the installation below to enjoy Omnizart locally.</p>
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <section id="using-pip">
 <h3>Using pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h3>
-<p>Omnizart is under developement and will be updated regularly on PyPI.
+<p>Omnizart is under development and will be updated regularly on PyPI.
 Use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install the latest stable version.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the prerequisites manually since there are some dependencies can&#39;t be</span>
 <span class="c1"># resolved automatically.</span>
 pip install numpy Cython
 
-<span class="c1"># Additional system pacakges are required to fully use Omnizart.</span>
+<span class="c1"># Additional system packages are required to fully use Omnizart.</span>
 sudo apt-get install libsndfile-dev fluidsynth ffmpeg
 
 <span class="c1"># Install Omnizart</span>
@@ -420,9 +420,10 @@ omnizart download-checkpoints
 <h3>Development installation<a class="headerlink" href="#development-installation" title="Permalink to this headline">¶</a></h3>
 <p>For the development installation, clone the git repo and the installation
 creates a virtual environment under the directory <em>omnizart/</em> by default.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Music-and-Culture-Technology-Lab/omnizart.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the omnizart repository from GitHub</span>
+git clone https://github.com/Music-and-Culture-Technology-Lab/omnizart.git
 
-<span class="c1"># Install dependenies, with checkpoints automatically downloaded</span>
+<span class="c1"># Install dependencies, with checkpoints automatically downloaded</span>
 <span class="nb">cd</span> omnizart
 make install
 
@@ -434,7 +435,7 @@ make install-dev
 </section>
 <section id="cli">
 <h2>CLI<a class="headerlink" href="#cli" title="Permalink to this headline">¶</a></h2>
-<p>Below is an example usuage of pitched instrument transcription with the command-line interface,
+<p>Below is an example usage of pitched instrument transcription with the command-line interface,
 first transcribing a piece of music and then synthesizing the results.
 For more details and other types of transcription, refer to <a class="reference internal" href="tutorial.html"><span class="doc">Tutorial</span></a>.</p>
 <section id="transcription">
